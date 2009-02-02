@@ -1,0 +1,8 @@
+log/*
+tmp/*
+tmp/**/*
+.DS_Store
+config/database.yml
+public/stylesheets/*
+db/development.sqlite3
+db/test.sqlite3
