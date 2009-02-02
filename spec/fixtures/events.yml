@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  is_private: false
+  starts_at: 2008-04-26 16:13:59
+  ends_at: 2008-04-26 16:13:59
+  name: MyString
+  description: MyText
+
+two:
+  is_private: false
+  starts_at: 2008-04-26 16:13:59
+  ends_at: 2008-04-26 16:13:59
+  name: MyString
+  description: MyText

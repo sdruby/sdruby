@@ -1,0 +1,16 @@
+rails -dmysql sdruby
+svn import http://svn.sdruby.com/sdruby/trunk sdruby
+rm -rf sdruby
+svn co http://svn.sdruby.com/sdruby/trunk sdruby
+cd sdruby
+piston import -r8430 http://svn.rubyonrails.org/rails/trunk vendor/rails #Rails 2.0.3
+piston import -r3279 http://rspec.rubyforge.org/svn/trunk/rspec vendor/plugins/rspec #Rspec
+piston import -r3279 http://rspec.rubyforge.org/svn/trunk/rspec_on_rails vendor/plugins/rspec_on_rails #Rspec on Rails
+gemsonrails .
+rake gem:freeze GEM=haml
+
+Getting the app running in development
+
+1. Copy config/database.example.yml to config/database.yml, or create your own
+2. Run migrations (db:migrate and db:test:prepare)
+3. Run bootstrap (db:bootstrap:load)>>>>>>> .r190

@@ -1,0 +1,10 @@
+widgets:
+  setup:
+    default: "default"
+    default_percent: 100 
+
+users:
+  email:
+    type: email
+  full_name:
+    min: 2

@@ -1,0 +1,24 @@
+%h1=t "Listing events"
+
+%table
+  %tr
+    %th Is private
+    %th Starts at
+    %th Ends at
+    %th Name
+    %th Description
+
+- @events.each do |event|
+  %tr
+    %td= event.is_private
+    %td= event.starts_at
+    %td= event.ends_at
+    %td= event.name
+    %td= event.description
+    %td= link_to 'Show', event
+    %td= link_to 'Edit', edit_event_path(event)
+    %td= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete
+
+%br/
+
+%p= link_to 'New widget', new_event_path

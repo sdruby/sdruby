@@ -1,0 +1,5 @@
+task :default => :doc
+
+task :doc do
+  exec "rdoc --line-numbers --main README README lib/*"
+end

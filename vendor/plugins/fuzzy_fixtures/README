@@ -1,0 +1,66 @@
+# Install #
+
+Installing the factory is simply a matter of 
+    
+    ruby script/plugin install svn://rubyforge.org/var/svn/fuzzyfixtures/tags/CURRENT/fuzzy_fixtures
+
+Or you can install by downloading the tgz file from 
+    
+    http://rubyforge.org/projects/fuzzyfixtures/
+
+# Development #
+
+Since FuzzyFixtures are tied so tightly to ActiveRecord you may want the FuzzyFixture test application (know as Person)
+and available through the source repository if your going to do development on this plugin.
+
+# Usage #
+
+Once the plugin is installed you can add the following line to your test class:
+
+    fuzzy :first_items, :second_items
+
+This works just like declaring fixtures, and does not conflict with existing fixtures.  After declairing this way,
+you can access the fuzzy fixtures like so:
+
+    fuzzy_first_items.create!
+
+You can also assign a fixture generator to a variable in your setup or anywhere else by calling
+FuzzyFixture.new(ClassName) to create a new ClassName factory.
+
+For example if your model was Person you could do:
+
+    person_factory = FuzzyFixture.new(Person)
+    random_person = person_factory.create!
+    first_name_harry_person = person_factory.create!(:first_name => "Harry")
+
+If you get an Exception or a Failure the factory will print out the key that was used to generate the random sequence.
+You can then set this in your FuzzyFixture.new call to enable repeatable testing like so:
+
+    fuzzy :first_items123412123124123
+
+OR
+
+    person_factory = FuzzyFixture.new(Person, 123412123124123)
+    
+## Configuration ##
+
+Unfortunately the factory doesn't automatically read your validations at this time.  
+However it is made even more flexible by this constraint.  You can add configuration in fuzzy.yml
+on a per model bases.  For example when you have a field that is never nil (say first_name) and that can only contain
+alphabet characters you could force that like so:
+
+    people:
+      first_name:
+        nil: false
+        characters: alpha
+
+You can also add custom types for common special cases.   A good example of this would be the email type.
+This is a common string, with some very special constraints.  To implement those
+constraints we create email.rb (found in the lib directory of this plugin).  It opens FuzzyFixture back up
+and adds a function called email which can then be set in the YAML file for any field like this:
+
+    my_model:
+      my_email:
+        type: email
+
+When a random email is needed the email function will be called instead of just giving you a random string.

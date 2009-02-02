@@ -1,0 +1,24 @@
+%p
+  %strong Is private:
+  = @event.is_private
+
+%p
+  %strong Starts at:
+  = @event.starts_at
+
+%p
+  %strong Ends at:
+  = @event.ends_at
+
+%p
+  %strong Name:
+  = @event.name
+
+%p
+  %strong Description:
+  = @event.description
+
+%p
+  = link_to 'Edit', edit_event_path(@event)
+  = "|"
+  = link_to 'Back', events_path

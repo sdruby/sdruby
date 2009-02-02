@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+next_meeting:
+  setup: next_meeting
+  view: next_meeting
+  column: 1
+  row: 1
+
+two:
+  setup: google_groups
+  view: google_groups
+  column: 1
+  row: 1

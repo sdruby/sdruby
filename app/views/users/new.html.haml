@@ -1,0 +1,15 @@
+%h1=t "Member Signup"
+
+= error_messages_for :user
+
+- form_for(@user, :html => { :multipart => true }) do |f|
+  %p
+    %label{:for => "user_avatar"} Avatar:
+    = f.file_field :avatar
+
+  = render :partial => 'form', :locals => {:f => f}
+  
+  %p
+    = f.submit "Sign Up"
+
+%p= link_to 'Back', users_path

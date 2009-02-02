@@ -1,0 +1,34 @@
+%h1=t "New event"
+
+= error_messages_for :event
+
+- form_for(@event) do |f|
+  %p
+    %label{:for => "event_name"} Name:
+    = f.text_field :name
+
+  %p
+    %label{:for => "event_description"} Description:
+    = f.text_area :description, :size => "50x5"
+  
+  %p
+    %label{:for => "event_starts_at"} Starts at:
+    = f.datetime_select :starts_at
+
+  %p
+    %label{:for => "event_ends_at"} Ends at:
+    = f.datetime_select :ends_at
+
+  %p
+  - Event.types.each do |event_type|
+    %label{:for => "event_type"}= "#{event_type}:"
+    = f.radio_button :class, event_type
+    
+  %p
+  = f.check_box :is_private
+  %label{:for => "event_is_private"} Make event private
+
+  %p
+    = f.submit "Create"
+
+%p= link_to 'Back', events_path

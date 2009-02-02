@@ -1,0 +1,14 @@
+%h1=t "Users"
+
+%table
+  - @users.each do |user|
+    %tr
+      %td= image_tag user.avatar.url(:small), :size => "48x48"
+      %td= user.full_name
+      %td= link_to 'Show', user
+      %td= link_to 'Edit', edit_user_path(user)
+      %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
+
+%br/
+
+%p= link_to 'New user', new_user_path
