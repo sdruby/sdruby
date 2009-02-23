@@ -1,5 +1,4 @@
-SD Ruby app
-===========
+# SD Ruby app #
 
 We're working on this app in a few phases.
 
@@ -7,13 +6,14 @@ In the first phase, we'll update the site design and merge the podcast site into
 
 Here's a breakdown of the first phase.
 
-### TODO:
+### Tasks ###
+
 - Unfreeze Rails
 - Update plugins
 - Update the app to Rails 2.2.2
 - Switch gems to use config.gem
-
 - Create new podcast model and controller
 - Create Rake task to import old podcast data
 - Markup new pages (homepage, podcast homepage, and podcast detail)
 - Style new pages (homepage, podcast homepage, and podcast detail)
+
