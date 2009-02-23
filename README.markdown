@@ -1,4 +1,4 @@
-# SD Ruby app #
+# SD Ruby 2.0 #
 
 We're working on this app in a few phases.
 
