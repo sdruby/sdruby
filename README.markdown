@@ -7,13 +7,15 @@ In the first phase, we'll update the site design and merge the podcast site into
 Here's a breakdown of the first phase.
 
 ### Tasks ###
-
-* <strike>Unfreeze Rails</strike> [Rob]
-* <strike>Update plugins</strike> [Rob]
-* <strike>Update the app to Rails 2.2.2</strike> [Rob]
-* <strike>Switch gems to use config.gem</strike> [Rob]
 - Create new podcast model and controller
 - Create Rake task to import old podcast data
-- Markup new pages (homepage, podcast homepage, and podcast detail)
-- Style new pages (homepage, podcast homepage, and podcast detail)
+- Markup and style podcast home [Patrick]
+- Markup and style podcast detail [Patrick]
 
+### Completed ###
+- Unfreeze Rails [Rob]
+- Update plugins [Rob]
+- Update the app to Rails 2.2.2 [Rob]
+- Switch gems to use config.gem [Rob]
+- Markup and style basic layout [Patrick]
+- Markup and style homepage [Patrick]
