@@ -5,7 +5,7 @@
 # ENV['RAILS_ENV'] ||= 'production'
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '2.0.2' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.2.2' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -16,9 +16,19 @@ Rails::Initializer.run do |config|
   # -- all .rb files in that directory are automatically loaded.
   # See Rails::Configuration for more options.
 
-  # Skip frameworks you're not going to use (only works if using vendor/rails).
-  # To use Rails without a database, you must remove the Active Record framework
+  # Skip frameworks you're not going to use. To use Rails without a database
+  # you must remove the Active Record framework.
   # config.frameworks -= [ :active_record, :active_resource, :action_mailer ]
+
+  # Specify gems that this application depends on. 
+  # They can then be installed with "rake gems:install" on new installations.
+  # You have to specify the :lib option for libraries, where the Gem name (sqlite3-ruby) differs from the file itself (sqlite3)
+  config.gem "haml"
+  config.gem "rspec", :lib => false
+  config.gem "rspec-rails", :lib => false
+  # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
+  # config.gem "sqlite3-ruby", :lib => "sqlite3"
+  # config.gem "aws-s3", :lib => "aws/s3"
 
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
@@ -32,18 +42,28 @@ Rails::Initializer.run do |config|
   # (by default production uses :info, the others :debug)
   # config.log_level = :debug
 
+  # Make Time.zone default to the specified zone, and make Active Record store time values
+  # in the database in UTC, and return them converted to the specified local zone.
+  # Run "rake -D time" for a list of tasks for finding time zone names. Comment line to use default local time.
+  config.time_zone = 'UTC'
+
+  # The internationalization framework can be changed to have another default locale (standard is :en) or more load paths.
+  # All files from config/locales/*.rb,yml are added automatically.
+  # config.i18n.load_path << Dir[File.join(RAILS_ROOT, 'my', 'locales', '*.{rb,yml}')]
+  # config.i18n.default_locale = :de
+
   # Your secret key for verifying cookie session data integrity.
   # If you change this key, all old sessions will become invalid!
   # Make sure the secret is at least 30 characters and all random, 
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
     :session_key => '_sdruby_session',
-    :secret      => '190ac4dd99b4a01aa9394cfaa4b375dc6f803afc540dc7ae061e5f699c2cc468c32459efa9395e83f95b04f55ab4e26cd3b0d8cdfe52f5446f9698a167a6fd89'
+    :secret      => 'ba70e28c278c17fe60dac072cf3ce71645dc87c08f3fbf43462734e248741af28e7df76a70b976112a2e5a98a2480e843dcc2c92593e3251f402d88632b2591c'
   }
 
   # Use the database for sessions instead of the cookie-based default,
   # which shouldn't be used to store highly confidential information
-  # (create the session table with 'rake db:sessions:create')
+  # (create the session table with "rake db:sessions:create")
   # config.action_controller.session_store = :active_record_store
 
   # Use SQL instead of Active Record's schema dumper when creating the test database.
@@ -52,10 +72,6 @@ Rails::Initializer.run do |config|
   # config.active_record.schema_format = :sql
 
   # Activate observers that should always be running
-  # config.active_record.observers = :cacher, :garbage_collector
-
-  # Make Active Record use UTC-base instead of local time
-  # config.active_record.default_timezone = :utc
+  # Please note that observers generated using script/generate observer need to have an _observer suffix
+  # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 end
-
-require 'core_extensions'
