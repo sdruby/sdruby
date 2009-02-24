@@ -8,10 +8,10 @@ Here's a breakdown of the first phase.
 
 ### Tasks ###
 
-- Unfreeze Rails
-- Update plugins
-- Update the app to Rails 2.2.2
-- Switch gems to use config.gem
+* <strike>Unfreeze Rails</strike> [Rob]
+* <strike>Update plugins</strike> [Rob]
+* <strike>Update the app to Rails 2.2.2</strike> [Rob]
+* <strike>Switch gems to use config.gem</strike> [Rob]
 - Create new podcast model and controller
 - Create Rake task to import old podcast data
 - Markup new pages (homepage, podcast homepage, and podcast detail)

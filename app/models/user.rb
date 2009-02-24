@@ -36,7 +36,7 @@ protected
   end
 
   def generate_salt
-    self.salt = String.random_alpha
+    self.salt = Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{full_name}--")
   end
 
   def generate_password_digest
