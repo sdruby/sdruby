@@ -1,3 +1,204 @@
+// Reset
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td
+  :margin 0
+  :padding 0
+  :border 0
+  :outline 0
+  :font-size 100%
+  :vertical-align baseline
+  :background transparent
+
+body
+  :line-height 1
+
+ol, ul
+  :list-style none
+
+blockquote, q
+  :quotes none
+
+\:focus 
+  :outline 0
+
+ins
+  :text-decoration none
+
+del
+  :text-decoration line-through
+
+table
+  :border-collapse collapse
+  :border-spacing 0
+
+
+// Tags
+
+body
+  :background #000
+  :color #98908c
+  :font-family 'Helvetica Neue', Helvetica, Arial, sans-serif
+
+h2
+  :color #fff
+  :font-size 18px
+  :margin 0 0 0 0
+
+p + h2
+  :padding-top 18px
+
+p
+  :line-height 20px
+  :margin 12px 0
+
+a
+  :color #fff
+  &:hover
+    :text-decoration none
+
+
+// Layout
+
+#page
+  :margin 30px auto
+  :width 900px
+
+#header
+  :background url('/images/application/header.png') no-repeat
+  :height 133px
+  #logo
+    :float left
+    :margin 20px 0 0 30px
+  #upcoming
+    :color #312218
+    :float left
+    :font-size 16px
+    :height 100px
+    :margin 27px 0 0 170px
+    :width 235px
+    span
+      :color #666
+      :font-size 14px
+    #date
+      :color #81161E
+      :font-size 20px
+      :font-weight bold
+      :margin 3px 0
+    a
+      :color #97908A
+    a#venue
+      :color #312218
+      :text-decoration none
+      &:hover
+        :text-decoration underline
+    #actions
+      :margin 3px 0 0 0
+      a
+        :margin 0 3px 0 0
+      img
+        :margin -2px 0 0 0
+  #podcast
+    :float right
+    :margin 15px 15px 0 0
+
+#slogan
+  :background #330906
+  :color #be0d21
+  :font-size 18px
+  :font-weight bold
+  :height 36px
+  :padding 20px
+
+#content
+  :background #312218
+  :min-height 400px
+  :padding 20px
+  a
+    :color #98908c
+
+#primary
+  :width 475px
+
+#footer
+  :background url('/images/application/footer.gif') no-repeat
+  :color #393633
+  :font-size 14px
+  :height 45px
+  :padding-top 10px
+  :text-align center
+  a
+    :color #393633
+
+
+
+// Home
+
+#promo
+  :float right
+  :width 370px
+  h2  
+    :margin-left 10px
+    a
+      :color #fff
+  #podcast 
+    :border 10px solid #261B13
+    :height 266px
+    :margin 12px 0
+    :width 345px
+    &:hover
+      :border 10px solid #1B140D
+  #name 
+    :margin 12px 0 12px 10px
+    a
+      :color #ccc
+      :text-decoration none
+  .watch
+    :background url('/images/application/watch.gif') no-repeat
+    :color #fff
+    :float left
+    :font-weight bold
+    :height 33px
+    :margin-left 10px
+    :padding 6px 0 0 0
+    :text-align center
+    :width 69px
+  #more
+    :float left
+    :font-size 14px
+    :margin 7px 0 0 7px
+
+#sponsors
+  :background #261B13
+  :color #685F5A
+  :font-size 18px
+  :font-weight bold
+  :height 66px
+  :padding 0 10px
+  :margin 30px -20px 10px -20px
+  :text-align center
+  img
+    :float left
+    :margin 10px 10px 0 0
+  span
+    :float left
+    :margin 23px 10px 0 135px
+
+#recruiters
+  :font-size 12px
+  :line-height 14px
+  :margin-top 3px
+
+
+// Miscellaneous
+
 .column
   :float left
   :width 500px

@@ -5,9 +5,5 @@
     %meta{"http-equiv" => "Content-type", :content => "text/html; charset=utf-8"}
     = stylesheet_link_tag :all
   %body
-    #page
-      = render :partial => "layouts/header"
-      = render :partial => "layouts/slogan"
-      #content
-        = yield
-      = render :partial => "layouts/footer"
+    = display_flash_using :div
+    = yield

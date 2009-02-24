@@ -1,5 +1,64 @@
+- t "We are San Diego's Ruby community."
 
+#promo
 
+  %h2
+    Latest from the
+    = link_to "SD Ruby Podcast", podcasts_path
+
+  #podcast
+    = link_to(image_tag("application/episode_36.png", :size => "345x266", :alt => "Episode 36"), podcasts_path)
+
+  #name
+    = link_to "Episode 036: The Return of Kevin Clark", "#"
+  
+  .watch
+    watch
+
+  #more
+    = link_to "more episodes", podcasts_path
+
+#primary
+
+  %h2 Meetings
+
+  %p
+    We meet the first Thursday of each month, on the campus of UCSD, 
+    in the Computer Science & Engineering Building.
+
+  %h2 Google Group
+
+  %p
+    We run a 
+    = link_to "mailing list", "http://groups.google.com/group/sdruby/topics?gvc=2"
+    for discussion of Ruby-related topics. If you have a question about Ruby (or Ruby on Rails), 
+    this group can probably figure it out.
+
+  %p
+    = link_to "Sign up", "http://groups.google.com/group/sdruby"
+    or 
+    = link_to("browse the archives", "http://groups.google.com/group/sdruby/topics?gvc=2") + "."
+    (The original list is 
+    = link_to("here", "http://comox.textdrive.com/pipermail/sdruby/") + ".)"
+
+  %h2 Need a Ruby Developer?
+
+  %p
+    Seeking freelance or fulltime developers? Please post a brief summary of your needs to the 
+    = link_to("mailing list", "http://groups.google.com/group/sdruby/topics?gvc=2") + "."
+
+  %p#recruiters
+    Recruiters: if you post long job listings, you will be banned.
+    Please keep your summary very short with a link to more information. 
+    Check the archives to make sure your listing hasn't been posted by another recruiter.
+
+  %h2 Have Questions About Ruby?
+
+  %p
+    Join us in #sdruby on
+    = link_to("freenode.net", "http://freenode.net/") + "."
+
+= render :partial => "sponsors"
 
 
 

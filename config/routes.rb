@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :events
   map.resources :meetings, :controller => "events"
+  map.resources :podcasts
   map.resources :widgets
 
   map.resources :users, :member => {:edit_profile => :get}
