@@ -47,6 +47,11 @@ body
   :color #98908c
   :font-family 'Helvetica Neue', Helvetica, Arial, sans-serif
 
+h1
+  :color #fff
+  :font-size 32px
+  :margin 12px 0
+
 h2
   :color #fff
   :font-size 18px
@@ -82,7 +87,7 @@ a
     :float left
     :font-size 16px
     :height 100px
-    :margin 27px 0 0 170px
+    :margin 30px 0 0 170px
     :width 235px
     span
       :color #666
@@ -100,11 +105,13 @@ a
       &:hover
         :text-decoration underline
     #actions
+      :font-size 14px
       :margin 3px 0 0 0
       a
         :margin 0 3px 0 0
       img
-        :margin -2px 0 0 0
+        :float right
+        :margin 0 30px 0 0
   #podcast
     :float right
     :margin 15px 15px 0 0
@@ -125,7 +132,7 @@ a
     :color #98908c
 
 #primary
-  :width 475px
+  :width 450px
 
 #footer
   :background url('/images/application/footer.gif') no-repeat
@@ -138,7 +145,6 @@ a
     :color #393633
 
 
-
 // Home
 
 #promo
@@ -148,28 +154,11 @@ a
     :margin-left 10px
     a
       :color #fff
-  #podcast 
-    :border 10px solid #261B13
-    :height 266px
-    :margin 12px 0
-    :width 345px
-    &:hover
-      :border 10px solid #1B140D
   #name 
     :margin 12px 0 12px 10px
     a
       :color #ccc
       :text-decoration none
-  .watch
-    :background url('/images/application/watch.gif') no-repeat
-    :color #fff
-    :float left
-    :font-weight bold
-    :height 33px
-    :margin-left 10px
-    :padding 6px 0 0 0
-    :text-align center
-    :width 69px
   #more
     :float left
     :font-size 14px
@@ -182,7 +171,7 @@ a
   :font-weight bold
   :height 66px
   :padding 0 10px
-  :margin 30px -20px 10px -20px
+  :margin 30px -20px 5px -20px
   :text-align center
   img
     :float left
@@ -192,10 +181,82 @@ a
     :margin 23px 10px 0 135px
 
 #recruiters
+  :color #776D67
   :font-size 12px
   :line-height 14px
   :margin-top 3px
 
+
+// Podcast
+
+.screenshot
+  :border 10px solid #261B13
+  :height 266px
+  :margin 12px 0
+  :width 345px
+  &:hover
+    :border 10px solid #1B140D
+
+.watch
+  :background url('/images/application/watch.gif') no-repeat
+  :color #fff
+  :font-weight bold
+  :height 33px
+  :margin-left 10px
+  :padding 6px 0 0 0
+  :text-align center
+  :width 69px
+  a
+    :text-decoration none
+        
+#featured_episode
+  #details
+    :float right
+    :margin 5px 0 0 0
+    :width 480px
+    h2
+      :margin 24px 0 -6px 0
+    #number
+      :font-weight bold
+      :margin 10px 0 -3px 0
+  #actions
+    :margin 0 0 0 10px
+    img
+      :margin 5px 10px 0 0
+  .watch_now
+    :background url('/images/application/watch_now.gif') no-repeat
+    :color #fff
+    :font-weight bold
+    :height 40px
+    :padding 10px 0 0 0
+    :text-align center
+    :width 121px
+    a
+      :color #fff
+      :text-decoration none
+
+#episodes
+  :border-top 1px solid #3F3229
+  :margin-top 70px
+
+  .episode
+    :padding 15px 0
+    :height 115px
+    :border-bottom 1px solid #3F3229
+    h3
+      :color #fff
+      :font-size 18px
+      :margin-top 6px
+    p
+      :font-size 16px
+    .small_screenshot
+      :float left
+      :margin 0 10px 0 0
+    .details
+      :margin-left 150px
+    .watch
+      :font-size 14px
+      :padding-top 8px
 
 // Miscellaneous
 
@@ -203,3 +264,5 @@ a
   :float left
   :width 500px
 
+.clear
+  :clear both

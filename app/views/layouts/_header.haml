@@ -10,10 +10,10 @@
     7:30pm, 
     = link_to "UCSD CSE Building", "http://www.cs.ucsd.edu/", :id => "venue"
     #actions
+      = link_to(image_tag("application/ical.gif", :size => "36x14", :alt => "iCal"), "http://tinyurl.com/bwlae4")
       = link_to "map", "http://tinyurl.com/2f486e"
       = link_to "directions", "http://tinyurl.com/2f486e"
       = link_to "calendar", "http://tinyurl.com/bhrj6c"
-      = link_to(image_tag("application/ical.gif", :size => "36x14", :alt => "iCal"), "http://tinyurl.com/bwlae4")
   
   #podcast
-    = link_to(image_tag("application/podcast.gif", :size => "102x104", :alt => "iCalendar"), podcasts_path)
+    = link_to(image_tag("application/podcast.gif", :size => "102x104", :alt => "iCalendar"), podcasts_url)

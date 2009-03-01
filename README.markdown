@@ -7,12 +7,18 @@ In the first phase, we'll update the site design and merge the podcast site into
 Here's a breakdown of the first phase.
 
 ### Tasks ###
-- Create new podcast model and controller
+- Add model for Podcast
+- Complete podcast index action
+- Complete podcast show action
+- Complete podcast new action
+- Complete podcast edit action
+- Complete podcast delete action
 - Create Rake task to import old podcast data
-- Markup and style podcast home [Patrick]
-- Markup and style podcast detail [Patrick]
 
 ### Completed ###
+- Markup and style podcast home [Patrick]
+- Markup and style podcast detail [Patrick]
+- Create basic podcast controller [Patrick]
 - Unfreeze Rails [Rob]
 - Update plugins [Rob]
 - Update the app to Rails 2.2.2 [Rob]
