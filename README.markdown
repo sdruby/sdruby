@@ -9,16 +9,16 @@ Here's a breakdown of the first phase.
 ### Tasks ###
 
 - Add support for image attachments via Paperclip
-- Add markdown support for descriptions [Patrick]
-- Strip tags from episode descriptions when viewed in lists [Patrick]
-- Create Rake task to import old podcast data [Patrick]
-- Atom feed of podcast episodes for iTunes, etc
 - Add jQuery-based filter for showing podcast episodes by year [Patrick]
+- Atom feed of podcast episodes for iTunes, etc
 - Add permanent redirects for old podcast links
 - Update podcast image on iTunes
 - Complete podcast delete action
 
 ### Completed ###
+- Strip tags from episode descriptions when viewed in lists [Patrick]
+- Add textile support for descriptions [Patrick]
+- Create Rake task to import old podcast data [Patrick]
 - Add model for Podcast [Patrick]
 - Complete podcast index action [Patrick]
 - Complete podcast show action [Patrick]

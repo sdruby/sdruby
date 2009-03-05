@@ -7,7 +7,7 @@
 
     %h2= "Episode 0#{@podcast.number}: #{@podcast.name}"
 
-    %p= @podcast.description
+    %p= RedCloth.new(@podcast.description).to_html
   
     .watch_now
       = link_to "Watch now", @podcast.movie_link
@@ -20,9 +20,7 @@
 
     %img{:id => "feed_stats", :src => "http://feeds.feedburner.com/~fc/sdrbpodcast?bg=FFFFFF&amp;fg=666666&amp;anim=0", :height => "26", :width => "88", :style => "border:0", :alt => ''}
     
-
 #episodes
-
   = render :partial => "podcast", :collection => @podcasts
       
   %br.clear
