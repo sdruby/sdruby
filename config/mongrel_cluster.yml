@@ -1,0 +1,9 @@
+--- 
+user: admin
+cwd: /home/admin/www/public/new.sdruby.com/current
+port: "8400"
+environment: production
+group: staff
+address: 127.0.0.1
+pid_file: log/mongrel.pid
+servers: 3
