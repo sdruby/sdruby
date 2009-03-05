@@ -9,10 +9,44 @@ set :deploy_to, "/home/admin/www/public/#{application}"
 # If you aren't using Subversion to manage your source code, specify
 # your SCM below:
 set :scm, :git
+set :branch, "master"
+set :deploy_via, :remote_cache
 
 role :app, "new.sdruby.com"
 role :web, "new.sdruby.com"
 role :db,  "new.sdruby.com", :primary => true
 
 set :user, "admin"
+set :mongrel_config, "#{current_path}/config/mongrel_cluster.yml"
 
+after  'deploy:update_code',  'deploy:symlink_configs'
+
+namespace :deploy do
+  desc "Symlinks the database and mongrel cluster configs"
+  task :symlink_configs, :roles => [:web] do 
+    symlink_database_config
+    symlink_mongrel_cluster_config
+  end
+  
+  desc "Link to the shared database.yml."
+  task :symlink_database_config, :roles => [:web] do
+    run "rm -f #{latest_release}/config/database.yml"
+    run "ln -nfs #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
+  end
+
+  desc "Link to the shared mongrel_cluster.yml."
+  task :symlink_mongrel_cluster_config, :roles => [:web] do
+    run "rm -f #{latest_release}/config/mongrel_cluster.yml"
+    run "ln -nfs #{shared_path}/config/mongrel_cluster.yml #{latest_release}/config/mongrel_cluster.yml"
+  end
+  
+  desc "Restart mongrel_cluster(which restarts rails)"
+  task :restart do
+    sudo "mongrel_rails cluster::restart -C #{mongrel_config}"
+  end
+
+  desc "Cold deploy start mongrel_cluster(which restarts rails)"
+  task :start do
+    sudo "mongrel_rails cluster::start -C #{mongrel_config}"
+  end
+end
