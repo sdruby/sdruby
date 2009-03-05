@@ -15,4 +15,4 @@ role :web, "new.sdruby.com"
 role :db,  "new.sdruby.com", :primary => true
 
 set :user, "admin"
-set :password, "LaHorviaQuecyec2"
+
