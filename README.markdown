@@ -7,15 +7,23 @@ In the first phase, we'll update the site design and merge the podcast site into
 Here's a breakdown of the first phase.
 
 ### Tasks ###
-- Add model for Podcast
-- Complete podcast index action
-- Complete podcast show action
-- Complete podcast new action
-- Complete podcast edit action
+
+- Add support for image attachments via Paperclip
+- Add markdown support for descriptions [Patrick]
+- Strip tags from episode descriptions when viewed in lists [Patrick]
+- Create Rake task to import old podcast data [Patrick]
+- Atom feed of podcast episodes for iTunes, etc
+- Add jQuery-based filter for showing podcast episodes by year [Patrick]
+- Add permanent redirects for old podcast links
+- Update podcast image on iTunes
 - Complete podcast delete action
-- Create Rake task to import old podcast data
 
 ### Completed ###
+- Add model for Podcast [Patrick]
+- Complete podcast index action [Patrick]
+- Complete podcast show action [Patrick]
+- Complete podcast new action [Patrick]
+- Complete podcast edit action [Patrick]
 - Markup and style podcast home [Patrick]
 - Markup and style podcast detail [Patrick]
 - Create basic podcast controller [Patrick]

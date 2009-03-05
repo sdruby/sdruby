@@ -1,0 +1,9 @@
+.episode
+  .small_screenshot
+    = link_to(image_tag("episodes/#{podcast.number}.png", :size => "150x116", :alt => "Episode #{podcast.number}"), podcast_path(podcast.id))
+  .details
+    %h3
+      = link_to "Episode 0#{podcast.number}: #{podcast.name}", podcast_path(podcast.id)
+    %p= truncate(podcast.description, {:length => 185})
+    .watch
+      = link_to "Watch", podcast.movie_link

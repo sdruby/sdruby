@@ -1,0 +1,24 @@
+%h1 New podcast episode
+
+- form_for(@podcast) do |f|
+  = f.error_messages
+
+  = f.label :name
+  = f.text_field :name, :size => 40
+
+  = f.label :description
+  = f.text_area :description
+
+  = f.label :movie_link, 'Movie Link'
+  = f.text_field :movie_link, :size => 40
+
+  = f.label :number
+  = f.text_field :number, :size => 6
+
+  .check_box
+    = f.check_box :publish
+    = f.label :publish, "Publish this episode"
+
+  = f.submit "Create Episode"
+
+= link_to 'Back', podcasts_path

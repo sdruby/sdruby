@@ -57,6 +57,17 @@ h2
   :font-size 18px
   :margin 0 0 0 0
 
+form
+  :margin 12px 0
+  input, textarea
+    :display block
+    :font-size 16px
+    :margin 3px 0 12px 0
+  label
+    :display block
+  .check_box input, label
+    :display inline
+
 p + h2
   :padding-top 18px
 
@@ -145,6 +156,16 @@ a
     :color #393633
 
 
+// Errors
+
+#errors
+  :margin 12px 0
+  ul
+    :list-style-type disc
+    :margin-left 20px
+  p
+    :font-weight bold
+
 // Home
 
 #promo
@@ -209,7 +230,7 @@ a
   a
     :text-decoration none
         
-#featured_episode
+#podcast_episode
   #details
     :float right
     :margin 5px 0 0 0
@@ -250,7 +271,12 @@ a
     h3
       :color #fff
       :font-size 18px
-      :margin-top 6px
+      :margin-top 4px
+      a
+        :color #fff
+        :text-decoration none
+        &:hover
+          :text-decoration underline
     p
       :font-size 16px
     .small_screenshot
@@ -259,6 +285,7 @@ a
     .details
       :margin-left 150px
     .watch
+      :margin-top -3px
       :font-size 14px
       :height 25px
       :padding-top 8px
