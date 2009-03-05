@@ -7,6 +7,9 @@ class LegacyPodcast < LegacyBase
       :description => clean_up_description(self.body.strip),
       :movie_link => self.body.match(/http:\/\/podcast.sdruby.com\/podcasts\/.*\.(m4v|mp4)/)[0],
       :number => self.id,
+      :old_permalink => self.permalink,
+      :created_at => self.published_at,
+      :updated_at => self.published_at,
       :publish => true
     }
   end

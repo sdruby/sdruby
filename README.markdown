@@ -9,6 +9,7 @@ Here's a breakdown of the first phase.
 ### Tasks ###
 
 - Add support for image attachments via Paperclip
+- Update rake task to import old attachments into new setup
 - Add jQuery-based filter for showing podcast episodes by year [Patrick]
 - Atom feed of podcast episodes for iTunes, etc
 - Add permanent redirects for old podcast links
