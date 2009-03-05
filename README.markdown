@@ -8,7 +8,7 @@ Here's a breakdown of the first phase.
 
 ### Tasks ###
 
-- Add support for image attachments via Paperclip [Patrick]
+- Add support for image attachments via Paperclip
 - Add markdown support for descriptions [Patrick]
 - Strip tags from episode descriptions when viewed in lists [Patrick]
 - Create Rake task to import old podcast data [Patrick]
