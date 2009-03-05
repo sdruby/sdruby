@@ -7,15 +7,19 @@ In the first phase, we'll update the site design and merge the podcast site into
 Here's a breakdown of the first phase.
 
 ### Tasks ###
-- Add model for Podcast
-- Complete podcast index action
-- Complete podcast show action
-- Complete podcast new action
-- Complete podcast edit action
+
+- Add markdown support for descriptions [Patrick]
+- Strip tags from episode descriptions when viewed in lists [Patrick]
+- Create Rake task to import old podcast data [Patrick]
+- Add jQuery-based filter for showing podcast episodes by year [Patrick]
 - Complete podcast delete action
-- Create Rake task to import old podcast data
 
 ### Completed ###
+- Add model for Podcast [Patrick]
+- Complete podcast index action [Patrick]
+- Complete podcast show action [Patrick]
+- Complete podcast new action [Patrick]
+- Complete podcast edit action [Patrick]
 - Markup and style podcast home [Patrick]
 - Markup and style podcast detail [Patrick]
 - Create basic podcast controller [Patrick]

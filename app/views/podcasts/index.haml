@@ -1,45 +1,28 @@
 - t "Podcast"
 
-#featured_episode
+#podcast_episode
 
   #details
     %h1 SD Ruby Podcast
 
-    %h2 Episode 036: The Return of Kevin Clark
+    %h2= "Episode 0#{@podcast.number}: #{@podcast.name}"
 
-    %p
-      Kevin Clark takes a break from Powerset to give a full-throttle talk on using Merb as a JSON-RPC service, god, gem2rpm, and heckle.
+    %p= @podcast.description
   
     .watch_now
-      = link_to "Watch now", podcast_path(36)
+      = link_to "Watch now", @podcast.movie_link
 
   .screenshot
-    = link_to(image_tag("application/episode_36.png", :size => "345x266", :alt => "Episode 36"), podcast_path(36))
+    = link_to(image_tag("episodes/#{@podcast.number}.png", :size => "345x266", :alt => "Episode 36"), @podcast.movie_link)
 
   #actions
-    = link_to(image_tag("application/feed.png", :size => "32x32", :alt => "Episode 36"), "#")
+    = link_to(image_tag("application/feed.png", :size => "32x32", :alt => "Episode #{@podcast.number}"), "#")
 
     %img{:id => "feed_stats", :src => "http://feeds.feedburner.com/~fc/sdrbpodcast?bg=FFFFFF&amp;fg=666666&amp;anim=0", :height => "26", :width => "88", :style => "border:0", :alt => ''}
     
 
 #episodes
 
-  .episode
-    .small_screenshot
-      = link_to(image_tag("episodes/35.png", :size => "150x116", :alt => "Episode 35"), "#")
-    .details
-      %h3 Episode 035: ActiveRecord Backup &amp; MimetypeFu
-      %p Matt Aimonetti demonstrates his newest plugins: ActiveRecord Backup and MimetypeFu.
-      .watch
-        = link_to "Watch", "#"
-      
-  .episode
-    .small_screenshot
-      = link_to(image_tag("episodes/34.png", :size => "150x116", :alt => "Episode 35"), "#")
-    .details
-      %h3 Episode 034: Intro to JRuby
-      %p Brian Chapados shows how to install and work with the latest JRuby release.
-      .watch
-        = link_to "Watch", "#"
+  = render :partial => "podcast", :collection => @podcasts
       
   %br.clear

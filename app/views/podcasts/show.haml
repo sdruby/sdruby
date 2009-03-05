@@ -1,19 +1,18 @@
-- t "Episode 036: The Return of Kevin Clark"
+- t "Episode 0#{@podcast.number}: #{h(@podcast.name)}"
 
-#featured_episode
+#podcast_episode
 
   #details
-    #number Episode 036
-    %h1 The Return of Kevin Clark
+    #number= "Episode #{@podcast.number}"
+    %h1= h(@podcast.name)
 
-    %p
-      Kevin Clark takes a break from Powerset to give a full-throttle talk on using Merb as a JSON-RPC service, god, gem2rpm, and heckle.
+    %p= @podcast.description
   
     .watch_now
-      = link_to "Watch now", podcast_path(36)
+      = link_to "Watch now", @podcast.movie_link
 
   .screenshot
-    = link_to(image_tag("application/episode_36.png", :size => "345x266", :alt => "Episode 36"), podcast_path(36))
+    = link_to(image_tag("episodes/#{@podcast.number}.png", :size => "345x266", :alt => "Episode 36"), @podcast.movie_link)
 
   #actions
     = link_to "More episodes from the SD Ruby Podcast&raquo;", podcasts_path
