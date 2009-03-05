@@ -13,6 +13,7 @@ Here's a breakdown of the first phase.
 - Add jQuery-based filter for showing podcast episodes by year [Patrick]
 - Atom feed of podcast episodes for iTunes, etc
 - Add permanent redirects for old podcast links
+- Move podcast files over to sdruby.com (update links accordingly)
 - Update podcast image on iTunes
 - Complete podcast delete action
 
