@@ -259,10 +259,37 @@ a
       :width 121px
       &:hover
         :color #fff
-        
+      
+ul#filter
+  :height 29px
+  :margin 70px 0 15px 160px
+  :padding 0
+  li
+    :display inline
+    :float left
+    :height 29px
+    :margin 0 10px 0 0
+    :width 77px
+    a
+      :background url('/images/application/filter.gif') no-repeat
+      :color #98908c
+      :display block
+      :font-weight bold
+      :height 24px
+      :padding 5px 0 0 0
+      :text-align center
+      :text-decoration none
+      :width 77px
+      &:hover
+        :background url('/images/application/selected_filter.gif') no-repeat
+        :color #fff
+  li.selected
+    a
+      :background url('/images/application/selected_filter.gif') no-repeat
+   
 #episodes
   :border-top 1px solid #3F3229
-  :margin-top 70px
+  :margin-top 10px
 
   .episode
     :padding 15px 0
@@ -297,6 +324,7 @@ a
         :width 69px
         &:hover
           :color #fff
+
 
 // Miscellaneous
 

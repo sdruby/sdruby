@@ -19,7 +19,14 @@
     = link_to(image_tag("application/feed.png", :size => "32x32", :alt => "Episode #{@podcast.number}"), "#")
 
     %img{:id => "feed_stats", :src => "http://feeds.feedburner.com/~fc/sdrbpodcast?bg=FFFFFF&amp;fg=666666&amp;anim=0", :height => "26", :width => "88", :style => "border:0", :alt => ''}
-    
+
+%ul#filter
+  %li.selected= link_to "All", "#"
+  %li= link_to "2009", "#"
+  %li= link_to "2008", "#"
+  %li= link_to "2007", "#"
+  %li= link_to "2006", "#"
+  
 #episodes
   = render :partial => "podcast", :collection => @podcasts
       
