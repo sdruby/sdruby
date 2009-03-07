@@ -270,9 +270,10 @@ ul#filter
     :height 29px
     :margin 0 10px 0 0
     :width 77px
-    a
+    span
       :background url('/images/application/filter.gif') no-repeat
       :color #98908c
+      :cursor pointer
       :display block
       :font-weight bold
       :height 24px
@@ -282,9 +283,8 @@ ul#filter
       :width 77px
       &:hover
         :background url('/images/application/selected_filter.gif') no-repeat
-        :color #fff
-  li.selected
-    a
+  li.current
+    span
       :background url('/images/application/selected_filter.gif') no-repeat
    
 #episodes

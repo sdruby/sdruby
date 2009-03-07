@@ -10,7 +10,6 @@ Here's a breakdown of the first phase.
 
 - Add support for image attachments via Paperclip
 - Update rake task to import old attachments into new setup
-- Add jQuery-based filter for showing podcast episodes by year [Patrick]
 - Atom feed of podcast episodes for iTunes, etc
 - Add permanent redirects for old podcast links
 - Move podcast files over to sdruby.com (update links accordingly)
@@ -18,6 +17,7 @@ Here's a breakdown of the first phase.
 - Complete podcast delete action
 
 ### Completed ###
+- Add jQuery-based filter for showing podcast episodes by year [Patrick]
 - Strip tags from episode descriptions when viewed in lists [Patrick]
 - Add textile support for descriptions [Patrick]
 - Create Rake task to import old podcast data [Patrick]

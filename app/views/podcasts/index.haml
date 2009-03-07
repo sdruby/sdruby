@@ -21,12 +21,14 @@
     %img{:id => "feed_stats", :src => "http://feeds.feedburner.com/~fc/sdrbpodcast?bg=FFFFFF&amp;fg=666666&amp;anim=0", :height => "26", :width => "88", :style => "border:0", :alt => ''}
 
 %ul#filter
-  %li.selected= link_to "All", "#"
-  %li= link_to "2009", "#"
-  %li= link_to "2008", "#"
-  %li= link_to "2007", "#"
-  %li= link_to "2006", "#"
-  
+  %li.all.current
+    %span= "All"
+  - @years.each do |year|
+    %li{:class => "filter_#{year}"}
+      %span= year
+
+- puts 
+
 #episodes
   = render :partial => "podcast", :collection => @podcasts
       

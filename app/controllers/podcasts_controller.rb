@@ -3,6 +3,7 @@ class PodcastsController < ApplicationController
   def index
     @podcasts = Podcast.find(:all, :order => "id DESC")
     @podcast = @podcasts.shift
+    @years = @podcasts.collect { |episode| episode.created_at.strftime('%Y') }.uniq
   end
 
   def show
