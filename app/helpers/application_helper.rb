@@ -28,5 +28,9 @@ module ApplicationHelper
         ""
     end
   end
+  
+  def request_host
+    "http://" + request.host + (":#{request.port}" if RAILS_ENV == "development")
+  end
 
 end

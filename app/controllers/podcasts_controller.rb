@@ -2,8 +2,13 @@ class PodcastsController < ApplicationController
   
   def index
     @podcasts = Podcast.find(:all, :order => "id DESC")
-    @podcast = @podcasts.shift
-    @years = @podcasts.collect { |episode| episode.created_at.strftime('%Y') }.uniq
+    respond_to do |format|
+      format.html do
+        @podcast = @podcasts.shift
+        @years = @podcasts.collect { |episode| episode.created_at.strftime('%Y') }.uniq
+      end
+      format.atom
+    end
   end
 
   def show

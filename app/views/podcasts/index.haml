@@ -13,7 +13,7 @@
       = link_to "Watch now", @podcast.movie_link
 
   .screenshot
-    = link_to(image_tag("episodes/#{@podcast.number}.png", :size => "345x266", :alt => "Episode 36"), @podcast.movie_link)
+    = link_to(image_tag(@podcast.image, :size => "345x266", :alt => "Episode 36"), @podcast.movie_link)
 
   #actions
     = link_to(image_tag("application/feed.png", :size => "32x32", :alt => "Episode #{@podcast.number}"), "#")
