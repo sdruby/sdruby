@@ -13,6 +13,5 @@ class Podcast < ActiveRecord::Base
   validates_attachment_content_type :screenshot,
                                     :content_type => ["image/jpeg", "image/jpg", "image/png", "image/gif"],
                                     :message => "must be a GIF, JPEG, or PNG"
-  
 
 end

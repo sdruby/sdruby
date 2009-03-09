@@ -4,13 +4,13 @@
   = f.error_messages
 
   = f.label :name
-  = f.text_field :name, :size => 40
+  = f.text_field :name, :size => 62
 
   = f.label :description
-  = f.text_area :description
+  = f.text_area :description, :cols => 60, :rows => 10
 
   = f.label :movie_link, 'Movie Link'
-  = f.text_field :movie_link, :size => 40
+  = f.text_field :movie_link, :size => 62
 
   = f.label :screenshot
   = f.file_field :screenshot

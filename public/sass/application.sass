@@ -63,10 +63,14 @@ form
     :display block
     :font-size 16px
     :margin 3px 0 12px 0
+    :padding 3px
   label
     :display block
   .check_box input, label
     :display inline
+  #podcast_screenshot
+    :color #98908c
+    :font-size 14px
 
 p + h2
   :padding-top 18px
@@ -180,6 +184,9 @@ a
     a
       :color #ccc
       :text-decoration none
+      &:hover
+        :text-decoration underline
+      
   #more
     :float left
     :font-size 14px
