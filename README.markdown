@@ -8,7 +8,6 @@ Here's a breakdown of the first phase.
 
 ### Tasks ###
 
-- Atom feed of podcast episodes for iTunes, etc
 - Add support for image attachments via Paperclip
 - Update rake task to import old attachments into new setup
 - Add simple auth for editing/deleting podcast episodes
@@ -17,6 +16,7 @@ Here's a breakdown of the first phase.
 - Update podcast image on iTunes
 
 ### Completed ###
+- Atom feed of podcast episodes for iTunes, etc
 - Add jQuery-based filter for showing podcast episodes by year [Patrick]
 - Strip tags from episode descriptions when viewed in lists [Patrick]
 - Add textile support for descriptions [Patrick]
