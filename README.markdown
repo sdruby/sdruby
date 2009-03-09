@@ -13,10 +13,10 @@ Here's a breakdown of the first phase.
 - Add simple auth for editing/deleting podcast episodes
 - Move podcast files over to sdruby.com (update links accordingly)
 - Add permanent redirects for old podcast links
-- Update podcast image on iTunes
 
 ### Completed ###
-- Atom feed of podcast episodes for iTunes, etc
+- Update podcast image on iTunes [Patrick]
+- Atom feed of podcast episodes for iTunes, etc [Patrick]
 - Add jQuery-based filter for showing podcast episodes by year [Patrick]
 - Strip tags from episode descriptions when viewed in lists [Patrick]
 - Add textile support for descriptions [Patrick]
