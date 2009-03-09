@@ -8,13 +8,13 @@ Here's a breakdown of the first phase.
 
 ### Tasks ###
 
-- Add support for image attachments via Paperclip
-- Update rake task to import old attachments into new setup
 - Add simple auth for editing/deleting podcast episodes
 - Move podcast files over to sdruby.com (update links accordingly)
 - Add permanent redirects for old podcast links
 
 ### Completed ###
+- Add support for image attachments via Paperclip [Patrick]
+- Update rake task to import old attachments into new setup [Patrick]
 - Update podcast image on iTunes [Patrick]
 - Atom feed of podcast episodes for iTunes, etc [Patrick]
 - Add jQuery-based filter for showing podcast episodes by year [Patrick]

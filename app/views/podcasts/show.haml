@@ -1,9 +1,9 @@
-- t "Episode 0#{@podcast.number}: #{h(@podcast.name)}"
+- t "Episode 0#{@podcast.id}: #{h(@podcast.name)}"
 
 #podcast_episode
 
   #details
-    #number= "Episode #{@podcast.number}"
+    #number= "Episode #{@podcast.id}"
     %h1= h(@podcast.name)
 
     = RedCloth.new(@podcast.description).to_html
@@ -12,7 +12,7 @@
       = link_to "Watch now", @podcast.movie_link
 
   .screenshot
-    = link_to(image_tag(@podcast.image, :size => "345x266", :alt => "Episode 36"), @podcast.movie_link)
+    = link_to(image_tag(@podcast.screenshot.url, :size => "345x266", :alt => "Episode #{@podcast.id}"), @podcast.movie_link)
 
   #actions
     = link_to "More episodes from the SD Ruby Podcast&raquo;", podcasts_path

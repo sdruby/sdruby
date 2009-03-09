@@ -6,10 +6,10 @@ class LegacyPodcast < LegacyBase
       :name => self.title.gsub(/Episode [0-9]*\: /,''),
       :description => clean_up_description(self.body.strip),
       :movie_link => self.body.match(/http:\/\/podcast.sdruby.com\/podcasts\/.*\.(m4v|mp4)/)[0],
-      :number => self.id,
       :old_permalink => self.permalink,
       :created_at => self.published_at,
       :updated_at => self.published_at,
+      :screenshot => File.open("public/images/episodes/#{self.id}.png"),
       :publish => true
     }
   end

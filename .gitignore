@@ -4,5 +4,6 @@ tmp/**/*
 .DS_Store
 config/database.yml
 public/stylesheets/*
+public/images/screenshots/*
 db/development.sqlite3
 db/test.sqlite3
