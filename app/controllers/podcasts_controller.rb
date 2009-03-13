@@ -1,5 +1,5 @@
 class PodcastsController < ApplicationController
-  before_filter :require_user, :except => :index
+  before_filter :require_user, :except => [:index, :show]
   def index
     @podcasts = Podcast.find(:all, :order => "id DESC")
     respond_to do |format|
