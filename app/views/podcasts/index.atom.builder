@@ -6,7 +6,7 @@ atom_feed({:root_url => podcasts_url, :schema_date => 2006}) do |feed|
       entry.title   podcast.name
       entry.content textilize(("!#{request_host}#{podcast.screenshot.url}!\n\n#{podcast.description}")), :type => 'html'
       entry.author do |author|
-        author.name "bob"
+        author.name "pcrowley"
       end
     end
   end
