@@ -26,6 +26,7 @@ Rails::Initializer.run do |config|
   config.gem "haml"
   config.gem "rspec", :lib => false
   config.gem "rspec-rails", :lib => false
+  config.gem "authlogic"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"

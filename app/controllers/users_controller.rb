@@ -1,43 +1,15 @@
 class UsersController < ApplicationController
-
-  def index
-    @users = User.find(:all)
-
-    respond_to do |format|
-      format.html
-      format.xml  { render :xml => @users }
-    end
-  end
-
-  def show
-    @user = User.find(params[:id])
-
-    respond_to do |format|
-      format.html
-      format.xml  { render :xml => @user }
-    end
-  end
-
+  before_filter :require_user #TODO remove this once user creation is working
   def new
     @user = User.new
-
     respond_to do |format|
       format.html
       format.xml  { render :xml => @user }
     end
-  end
-
-  def edit
-    @user = User.find(params[:id])
-  end
-
-  def edit_profile
-    edit
   end
 
   def create
     @user = User.new(params[:user])
-
     respond_to do |format|
       if @user.save
         flash[:notice] = 'User was successfully created.'
@@ -50,9 +22,24 @@ class UsersController < ApplicationController
     end
   end
 
-  def update
-    @user = User.find(params[:id])
+  def show
+    @user = @current_user
+    respond_to do |format|
+      format.html
+      format.xml  { render :xml => @user }
+    end
+  end
 
+  def edit
+    @user = @current_user
+  end
+
+  def edit_profile #TODO check if we're using this
+    edit
+  end
+
+  def update
+    @user = @current_user # makes our views "cleaner" and more consistent
     respond_to do |format|
       if @user.update_attributes(params[:user])
         flash[:notice] = 'User was successfully updated.'
@@ -64,14 +51,5 @@ class UsersController < ApplicationController
       end
     end
   end
-
-  def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(users_url) }
-      format.xml  { head :ok }
-    end
-  end
+    
 end

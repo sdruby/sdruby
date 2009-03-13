@@ -5,18 +5,21 @@
   #details
     %h1 SD Ruby Podcast
 
-    %h2= "Episode 0#{@podcast.id}: #{@podcast.name}"
-
-    %p= RedCloth.new(@podcast.description).to_html
+    - if @podcast
+      %h2= "Episode 0#{@podcast.id}: #{@podcast.name}"
+ 
+      %p= RedCloth.new(@podcast.description).to_html
   
-    .watch_now
-      = link_to "Watch now", @podcast.movie_link
+      .watch_now
+        = link_to "Watch now", @podcast.movie_link if @podcast
 
-  .screenshot
-    = link_to(image_tag(@podcast.screenshot.url, :size => "345x266", :alt => "Episode 36"), @podcast.movie_link)
+  - if @podcast && @podcast.screenshot
+    .screenshot
+      = link_to(image_tag(@podcast.screenshot.url, :size => "345x266", :alt => "Episode 36"), @podcast.movie_link)
 
-  #actions
-    = link_to(image_tag("application/feed.png", :size => "32x32", :alt => "Episode #{@podcast.id}"), "#")
+  - if @podcast && @podcast.screenshot
+    #actions
+      = link_to(image_tag("application/feed.png", :size => "32x32", :alt => "Episode #{@podcast.id}"), "#")
 
     %img{:id => "feed_stats", :src => "http://feeds.feedburner.com/~fc/sdrbpodcast?bg=FFFFFF&amp;fg=666666&amp;anim=0", :height => "26", :width => "88", :style => "border:0", :alt => ''}
 

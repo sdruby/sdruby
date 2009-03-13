@@ -1,15 +1,11 @@
 class User < ActiveRecord::Base
-  attr_accessor :password, :password_confirmation
+  acts_as_authentic
 
   validates_length_of :full_name, :minimum => 2
   validates_uniqueness_of :email
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
-  validates_length_of :password, :password_confirmation, :minimum => 4, :on => :create
 
-  validate_on_create :passwords_are_equal
   validate :avatar_is_valid
-
-  before_save :generate_salt, :generate_password_digest
 
   has_attached_file :avatar, 
                     :styles => { :small  => "48x48#", :medium  => "128x128#", :large  => "256x256#" }, 
@@ -31,15 +27,4 @@ protected
     end
   end
 
-  def passwords_are_equal
-    errors.add_to_base("Password confirmation must match Password.") unless self.password == self.password_confirmation
-  end
-
-  def generate_salt
-    self.salt = Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{full_name}--")
-  end
-
-  def generate_password_digest
-    self.password_digest = Digest::MD5.hexdigest(password + salt)
-  end
 end

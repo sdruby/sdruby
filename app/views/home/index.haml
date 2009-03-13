@@ -7,10 +7,12 @@
     = link_to "SD Ruby Podcast", podcasts_path
 
   .screenshot
-    = link_to(image_tag(@podcast.screenshot.url, :size => "345x266", :alt => "Episode #{@podcast.id}"), podcasts_path)
+    - if @podcast && @podcast.screenshot
+      = link_to(image_tag(@podcast.screenshot.url, :size => "345x266", :alt => "Episode #{@podcast.id}"), podcasts_path)
 
   #name
-    = link_to "Episode 0#{@podcast.id}: #{@podcast.name}", podcasts_path
+    - if @podcast
+      = link_to "Episode 0#{@podcast.id}: #{@podcast.name}", podcasts_path
     
 
 #primary
