@@ -26,6 +26,7 @@ namespace :deploy do
   task :symlink_configs, :roles => [:web] do 
     symlink_database_config
     symlink_mongrel_cluster_config
+    symlink_images
   end
   
   desc "Link to the shared database.yml."
@@ -39,14 +40,25 @@ namespace :deploy do
     run "rm -f #{latest_release}/config/mongrel_cluster.yml"
     run "ln -nfs #{shared_path}/config/mongrel_cluster.yml #{latest_release}/config/mongrel_cluster.yml"
   end
+
+  desc "Link images to production"
+  task :symlink_images, :roles => [:web] do
+    run "rm -f #{latest_release}/public/images/screenshots"
+    run "ln -nfs #{shared_path}/system/screenshots #{latest_release}/public/images/screenshots"
+  end
+
+  desc "Link videos"
+  task :symlink_video, :roles => [:web] do
+    run "ln -nfs /home/admin/www/public/podcast.sdruby.com/public/podcasts #{latest_release}/public/video"
+  end
   
   desc "Restart mongrel_cluster(which restarts rails)"
   task :restart do
-    sudo "mongrel_rails cluster::restart -C #{mongrel_config}"
+    run "mongrel_rails cluster::restart -C #{mongrel_config}"
   end
 
   desc "Cold deploy start mongrel_cluster(which restarts rails)"
   task :start do
-    sudo "mongrel_rails cluster::start -C #{mongrel_config}"
+    run "mongrel_rails cluster::start -C #{mongrel_config}"
   end
 end
