@@ -30,7 +30,11 @@ module ApplicationHelper
   end
   
   def request_host
-    "http://" + request.host + (":#{request.port}" if RAILS_ENV == "development")
+    if RAILS_ENV == "development"
+      "http://#{request.host}:#{request.port}"
+    else
+      "http://sdruby.com"
+    end
   end
 
 end
