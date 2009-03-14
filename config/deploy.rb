@@ -27,6 +27,7 @@ namespace :deploy do
     symlink_database_config
     symlink_mongrel_cluster_config
     symlink_images
+    symlink_video
   end
   
   desc "Link to the shared database.yml."
