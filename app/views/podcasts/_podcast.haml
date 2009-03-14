@@ -1,6 +1,6 @@
 .episode{:class => "published_in_#{podcast.created_at.to_s[0..3]}"}
   .small_screenshot
-    = link_to(image_tag(podcast.screenshot.url, :size => "150x116", :alt => "Episode #{podcast.id}"), podcast_path(podcast.id))
+    = link_to(image_tag(podcast.screenshot.url(:small), :size => "150x116", :alt => "Episode #{podcast.id}"), podcast_path(podcast.id))
   .details
     %h3
       = link_to "Episode 0#{podcast.id}: #{podcast.name}", podcast_path(podcast.id)

@@ -35,6 +35,6 @@ $(document).ready(function() {
     $(".published_in_2006").show();
   });
   
-  $("img").lazyload({ threshold : 200 });
+  $("img").lazyload();
   
 });
