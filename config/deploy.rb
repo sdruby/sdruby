@@ -50,7 +50,7 @@ namespace :deploy do
 
   desc "Link videos"
   task :symlink_video, :roles => [:web] do
-    run "ln -nfs /home/admin/www/public/podcast.sdruby.com/public/podcasts #{latest_release}/public/video"
+    run "ln -nfs  /home/admin/www/public/podcast.sdruby.com/public/podcasts #{latest_release}/public/video"
   end
   
   desc "Restart mongrel_cluster(which restarts rails)"
