@@ -13,5 +13,13 @@ class Podcast < ActiveRecord::Base
   validates_attachment_content_type :screenshot,
                                     :content_type => ["image/jpeg", "image/jpg", "image/png", "image/gif"],
                                     :message => "must be a GIF, JPEG, or PNG"
+                                    
+  def episode_number
+    number = self.id.to_s
+    while number.length != 3
+      number = "0" + number
+    end
+    return "Episode #{number}"
+  end
 
 end
