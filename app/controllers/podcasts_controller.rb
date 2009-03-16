@@ -8,6 +8,7 @@ class PodcastsController < ApplicationController
         @years = @podcasts.collect { |episode| episode.created_at.strftime('%Y') }.uniq
       end
       format.atom
+      format.rss
     end
   end
 

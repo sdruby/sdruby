@@ -21,5 +21,10 @@ class Podcast < ActiveRecord::Base
     end
     return "Episode #{number}"
   end
+  
+  def enclosure_type
+    return "video/mp4" if self.movie_link.match(/mp4/)
+    return "video/x-m4v" if self.movie_link.match(/m4v/)    
+  end
 
 end
