@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :require_user #TODO remove this once user creation is working
+  # before_filter :require_user #TODO remove this once user creation is working
   def new
     @user = User.new
     respond_to do |format|

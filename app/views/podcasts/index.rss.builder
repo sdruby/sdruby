@@ -35,13 +35,13 @@ xml.rss "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd",  "xmlns:
         xml.title "#{podcast.episode_number}: #{podcast.name}"
         xml.description textilize(("!#{request_host}#{podcast.screenshot.url}!\n\n#{podcast.description}")), :type => 'html'
         xml.pubDate podcast.created_at.to_s(:rfc822)
-        xml.enclosure :url => podcast.movie_link, :type => podcast.enclosure_type # :length => download.bytes,
+        xml.enclosure :url => podcast.movie_link, :type => podcast.movie_type, :length => podcast.movie_size
         xml.link podcast_url(podcast)
         xml.guid({:isPermaLink => "false"}, podcast_url(podcast))
         xml.itunes :summary, strip_tags(textilize(("!#{request_host}#{podcast.screenshot.url}!\n\n#{podcast.description}")))
         xml.itunes :explicit, 'no'
+        xml.itunes :duration, podcast.movie_duration.strip
         # xml.itunes :author, author
-        # xml.itunes :duration, download.duration
       end
     end
   end

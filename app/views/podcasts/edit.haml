@@ -11,6 +11,12 @@
 
   = f.label :movie_link, 'Movie Link'
   = f.text_field :movie_link, :size => 62
+  
+  = f.label :movie_size, 'Movie Size (in bytes)'
+  = f.text_field :movie_size, :size => 17
+
+  = f.label :movie_duration, 'Movie Duration (hh:mm:ss)'
+  = f.text_field :movie_duration, :size => 17
 
   = f.label :screenshot
   = f.file_field :screenshot
