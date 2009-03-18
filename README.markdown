@@ -7,12 +7,13 @@ In the first phase, we'll update the site design and merge the podcast site into
 Here's a breakdown of the first phase.
 
 ### Tasks ###
-
-- Add simple auth for editing/deleting podcast episodes
-- Move podcast files over to sdruby.com (update links accordingly)
-- Add permanent redirects for old podcast links
+- Get running length and file size (in bytes) for all episodes
+- Update feedburner feed with new iTunes-compatible RSS feed
 
 ### Completed ###
+- Add simple auth for editing/deleting podcast episodes [Rob]
+- Move podcast files over to sdruby.com (update links accordingly) [Rob]
+- Add permanent redirects for old podcast links [Rob]
 - Add support for image attachments via Paperclip [Patrick]
 - Update rake task to import old attachments into new setup [Patrick]
 - Update podcast image on iTunes [Patrick]
