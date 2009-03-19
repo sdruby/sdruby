@@ -1,5 +1,9 @@
 # Be sure to restart your server when you modify this file
 
+# Redcloth is loaded by actioncontroller which f's up everything if
+# you have a different version in rubygems than is frozen
+gem 'RedCloth', "4.1.1"
+require 'RedCloth'
 # Uncomment below to force Rails into production mode when
 # you don't control web/app server and can't set it the proper way
 # ENV['RAILS_ENV'] ||= 'production'
@@ -27,7 +31,7 @@ Rails::Initializer.run do |config|
   config.gem "rspec", :lib => false
   config.gem "rspec-rails", :lib => false
   config.gem "authlogic"
-  config.gem "RedCloth"
+  config.gem "RedCloth", :version => "4.1.1"
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"

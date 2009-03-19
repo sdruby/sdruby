@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090312210342) do
+ActiveRecord::Schema.define(:version => 20090319190304) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(:version => 20090312210342) do
     t.string   "screenshot_content_type"
     t.integer  "screenshot_file_size"
     t.datetime "screenshot_updated_at"
+    t.string   "movie_duration"
+    t.integer  "movie_size"
   end
 
   create_table "users", :force => true do |t|
