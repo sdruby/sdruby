@@ -18,8 +18,8 @@ class AddLengthToExisting < ActiveRecord::Migration
       podcast = Podcast.find(:first, :conditions => ["movie_link = ?", "http://sdruby.com/video/#{File.basename(file)}"])
       next unless podcast
 
-      podcast.movie_duration = "#{minutes}:#{seconds} minutes"
-      podcast.movie_size = "#{file_size / 1.megabyte} MB"
+      podcast.movie_duration = "#{minutes}:#{seconds}"
+      podcast.movie_size = file_size
       podcast.save
     end
 
