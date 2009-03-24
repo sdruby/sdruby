@@ -16,7 +16,6 @@ xml.rss "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd",  "xmlns:
     xml.lastBuildDate @podcasts.first.created_at.to_s(:rfc822)
     xml.itunes :author, author
     xml.itunes :keywords, keywords
-    xml.itunes :explicit, 'clean'
     xml.itunes :image, :href => image
     xml.itunes :owner do
       xml.itunes :name, author
