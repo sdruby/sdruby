@@ -7,10 +7,11 @@ In the first phase, we'll update the site design and merge the podcast site into
 Here's a breakdown of the first phase.
 
 ### Tasks ###
-- Get running length and file size (in bytes) for all episodes
-- Update feedburner feed with new iTunes-compatible RSS feed
+
 
 ### Completed ###
+- Get running length and file size (in bytes) for all episodes
+- Update feedburner feed with new iTunes-compatible RSS feed
 - Add simple auth for editing/deleting podcast episodes [Rob]
 - Move podcast files over to sdruby.com (update links accordingly) [Rob]
 - Add permanent redirects for old podcast links [Rob]
