@@ -3,7 +3,7 @@ author = "SD Ruby"
 email = 'patrick@mokolabs.com'
 description = "SD Ruby. We are San Diego's Ruby community."
 keywords = "ruby, rails, ruby on rails, programming, web, development, agile, railscast"
-image = "http://sdruby.com/images/application/logo_podcast.png"
+image = "http://sdruby.com/images/application/logo_podcast.jpg"
 
 xml.instruct! :xml, :version => "1.0" 
 xml.rss "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd",  "xmlns:media" => "http://search.yahoo.com/mrss/",  :version => "2.0" do
