@@ -2,7 +2,9 @@ ActionController::Routing::Routes.draw do |map|
   
   # Homepage
   map.root :controller => 'home'
-  
+  map.tshirts '/tshirts',  :controller => 'home', :action => "tshirts"
+  map.thanks '/thanks',  :controller => 'home', :action => "thanks"
+
   # Resources
   map.resources :events
   map.resources :meetings, :controller => 'events'
