@@ -1,76 +1,17 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe UsersController do
-  describe "handling GET /users" do
-
-    before(:each) do
-      @user = mock_model(User)
-      User.stub!(:find).and_return([@user])
-    end
-  
-    def do_get
-      get :index
-    end
-  
-    it "should be successful" do
-      do_get
-      response.should be_success
-    end
-
-    it "should render index template" do
-      do_get
-      response.should render_template('index')
-    end
-  
-    it "should find all users" do
-      User.should_receive(:find).with(:all).and_return([@user])
-      do_get
-    end
-  
-    it "should assign the found users for the view" do
-      do_get
-      assigns[:users].should == [@user]
-    end
-  end
-
-  describe "handling GET /users.xml" do
-
-    before(:each) do
-      @user = mock_model(User, :to_xml => "XML")
-      User.stub!(:find).and_return(@user)
-    end
-  
-    def do_get
-      @request.env["HTTP_ACCEPT"] = "application/xml"
-      get :index
-    end
-  
-    it "should be successful" do
-      do_get
-      response.should be_success
-    end
-
-    it "should find all users" do
-      User.should_receive(:find).with(:all).and_return([@user])
-      do_get
-    end
-  
-    it "should render the found users as xml" do
-      @user.should_receive(:to_xml).and_return("XML")
-      do_get
-      response.body.should == "XML"
-    end
-  end
-
+  fuzzy :users
   describe "handling GET /users/1" do
 
     before(:each) do
-      @user = mock_model(User)
+      @user = fuzzy_users.create!(:password => "testing", :password_confirmation => "testing")
+      set_session_for(@user)
       User.stub!(:find).and_return(@user)
     end
   
     def do_get
-      get :show, :id => "1"
+      get :show, :id => @user.id
     end
 
     it "should be successful" do
@@ -83,11 +24,6 @@ describe UsersController do
       response.should render_template('show')
     end
   
-    it "should find the user requested" do
-      User.should_receive(:find).with("1").and_return(@user)
-      do_get
-    end
-  
     it "should assign the found user for the view" do
       do_get
       assigns[:user].should equal(@user)
@@ -97,7 +33,8 @@ describe UsersController do
   describe "handling GET /users/1.xml" do
 
     before(:each) do
-      @user = mock_model(User, :to_xml => "XML")
+      @user = fuzzy_users.create!(:password => "testing", :password_confirmation => "testing")
+      set_session_for(@user)
       User.stub!(:find).and_return(@user)
     end
   
@@ -110,12 +47,7 @@ describe UsersController do
       do_get
       response.should be_success
     end
-  
-    it "should find the user requested" do
-      User.should_receive(:find).with("1").and_return(@user)
-      do_get
-    end
-  
+    
     it "should render the found user as xml" do
       @user.should_receive(:to_xml).and_return("XML")
       do_get
@@ -126,7 +58,7 @@ describe UsersController do
   describe "handling GET /users/new" do
 
     before(:each) do
-      @user = mock_model(User)
+      @user = fuzzy_users.create!(:password => "testing", :password_confirmation => "testing")
       User.stub!(:new).and_return(@user)
     end
   
@@ -163,7 +95,8 @@ describe UsersController do
   describe "handling GET /users/1/edit" do
 
     before(:each) do
-      @user = mock_model(User)
+      @user = fuzzy_users.create!(:password => "testing", :password_confirmation => "testing")
+      set_session_for(@user)
       User.stub!(:find).and_return(@user)
     end
   
@@ -195,7 +128,8 @@ describe UsersController do
   describe "handling POST /users" do
 
     before(:each) do
-      @user = mock_model(User, :to_param => "1")
+      @user = fuzzy_users.create!(:password => "testing", :password_confirmation => "testing")
+      set_session_for(@user)
       User.stub!(:new).and_return(@user)
     end
     
@@ -213,7 +147,7 @@ describe UsersController do
 
       it "should redirect to the new user" do
         do_post
-        response.should redirect_to(user_url("1"))
+        response.should redirect_to(user_url(@user.id))
       end
       
     end
@@ -236,7 +170,8 @@ describe UsersController do
   describe "handling PUT /users/1" do
 
     before(:each) do
-      @user = mock_model(User, :to_param => "1")
+      @user = fuzzy_users.create!(:password => "testing", :password_confirmation => "testing")
+      set_session_for(@user)
       User.stub!(:find).and_return(@user)
     end
     
@@ -244,12 +179,7 @@ describe UsersController do
 
       def do_put
         @user.should_receive(:update_attributes).and_return(true)
-        put :update, :id => "1"
-      end
-
-      it "should find the user requested" do
-        User.should_receive(:find).with("1").and_return(@user)
-        do_put
+        put :update, :id => @user.id
       end
 
       it "should update the found user" do
@@ -264,7 +194,7 @@ describe UsersController do
 
       it "should redirect to the user" do
         do_put
-        response.should redirect_to(user_url("1"))
+        response.should redirect_to(user_url(@user.id))
       end
 
     end
@@ -284,30 +214,4 @@ describe UsersController do
     end
   end
 
-  describe "handling DELETE /users/1" do
-
-    before(:each) do
-      @user = mock_model(User, :destroy => true)
-      User.stub!(:find).and_return(@user)
-    end
-  
-    def do_delete
-      delete :destroy, :id => "1"
-    end
-
-    it "should find the user requested" do
-      User.should_receive(:find).with("1").and_return(@user)
-      do_delete
-    end
-  
-    it "should call destroy on the found user" do
-      @user.should_receive(:destroy)
-      do_delete
-    end
-  
-    it "should redirect to the users list" do
-      do_delete
-      response.should redirect_to(users_url)
-    end
-  end
 end

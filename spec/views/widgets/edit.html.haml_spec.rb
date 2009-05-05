@@ -19,7 +19,7 @@ describe "/widgets/edit.html.haml" do
     
     response.should have_tag("form[action=#{widget_path(@widget)}][method=post]") do
       with_tag('input#widget_setup[name=?]', "widget[setup]")
-      with_tag('input#widget_view[name=?]', "widget[view]")
+      with_tag('textarea#widget_view[name=?]', "widget[view]")
       with_tag('input#widget_column[name=?]', "widget[column]")
       with_tag('input#widget_row[name=?]', "widget[row]")
     end

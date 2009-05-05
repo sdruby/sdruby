@@ -23,15 +23,15 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = @current_user
+    @user = current_user
     respond_to do |format|
       format.html
-      format.xml  { render :xml => @user }
+      format.xml  { render :xml => @user.to_xml }
     end
   end
 
   def edit
-    @user = @current_user
+    @user = current_user
   end
 
   def edit_profile #TODO check if we're using this
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = @current_user # makes our views "cleaner" and more consistent
+    @user = current_user
     respond_to do |format|
       if @user.update_attributes(params[:user])
         flash[:notice] = 'User was successfully updated.'

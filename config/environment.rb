@@ -2,6 +2,7 @@
 
 # Redcloth is loaded by actioncontroller which f's up everything if
 # you have a different version in rubygems than is frozen
+require 'rubygems'
 gem 'RedCloth', "4.1.1"
 require 'RedCloth'
 # Uncomment below to force Rails into production mode when

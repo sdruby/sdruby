@@ -1,10 +1,11 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe EventsController do
+  fuzzy :events, :meetings
   describe "handling GET /events" do
 
     before(:each) do
-      @event = mock_model(Event)
+      @event = fuzzy_events.create!
       Event.stub!(:find).and_return([@event])
     end
   
@@ -36,7 +37,7 @@ describe EventsController do
   describe "handling GET /events.xml" do
 
     before(:each) do
-      @event = mock_model(Event, :to_xml => "XML")
+      @event = fuzzy_events.create!
       Event.stub!(:find).and_return(@event)
     end
   
@@ -65,7 +66,7 @@ describe EventsController do
   describe "handling GET /events/1" do
 
     before(:each) do
-      @event = mock_model(Event)
+      @event = fuzzy_events.create!
       Event.stub!(:find).and_return(@event)
     end
   
@@ -97,7 +98,7 @@ describe EventsController do
   describe "handling GET /events/1.xml" do
 
     before(:each) do
-      @event = mock_model(Event, :to_xml => "XML")
+      @event = fuzzy_events.create!
       Event.stub!(:find).and_return(@event)
     end
   
@@ -126,7 +127,7 @@ describe EventsController do
   describe "handling GET /events/new" do
 
     before(:each) do
-      @event = mock_model(Event)
+      @event = fuzzy_events.create!
       Event.stub!(:new).and_return(@event)
     end
   
@@ -163,7 +164,7 @@ describe EventsController do
   describe "handling GET /events/1/edit" do
 
     before(:each) do
-      @event = mock_model(Event)
+      @event = fuzzy_events.create!
       Event.stub!(:find).and_return(@event)
     end
   
@@ -195,16 +196,13 @@ describe EventsController do
   describe "handling POST /events" do
 
     before(:each) do
-      @event = mock_model(Event, :to_param => "1")
-      Event.stub!(:new).and_return(@event)
-      @meeting = mock_model(Meeting, :to_param => "1")
-      Meeting.stub!(:new).and_return(@meeting)
+      @event = Event.create!
+      @meeting = fuzzy_meetings.create!
     end
     
     describe "with successful save" do
   
       def do_post
-        @event.should_receive(:save).and_return(true)
         post :create, :event => {'class' => 'Event'}
       end
   
@@ -216,7 +214,8 @@ describe EventsController do
 
       it "should redirect to the new event" do
         do_post
-        response.should redirect_to(event_url("1"))
+        last_event = Event.last
+        response.should redirect_to(event_url(last_event.id))
       end
       
     end
@@ -224,7 +223,6 @@ describe EventsController do
     describe "with successful save with Meeting type" do
   
       def do_post
-        @meeting.should_receive(:save).and_return(true)
         post :create, :event => {'class' => 'Meeting'}
       end
   
@@ -236,7 +234,8 @@ describe EventsController do
 
       it "should redirect to the new event" do
         do_post
-        response.should redirect_to(meeting_url("1"))
+        last_meeting = Meeting.last
+        response.should redirect_to(meeting_url(last_meeting.id))
       end
       
     end
@@ -245,6 +244,7 @@ describe EventsController do
     describe "with failed save" do
 
       def do_post
+        Event.should_receive(:new).and_return(@event)
         @event.should_receive(:save).and_return(false)
         post :create, :event => {}
       end
@@ -260,7 +260,7 @@ describe EventsController do
   describe "handling PUT /events/1" do
 
     before(:each) do
-      @event = mock_model(Event, :to_param => "1")
+      @event = fuzzy_events.create!
       Event.stub!(:find).and_return(@event)
     end
     
@@ -268,11 +268,11 @@ describe EventsController do
 
       def do_put
         @event.should_receive(:update_attributes).and_return(true)
-        put :update, :id => "1"
+        put :update, :id => @event.id
       end
 
       it "should find the event requested" do
-        Event.should_receive(:find).with("1").and_return(@event)
+        Event.should_receive(:find).with(@event.id.to_s).and_return(@event)
         do_put
       end
 
@@ -288,7 +288,7 @@ describe EventsController do
 
       it "should redirect to the event" do
         do_put
-        response.should redirect_to(event_url("1"))
+        response.should redirect_to(event_url(@event.id))
       end
 
     end
@@ -297,7 +297,7 @@ describe EventsController do
 
       def do_put
         @event.should_receive(:update_attributes).and_return(false)
-        put :update, :id => "1"
+        put :update, :id => @event.id
       end
 
       it "should re-render 'edit'" do
@@ -311,16 +311,16 @@ describe EventsController do
   describe "handling DELETE /events/1" do
 
     before(:each) do
-      @event = mock_model(Event, :destroy => true)
+      @event = fuzzy_events.create!
       Event.stub!(:find).and_return(@event)
     end
   
     def do_delete
-      delete :destroy, :id => "1"
+      delete :destroy, :id => @event.id
     end
 
     it "should find the event requested" do
-      Event.should_receive(:find).with("1").and_return(@event)
+      Event.should_receive(:find).with(@event.id.to_s).and_return(@event)
       do_delete
     end
   

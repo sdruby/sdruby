@@ -5,6 +5,14 @@ widgets:
 
 users:
   email:
-    type: email
+    default: "test@example.com"
+    default_percent: 100
   full_name:
     min: 2
+  avatar_content_type:
+    nil_percent: 100
+  avatar_file_size:
+    nil_percent: 100
+  avatar_file_name:
+    nil_percent: 100
+  

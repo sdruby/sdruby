@@ -5,7 +5,7 @@ class Event < ActiveRecord::Base
   end
   
   def self.next
-    self.find(:first, :conditions => ["starts_at > ? AND is_private = ?", Time.now, false ])
+    self.find(:first, :conditions => ["starts_at > ? AND is_private = ?", Time.now, false ], :order => "starts_at DESC")
   end
   
 end

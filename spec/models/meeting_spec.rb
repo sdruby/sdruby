@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
-describe Meeting do
+describe "Meeting" do
   fuzzy :events
 
   before(:each) do

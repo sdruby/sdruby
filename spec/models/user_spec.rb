@@ -5,7 +5,6 @@ describe User do
 
   before(:each) do
     @attribute_defaults = {
-      :avatar => mock_model(Paperclip::Attachment),
       :password => 'test',
       :password_confirmation => 'test',
       :avatar_file_name => 'Pic 001.gif',
@@ -48,18 +47,9 @@ describe User do
     new_user(:password => 'tesT', :password_confirmation => 'test').should_not be_valid
   end
 
-  it "should generate a salt and password_digest before saving" do
+  it "should generate a salt after saving" do
     (user = new_user).save
-    user.salt.should_not be_blank
-    user.password_digest.should_not be_blank
-  end
-
-  it "should reset salt and password_digest after changing password" do
-    (user = new_user(:avatar_file_name => nil)).save
-    user.password_digest.should == Digest::MD5.hexdigest(user.password + user.salt)
-    user.password = user.password_confirmation = 'testeroo'
-    user.save
-    user.password_digest.should == Digest::MD5.hexdigest(user.password + user.salt)
+    user.password_salt.should_not be_blank
   end
 
 protected

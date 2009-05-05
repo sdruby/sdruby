@@ -2,9 +2,12 @@
 # from the project root directory.
 ENV["RAILS_ENV"] = "test"
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
+require 'rubygems'
+gem 'rspec'
 require 'spec'
 require 'spec/rails'
-
+file = Dir.glob(RAILS_ROOT + '/vendor/gems/authlogic-*/lib/authlogic/testing/test_unit_helpers.rb').first
+require file
 Spec::Runner.configure do |config|
   # If you're not using ActiveRecord you should remove these
   # lines, delete config/database.yml and disable :active_record
