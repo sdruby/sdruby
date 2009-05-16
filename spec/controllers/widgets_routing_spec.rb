@@ -12,19 +12,19 @@ describe WidgetsController do
     end
   
     it "should map { :controller => 'widgets', :action => 'show', :id => 1 } to /widgets/1" do
-      route_for(:controller => "widgets", :action => "show", :id => 1).should == "/widgets/1"
+      route_for(:controller => "widgets", :action => "show", :id => '1').should == "/widgets/1"
     end
   
     it "should map { :controller => 'widgets', :action => 'edit', :id => 1 } to /widgets/1/edit" do
-      route_for(:controller => "widgets", :action => "edit", :id => 1).should == "/widgets/1/edit"
+      route_for(:controller => "widgets", :action => "edit", :id => '1').should == "/widgets/1/edit"
     end
   
     it "should map { :controller => 'widgets', :action => 'update', :id => 1} to /widgets/1" do
-      route_for(:controller => "widgets", :action => "update", :id => 1).should == "/widgets/1"
+      route_for(:controller => "widgets", :action => "update", :id => '1').should == {:path => "/widgets/1", :method => :put}
     end
   
     it "should map { :controller => 'widgets', :action => 'destroy', :id => 1} to /widgets/1" do
-      route_for(:controller => "widgets", :action => "destroy", :id => 1).should == "/widgets/1"
+      route_for(:controller => "widgets", :action => "destroy", :id => '1').should == {:path => "/widgets/1", :method => :delete}
     end
   end
 

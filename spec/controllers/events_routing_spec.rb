@@ -12,19 +12,19 @@ describe EventsController do
     end
   
     it "should map { :controller => 'events', :action => 'show', :id => 1 } to /events/1" do
-      route_for(:controller => "events", :action => "show", :id => 1).should == "/events/1"
+      route_for(:controller => "events", :action => "show", :id => '1').should == "/events/1"
     end
   
     it "should map { :controller => 'events', :action => 'edit', :id => 1 } to /events/1/edit" do
-      route_for(:controller => "events", :action => "edit", :id => 1).should == "/events/1/edit"
+      route_for(:controller => "events", :action => "edit", :id => '1').should == "/events/1/edit"
     end
   
     it "should map { :controller => 'events', :action => 'update', :id => 1} to /events/1" do
-      route_for(:controller => "events", :action => "update", :id => 1).should == "/events/1"
+      route_for(:controller => 'events', :action => 'update', :id => '1').should == {:path => "/events/1", :method => :put}
     end
-  
+
     it "should map { :controller => 'events', :action => 'destroy', :id => 1} to /events/1" do
-      route_for(:controller => "events", :action => "destroy", :id => 1).should == "/events/1"
+      route_for(:controller => "events", :action => "destroy", :id => '1').should == {:path => "/events/1", :method => :delete}
     end
   end
 
