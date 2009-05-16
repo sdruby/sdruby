@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
     self.id == 1 ? true : false
   end
 
+  def first_name
+    full_name.split(' ').first
+  end
+
 protected
   def avatar_is_valid
     if self.avatar_file_name?
