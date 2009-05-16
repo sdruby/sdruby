@@ -34,5 +34,4 @@ $(document).ready(function() {
     $(".filter_2006").addClass("current");
     $(".published_in_2006").show();
   });
-    
 });

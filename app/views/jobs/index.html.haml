@@ -1,0 +1,9 @@
+%h2
+  Ruby Jobs in San Diego
+
+#jobs
+  %ul
+    - @jobs.each do |job|
+      %li
+        = link_to "#{job.title}", job_path(job)
+        = "(posted by #{job.user.first_name} #{distance_of_time_in_words_to_now(job.created_at)} ago)"

@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :jobs
+
   
   # Homepage
   map.root :controller => 'home'

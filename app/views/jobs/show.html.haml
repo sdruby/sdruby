@@ -1,0 +1,9 @@
+%h2
+  = @job.title
+
+#job_description
+  = @job.description
+
+- if @job.contract
+  %p
+    This is a contract position
