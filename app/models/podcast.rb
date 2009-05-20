@@ -1,5 +1,6 @@
 class Podcast < ActiveRecord::Base
 
+  named_scope :published, :conditions => {:publish => true}
   has_attached_file :screenshot, 
                     :styles => { 
                     :large => ["345x267!", :png], 
