@@ -2,10 +2,8 @@ class JobsController < ApplicationController
   before_filter :require_login, :except => [:index, :show]
 
   def index
-    @jobs = Job.find(:all)
+    @jobs = Job.published.newest_first
 
-    p @jobs
-    
     respond_to do |format|
       format.html
       format.xml  { render :xml => @jobs }
@@ -32,6 +30,12 @@ class JobsController < ApplicationController
 
   def edit
     @job = Job.find(params[:id])
+
+    if @job.created_by?(current_user)
+      render :action => 'edit'
+    else
+      redirect_to jobs_path
+    end
   end
 
   def create
@@ -52,30 +56,42 @@ class JobsController < ApplicationController
   def update
     @job = Job.find(params[:id])
 
-    respond_to do |format|
-      if @job.update_attributes(params[:job])
-        flash[:notice] = 'Job was successfully updated.'
-        format.html { redirect_to(@job) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @job.errors, :status => :unprocessable_entity }
+    if @job.created_by?(current_user)
+      respond_to do |format|
+        if @job.update_attributes(params[:job])
+          flash[:notice] = 'Job was successfully updated.'
+          format.html { redirect_to(@job) }
+          format.xml  { head :ok }
+        else
+          format.html { render :action => "edit" }
+          format.xml  { render :xml => @job.errors, :status => :unprocessable_entity }
+        end
       end
+    else
+      redirect_to jobs_path
     end
   end
 
   def destroy
     @job = Job.find(params[:id])
-    @job.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(jobs_url) }
-      format.xml  { head :ok }
+    if @job.created_by?(current_user)
+      @job.destroy
+
+      respond_to do |format|
+        format.html { redirect_to(jobs_url) }
+        format.xml  { head :ok }
+      end
+    else
+      redirect_to jobs_path
     end
   end
 
   private
   def require_login
-    redirect_to login_path if current_user.nil?
+    if current_user.nil?
+      flash[:notice] = "Please login to post a job "
+      redirect_to login_path
+    end
   end
 end
