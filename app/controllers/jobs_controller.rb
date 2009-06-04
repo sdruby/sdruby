@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   before_filter :require_login, :except => [:index, :show]
   before_filter :load_job_and_authorize, :only => [:edit, :update, :destroy]
+
   def index
     @jobs = Job.published.newest_first
 
@@ -79,10 +80,9 @@ class JobsController < ApplicationController
 
   def load_job_and_authorize
     @job = Job.find(params[:id])
-
+    
     unless @job.created_by?(current_user)
       redirect_to jobs_path
     end
   end
-
 end
