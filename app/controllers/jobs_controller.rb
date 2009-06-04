@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   before_filter :require_login, :except => [:index, :show]
-
+  before_filter :load_job_and_authorize, :only => [:edit, :update, :destroy]
   def index
     @jobs = Job.published.newest_first
 
@@ -29,13 +29,7 @@ class JobsController < ApplicationController
   end
 
   def edit
-    @job = Job.find(params[:id])
-
-    if @job.created_by?(current_user)
-      render :action => 'edit'
-    else
-      redirect_to jobs_path
-    end
+    render :action => 'edit'
   end
 
   def create
@@ -54,36 +48,24 @@ class JobsController < ApplicationController
   end
 
   def update
-    @job = Job.find(params[:id])
-
-    if @job.created_by?(current_user)
-      respond_to do |format|
-        if @job.update_attributes(params[:job])
-          flash[:notice] = 'Job was successfully updated.'
-          format.html { redirect_to(@job) }
-          format.xml  { head :ok }
-        else
-          format.html { render :action => "edit" }
-          format.xml  { render :xml => @job.errors, :status => :unprocessable_entity }
-        end
+    respond_to do |format|
+      if @job.update_attributes(params[:job])
+        flash[:notice] = 'Job was successfully updated.'
+        format.html { redirect_to(@job) }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @job.errors, :status => :unprocessable_entity }
       end
-    else
-      redirect_to jobs_path
     end
   end
 
   def destroy
-    @job = Job.find(params[:id])
+    @job.destroy
 
-    if @job.created_by?(current_user)
-      @job.destroy
-
-      respond_to do |format|
-        format.html { redirect_to(jobs_url) }
-        format.xml  { head :ok }
-      end
-    else
-      redirect_to jobs_path
+    respond_to do |format|
+      format.html { redirect_to(jobs_url) }
+      format.xml  { head :ok }
     end
   end
 
@@ -94,4 +76,13 @@ class JobsController < ApplicationController
       redirect_to login_path
     end
   end
+
+  def load_job_and_authorize
+    @job = Job.find(params[:id])
+
+    unless @job.created_by?(current_user)
+      redirect_to jobs_path
+    end
+  end
+
 end
