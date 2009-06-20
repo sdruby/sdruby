@@ -1,9 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :jobs
+
   
   # Homepage
   map.root :controller => 'home'
   map.tshirts '/tshirts',  :controller => 'home', :action => "tshirts"
   map.thanks '/thanks',  :controller => 'home', :action => "thanks"
+  map.logout '/logout', :controller => 'user_sessions', :action => 'destroy'
+  map.login '/login', :controller => 'user_sessions', :action => 'new'
+  map.register '/register', :controller => 'users', :action => 'new'
 
   # Resources
   map.resources :events

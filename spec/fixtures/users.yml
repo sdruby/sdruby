@@ -1,3 +1,9 @@
 loyal_rubyist:
   id: 388298128
   full_name: Loyal Rubyist
+  persistence_token: dd9d9a6e756a8d0d30b6c9bfdf69188d7b604e68965eeda8807fced24d0f7b9bc3c6b2c58780da8b62c11e52a4c31352fc6b1e6afdb97fe87c0b83c8e3b7fb83
+
+job_creating_rubyist:
+  id: 388298129
+  full_name: I Make Jobs
+  persistence_token: 84bc52f04f138e72f7cdb97054b8b088b60d7bfa219e979a51e6783ae39d70fe0e6d033b1ea4a51dbd3e584535f77ade7eac0b611bde7c6409cdd1e927ffd1b4

@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :jobs
+
   acts_as_authentic
 
   validates_length_of :full_name, :minimum => 2
@@ -16,6 +18,10 @@ class User < ActiveRecord::Base
                     
   def is_admin?
     self.id == 1 ? true : false
+  end
+
+  def first_name
+    full_name.split(' ').first
   end
 
 protected
