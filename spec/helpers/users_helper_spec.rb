@@ -9,5 +9,5 @@ describe UsersHelper do
       included_modules.should include(UsersHelper)
     end
   end
-  
+
 end

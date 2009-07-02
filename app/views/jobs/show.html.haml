@@ -1,0 +1,12 @@
+- if current_user && @job.created_by?(current_user)
+  = render :partial => "manage"
+
+%h2
+  = @job.title
+
+#job_description
+  = markdown(@job.description)
+
+- if @job.contract
+  %p
+    This is a contract position

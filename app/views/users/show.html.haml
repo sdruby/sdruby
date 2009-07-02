@@ -6,10 +6,12 @@
 %p
   = link_to 'Edit Info &amp; Avatar', edit_user_path(@user)
 
-%p
-  %strong= "About #{@user.full_name.split(' ').first}"
-#user_about= @user.about
+- if @user.about
+  %p
+    %strong= "About #{@user.first_name}"
+  #user_about= @user.about
 
-%p
-  %strong=  "#{@user.full_name.split(' ').first}'s Links"
-#user_links= linkify @user.links
+- if @user.links
+  %p
+    %strong=  "#{@user.first_name}'s Links"
+  #user_links= linkify @user.links if @user.links

@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe User do
   fuzzy :users
 
-  before(:each) do
+  before(:all) do
     @attribute_defaults = {
       :password => 'test',
       :password_confirmation => 'test',
@@ -50,6 +50,18 @@ describe User do
   it "should generate a salt after saving" do
     (user = new_user).save
     user.password_salt.should_not be_blank
+  end
+
+  describe 'instance methods' do
+    describe 'first_name' do
+      before do
+        @user = new_user(:full_name => 'Snoop Dogg')
+      end
+
+      it 'should return the users first name' do
+        @user.first_name.should == 'Snoop'
+      end
+    end
   end
 
 protected
