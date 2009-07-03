@@ -1,4 +1,4 @@
-%h1=t "Users"
+%h1=t "Members"
 
 %table
   - @users.each do |user|
@@ -10,5 +10,3 @@
       %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete
 
 %br/
-
-%p= link_to 'New user', new_user_path

@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
   # before_filter :require_user #TODO remove this once user creation is working
+  
+  def index
+    @users = User.all(:order => "full_name")
+  end
+  
   def new
     @user = User.new
     respond_to do |format|
