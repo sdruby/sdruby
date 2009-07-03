@@ -1,17 +1,17 @@
 %h1=t @user.full_name
 
 #user_photo
-  = image_tag @user.avatar.url(:large)
+  = image_tag @user.avatar.url(:medium)
 
-%p
-  = link_to 'Edit Info &amp; Avatar', edit_user_path(@user)
-
-- if @user.about
+- unless @user.about.blank?
   %p
     %strong= "About #{@user.first_name}"
-  #user_about= @user.about
+    = @user.about
 
-- if @user.links
+- unless @user.links.blank?
   %p
-    %strong=  "#{@user.first_name}'s Links"
-  #user_links= linkify @user.links if @user.links
+    %strong= "#{@user.first_name}&rsquo;s Links"
+    = linkify @user.links if @user.links
+
+%p
+  = link_to 'Edit Profile', edit_user_path(@user)

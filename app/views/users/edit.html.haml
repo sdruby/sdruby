@@ -1,27 +1,34 @@
-%h1=t "Edit"
+%h1=t "Edit Profile"
 
 = error_messages_for :user
 
 - form_for(@user, :html => { :multipart => true }) do |f|
 
-  %h2 Account
-  = render :partial => 'form', :locals => {:f => f}
+  .panel
+  
+    %h2 Profile
 
-  %h2 Profile
-  %p
-    %label{:for => "user_avatar"} Avatar:
-    = f.file_field :avatar
+    %p
+      %label About you:
+      = f.text_area :about, :size => "35x5"
 
-  %p
-    %strong= "About You"
-  #user_about= f.text_area :about
+    %p
+      %label Links:
+      = f.text_area :links, :size => "35x5"
 
-  %p
-    %strong=  "Your Links"
-    (Separated by newlines)
-  #user_links= f.text_area :links
+    %p
+      %label{:for => "user_avatar"} Avatar:
+      = f.file_field :avatar
+    
+    %p
+      = f.submit "Save"
+      or
+      = link_to 'Back to Profile', @user
+      
+  
+  .panel
 
-  %p
-    = f.submit "Save"
-    or
-    = link_to 'Back to Profile', @user
+    %h2 Account
+    = render :partial => 'form', :locals => {:f => f}
+        
+  %br.clear

@@ -6,6 +6,7 @@ config/database.yml
 config/password.txt
 public/stylesheets/*
 public/images/screenshots/*
+public/images/users/avatars/*
 db/development.sqlite3
 db/test.sqlite3
 .idea/*
