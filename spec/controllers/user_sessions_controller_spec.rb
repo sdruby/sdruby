@@ -50,11 +50,26 @@ describe UserSessionsController do
 
   describe 'DELETE destroy' do
     context 'not logged in' do
+      before do
+        delete :destroy
+      end
 
+      it 'should set a notice and redirect to /' do
+        flash[:notice].should == "You're already logged out!"
+        response.should redirect_to(root_path)
+      end
     end
 
     context 'logged in' do
+      before do
+        set_session_for users(:loyal_rubyist)
+        delete :destroy
+      end
 
+      it 'should log the user out' do
+        flash[:notice].should == "Logout successful!"
+        response.should redirect_to(root_path)
+      end
     end
   end
 end
