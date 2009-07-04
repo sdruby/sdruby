@@ -53,3 +53,7 @@ end
 def logout
   request.session = {'user_credentials' => nil, 'user_credentials_id' => nil}
 end
+
+def login_as(user)
+  set_session_for(user)
+end
