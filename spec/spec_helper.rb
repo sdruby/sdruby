@@ -49,3 +49,7 @@ Spec::Runner.configure do |config|
   # 
   # For more information take a look at Spec::Runner::Configuration and Spec::Runner
 end
+
+def logout
+  request.session = {'user_credentials' => nil, 'user_credentials_id' => nil}
+end
