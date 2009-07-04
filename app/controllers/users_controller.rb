@@ -1,12 +1,18 @@
 class UsersController < ApplicationController
   # before_filter :require_user #TODO remove this once user creation is working
-  before_filter :require_not_logged_in, :only => :new
+  before_filter :require_login, :only => [:show, :edit, :update]
+  before_filter :authorize, :only => [:edit, :update]
 
   def index
     @users = User.all(:order => "full_name")
   end
   
   def new
+    if current_user
+      redirect_to account_path
+      return
+    end
+    
     @user = User.new
     respond_to do |format|
       format.html
@@ -59,9 +65,16 @@ class UsersController < ApplicationController
   end
 
   private
-  def require_not_logged_in
-    if current_user
-      redirect_to account_path
+  def require_login
+    if current_user.nil?
+      redirect_to login_path
+    end
+  end
+
+  def authorize
+    unless current_user.id == params[:id].to_i
+      flash[:error] = "You are not authorized to edit this resource"
+      redirect_to root_path
     end
   end
 end
