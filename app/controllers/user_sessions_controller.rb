@@ -1,6 +1,5 @@
 class UserSessionsController < ApplicationController
   before_filter :require_not_logged_in, :only => [:new, :create]
-  before_filter :require_login, :only => :destroy
 
   def new
     @user_session = UserSession.new
@@ -17,19 +16,16 @@ class UserSessionsController < ApplicationController
   end
 
   def destroy
-    current_user_session.destroy
-    flash[:notice] = "Logout successful!"
+    if current_user.nil?
+      flash[:notice] = "You're already logged out!"
+    else
+      current_user_session.destroy
+      flash[:notice] = "Logout successful!"
+    end
     redirect_to root_path
   end
 
   private
-  def require_login
-    if current_user.nil?
-      flash[:notice] = "You're already logged out!"
-      redirect_to root_path
-    end
-  end
-
   def require_not_logged_in
     if current_user
       redirect_to account_path
