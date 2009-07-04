@@ -56,39 +56,51 @@ describe UsersController do
   end
 
   describe "handling GET /users/new" do
+    context 'logged in' do
+      before do
+        set_session_for users(:loyal_rubyist)
+        get :new
+      end
 
-    before(:each) do
-      @user = fuzzy_users.create!(:password => "testing", :password_confirmation => "testing")
-      User.stub!(:new).and_return(@user)
-    end
-  
-    def do_get
-      get :new
+      it 'should redirect to accounts' do
+        response.should redirect_to(account_path)
+      end
     end
 
-    it "should be successful" do
-      do_get
-      response.should be_success
-    end
-  
-    it "should render new template" do
-      do_get
-      response.should render_template('new')
-    end
-  
-    it "should create an new user" do
-      User.should_receive(:new).and_return(@user)
-      do_get
-    end
-  
-    it "should not save the new user" do
-      @user.should_not_receive(:save)
-      do_get
-    end
-  
-    it "should assign the new user for the view" do
-      do_get
-      assigns[:user].should equal(@user)
+    context 'not logged in' do
+      before(:each) do
+        @user = fuzzy_users.create!(:password => "testing", :password_confirmation => "testing")
+        User.stub!(:new).and_return(@user)
+      end
+
+      def do_get
+        get :new
+      end
+
+      it "should be successful" do
+        do_get
+        response.should be_success
+      end
+
+      it "should render new template" do
+        do_get
+        response.should render_template('new')
+      end
+
+      it "should create an new user" do
+        User.should_receive(:new).and_return(@user)
+        do_get
+      end
+
+      it "should not save the new user" do
+        @user.should_not_receive(:save)
+        do_get
+      end
+
+      it "should assign the new user for the view" do
+        do_get
+        assigns[:user].should equal(@user)
+      end
     end
   end
 

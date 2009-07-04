@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   # before_filter :require_user #TODO remove this once user creation is working
-  
+  before_filter :require_not_logged_in, :only => :new
+
   def index
     @users = User.all(:order => "full_name")
   end
@@ -56,5 +57,11 @@ class UsersController < ApplicationController
       end
     end
   end
-    
+
+  private
+  def require_not_logged_in
+    if current_user
+      redirect_to account_path
+    end
+  end
 end
