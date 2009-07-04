@@ -1,4 +1,6 @@
 class UserSessionsController < ApplicationController
+  before_filter :require_not_logged_in, :only => [:new, :create]
+
   def new
     @user_session = UserSession.new
   end
@@ -17,6 +19,13 @@ class UserSessionsController < ApplicationController
     current_user_session.destroy
     flash[:notice] = "Logout successful!"
     redirect_to root_path
+  end
+
+  private
+  def require_not_logged_in
+    if current_user
+      redirect_to account_path
+    end
   end
 end
 
