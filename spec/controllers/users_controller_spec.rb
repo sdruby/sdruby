@@ -6,10 +6,12 @@ describe UsersController do
   describe "GET show" do
     describe "requesting HTML" do
       context 'for a valid user' do
-        before(:each) do
+        before do
           @user = fuzzy_users.create!(:password => "testing", :password_confirmation => "testing")
           set_session_for(@user)
+
           User.stub!(:find).and_return(@user)
+
           get :show, :id => @user.id
         end
 
@@ -29,6 +31,7 @@ describe UsersController do
       context 'for an invalid user' do
         before do
           login_as users(:loyal_rubyist)
+
           get :show, :id => 'snoop doggy dogg'
         end
 
@@ -43,26 +46,26 @@ describe UsersController do
     end
 
     describe "requesting XML" do
+      before do
+        @request.env["HTTP_ACCEPT"] = "application/xml"
+      end
+
       context 'for a valid user' do
-        before(:each) do
+        before do
           @user = fuzzy_users.create!(:password => "testing", :password_confirmation => "testing")
           set_session_for(@user)
-          User.stub!(:find).and_return(@user)
-        end
 
-        def do_get
-          @request.env["HTTP_ACCEPT"] = "application/xml"
+          User.stub!(:find).and_return(@user)
+          @user.should_receive(:to_xml).and_return("XML")
+
           get :show, :id => "1"
         end
 
         it "should be successful" do
-          do_get
           response.should be_success
         end
 
         it "should render the found user as xml" do
-          @user.should_receive(:to_xml).and_return("XML")
-          do_get
           response.body.should == "XML"
         end
       end
@@ -70,9 +73,9 @@ describe UsersController do
       context 'for an invalid user' do
         before do
           @failure_xml = '<?xml version="1.0" encoding="UTF-8"?><errors><error>User Not Found</error></errors>'
-          @request.env["HTTP_ACCEPT"] = "application/xml"
 
           login_as users(:loyal_rubyist)
+
           get :show, :id => 'snoop doggy dogg'
         end
 
@@ -100,9 +103,11 @@ describe UsersController do
     end
 
     context 'not logged in' do
-      before(:each) do
+      before do
         @user = fuzzy_users.create!(:password => "testing", :password_confirmation => "testing")
+
         User.should_receive(:new).and_return(@user)
+
         get :new
       end
 
@@ -122,10 +127,12 @@ describe UsersController do
 
   describe "GET edit" do
     context 'logged in' do
-      before(:each) do
+      before do
         @user = fuzzy_users.create!(:password => "testing", :password_confirmation => "testing")
         set_session_for(@user)
+
         User.should_receive(:find).and_return(@user)
+
         get :edit, :id => @user.id
       end
 
@@ -145,6 +152,7 @@ describe UsersController do
     context 'logged in as a different user' do
       before do
         set_session_for users(:loyal_rubyist)
+
         get :edit, :id => users(:job_creating_rubyist).id
       end
 
@@ -205,13 +213,15 @@ describe UsersController do
       before(:each) do
         @user = fuzzy_users.create!(:password => "testing", :password_confirmation => "testing")
         set_session_for(@user)
+
         User.stub!(:find).and_return(@user)
       end
 
       describe "with successful update" do
-          before do
-            @user.should_receive(:update_attributes).and_return(true)
-            put :update, :id => @user.id
+        before do
+          @user.should_receive(:update_attributes).and_return(true)
+
+          put :update, :id => @user.id
         end
 
         it "should update the found user" do
@@ -230,6 +240,7 @@ describe UsersController do
       describe "with failed update" do
         before do
           @user.should_receive(:update_attributes).and_return(false)
+
           put :update, :id => @user.id
         end
 
@@ -242,6 +253,7 @@ describe UsersController do
     context 'logged in as a different user' do
       before do
         set_session_for users(:loyal_rubyist)
+
         put :update, :id => users(:job_creating_rubyist).id
       end
 
