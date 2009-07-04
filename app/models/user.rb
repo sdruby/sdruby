@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
     full_name.split(' ').first
   end
 
-protected
+  protected
   def avatar_is_valid
     if self.avatar_file_name?
       unless ["image/gif", "image/jpeg", "image/png"].include?(self.avatar_content_type)
@@ -31,5 +31,4 @@ protected
       end
     end
   end
-
 end

@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   # before_filter :require_user #TODO remove this once user creation is working
-  before_filter :require_login, :only => [:show, :edit, :update]
-  before_filter :authorize, :only => [:edit, :update]
+  before_filter :require_login_and_authorize, :only => [:edit, :update]
 
   def index
     @users = User.all(:order => "full_name")
@@ -35,10 +34,22 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
-    respond_to do |format|
-      format.html
-      format.xml  { render :xml => @user.to_xml }
+    unless @user = User.find_by_id(params[:id])
+      respond_to do |format|
+        format.html do
+          flash[:notice] = "No such user."
+          redirect_to root_path
+        end
+        format.xml do
+          render :xml => '<?xml version="1.0" encoding="UTF-8"?><errors><error>' +
+                         'User Not Found</error></errors>', :status => :unprocessable_entity
+        end
+      end
+    else
+      respond_to do |format|
+        format.html
+        format.xml  { render :xml => @user.to_xml }
+      end
     end
   end
 
@@ -65,16 +76,20 @@ class UsersController < ApplicationController
   end
 
   private
-  def require_login
-    if current_user.nil?
-      redirect_to login_path
-    end
+  def not_logged_in
+    current_user.nil?
   end
 
-  def authorize
-    unless current_user.id == params[:id].to_i
+  def unauthorized
+    !(current_user.id == params[:id].to_i)
+  end
+
+  def require_login_and_authorize
+    if not_logged_in
+      redirect_to(login_path)
+    elsif unauthorized
       flash[:error] = "You are not authorized to edit this resource"
-      redirect_to root_path
+      redirect_to(root_path)
     end
   end
 end
