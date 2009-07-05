@@ -11,45 +11,23 @@ class UsersController < ApplicationController
       redirect_to account_path
       return
     end
-    
     @user = User.new
-    respond_to do |format|
-      format.html
-      format.xml  { render :xml => @user }
-    end
   end
 
   def create
     @user = User.new(params[:user])
-    respond_to do |format|
-      if @user.save
-        flash[:notice] = 'User was successfully created.'
-        format.html { redirect_to(@user) }
-        format.xml  { render :xml => @user, :status => :created, :location => @user }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
-      end
+    if @user.save
+      flash[:notice] = 'User was successfully created.'
+      redirect_to(@user)
+    else
+      render :action => "new"
     end
   end
 
   def show
     unless @user = User.find_by_id(params[:id])
-      respond_to do |format|
-        format.html do
-          flash[:notice] = "No such user."
-          redirect_to root_path
-        end
-        format.xml do
-          render :xml => '<?xml version="1.0" encoding="UTF-8"?><errors><error>' +
-                         'User Not Found</error></errors>', :status => :unprocessable_entity
-        end
-      end
-    else
-      respond_to do |format|
-        format.html
-        format.xml  { render :xml => @user.to_xml }
-      end
+      flash[:notice] = "No such user."
+      redirect_to root_path
     end
   end
 
@@ -63,15 +41,11 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        flash[:notice] = 'User was successfully updated.'
-        format.html { redirect_to(@user) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
-      end
+    if @user.update_attributes(params[:user])
+      flash[:notice] = 'User was successfully updated.'
+      redirect_to(@user)
+    else
+      render :action => "edit"
     end
   end
 

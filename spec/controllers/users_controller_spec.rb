@@ -44,50 +44,6 @@ describe UsersController do
         end
       end
     end
-
-    describe "requesting XML" do
-      before do
-        @request.env["HTTP_ACCEPT"] = "application/xml"
-      end
-
-      context 'for a valid user' do
-        before do
-          @user = fuzzy_users.create!(:password => "testing", :password_confirmation => "testing")
-          set_session_for(@user)
-
-          User.stub!(:find).and_return(@user)
-          @user.should_receive(:to_xml).and_return("XML")
-
-          get :show, :id => "1"
-        end
-
-        it "should be successful" do
-          response.should be_success
-        end
-
-        it "should render the found user as xml" do
-          response.body.should == "XML"
-        end
-      end
-
-      context 'for an invalid user' do
-        before do
-          @failure_xml = '<?xml version="1.0" encoding="UTF-8"?><errors><error>User Not Found</error></errors>'
-
-          login_as users(:loyal_rubyist)
-
-          get :show, :id => 'snoop doggy dogg'
-        end
-
-        it 'should return a 422' do
-          response.status.should == '422 Unprocessable Entity'
-        end
-
-        it 'should render an error in XML' do
-          response.body.should == @failure_xml
-        end
-      end
-    end
   end
 
   describe "GET new" do
