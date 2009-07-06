@@ -10,8 +10,8 @@
 
 - unless @user.links.blank?
   %p
-    %strong= "#{@user.first_name}&rsquo;s Links"
-    = linkify @user.links if @user.links
+    %strong= "Links"
+    = iconify_and_link @user.links, :size => 16
     
 - unless @user.github_projects.blank?
   %p
