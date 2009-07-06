@@ -1,28 +1,40 @@
-%h1=t @user.full_name
 
-#user_photo
-  = image_tag @user.avatar.url(:medium)
+.profile
 
-- unless @user.about.blank?
-  %p
-    = @user.about
+  #links_and_projects
 
-- unless @user.started_using_ruby_on.blank?
-  %p
-    %strong Started using Ruby 
-    = @user.started_using_ruby_on.strftime('%B %Y')
-
-- unless @user.links.blank?
-  %p
-    %strong= "Links"
-    %ul.links
-      = iconify_and_link @user.links, :size => 32
+    - unless @user.links.blank?
+      %p
+        %strong= "Links"
+        %ul#links
+          = iconify_and_link @user.links, :size => 32
     
-- unless @user.github_projects.blank?
-  %p
-    %strong GitHub Projects
-    %ul.projects
-      = show_github_projects_for(@user)
+    - unless @user.github_projects.blank?
+      %p
+        %strong GitHub Projects
+        %ul#projects
+          = show_github_projects_for(@user)
 
-%p
-  = link_to 'Edit Profile', edit_user_path(@user)
+
+      
+  #basics
+  
+    #avatar
+      = image_tag @user.avatar.url(:medium)
+
+    %h1=t @user.full_name
+
+    - unless @user.about.blank?
+      %p
+        = @user.about
+
+    - unless @user.started_using_ruby_on.blank?
+      %p
+        %strong Started using Ruby
+        in
+        = @user.started_using_ruby_on.strftime('%B %Y')
+      
+    %p
+      = link_to 'edit profile', edit_user_path(@user)
+    
+  %br.clear

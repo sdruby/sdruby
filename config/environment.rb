@@ -5,6 +5,8 @@
 require 'rubygems'
 gem 'RedCloth', "4.1.1"
 require 'RedCloth'
+require 'open-uri'
+
 # Uncomment below to force Rails into production mode when
 # you don't control web/app server and can't set it the proper way
 # ENV['RAILS_ENV'] ||= 'production'
@@ -84,6 +86,3 @@ Rails::Initializer.run do |config|
   # Please note that observers generated using script/generate observer need to have an _observer suffix
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 end
-
-require 'open-uri'
-

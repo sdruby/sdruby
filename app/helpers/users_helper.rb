@@ -4,9 +4,9 @@ module UsersHelper
     options[:separator] = "\n" if options[:separator].blank?
     links.split(options[:separator]).collect do |link|
       icon = String.new
-      ['github','twitter','flickr','delicious','aim', 'digg', 'yelp', 'vimeo'].each do |service|
-        if link.match(/#{service}/)
-          icon += link_to(image_tag("application/social/#{service}_#{options[:size]}.png"), link)
+      WEBSITES.each do |website|
+        if link.match(/#{website}/) && icon.blank?
+          icon += link_to(image_tag("application/social/#{website}_#{options[:size]}.png"), link)
         end
       end
       if icon.blank?
