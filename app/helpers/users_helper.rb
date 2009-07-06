@@ -12,14 +12,17 @@ module UsersHelper
       if icon.blank?
         icon += link_to(image_tag("application/social/web_#{options[:size]}.png"), link)
       end
-      icon + " " + link_to(link, link)
-    end.join '<br />'
+      "<li>" + icon + " " + link_to(link, link) + "</li>"
+    end.join "\n"
   end
   
   def show_github_projects_for(user)
     projects = String.new
-    YAML::load(user.github_projects).each do |project|
-      projects << "<li>" + project[0] + " &mdash; " + project[1] + "</li>\n"
+    YAML::load(user.github_projects).sort.each do |repo, description|
+      projects << "<li>"
+      projects << link_to(repo, "http://github.com/#{user.github_username}/#{repo}")
+      projects << "<span>" + description + "</span>"
+      projects << "</li>\n"
     end
     return projects
   end

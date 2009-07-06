@@ -11,12 +11,14 @@
 - unless @user.links.blank?
   %p
     %strong= "Links"
-    = iconify_and_link @user.links, :size => 16
+    %ul.links
+      = iconify_and_link @user.links, :size => 32
     
 - unless @user.github_projects.blank?
   %p
     %strong GitHub Projects
-    = show_github_projects_for(@user)
+    %ul.projects
+      = show_github_projects_for(@user)
 
 %p
   = link_to 'Edit Profile', edit_user_path(@user)
