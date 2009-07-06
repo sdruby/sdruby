@@ -23,7 +23,31 @@ class User < ActiveRecord::Base
     full_name.split(' ').first
   end
 
+  def grab_projects
+    unless self.github_username.blank?
+      begin
+      doc = Hpricot.XML(open("http://github.com/api/v2/xml/repos/show/#{self.github_username.strip}/"))
+
+      repos = Array.new
+
+      (doc/:repositories).each do |repository|
+        (repository/:name).each_with_index do |name, index|
+          unless (repository/:fork)[index].inner_html == 'true' 
+            repos << [name.inner_html, (repository/:description)[index].inner_html]
+          end
+        end
+      end
+      self.github_projects = repos.to_yaml
+      rescue
+        self.github_projects = ''
+      end
+    else
+      self.github_projects = ''
+    end
+  end
+
   protected
+  
   def avatar_is_valid
     if self.avatar_file_name?
       unless ["image/gif", "image/jpeg", "image/png"].include?(self.avatar_content_type)
@@ -31,4 +55,5 @@ class User < ActiveRecord::Base
       end
     end
   end
+  
 end

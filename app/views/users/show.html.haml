@@ -12,6 +12,11 @@
   %p
     %strong= "#{@user.first_name}&rsquo;s Links"
     = linkify @user.links if @user.links
+    
+- unless @user.github_projects.blank?
+  %p
+    %strong GitHub Projects
+    = show_github_projects_for(@user)
 
 %p
   = link_to 'Edit Profile', edit_user_path(@user)

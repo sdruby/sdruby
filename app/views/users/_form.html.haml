@@ -1,15 +1,15 @@
 %p
   %label{:for => "user_full_name"} Full name:
-  = f.text_field :full_name
+  = f.text_field :full_name, :size => 30
 
 %p
   %label{:for => "user_email"} Email:
-  = f.text_field :email
+  = f.text_field :email, :size => 30
 
 %p
   %label{:for => "user_password"} Password:
-  = f.password_field :password
+  = f.password_field :password, :size => 30
 
 %p
   %label{:for => "user_password_confirmation"} Password confirmation:
-  = f.password_field :password_confirmation
+  = f.password_field :password_confirmation, :size => 30

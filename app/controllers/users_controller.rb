@@ -43,13 +43,24 @@ class UsersController < ApplicationController
     @user = current_user
     if @user.update_attributes(params[:user])
       flash[:notice] = 'User was successfully updated.'
+      @user.grab_projects
+      @user.save
+      @user.reload
       redirect_to(@user)
     else
       render :action => "edit"
     end
   end
+  
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+
+    redirect_to(users_url)
+  end
 
   private
+  
   def not_logged_in
     current_user.nil?
   end

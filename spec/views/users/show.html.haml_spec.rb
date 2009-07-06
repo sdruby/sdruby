@@ -25,15 +25,5 @@ describe "/users/show.html.haml" do
     }))
   end
 
-  it "should render attributes in <p>" do
-    assigns[:user].should_receive(:first_name).twice   
-    render "/users/show.html.haml"
-    # response.should have_text(/MyString/)
-    # response.should have_text(/MyString/)
-    # response.should have_text(/MyString/)
-    # response.should have_text(/MyString/)
-    # response.should have_text(/MyText/)
-    # response.should have_text(/MyText/)
-  end
 end
 

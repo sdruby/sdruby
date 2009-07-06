@@ -9,12 +9,16 @@
     %h2 Profile
 
     %p
-      %label About you:
+      %label{:for => "user_about"} About you:
       = f.text_area :about, :size => "35x5"
 
     %p
-      %label Links:
+      %label{:for => "user_links"} Links:
       = f.text_area :links, :size => "35x5"
+      
+    %p
+      %label{:for => "user_github_username"} GitHub Username:
+      = f.text_field :github_username, :size => 30
 
     %p
       %label{:for => "user_avatar"} Avatar:

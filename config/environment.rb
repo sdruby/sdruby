@@ -29,6 +29,7 @@ Rails::Initializer.run do |config|
   # They can then be installed with "rake gems:install" on new installations.
   # You have to specify the :lib option for libraries, where the Gem name (sqlite3-ruby) differs from the file itself (sqlite3)
   config.gem "haml"
+  config.gem "hpricot", :version => '>=0.8.1'
   config.gem "rspec", :lib => false, :version => ">= 1.2.6"
   config.gem "rspec-rails", :lib => false, :version => ">= 1.2.6"
   config.gem "authlogic"
@@ -83,3 +84,6 @@ Rails::Initializer.run do |config|
   # Please note that observers generated using script/generate observer need to have an _observer suffix
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 end
+
+require 'open-uri'
+
