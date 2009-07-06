@@ -5,8 +5,12 @@
 
 - unless @user.about.blank?
   %p
-    %strong= "About #{@user.first_name}"
     = @user.about
+
+- unless @user.started_using_ruby_on.blank?
+  %p
+    %strong Started using Ruby 
+    = @user.started_using_ruby_on.strftime('%B %Y')
 
 - unless @user.links.blank?
   %p

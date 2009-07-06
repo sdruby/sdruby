@@ -9,12 +9,17 @@
     %h2 Profile
 
     %p
-      %label{:for => "user_about"} About you:
+      %label{:for => "user_about"} Tell us about you:
       = f.text_area :about, :size => "35x5"
 
     %p
       %label{:for => "user_links"} Links:
       = f.text_area :links, :size => "35x5"
+      
+    %p
+      %label{:for => "user_started_using_ruby_on"} When did you start using Ruby?
+      .select
+        = f.date_select :started_using_ruby_on, :discard_day => true, :order => [:month, :year], :start_year => 1995, :end_year => Time.now.year
       
     %p
       %label{:for => "user_github_username"} GitHub Username:

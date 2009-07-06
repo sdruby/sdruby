@@ -59,19 +59,28 @@ h2
 
 form
   :margin 12px 0
-  input, textarea
+  input, textarea, select
     :color #666
     :display block
     :font-size 16px
     :margin 3px 0 12px 0
     :padding 3px
+  select
+    :margin 0
+    :padding 0
   input[type=submit]
     :color #000
+  input[type=hidden]
+    :display none
   label
     :display block
     :font-size 16px
   .check_box input, label
     :display inline
+  .select
+    :margin -9px 0 0 0
+    select
+      :display inline
   #podcast_screenshot
     :color #98908c
     :font-size 14px
