@@ -1,0 +1,5 @@
+%h1=t "Projects"
+
+.profile
+  %ul#projects
+    = @projects.map { |project| project[1].full_name + show_github_projects_for(project[1]) }
