@@ -15,7 +15,11 @@
     %p
       %label{:for => "user_links"} Links:
       = f.text_area :links, :size => "35x5"
-      
+  
+    %p
+      %label{:for => "user_neighborhood"} What neighborhood do you live in?
+      = f.text_field :neighborhood, :size => 30
+    
     %p
       %label{:for => "user_started_using_ruby_on"} When did you start using Ruby?
       .select
@@ -26,8 +30,12 @@
       = f.text_field :github_username, :size => 30
 
     %p
+      %label{:for => "user_available_for_work"} Available for work?
+      = f.check_box :available_for_work
+
+    %p
       %label{:for => "user_avatar"} Avatar:
-      = f.file_field :avatar
+      = f.file_field :avatar, :size => 20
     
     %p
       = f.submit "Save"

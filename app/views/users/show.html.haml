@@ -11,11 +11,9 @@
     
     - unless @user.github_projects.blank?
       %p
-        %strong GitHub Projects
+        %strong Projects
         %ul#projects
           = show_github_projects_for(@user)
-
-
       
   #basics
   
@@ -28,11 +26,18 @@
       %p
         = @user.about
 
-    - unless @user.started_using_ruby_on.blank?
-      %p
-        %strong Started using Ruby
-        in
-        = @user.started_using_ruby_on.strftime('%B %Y')
+    %ul#stats
+      - unless @user.started_using_ruby_on.blank?
+        %li
+          Using Ruby since
+          = @user.started_using_ruby_on.strftime('%B %Y')
+      - unless @user.neighborhood.blank?
+        %li
+          Lives in
+          = @user.neighborhood
+      - unless not @user.available_for_work?
+        %li
+          Available for work
       
     %p
       = link_to 'edit profile', edit_user_path(@user)

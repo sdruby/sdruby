@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090706160046) do
+ActiveRecord::Schema.define(:version => 20090707171510) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -69,6 +69,8 @@ ActiveRecord::Schema.define(:version => 20090706160046) do
     t.string   "github_username"
     t.text     "github_projects"
     t.date     "started_using_ruby_on"
+    t.string   "neighborhood"
+    t.boolean  "available_for_work"
   end
 
   create_table "widgets", :force => true do |t|
