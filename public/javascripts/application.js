@@ -35,6 +35,7 @@ $(document).ready(function() {
     $(".published_in_2006").show();
   });
   
-  $(':checkbox').iphoneStyle();
+  if ( $('.panel').length > 0 )
+    $(':checkbox').iphoneStyle();
   
 });
