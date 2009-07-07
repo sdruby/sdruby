@@ -9,6 +9,7 @@ users:
     default_percent: 100
   full_name:
     min: 2
+    nil: false
   avatar_content_type:
     nil_percent: 100
   avatar_file_size:
