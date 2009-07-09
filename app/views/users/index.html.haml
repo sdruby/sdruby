@@ -1,11 +1,14 @@
-%h1=t "Members"
+%h1=t "SD Ruby Members"
 
 %table#members
   - @users.each do |user|
     %tr.member
       %td= link_to(image_tag(user.avatar.url(:small), :size => "48x48"), user)
       %td= link_to user.full_name, user
-      %td= user.neighborhood
+      - if user.neighborhood?
+        %td= user.neighborhood
+      - else
+        %td ...
       - if user.github_projects?
         %td= pluralize(YAML::load(user.github_projects || 0).size, 'project')
       - else

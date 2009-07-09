@@ -3,6 +3,11 @@
 
   #links_and_projects
 
+    - unless @user.about.blank?
+      %p#about
+        = @user.about
+        %br
+      
     - unless @user.links.blank?
       %p
         %strong= "Links"
@@ -22,10 +27,6 @@
 
     %h1=t @user.full_name
 
-    - unless @user.about.blank?
-      %p
-        = @user.about
-
     %ul#stats
       - unless @user.started_using_ruby_on.blank?
         %li
@@ -39,7 +40,8 @@
         %li
           Available for work
       
-    %p
-      = link_to 'edit profile', edit_user_path(@user)
+    - if @user == current_user
+      %p
+        = link_to 'edit profile', edit_user_path(@user)
     
   %br.clear
