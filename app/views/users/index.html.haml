@@ -1,9 +1,11 @@
 %h1=t "Members"
 
-%table
+%table#members
   - @users.each do |user|
-    %tr
+    %tr.member
       %td= link_to(image_tag(user.avatar.url(:small), :size => "48x48"), user)
       %td= link_to user.full_name, user
-
+      %td= user.neighborhood
+      %td= pluralize(YAML::load(user.github_projects).size, 'project')
+      
 %br/

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_filter :require_login_and_authorize, :only => [:edit, :update]
 
   def index
-    @users = User.all(:order => "full_name")
+    @users = User.all(:order => "full_name ASC")
   end
   
   def new
