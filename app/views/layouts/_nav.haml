@@ -1,8 +1,12 @@
-#nav
-  - if current_user
-    = link_to "logout", logout_path
-  - else
-    = link_to "login", login_path
-    = link_to "register", register_path
+%ul#nav
+  %li Home
+  %li Members
+  %li= link_to "jobs", jobs_path
+  %li
+    - if current_user
+      = link_to "Logout", logout_path
+    - else
+      = link_to "Login", login_path
+      = link_to "Register", register_path
 
-  = link_to "jobs", jobs_path
+  
