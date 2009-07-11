@@ -1,4 +1,10 @@
-%h1=t "SD Ruby Members"
+-t "Members"
+
+%p
+  SD Ruby is an awesome group of designers, developers, and all-around cool people.
+  At present, we have
+  = User.count
+  users, created over 34 open-source projects, and given 64 talks about Ruby and related topics.
 
 %table#members
   - @users.each do |user|

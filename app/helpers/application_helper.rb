@@ -37,4 +37,17 @@ module ApplicationHelper
     end
   end
 
+  def check_if_active(controller)
+  
+    if @controller.controller_name == controller.to_s
+      return "active"
+    elsif @controller.action_name == controller.to_s
+      return "active"
+    else
+      return nil
+    end
+
+  end
+  
 end
+
