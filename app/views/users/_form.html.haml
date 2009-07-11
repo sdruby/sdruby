@@ -1,4 +1,8 @@
 %p
+  %label{:for => "user_avatar"} Avatar:
+  = f.file_field :avatar
+  
+%p
   %label{:for => "user_full_name"} Full name:
   = f.text_field :full_name, :size => 30
 

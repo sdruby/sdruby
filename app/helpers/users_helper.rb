@@ -19,11 +19,11 @@ module UsersHelper
   
   def show_github_projects_for(user)
     projects = String.new
-    YAML::load(user.github_projects).sort.each do |repo, description|
+    user.projects.each do |project|
       projects << "<li>"
-      projects << link_to(repo, "http://github.com/#{user.github_username}/#{repo}")
-      projects << "<span>" + description + "</span>"
-      projects << "</li>\n"
+      projects << link_to(project.name, "http://github.com/#{user.github_username}/#{project.name}")
+      projects << "<span>" + project.description + "</span>"
+      projects << "</li>\n"      
     end
     return projects
   end

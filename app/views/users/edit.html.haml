@@ -34,8 +34,8 @@
       = f.check_box :available_for_work
 
     %p
-      %label{:for => "user_avatar"} Avatar:
-      = f.file_field :avatar, :size => 20
+      %label{:for => "user_show_email"} Show email?
+      = f.check_box :show_email
     
     %p
       = f.submit "Save"

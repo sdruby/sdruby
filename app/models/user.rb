@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :jobs
+  has_many :projects
 
   acts_as_authentic
 
@@ -29,20 +30,19 @@ class User < ActiveRecord::Base
       doc = Hpricot.XML(open("http://github.com/api/v2/xml/repos/show/#{self.github_username.strip}/"))
 
       repos = Array.new
+      
+      # Projects.user.delete
 
       (doc/:repositories).each do |repository|
         (repository/:name).each_with_index do |name, index|
-          unless (repository/:fork)[index].inner_html == 'true' 
-            repos << [name.inner_html, (repository/:description)[index].inner_html]
+          unless (repository/:fork)[index].inner_html == 'true'
+            self.projects << Project.new(:name => name.inner_html, :description => (repository/:description)[index].inner_html)
           end
         end
       end
-      self.github_projects = repos.to_yaml
       rescue
-        self.github_projects = ''
       end
     else
-      self.github_projects = ''
     end
   end
 

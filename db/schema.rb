@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090707171510) do
+ActiveRecord::Schema.define(:version => 20090711193504) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -48,6 +48,14 @@ ActiveRecord::Schema.define(:version => 20090707171510) do
     t.integer  "movie_size"
   end
 
+  create_table "projects", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "full_name"
     t.string   "email"
@@ -57,20 +65,20 @@ ActiveRecord::Schema.define(:version => 20090707171510) do
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
-    t.string   "crypted_password",                     :null => false
-    t.string   "password_salt",                        :null => false
-    t.string   "persistence_token",                    :null => false
-    t.string   "single_access_token",                  :null => false
-    t.string   "perishable_token",                     :null => false
-    t.integer  "login_count",           :default => 0, :null => false
-    t.integer  "failed_login_count",    :default => 0, :null => false
+    t.string   "crypted_password",                         :null => false
+    t.string   "password_salt",                            :null => false
+    t.string   "persistence_token",                        :null => false
+    t.string   "single_access_token",                      :null => false
+    t.string   "perishable_token",                         :null => false
+    t.integer  "login_count",           :default => 0,     :null => false
+    t.integer  "failed_login_count",    :default => 0,     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "github_username"
-    t.text     "github_projects"
     t.date     "started_using_ruby_on"
     t.string   "neighborhood"
     t.boolean  "available_for_work"
+    t.boolean  "show_email",            :default => false
   end
 
   create_table "widgets", :force => true do |t|

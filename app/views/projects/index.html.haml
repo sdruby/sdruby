@@ -1,5 +1,25 @@
 %h1=t "Projects"
 
-.profile
-  %ul#projects
-    = @projects.map { |project| project[1].full_name + show_github_projects_for(project[1]) }
+%p#projects_intro
+  This is a list of 
+  = @projects.size
+  open-source projects created by SD Ruby members.
+
+%ul#by_alpha.projects
+  - @projects.each do |project|
+    %li
+      = link_to(project.name, "http://github.com/#{project.user.github_username}/#{project.name}")
+      %span
+        = project.description
+      / = link_to(image_tag(project.user.avatar.url(:small), :size => "24x24"), project.user)
+      / = link_to project.user.full_name, project.user
+
+%ul#by_member.users
+  - @users.each do |user|
+    %li
+      .user
+        = link_to(image_tag(user.avatar.url(:small), :size => "36x36"), user)
+        .name
+          = link_to user.full_name, user
+      %ul.projects
+        = show_github_projects_for(user)

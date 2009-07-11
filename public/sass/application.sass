@@ -513,6 +513,9 @@ ul#filter
   img
     :border 5px solid #261B13
   
+#members_intro
+  :margin-left 15px
+
 
 // Member profile
 
@@ -549,15 +552,48 @@ ul#filter
         :margin-right 3px
         :vertical-align middle
 
-  #projects
+// Projects
+
+.projects
+  span
+    :color #776D67
+    :display block
+    :margin 3px 0
+  li
     :margin 12px 0
-    span
-      :color #776D67
-      :display block
-      :margin 3px 0
+
+#projects_intro
+  :margin-bottom 12px
+
+#tabs
+  :margin 12px 0
+  ul:first
     li
-      :margin 12px 0
-  
+      :margin 0 10px 0 0
+      a
+        :text-decoration none
+    li.active
+      a
+        :text-decoration underline
+
+#by_alpha
+  :clear left
+  :display none
+
+#by_member
+  :clear left
+  :margin-top -10px
+  .user
+    :height 36px
+    :margin 40px 0 20px 0
+    .name
+      :padding-top 6px
+    img
+      :float left
+      :margin 0 10px 0 0
+  li
+    .projects
+      :margin-left 47px
 
 // Miscellaneous
 

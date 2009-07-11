@@ -1,10 +1,7 @@
 -t "Members"
 
-%p
-  SD Ruby is an awesome group of designers, developers, and all-around cool people.
-  At present, we have
-  = User.count
-  users, created over 34 open-source projects, and given 64 talks about Ruby and related topics.
+%p#members_intro
+  SD Ruby is an awesome group of developers, designers, and all-around cool people.
 
 %table#members
   - @users.each do |user|
@@ -15,8 +12,8 @@
         %td= user.neighborhood
       - else
         %td ...
-      - if user.github_projects?
-        %td= pluralize(YAML::load(user.github_projects || 0).size, 'project')
+      - if not user.projects.empty?
+        %td= pluralize(user.projects.count, 'project')
       - else
         %td ...
       

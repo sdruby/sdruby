@@ -14,10 +14,10 @@
         %ul#links
           = iconify_and_link @user.links, :size => 32
     
-    - unless @user.github_projects.blank?
+    - unless @user.projects.empty?
       %p
         %strong Projects
-        %ul#projects
+        %ul.projects
           = show_github_projects_for(@user)
       
   #basics
@@ -39,6 +39,10 @@
       - unless not @user.available_for_work?
         %li
           Available for work
+      - unless not @user.show_email?
+        %li
+          = enkode_mail(@user.email,'Email me')    
+      
       
     - if @user == current_user
       %p

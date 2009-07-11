@@ -1,11 +1,8 @@
 class ProjectsController < ApplicationController
 
   def index
-    @users = User.all
-    @projects = Array.new
-    @users.each do |user|
-      @projects << [YAML::load(user.github_projects), user]
-    end
+    @projects = Project.find(:all, :order => "name ASC")
+    @users = User.find(:all, :order => "full_name ASC")
   end
 
 end
