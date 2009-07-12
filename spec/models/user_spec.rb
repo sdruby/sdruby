@@ -9,7 +9,8 @@ describe User do
       :password_confirmation => 'test',
       :avatar_file_name => 'Pic 001.gif',
       :avatar_content_type => 'image/gif',
-      :avatar_file_size => 3242
+      :avatar_file_size => 3242,
+      :neighborhood => "South Park"
     }
   end
 

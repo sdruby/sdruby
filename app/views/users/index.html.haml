@@ -8,7 +8,7 @@
     %tr.member
       %td= link_to(image_tag(user.avatar.url(:small), :size => "48x48"), user)
       %td= link_to user.full_name, user
-      - if user.neighborhood?
+      - unless user.neighborhood.blank?
         %td= user.neighborhood
       - else
         %td ...
