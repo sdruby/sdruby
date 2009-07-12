@@ -26,12 +26,13 @@ class User < ActiveRecord::Base
 
   def grab_projects
     unless self.github_username.blank?
+      
+      # Destroy existing projects
+      self.projects.destroy_all
+      
+      # Grab new projects
       begin
       doc = Hpricot.XML(open("http://github.com/api/v2/xml/repos/show/#{self.github_username.strip}/"))
-
-      repos = Array.new
-      
-      # Projects.user.delete
 
       (doc/:repositories).each do |repository|
         (repository/:name).each_with_index do |name, index|
@@ -40,9 +41,11 @@ class User < ActiveRecord::Base
           end
         end
       end
-      rescue
+      rescue #if no projects are found
       end
     else
+      # Destroy existing projects (if github username is blank)
+      self.projects.destroy_all
     end
   end
 
