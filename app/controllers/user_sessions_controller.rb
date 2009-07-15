@@ -26,10 +26,12 @@ class UserSessionsController < ApplicationController
   end
 
   private
+  
   def require_not_logged_in
     if current_user
       redirect_to account_path
     end
   end
+
 end
 

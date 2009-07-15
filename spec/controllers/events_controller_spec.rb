@@ -34,35 +34,6 @@ describe EventsController do
     end
   end
 
-  describe "handling GET /events.xml" do
-
-    before(:each) do
-      @event = fuzzy_events.create!
-      Event.stub!(:find).and_return(@event)
-    end
-  
-    def do_get
-      @request.env["HTTP_ACCEPT"] = "application/xml"
-      get :index
-    end
-  
-    it "should be successful" do
-      do_get
-      response.should be_success
-    end
-
-    it "should find all events" do
-      Event.should_receive(:find).with(:all).and_return([@event])
-      do_get
-    end
-  
-    it "should render the found events as xml" do
-      @event.should_receive(:to_xml).and_return("XML")
-      do_get
-      response.body.should == "XML"
-    end
-  end
-
   describe "handling GET /events/1" do
 
     before(:each) do
@@ -92,35 +63,6 @@ describe EventsController do
     it "should assign the found event for the view" do
       do_get
       assigns[:event].should equal(@event)
-    end
-  end
-
-  describe "handling GET /events/1.xml" do
-
-    before(:each) do
-      @event = fuzzy_events.create!
-      Event.stub!(:find).and_return(@event)
-    end
-  
-    def do_get
-      @request.env["HTTP_ACCEPT"] = "application/xml"
-      get :show, :id => "1"
-    end
-
-    it "should be successful" do
-      do_get
-      response.should be_success
-    end
-  
-    it "should find the event requested" do
-      Event.should_receive(:find).with("1").and_return(@event)
-      do_get
-    end
-  
-    it "should render the found event as xml" do
-      @event.should_receive(:to_xml).and_return("XML")
-      do_get
-      response.body.should == "XML"
     end
   end
 
