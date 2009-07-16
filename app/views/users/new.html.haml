@@ -1,4 +1,4 @@
-%h1=t "Member Signup"
+%h1=t "Signup"
 
 = error_messages_for :user
 
@@ -6,6 +6,6 @@
   = render :partial => 'form', :locals => {:f => f}
   
   %p
-    = f.submit "Sign Up"
+    = f.submit "Create account"
 
 %p= link_to 'Back', users_path
