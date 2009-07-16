@@ -12,6 +12,7 @@
     = auto_discovery_link_tag(:atom, "http://feeds2.feedburner.com/sdrbpodcast", {:title => "SD Ruby Podcast"})
   %body
     #page
+      = render :partial => "layouts/login"
       = render :partial => "layouts/header"
       = render :partial => "layouts/slogan"
       = render :partial => "layouts/navigation"

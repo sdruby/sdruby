@@ -1,0 +1,12 @@
+#login
+  - if current_user
+    = link_to(image_tag(current_user.avatar.url(:small), :size => "24x24"), current_user)
+    .text
+      Hey,
+      = link_to(current_user.full_name, current_user, :class => "name") + "."
+      = link_to "Logout", logout_path
+  - else
+    .text
+      = link_to "Login", login_path
+      or
+      = link_to "Signup", register_path

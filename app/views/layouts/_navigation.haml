@@ -1,17 +1,7 @@
-
 #navigation
   %ul
     %li{:class => check_if_active(:home)}= link_to "Home", root_path
-    %li{:class => check_if_active(:podcasts)}= link_to "Podcast", podcasts_path
-    %li{:class => check_if_active(:projects)}= link_to "Projects", projects_path
     %li{:class => check_if_active(:users)}= link_to "Members", users_path
-    %li{:class => check_if_active(:sponsors)}= link_to "Sponsors", sponsors_path
-
-  / #login
-  /   - if current_user
-  /     Logged in as
-  /     = current_user.full_name
-  /     = link_to "Logout", logout_path
-  /   - else
-  /     = link_to "Login", login_path
-  /     = link_to "Signup", register_path
+    %li{:class => check_if_active(:projects)}= link_to "Projects", projects_path
+    %li{:class => check_if_active(:podcasts)}= link_to "Podcast", podcasts_path
+    %li{:class => check_if_active(:jobs)}= link_to "Jobs", jobs_path

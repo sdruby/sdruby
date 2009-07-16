@@ -108,11 +108,36 @@ td
 // Layout
 
 #page
-  :margin 30px auto
+  :margin 20px auto 30px auto
   :width 900px
 
+#login
+  :color #55483F
+  :height 30px
+  :text-align left
+  :font-size 14px
+  :margin 10px 10px 5px 5px
+  a
+    :color #98908c
+    :font-weight normal
+  a.name
+    :color #55483F
+    :font-weight bold
+    :text-decoration none
+    &:hover
+      :text-decoration underline
+  img
+    :border 1px solid #333
+    :margin -5px 5px 0 0
+    :float left
+  .text
+    :display block
+    :font-weight bold
+    :float left
+    :padding 0 0 0 0
+      
 #header
-  :background url('/images/application/header.png') #fff no-repeat
+  :background #fff no-repeat
   :height 133px
   #logo
     :float left
@@ -180,18 +205,10 @@ td
     :background #312218
     a
       :color #fff
-  #login
-    :float right
-    :font-size 14px
-    a
-      :color #fff
-      :display block
-      :float left
-      :margin 0 5px
   
 #content
   :background #312218
-  :min-height 400px
+  :min-height 500px
   :padding 20px
   a
     :color #98908c
@@ -306,7 +323,7 @@ label
 
 #promo
   :float right
-  :margin-top 5px
+  :margin-top -5px
   :width 370px
   h2  
     :margin-left 10px
@@ -314,11 +331,6 @@ label
       :color #fff
   #name 
     :margin 12px 0 12px 10px
-    a
-      :color #ccc
-      :text-decoration none
-      &:hover
-        :text-decoration underline
       
   #more
     :float left
@@ -500,7 +512,6 @@ ul#filter
         &:hover
           :color #fff
 
-
 // Members
 
 #members
@@ -515,7 +526,6 @@ ul#filter
   
 #members_intro
   :margin-left 15px
-
 
 // Member profile
 
@@ -593,4 +603,3 @@ ul#filter
 .panel
   :float left
   :margin-right 60px
-
