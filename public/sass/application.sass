@@ -132,6 +132,8 @@ td
     :border 1px solid #333
     :margin -5px 5px 0 0
     :float left
+    &:hover
+      :border 1px solid #222
   .text
     :display block
     :font-weight bold
@@ -335,7 +337,6 @@ label
       :color #fff
   #name 
     :margin 12px 0 12px 10px
-      
   #more
     :float left
     :font-size 14px
@@ -527,6 +528,8 @@ ul#filter
 .member
   img
     :border 5px solid #261B13
+    &:hover
+      :border 5px solid #1B140D
   
 #members_intro
   :margin-left 15px
@@ -590,11 +593,18 @@ ul#filter
     :height 36px
     :margin 40px 0 20px 0
     .name
-      :padding-top 12px
+      :padding-top 10px
+      :font-size 24px
+      a
+        :text-decoration none
+        &:hover
+          :text-decoration underline
     img
       :border 5px solid #261B13
       :float left
       :margin 0 10px 0 0
+      &:hover
+        :border 5px solid #1B140D
   li
     .projects
       :margin-left 57px
