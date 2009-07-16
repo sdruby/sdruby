@@ -2,14 +2,14 @@
 
 #promo
 
-  %h2
-    Latest from the
-    = link_to "SD Ruby Podcast", podcasts_path
-
   .screenshot
     - if @podcast && @podcast.screenshot
       = link_to(image_tag(@podcast.screenshot.url, :size => "345x266", :alt => "Episode #{@podcast.id}"), podcasts_path)
 
+  %h2
+    Latest from the
+    = "#{link_to "SD Ruby Podcast", podcasts_path}:"
+        
   #name
     - if @podcast
       = link_to "Episode 0#{@podcast.id}: #{@podcast.name}", podcasts_path
