@@ -1,19 +1,19 @@
 %p
   %label{:for => "user_avatar"} Avatar:
-  = f.file_field :avatar
+  = f.file_field :avatar, :size => 20
   
 %p
   %label{:for => "user_full_name"} Full name:
-  = f.text_field :full_name, :size => 30
+  = f.text_field :full_name, :size => 35
 
 %p
   %label{:for => "user_email"} Email:
-  = f.text_field :email, :size => 30
+  = f.text_field :email, :size => 35
 
 %p
   %label{:for => "user_password"} Password:
-  = f.password_field :password, :size => 30
+  = f.password_field :password, :size => 35
 
 %p
   %label{:for => "user_password_confirmation"} Password confirmation:
-  = f.password_field :password_confirmation, :size => 30
+  = f.password_field :password_confirmation, :size => 35

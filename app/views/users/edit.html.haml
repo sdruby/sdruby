@@ -4,30 +4,35 @@
 
 - form_for(@user, :html => { :multipart => true }) do |f|
 
+  %p.save
+    = f.submit "Save changes"
+    or
+    = link_to 'View Profile', @user
+  
   .panel
   
     %h2 Profile
 
     %p
       %label{:for => "user_about"} Tell us about you:
-      = f.text_area :about, :size => "35x5"
+      = f.text_area :about, :size => "37x5"
 
     %p
       %label{:for => "user_links"} Links:
-      = f.text_area :links, :size => "35x5"
+      = f.text_area :links, :size => "37x5"
   
     %p
+      %label{:for => "user_github_username"} GitHub username:
+      = f.text_field :github_username, :size => 35
+        
+    %p
       %label{:for => "user_neighborhood"} What neighborhood do you live in?
-      = f.text_field :neighborhood, :size => 30
-    
+      = f.text_field :neighborhood, :size => 35
+        
     %p
       %label{:for => "user_started_using_ruby_on"} When did you start using Ruby?
       .select
         = f.date_select :started_using_ruby_on, :discard_day => true, :order => [:month, :year], :start_year => 1995, :end_year => Time.now.year
-      
-    %p
-      %label{:for => "user_github_username"} GitHub Username:
-      = f.text_field :github_username, :size => 30
 
     %p
       %label{:for => "user_available_for_work"} Available for work?
@@ -36,12 +41,6 @@
     %p
       %label{:for => "user_show_email"} Show email?
       = f.check_box :show_email
-    
-    %p
-      = f.submit "Save changes"
-      or
-      = link_to 'Back to Profile', @user
-      
   
   .panel
 
