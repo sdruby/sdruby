@@ -1,24 +1,15 @@
 - form_for(@job) do |f|
-  %label{:for => 'title'}
-    title:
+
+  %label{:for => 'title'} Title:
   = f.text_field :title
 
-  %label{:for => 'description'}
-    description:
+  %label{:for => 'job_description'} Description:
   = f.text_area :description, :cols => 60
+  = link_to 'markdown available', ' http://daringfireball.net/projects/markdown/syntax'
 
-  %label{:for => 'contract'}
-    contract?
+  %label{:for => 'job_contract'} Contract?
   = f.check_box :contract
 
-  %label{:for => 'publsihed'}
-    publish?
+  %label{:for => 'job_published'} Publish?
   = f.check_box :published
-
-  = submit_tag 'submit'
-
-
-
-
-  
   
