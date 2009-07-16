@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
                     :styles => { :small  => "48x48#", :medium  => "128x128#", :large  => "256x256#" }, 
                     :path => ":rails_root/public/images/users/avatars/:id/:style.:extension",
                     :url => "/images/users/avatars/:id/:style.:extension",
-                    :default_url => "/images/users/avatar.png"
+                    :default_url => "/images/users/avatar_:style.png"
                     
   def is_admin?
     self.id == 1 ? true : false
