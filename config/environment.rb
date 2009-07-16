@@ -2,9 +2,6 @@
 
 # Redcloth is loaded by actioncontroller which f's up everything if
 # you have a different version in rubygems than is frozen
-require 'rubygems'
-gem 'RedCloth', "4.1.1"
-require 'RedCloth'
 require 'open-uri'
 
 # Uncomment below to force Rails into production mode when
@@ -30,13 +27,13 @@ Rails::Initializer.run do |config|
   # Specify gems that this application depends on. 
   # They can then be installed with "rake gems:install" on new installations.
   # You have to specify the :lib option for libraries, where the Gem name (sqlite3-ruby) differs from the file itself (sqlite3)
+
   config.gem "haml"
-  config.gem "hpricot", :version => '>=0.8.1'
-  config.gem "rspec", :lib => false, :version => ">= 1.2.6"
-  config.gem "rspec-rails", :lib => false, :version => ">= 1.2.6"
+  config.gem "rspec", :lib => false
+  config.gem "rspec-rails", :lib => false
   config.gem "authlogic"
-  config.gem "RedCloth", :version => "4.1.1"
   config.gem 'mislav-will_paginate', :lib => false, :version => '>= 2.3.11'
+
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
