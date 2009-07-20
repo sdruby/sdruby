@@ -1,9 +1,5 @@
 # Be sure to restart your server when you modify this file
 
-# Redcloth is loaded by actioncontroller which f's up everything if
-# you have a different version in rubygems than is frozen
-require 'open-uri'
-
 # Uncomment below to force Rails into production mode when
 # you don't control web/app server and can't set it the proper way
 # ENV['RAILS_ENV'] ||= 'production'
@@ -82,4 +78,15 @@ Rails::Initializer.run do |config|
   # Activate observers that should always be running
   # Please note that observers generated using script/generate observer need to have an _observer suffix
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
+end
+
+# We need open-uri to grab GitHub projects
+require 'open-uri'
+
+# Markdown support
+begin
+  require 'rdiscount'
+  BlueCloth = RDiscount
+rescue LoadError
+  require 'bluecloth'
 end

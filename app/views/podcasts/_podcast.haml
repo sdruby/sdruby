@@ -4,6 +4,6 @@
   .details
     %h3
       = link_to "Episode 0#{podcast.id}: #{podcast.name}", podcast_path(podcast.id)
-    %p= truncate(strip_tags(RedCloth.new(podcast.description).to_html).squish, {:length => 180})
+    %p= truncate(strip_tags(markdown(podcast.description)).squish, {:length => 180})
     .watch
       = link_to "Watch", podcast.movie_link

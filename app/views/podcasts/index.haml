@@ -7,7 +7,7 @@
 
     %h2= "Episode 0#{@podcast.id}: #{@podcast.name}"
 
-    %p= RedCloth.new(@podcast.description).to_html
+    %p= markdown(@podcast.description)
 
     .watch_now
       = link_to "Watch now", @podcast.movie_link if @podcast
