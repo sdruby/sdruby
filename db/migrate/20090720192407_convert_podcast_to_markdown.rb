@@ -3,6 +3,7 @@ class ConvertPodcastToMarkdown < ActiveRecord::Migration
   def self.up
     Podcast.find(:all).each do |podcast|
       podcast.description = podcast.description.gsub(/\"([^\"]*)\"\:([^[:space:],]*)/, ('[\1](\2)'))
+      podcast.description = podcast.description.gsub(/\.\)/,').')
       podcast.save
     end
   end
