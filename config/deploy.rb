@@ -1,10 +1,10 @@
-set :application, "new.sdruby.com"
+set :application, "sdruby.org"
 set :repository,  "git://github.com/mokolabs/sdruby.git"
 
 # If you aren't deploying to /u/apps/#{application} on the target
 # servers (which is the default), you can specify the actual location
 # via the :deploy_to variable:
-set :deploy_to, "/home/admin/www/public/#{application}"
+set :deploy_to, "/var/www/apps/#{application}"
 
 # If you aren't using Subversion to manage your source code, specify
 # your SCM below:
@@ -12,11 +12,14 @@ set :scm, :git
 set :branch, "master"
 set :deploy_via, :remote_cache
 
-role :app, "new.sdruby.com"
-role :web, "new.sdruby.com"
-role :db,  "new.sdruby.com", :primary => true
+# role :app, :application
+# role :web, :application
+# role :db,  :application, :primary => true
+role :app, "8.17.171.89"
+role :web, "8.17.171.89"
+role :db,  "8.17.171.89", :primary => true
 
-set :user, "admin"
+set :user, "jill"
 set :mongrel_config, "#{current_path}/config/mongrel_cluster.yml"
 
 after  'deploy:update_code',  'deploy:symlink_configs'
