@@ -19,7 +19,7 @@ role :app, "8.17.171.89"
 role :web, "8.17.171.89"
 role :db,  "8.17.171.89", :primary => true
 
-set :user, "jill"
+set :user, "admin"
 set :mongrel_config, "#{current_path}/config/mongrel_cluster.yml"
 
 after  'deploy:update_code',  'deploy:symlink_configs'
@@ -53,7 +53,7 @@ namespace :deploy do
 
   desc "Link videos"
   task :symlink_video, :roles => [:web] do
-    run "ln -nfs  /home/admin/www/public/new.sdruby.com/shared/system/video #{latest_release}/public/video"
+    run "ln -nfs  #{shared_path}/system/video #{latest_release}/public/video"
   end
   
   desc "Restart mongrel_cluster(which restarts rails)"

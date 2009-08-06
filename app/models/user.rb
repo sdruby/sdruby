@@ -41,7 +41,8 @@ class User < ActiveRecord::Base
           end
         end
       end
-      rescue #if no projects are found
+      rescue Exception => e#if no projects are found
+        Rails.logger.error(e.inspect)
       end
     else
       # Destroy existing projects (if github username is blank)
