@@ -47,8 +47,12 @@ namespace :deploy do
 
   desc "Link images to production"
   task :symlink_images, :roles => [:web] do
+    # Podcast screenshots
     run "rm -f #{latest_release}/public/images/screenshots"
     run "ln -nfs #{shared_path}/system/screenshots #{latest_release}/public/images/screenshots"
+    # Member avatars
+    run "rm -f #{latest_release}/public/images/users/avatars"
+    run "ln -nfs #{shared_path}/system/avatars #{latest_release}/public/images/users/avatars"
   end
 
   desc "Link videos"
