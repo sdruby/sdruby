@@ -4,7 +4,7 @@ Currently, this application includes support for our video podcast, member signu
 
 ### Podcast ###
 
-Thanks to UCSD, we're able to record SD Ruby meetings, and publish our talks as a video podcast.
+Thanks to UCSD, we're able to record SD Ruby meetings, and publish our talks as a [video podcast](http://sdruby.org/podcast).
 
 The podcast code can generate both an Atom feed and an RSS feed (with custom iTunes RSS extensions).
 
