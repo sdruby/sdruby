@@ -1,10 +1,10 @@
 # SD Ruby #
 
-This app serves as the web home of SD Ruby, a local Ruby user group, based in San Diego, CA.
+This app serves as the web home of SD Ruby, a local Ruby user group based in San Diego, CA.
 
-Currently, the app includes support for video podcasts, member profiles, and a Github project list. We're also working on adding a job board and other features.
+Currently, this application includes support for our video podcast, member signup and registration, member profiles, and a Github project list. We're also working on adding a job board and other features.
 
-Other Ruby groups should feel free to use this code as the basis for their group website.
+If you belong to another Ruby group, feel free to fork this code as the basis for your group's website.
 
 ### Podcast ###
 
