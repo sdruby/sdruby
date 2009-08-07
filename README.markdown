@@ -15,13 +15,13 @@ Thanks to UCSD, we're able to record SD Ruby meetings, and publish our talks as 
 The member guide contains a list of all SD Ruby members.
 
 Member profiles can include:
-- Full name
-- Avatar image
-- Github ID
-- Neighborhood
-- Ruby experience
-- Work availability 
-- Contact email (if public)
+* Full name
+* Avatar image
+* Github ID
+* Neighborhood
+* Ruby experience
+* Work availability 
+* Contact email (if public)
 
 ## Project List ###
 
