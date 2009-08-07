@@ -1,8 +1,8 @@
+# Overview #
+
 This app serves as the web home of SD Ruby, a local Ruby user group based in San Diego, CA.
 
 Currently, this application includes support for our video podcast, member signup and registration, member profiles, and a Github project list. We're also working on adding a job board and other features.
-
-If you belong to another Ruby group, feel free to fork this code as the basis for your group's website.
 
 ### Podcast ###
 
@@ -32,8 +32,8 @@ The list of projects shows off all Github projects created by SD Ruby members.
 
 Thanks to the following people for helping build this app:
 
-* Patrick Crowley
 * Neal Clark
+* Patrick Crowley
 * Jordan Fowler
 * Rob Kaufman
 * Nick Zadrozny
