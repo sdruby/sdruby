@@ -10,7 +10,7 @@ The podcast code can generate both an Atom feed and an RSS feed (with custom iTu
 
 ### Member Guide ###
 
-The member guide contains a list of all SD Ruby members.
+The [member guide](http://sdruby.org/users) contains a list of all SD Ruby members.
 
 Member profiles can include:
 
@@ -24,7 +24,7 @@ Member profiles can include:
 
 ### Project List ###
 
-The list of projects shows all Github projects created by SD Ruby members.
+The [list of projects](http://sdruby.org/projects) shows all Github projects created by SD Ruby members.
 
 ### Contributors ###
 
