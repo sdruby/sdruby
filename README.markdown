@@ -1,4 +1,4 @@
-# SD Ruby app #
+# SD Ruby #
 
 This app is the website of [SD Ruby](http://sdruby.org), a local Ruby user group based in San Diego, CA.
 
