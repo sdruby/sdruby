@@ -1,4 +1,4 @@
-## Overview ##
+### SD Ruby ###
 
 This app serves as the web home of SD Ruby, a local Ruby user group based in San Diego, CA.
 
@@ -30,7 +30,7 @@ Member profiles can include:
 
 The list of projects shows off all Github projects created by SD Ruby members.
 
-## Contributors ##
+### Contributors ###
 
 Thanks to the following people for helping build this app:
 
