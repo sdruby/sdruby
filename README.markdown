@@ -10,6 +10,8 @@ If you belong to another Ruby group, feel free to fork this code as the basis fo
 
 Thanks to UCSD, we're able to record SD Ruby meetings, and publish our talks as a video podcast.
 
+The podcast code can generate both an Atom feed and an RSS feed (with custom iTunes RSS extensions).
+
 ### Member Guide ###
 
 The member guide contains a list of all SD Ruby members.
@@ -28,3 +30,10 @@ Member profiles can include:
 
 The list of projects shows off all Github projects created by SD Ruby members.
 
+### Contributors ###
+
+* Patrick Crowley
+* Neal Clark
+* Jordan Fowler
+* Rob Kaufman
+* Nick Zadrozny
