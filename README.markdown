@@ -24,7 +24,7 @@ Member profiles can include:
 * Work availability 
 * Contact email (if public)
 
-## Project List ###
+### Project List ###
 
 The list of projects shows off all Github projects created by SD Ruby members.
 
