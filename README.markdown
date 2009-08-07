@@ -4,7 +4,7 @@ This app serves as the web home of SD Ruby, a local Ruby user group based in San
 
 Currently, this application includes support for our video podcast, member signup and registration, member profiles, and a Github project list. We're also working on adding a job board and other features.
 
-# Features #
+## Features ##
 
 ### Podcast ###
 
@@ -30,7 +30,7 @@ Member profiles can include:
 
 The list of projects shows off all Github projects created by SD Ruby members.
 
-# Contributors #
+## Contributors ##
 
 Thanks to the following people for helping build this app:
 
