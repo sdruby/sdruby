@@ -1,39 +1,39 @@
-# SD Ruby 2.0 #
+This app is the website of [SD Ruby](http://sdruby.org), a local Ruby user group based in San Diego, CA.
 
-We're working on this app in a few phases.
+Currently, this application includes support for our video podcast, member signup and registration, member profiles, and a Github project list. We're also working on adding a job board and other features.
 
-In the first phase, we'll update the site design and merge the podcast site into the main website. In the second phase, we'll work towards adding support for calendaring and podcast workflows. Then, we'll work on abstracting this project into something other groups can use.
+## Features ##
 
-Here's a breakdown of the first phase.
+### Podcast ###
 
-### Tasks ###
+Thanks to UCSD, we're able to record SD Ruby meetings, and publish our talks as a [video podcast](http://sdruby.org/podcast).
 
+The podcast code can generate both an Atom feed and an RSS feed (with custom iTunes RSS extensions).
 
-### Completed ###
-- Get running length and file size (in bytes) for all episodes
-- Update feedburner feed with new iTunes-compatible RSS feed
-- Add simple auth for editing/deleting podcast episodes [Rob]
-- Move podcast files over to sdruby.com (update links accordingly) [Rob]
-- Add permanent redirects for old podcast links [Rob]
-- Add support for image attachments via Paperclip [Patrick]
-- Update rake task to import old attachments into new setup [Patrick]
-- Update podcast image on iTunes [Patrick]
-- Atom feed of podcast episodes for iTunes, etc [Patrick]
-- Add jQuery-based filter for showing podcast episodes by year [Patrick]
-- Strip tags from episode descriptions when viewed in lists [Patrick]
-- Add textile support for descriptions [Patrick]
-- Create Rake task to import old podcast data [Patrick]
-- Add model for Podcast [Patrick]
-- Complete podcast index action [Patrick]
-- Complete podcast show action [Patrick]
-- Complete podcast new action [Patrick]
-- Complete podcast edit action [Patrick]
-- Markup and style podcast home [Patrick]
-- Markup and style podcast detail [Patrick]
-- Create basic podcast controller [Patrick]
-- Unfreeze Rails [Rob]
-- Update plugins [Rob]
-- Update the app to Rails 2.2.2 [Rob]
-- Switch gems to use config.gem [Rob]
-- Markup and style basic layout [Patrick]
-- Markup and style homepage [Patrick]
+### Member Guide ###
+
+The [member guide](http://sdruby.org/users) contains a list of all SD Ruby members.
+
+Member profiles can include:
+
+* Full name
+* Avatar image
+* Github ID
+* Neighborhood
+* Ruby experience
+* Work availability 
+* Contact email (if public)
+
+### Project List ###
+
+The [list of projects](http://sdruby.org/projects) shows all Github projects created by SD Ruby members.
+
+## Contributors ##
+
+Thanks to the following people for contributing to this app.
+
+* Neal Clark
+* Patrick Crowley
+* Jordan Fowler
+* Rob Kaufman
+* Nick Zadrozny
