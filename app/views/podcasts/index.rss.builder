@@ -32,7 +32,7 @@ xml.rss "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd",  "xmlns:
     @podcasts.each do  |podcast|
       xml.item do
         xml.title "#{podcast.episode_number}: #{podcast.name}"
-        xml.description markdown(("!#{request_host}#{podcast.screenshot.url}!\n\n#{podcast.description}")), :type => 'html'
+        xml.description markdown(("![#{podcast.episode_number}: #{podcast.name}](#{request_host}#{podcast.screenshot.url})\n\n#{podcast.description}")), :type => 'html'
         xml.pubDate podcast.created_at.to_s(:rfc822)
         xml.enclosure :url => podcast.movie_link, :type => podcast.movie_type, :length => podcast.movie_size
         xml.link podcast_url(podcast)
