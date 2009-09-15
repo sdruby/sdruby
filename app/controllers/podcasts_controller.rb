@@ -1,5 +1,6 @@
 class PodcastsController < ApplicationController
   before_filter :require_user, :except => [:index, :show]
+  
   def index
     @podcasts = Podcast.published.find(:all, :order => "id DESC")
     respond_to do |format|
@@ -7,8 +8,12 @@ class PodcastsController < ApplicationController
         @podcast = @podcasts.shift
         @years = @podcasts.collect { |episode| episode.created_at.strftime('%Y') }.uniq
       end
-      format.atom
-      format.rss
+      format.atom do
+        render :layout => false
+      end
+      format.rss do
+        render :layout => false
+      end
     end
   end
 
