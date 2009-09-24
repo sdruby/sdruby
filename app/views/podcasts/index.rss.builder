@@ -37,7 +37,7 @@ xml.rss "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd",  "xmlns:
         xml.enclosure :url => podcast.movie_link, :type => podcast.movie_type, :length => podcast.movie_size
         xml.link podcast_url(podcast)
         xml.guid({:isPermaLink => "false"}, podcast_url(podcast))
-        xml.itunes :summary, strip_tags(markdown(("!#{request_host}#{podcast.screenshot.url}!\n\n#{podcast.description}"))).gsub('&#8217;',"'")
+        xml.itunes :summary, strip_tags(markdown(podcast.description)).gsub('&#8217;',"'")
         xml.itunes :explicit, 'no'
         xml.itunes :duration, podcast.movie_duration.strip
         # xml.itunes :author, author
