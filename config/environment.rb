@@ -24,8 +24,8 @@ Rails::Initializer.run do |config|
   # They can then be installed with "rake gems:install" on new installations.
   # You have to specify the :lib option for libraries, where the Gem name (sqlite3-ruby) differs from the file itself (sqlite3)
 
-  config.gem "BlueCloth", :lib => 'bluecloth'
   config.gem "haml"
+  config.gem "rdiscount"
   config.gem "rspec", :lib => false
   config.gem "rspec-rails", :lib => false
   config.gem "authlogic"
