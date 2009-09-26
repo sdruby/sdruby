@@ -50,7 +50,7 @@ module ApplicationHelper
   end
   
   def markdown(text)
-    BlueCloth.new(text).to_html
+    RDiscount.new(text).to_html
   end
   
 end
