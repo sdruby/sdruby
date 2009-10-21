@@ -25,6 +25,7 @@ Rails::Initializer.run do |config|
   # You have to specify the :lib option for libraries, where the Gem name (sqlite3-ruby) differs from the file itself (sqlite3)
 
   config.gem "haml"
+  config.gem "newrelic_rpm"
   config.gem "rdiscount"
   config.gem "rspec", :lib => false
   config.gem "rspec-rails", :lib => false
