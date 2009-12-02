@@ -20,7 +20,6 @@ role :web, "8.17.171.89"
 role :db,  "8.17.171.89", :primary => true
 
 set :user, "admin"
-set :mongrel_config, "#{current_path}/config/mongrel_cluster.yml"
 
 after  'deploy:update_code',  'deploy:symlink_configs'
 
@@ -28,7 +27,6 @@ namespace :deploy do
   desc "Symlinks the database and mongrel cluster configs"
   task :symlink_configs, :roles => [:web] do 
     symlink_database_config
-    symlink_mongrel_cluster_config
     symlink_images
     symlink_video
   end
@@ -37,12 +35,6 @@ namespace :deploy do
   task :symlink_database_config, :roles => [:web] do
     run "rm -f #{latest_release}/config/database.yml"
     run "ln -nfs #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
-  end
-
-  desc "Link to the shared mongrel_cluster.yml."
-  task :symlink_mongrel_cluster_config, :roles => [:web] do
-    run "rm -f #{latest_release}/config/mongrel_cluster.yml"
-    run "ln -nfs #{shared_path}/config/mongrel_cluster.yml #{latest_release}/config/mongrel_cluster.yml"
   end
 
   desc "Link images to production"
@@ -60,13 +52,8 @@ namespace :deploy do
     run "ln -nfs  #{shared_path}/system/video #{latest_release}/public/video"
   end
   
-  desc "Restart mongrel_cluster(which restarts rails)"
+  desc "Restart application"
   task :restart do
-    run "mongrel_rails cluster::restart -C #{mongrel_config}"
-  end
-
-  desc "Cold deploy start mongrel_cluster(which restarts rails)"
-  task :start do
-    run "mongrel_rails cluster::start -C #{mongrel_config}"
+    run "touch #{current_path}/tmp/restart.txt"
   end
 end
