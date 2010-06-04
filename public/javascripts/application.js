@@ -7,6 +7,13 @@ $(document).ready(function() {
     $(".all").addClass("current");
   });
   
+  $("li.filter_2010").click(function() {
+    $(".episode").hide();
+    $("#filter li").removeClass("current");
+    $(".filter_2010").addClass("current");
+    $(".published_in_2010").show();
+  });
+  
   $("li.filter_2009").click(function() {
     $(".episode").hide();
     $("#filter li").removeClass("current");
