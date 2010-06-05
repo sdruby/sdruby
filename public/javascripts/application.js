@@ -7,39 +7,12 @@ $(document).ready(function() {
     $(".all").addClass("current");
   });
   
-  $("li.filter_2010").click(function() {
+  $("li.filter").click(function() {
+    year = $(this).find("span").html();
     $(".episode").hide();
     $("#filter li").removeClass("current");
-    $(".filter_2010").addClass("current");
-    $(".published_in_2010").show();
-  });
-  
-  $("li.filter_2009").click(function() {
-    $(".episode").hide();
-    $("#filter li").removeClass("current");
-    $(".filter_2009").addClass("current");
-    $(".published_in_2009").show();
-  });
-  
-  $("li.filter_2008").click(function() {
-    $(".episode").hide();
-    $("#filter li").removeClass("current");
-    $(".filter_2008").addClass("current");
-    $(".published_in_2008").show();
-  });
-  
-  $("li.filter_2007").click(function() {
-    $(".episode").hide();
-    $("#filter li").removeClass("current");
-    $(".filter_2007").addClass("current");
-    $(".published_in_2007").show();
-  });
-  
-  $("li.filter_2006").click(function() {
-    $(".episode").hide();
-    $("#filter li").removeClass("current");
-    $(".filter_2006").addClass("current");
-    $(".published_in_2006").show();
+    $(".filter_" + year).addClass("current");
+    $(".published_in_" + year).show();
   });
   
   if ( $('.panel').length > 0 )
