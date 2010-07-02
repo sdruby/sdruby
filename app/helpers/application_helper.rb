@@ -49,5 +49,25 @@ module ApplicationHelper
 
   end
   
+  def next_meeting_date
+    
+    today = Date.today
+    beginning_of_current_month = Date.today.beginning_of_month
+    beginning_of_next_month = Date.today.next_month.beginning_of_month
+    
+    while beginning_of_current_month <= today do
+      if beginning_of_current_month.strftime("%A") == "Thursday"
+        return beginning_of_current_month
+      end
+      beginning_of_current_month += 1.day
+    end
+    
+    loop do
+      return beginning_of_next_month if beginning_of_next_month.strftime("%A") == "Thursday"
+      beginning_of_next_month += 1.day
+    end
+    
+  end
+  
 end
 

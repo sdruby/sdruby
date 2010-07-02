@@ -6,7 +6,8 @@
 
   #upcoming
     %span Next meeting:
-    #date Thursday, May 6
+    #date 
+      = next_meeting_date.strftime("%A, %B %e")
     7:30pm, 
     = link_to "UCSD CSE Building", "http://www.cs.ucsd.edu/", :id => "venue"
     #actions
