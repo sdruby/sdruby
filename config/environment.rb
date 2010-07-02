@@ -32,7 +32,8 @@ Rails::Initializer.run do |config|
   config.gem "authlogic"
   config.gem 'mislav-will_paginate', :lib => false, :version => '>= 2.3.11'
 
-  config.gem "hpricot" #, :version => '0.6', :source => "http://code.whytheluckystiff.net"
+  config.gem "hpricot"
+  config.gem "chronic" #, :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
 

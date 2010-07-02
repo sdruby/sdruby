@@ -49,24 +49,13 @@ module ApplicationHelper
 
   end
   
-  def next_meeting_date
-    
-    today = Date.today
-    beginning_of_current_month = Date.today.beginning_of_month
-    beginning_of_next_month = Date.today.next_month.beginning_of_month
-    
-    while beginning_of_current_month <= today do
-      if beginning_of_current_month.strftime("%A") == "Thursday"
-        return beginning_of_current_month
-      end
-      beginning_of_current_month += 1.day
+  def next_meeting_date(now=Time.now)
+    now -= 1.day
+    if Chronic.parse("1st thursday of this month", :context => :past, :now => now)
+      return Chronic.parse('1st thursday of next month', :now => now)
+    else
+      return Chronic.parse("1st thursday of this month", :now => now)
     end
-    
-    loop do
-      return beginning_of_next_month if beginning_of_next_month.strftime("%A") == "Thursday"
-      beginning_of_next_month += 1.day
-    end
-    
   end
   
 end
