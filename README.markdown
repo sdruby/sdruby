@@ -37,3 +37,4 @@ Thanks to the following people for contributing to this app.
 * Jordan Fowler
 * Rob Kaufman
 * Nick Zadrozny
+* James Miller
