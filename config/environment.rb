@@ -24,19 +24,6 @@ Rails::Initializer.run do |config|
   # They can then be installed with "rake gems:install" on new installations.
   # You have to specify the :lib option for libraries, where the Gem name (sqlite3-ruby) differs from the file itself (sqlite3)
 
-  config.gem "haml"
-  config.gem "newrelic_rpm"
-  config.gem "rdiscount"
-  config.gem "rspec", :lib => false
-  config.gem "rspec-rails", :lib => false
-  config.gem "authlogic"
-  config.gem 'mislav-will_paginate', :lib => false, :version => '>= 2.3.11'
-
-  config.gem "hpricot"
-  config.gem "chronic" #, :version => '0.6', :source => "http://code.whytheluckystiff.net"
-  # config.gem "sqlite3-ruby", :lib => "sqlite3"
-  # config.gem "aws-s3", :lib => "aws/s3"
-
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
   # :all can be used as a placeholder for all plugins not explicitly named
