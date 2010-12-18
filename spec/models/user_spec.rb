@@ -1,72 +1,61 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe User do
-  fuzzy :users
+  it { should have_many(:jobs) }
+  it { should have_many(:projects) }
 
-  before(:all) do
-    @attribute_defaults = {
-      :password => 'test',
-      :password_confirmation => 'test',
-      :avatar_file_name => 'Pic 001.gif',
-      :avatar_content_type => 'image/gif',
-      :avatar_file_size => 3242,
-      :neighborhood => "South Park"
-    }
-  end
+  before { @user = Factory(:user, :full_name => "Snoop Dog") }
 
   it "should be valid" do
-    new_user.should be_valid
+    @user.should be_valid
+  end
+  
+  it "should expose #first_name" do
+    @user.first_name.should == "Snoop"
   end
 
-  it "should be invalid when full_name is nil, blank, or too short" do
-    new_user(:full_name => nil).should_not be_valid
-    new_user(:full_name => '').should_not be_valid
-    new_user(:full_name => 'A').should_not be_valid
-  end
+  it "should expost #last_name" do
+    @user.last_name.should == "Dog"
+  end 
 
-  it "should be invalid if email is taken" do
-    (user1 = new_user(:email => 'dude@awesome.com')).save
-    new_user(:email => 'dude@awesome.com').should_not be_valid
-  end
+  describe "validations" do
+    it "should be invalid when full_name is nil, blank, or too short" do
+      Factory.build(:user, :full_name => nil).should_not be_valid
+      Factory.build(:user, :full_name => '').should_not be_valid
+      Factory.build(:user, :full_name => 'A').should_not be_valid
+    end
 
-  it "should be invalid when email is nil, blank, or wrong format" do
-    new_user(:email => nil).should_not be_valid
-    new_user(:email => '').should_not be_valid
-    new_user(:email => 'asdf jdaskj@ askdjfkasdjf .com').should_not be_valid
-  end
+    it "should be invalid if email is taken" do
+      Factory.create(:user, :email => "dude@awesome.com")
+      Factory.build(:user, :email => "dude@awesome.com").should_not be_valid
+    end
 
-  it "should be invalid when password/password_confirmation are nil, blank, or too short" do
-    new_user(:password => nil).should_not be_valid
-    new_user(:password_confirmation => nil).should_not be_valid
-    new_user(:password => '').should_not be_valid
-    new_user(:password_confirmation => '').should_not be_valid
-    new_user(:password => 'asd').should_not be_valid
-    new_user(:password_confirmation => 'asd').should_not be_valid
-  end
+    it "should be invalid when email is nil, blank, or wrong format" do
+      Factory.build(:user, :email => nil).should_not be_valid
+      Factory.build(:user, :email => '').should_not be_valid
+      Factory.build(:user, :email => 'asdf jdaskj@ askdjfkasdjf .com').should_not be_valid
+    end
 
-  it "should be invalid when password and password_confirmation are not equal" do
-    new_user(:password => 'tesT', :password_confirmation => 'test').should_not be_valid
-  end
+    it "should be invalid when password/password_confirmation are nil, blank, or too short" do
+      Factory.build(:user, :password => nil).should_not be_valid
+      Factory.build(:user, :password_confirmation => nil).should_not be_valid
+      Factory.build(:user, :password => '').should_not be_valid
+      Factory.build(:user, :password_confirmation => '').should_not be_valid
+      Factory.build(:user, :password => 'asd').should_not be_valid
+      Factory.build(:user, :password_confirmation => 'asd').should_not be_valid
+    end
 
-  it "should generate a salt after saving" do
-    (user = new_user).save
-    user.password_salt.should_not be_blank
-  end
-
-  describe 'instance methods' do
-    describe 'first_name' do
-      before do
-        @user = new_user(:full_name => 'Snoop Dogg')
-      end
-
-      it 'should return the usersÊfirst name' do
-        @user.first_name.should == 'Snoop'
-      end
+    it "should be invalid when password and password_confirmation are not equal" do
+      Factory.build(:user, :password => 'tesT', :password_confirmation => 'test').should_not be_valid
     end
   end
 
-protected
-  def new_user(options = {})
-    User.new(fuzzy_users.generate_columns(@attribute_defaults.merge(options)))
+  describe "after saving" do
+    before { @user.save }
+
+    it "should have generated a salt" do
+      @user.password_salt.should_not be_blank
+    end
   end
+
 end
