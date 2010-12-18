@@ -8,7 +8,7 @@ describe UsersController do
       context 'for a valid user' do
         before do
           @user = fuzzy_users.create!(:password => "testing", :password_confirmation => "testing")
-          set_session_for(@user)
+          login_as(@user)
 
           User.stub!(:find).and_return(@user)
 
@@ -49,7 +49,7 @@ describe UsersController do
   describe "GET new" do
     context 'logged in' do
       before do
-        set_session_for users(:loyal_rubyist)
+        login_as users(:loyal_rubyist)
         get :new
       end
 
@@ -85,9 +85,7 @@ describe UsersController do
     context 'logged in' do
       before do
         @user = fuzzy_users.create!(:password => "testing", :password_confirmation => "testing")
-        set_session_for(@user)
-
-        User.should_receive(:find).and_return(@user)
+        login_as(@user)
 
         get :edit, :id => @user.id
       end
@@ -107,7 +105,7 @@ describe UsersController do
 
     context 'logged in as a different user' do
       before do
-        set_session_for users(:loyal_rubyist)
+        login_as users(:loyal_rubyist)
 
         get :edit, :id => users(:job_creating_rubyist).id
       end
@@ -136,7 +134,7 @@ describe UsersController do
   describe "POST create" do
     before do
       @user = fuzzy_users.create!(:password => "testing", :password_confirmation => "testing")
-      set_session_for(@user)
+      login_as(@user)
 
       User.should_receive(:new).with({}).and_return(@user)
     end
@@ -168,7 +166,7 @@ describe UsersController do
     context 'logged in' do
       before(:each) do
         @user = fuzzy_users.create!(:password => "testing", :password_confirmation => "testing")
-        set_session_for(@user)
+        login_as(@user)
 
         User.stub!(:find).and_return(@user)
       end
@@ -208,7 +206,7 @@ describe UsersController do
 
     context 'logged in as a different user' do
       before do
-        set_session_for users(:loyal_rubyist)
+        login_as users(:loyal_rubyist)
 
         put :update, :id => users(:job_creating_rubyist).id
       end

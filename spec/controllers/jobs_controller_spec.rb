@@ -40,7 +40,7 @@ describe JobsController do
     context 'logged in' do
       context 'as the job creator' do
         before do
-          set_session_for users(:job_creating_rubyist)
+          login_as users(:job_creating_rubyist)
           get :edit, :id => @job.id
         end
 
@@ -55,7 +55,7 @@ describe JobsController do
 
       context 'as a user who did not create the job' do
         before do
-          set_session_for users(:loyal_rubyist)
+          login_as users(:loyal_rubyist)
           get :edit, :id => @job.id
         end
 
@@ -90,7 +90,7 @@ describe JobsController do
     context 'logged in' do
       before do
         @job_creator = users(:job_creating_rubyist)
-        set_session_for @job_creator
+        login_as @job_creator
       end
 
       # TODO: better way to test current_user.jobs.build than the []= expectation?
@@ -135,7 +135,7 @@ describe JobsController do
   describe 'PUT update' do
     context 'logged in as the job creator' do
       before do
-        set_session_for users(:job_creating_rubyist)
+        login_as users(:job_creating_rubyist)
       end
 
       context 'with valid params' do
@@ -183,7 +183,7 @@ describe JobsController do
 
     context 'not logged in as the job creator' do
       before do
-        set_session_for users(:loyal_rubyist)
+        login_as users(:loyal_rubyist)
         put :update, :id => jobs(:my_great_job).id, :job => {:title => 'some other title'}
       end
 
@@ -206,7 +206,7 @@ describe JobsController do
   describe 'DELETE destroy' do
     context 'logged in as the job creator' do
       before do
-        set_session_for users(:job_creating_rubyist)
+        login_as users(:job_creating_rubyist)
       end
 
       it 'destroys the requested job' do
@@ -224,7 +224,7 @@ describe JobsController do
 
     context 'not logged in as the job creator' do
       before do
-        set_session_for users(:loyal_rubyist)
+        login_as users(:loyal_rubyist)
       end
 
       it 'does not destroy the requested job' do

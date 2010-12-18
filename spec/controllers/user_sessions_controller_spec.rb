@@ -1,11 +1,10 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
-#set_session_for users(:job_creating_rubyist)
 
 describe UserSessionsController do
   describe 'GET new' do
     context 'logged in' do
       before do
-        set_session_for users(:loyal_rubyist)
+        login_as users(:loyal_rubyist)
         get :new
       end
 
@@ -28,7 +27,7 @@ describe UserSessionsController do
   describe 'POST create' do
     context 'logged in' do
       before do
-        set_session_for users(:loyal_rubyist)
+        login_as users(:loyal_rubyist)
         post :create
       end
 
@@ -62,7 +61,9 @@ describe UserSessionsController do
 
     context 'logged in' do
       before do
-        set_session_for users(:loyal_rubyist)
+        login_as users(:loyal_rubyist)
+
+        UserSession.should_receive(:destroy)
         delete :destroy
       end
 
