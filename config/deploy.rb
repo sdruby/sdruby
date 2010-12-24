@@ -1,3 +1,5 @@
+require "bundler/capistrano"
+
 set :application, "sdruby.org"
 set :repository,  "git://github.com/mokolabs/sdruby.git"
 
