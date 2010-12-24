@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   
   def index
-    @podcast = Podcast.published.find(:last)
+    @podcast = Podcast.published.last
   end
 
 end
