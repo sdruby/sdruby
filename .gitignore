@@ -10,3 +10,4 @@ public/images/users/avatars/*
 db/development.sqlite3
 db/test.sqlite3
 .idea/*
+.bundle
