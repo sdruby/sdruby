@@ -1,24 +1,22 @@
 class PodcastsController < ApplicationController
   before_filter :require_user, :except => [:index, :show]
+  before_filter :find_podcast, :except => [:index, :new, :create]
   
   def index
-    @podcasts = Podcast.published.find(:all, :order => "id DESC")
+    @podcasts = Podcast.published.all
+
     respond_to do |format|
       format.html do
         @podcast = @podcasts.shift
         @years = @podcasts.collect { |episode| episode.created_at.strftime('%Y') }.uniq
       end
-      format.atom do
-        render :layout => false
-      end
-      format.rss do
-        render :layout => false
-      end
+
+      format.atom { render :layout => false }
+      format.rss { render :layout => false }
     end
   end
 
   def show
-    @podcast = Podcast.find(params[:id])
   end
 
   def new
@@ -26,7 +24,6 @@ class PodcastsController < ApplicationController
   end
 
   def edit
-    @podcast = Podcast.find(params[:id])
   end
 
   def create
@@ -41,8 +38,6 @@ class PodcastsController < ApplicationController
   end
 
   def update
-    @podcast = Podcast.find(params[:id])
-
     if @podcast.update_attributes(params[:podcast])
       flash[:notice] = 'Podcast was successfully updated.'
       redirect_to(@podcast)
@@ -52,10 +47,15 @@ class PodcastsController < ApplicationController
   end
 
   def destroy
-    @podcast = Podcast.find(params[:id])
     @podcast.destroy
 
     redirect_to(podcasts_url)
   end
 
+
+  protected
+
+  def find_podcast
+    @podcast = Podcast.find(params[:id])
+  end
 end

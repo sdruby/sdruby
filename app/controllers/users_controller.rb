@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
+
     if @user.save
       flash[:notice] = 'User was successfully created.'
       redirect_to(@user)
@@ -57,6 +58,7 @@ class UsersController < ApplicationController
 
     redirect_to(users_url)
   end
+
 
   private
   

@@ -58,6 +58,7 @@ class JobsController < ApplicationController
     
     unless @job.created_by?(current_user)
       redirect_to jobs_path
+      return false
     end
   end
 

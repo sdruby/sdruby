@@ -1,77 +1,52 @@
-require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+require File.dirname(__FILE__) + '/../spec_helper'
 
 describe UserSessionsController do
-  describe 'GET new' do
-    context 'logged in' do
-      before do
-        login_as users(:loyal_rubyist)
-        get :new
-      end
+  integrate_views
 
-      it 'should redirect to /account' do
-        response.should redirect_to(account_path)
-      end
+  before { @user = Factory.create(:user) }
+
+  context "when logged in" do
+    before { login_as @user }
+
+    describe "on GET to new" do
+      before { get :new }
+      it { should redirect_to(account_path) }
     end
 
-    context 'not logged in' do
-      before do
-        get :new
-      end
-
-      it 'should render the login page' do
-        response.should render_template('new')
-      end
-    end
-  end
-
-  describe 'POST create' do
-    context 'logged in' do
-      before do
-        login_as users(:loyal_rubyist)
-        post :create
-      end
-
-      it 'should redirect to the account page' do
-        response.should redirect_to(account_path)
-      end
+    describe "on POST to create" do
+      before { post :create }
+      it { should redirect_to(account_path) }
     end
 
-    context 'not logged in' do
-      before do
-        post :create
-      end
-
-      it 'should render the login page' do
-        response.should render_template('new')
-      end
+    describe "on DELETE to destroy" do
+      before { delete :destroy }
+      it { should redirect_to(root_path) }
+      it { should set_the_flash }
     end
   end
 
-  describe 'DELETE destroy' do
-    context 'not logged in' do
-      before do
-        delete :destroy
+  context "when not logged in" do
+    describe "on GET to new" do
+      before { get :new }
+      it { should respond_with(:success) }
+      it { should render_template(:new) }
+    end
+
+    describe "on POST to create" do
+      context "when valid" do
+
       end
 
-      it 'should set a notice and redirect to /' do
-        flash[:notice].should == "You're already logged out!"
-        response.should redirect_to(root_path)
+      context "when invalid" do
+
       end
     end
 
-    context 'logged in' do
-      before do
-        login_as users(:loyal_rubyist)
+    describe "on DELETE to destroy" do
+      before { delete :destroy }
 
-        UserSession.should_receive(:destroy)
-        delete :destroy
-      end
-
-      it 'should log the user out' do
-        flash[:notice].should == "Logout successful!"
-        response.should redirect_to(root_path)
-      end
     end
   end
+
 end
 
