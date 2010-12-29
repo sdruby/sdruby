@@ -12,7 +12,6 @@ ActionController::Routing::Routes.draw do |map|
   map.sponsors '/sponsors', :controller => 'pages', :action => 'sponsors'
 
   # Resources
-  map.resources :events
   map.resources :jobs
   map.resources :meetings, :controller => 'events'
   map.resources :podcasts, :as => 'podcast'

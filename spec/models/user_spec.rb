@@ -14,7 +14,7 @@ describe User do
     @user.first_name.should == "Snoop"
   end
 
-  it "should expost #last_name" do
+  it "should expose #last_name" do
     @user.last_name.should == "Dog"
   end 
 
