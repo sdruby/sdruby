@@ -1,13 +1,12 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
 describe Project do
-  before(:each) do
-    @valid_attributes = {
-      :name => "rails"
-    }
-  end
+  it { should belong_to(:user) }
+  it { should validate_presence_of(:name) }
 
-  it "should create a new instance given valid attributes" do
-    Project.create!(@valid_attributes)
+  before { @project = Factory(:project) }
+
+  it "should be valid" do
+    @project.should be_valid
   end
 end

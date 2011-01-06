@@ -20,12 +20,18 @@ group :test do
   gem "shoulda", "~> 2.11.3"
   gem "faker", "~> 0.3.1"
   gem "factory_girl", "~> 1.3.2"
-  gem "rcov", "~> 0.9.9"
+  gem "vcr"
+  gem "webmock"
 end
 
 group :cucumber do
   gem "rspec", "~> 1.3.1"
   gem "rspec-rails", "~> 1.3.2"
+  gem "shoulda", "~> 2.11.3"
+  gem "faker", "~> 0.3.1"
+  gem "factory_girl", "~> 1.3.2"
+  gem "vcr"
+  gem "webmock"
   gem "cucumber", "~> 0.9.3"
   gem "cucumber-rails", "~> 0.3.2"
   gem "pickle", "~> 0.4.2"
