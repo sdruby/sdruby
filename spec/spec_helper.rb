@@ -8,6 +8,7 @@ require "spec/rails"
 require "faker"
 require "factory_girl"
 require "shoulda"
+require "authlogic/test_case"
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
@@ -27,7 +28,10 @@ Spec::Runner.configure do |config|
   end
 
   def login_as(user)
-    UserSession.stub!(:find).and_return(mock_model(UserSession, :user => user))
+    activate_authlogic
+
+    user = Factory(user) if user.is_a?(Symbol)
+    UserSession.create(user)
   end
 end
 

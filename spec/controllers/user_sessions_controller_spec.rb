@@ -34,17 +34,21 @@ describe UserSessionsController do
 
     describe "on POST to create" do
       context "when valid" do
-
+        before { post :create, :user_session => {:email => @user.email, :password => "password"} }
+        it { should respond_with(:redirect) }
       end
 
       context "when invalid" do
-
+        before { post :create, :user_session => {:email => @user.email, :password => "wrong"} }
+        it { should respond_with(:success) }
+        it { should render_template(:new) }
       end
     end
 
     describe "on DELETE to destroy" do
       before { delete :destroy }
-
+      it { should set_the_flash.to(/already logged out/) }
+      it { should redirect_to(root_path) }
     end
   end
 
