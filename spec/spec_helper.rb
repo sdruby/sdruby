@@ -9,6 +9,7 @@ require "faker"
 require "factory_girl"
 require "shoulda"
 require "authlogic/test_case"
+require "vcr"
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
@@ -21,6 +22,12 @@ Spec::Runner.configure do |config|
   config.use_transactional_fixtures = true
   config.use_instantiated_fixtures  = false
   config.fixture_path = RAILS_ROOT + '/spec/fixtures/'
+
+  ## Configure VCR Cassettes
+  VCR.config do |c|
+    c.cassette_library_dir = Rails.root.join("spec/vcr_cassettes")
+    c.stub_with :webmock # or :fakeweb
+  end
 
   ## Helpers:
   def logout

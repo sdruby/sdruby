@@ -50,6 +50,23 @@ describe User do
     end
   end
 
+  describe "getting projects" do
+    before do
+      VCR.use_cassette("user_get_projects", :record => :new_episodes) do
+        @user.github_username = "mokolabs"
+        @user.grab_projects
+      end
+    end
+
+    it "should have created projects" do
+      @user.projects.should_not be_empty
+    end
+
+    it "should have created an sdruby project" do
+      @user.projects.map(&:name).should include("sdruby")
+    end
+  end
+
   describe "after saving" do
     before { @user.save }
 
