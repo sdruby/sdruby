@@ -49,7 +49,7 @@ module ApplicationHelper
 
   end
   
-  def next_meeting_date(now=Time.now)
+  def next_meeting_date(now=Time.zone.now)
     now -= 1.day
     if Chronic.parse("1st thursday of this month", :context => :past, :now => now)
       return Chronic.parse('1st thursday of next month', :now => now)
