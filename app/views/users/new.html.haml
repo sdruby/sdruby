@@ -4,6 +4,10 @@
 
 - form_for(@user, :html => { :multipart => true }) do |f|
   = render :partial => 'form', :locals => {:f => f}
+
+  %p
+    %label Verification
+    = recaptcha_tag :challenge
   
   %p
     = f.submit "Create account"
