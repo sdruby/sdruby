@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-gem "rails", "2.3.9"
+gem "rails", "2.3.10"
 gem "mysql"
 gem "haml"
 gem "newrelic_rpm", "~> 2.9.5"
