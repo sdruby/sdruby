@@ -52,7 +52,7 @@ module ApplicationHelper
   def next_meeting_date(now=Time.now)
     now = now - 1.day
     if RAILS_ENV == "production"
-      now = now - 8 hours
+      now = now - 8.hours
     end
     if Chronic.parse("1st thursday of this month", :context => :past, :now => now)
       return Chronic.parse('1st thursday of next month', :now => now)
