@@ -55,7 +55,8 @@ class PodcastsController < ApplicationController
 
   protected
 
-  def find_podcast
-    @podcast = Podcast.find(params[:id])
-  end
+    def find_podcast
+      @podcast = Podcast.find(params[:id])
+    end
+
 end
