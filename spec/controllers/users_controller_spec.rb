@@ -59,6 +59,10 @@ describe UsersController do
     end
 
     describe "on POST to create" do
+      before do
+        controller.stub!(:recaptcha_valid?).and_return(true)
+      end
+
       context "when valid" do
         before do
           lambda { post :create, :user => Factory.attributes_for(:user) }.should change {

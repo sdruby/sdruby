@@ -9,6 +9,7 @@ gem "authlogic", "~> 2.1.1"
 gem "will_paginate", "~> 2.3.11"
 gem "hpricot", "~> 0.8.1"
 gem "chronic", "~> 0.2.3"
+gem "rack-recaptcha", :require => "rack/recaptcha"
 
 group :development do
   gem "ruby-debug"

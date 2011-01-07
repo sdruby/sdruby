@@ -68,6 +68,9 @@ Rails::Initializer.run do |config|
   # Activate observers that should always be running
   # Please note that observers generated using script/generate observer need to have an _observer suffix
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
+
+  require "rack/recaptcha"  # I know, I know... Bundler doesn't seem to be requiring this correctly!
+  config.middleware.use Rack::Recaptcha, :public_key => '6LdJOMASAAAAAFZDpwMtiQLz_J4yZ5PqaGRlJ2dQ', :private_key => '6LdJOMASAAAAABY7abzfkCSBFOz94yd-sVF8RBvn', :paths => '/users'
 end
 
 # We need open-uri to grab GitHub projects

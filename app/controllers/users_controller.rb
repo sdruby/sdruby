@@ -16,7 +16,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
 
-    if @user.save
+    if !recaptcha_valid?
+      @user.errors.add_to_base "The CAPTCHA verification failed.  Please retry:"
+      render :action => "new"
+    elsif @user.save
       flash[:notice] = 'User was successfully created.'
       redirect_to(@user)
     else
