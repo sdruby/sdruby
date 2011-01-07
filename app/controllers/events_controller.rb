@@ -1,11 +1,11 @@
 class EventsController < ApplicationController
+  before_filter :find_event, :except => [:index, :new, :create]
 
   def index
-    @events = Event.find(:all)
+    @events = Event.all
   end
 
   def show
-    @event = Event.find(params[:id])
   end
 
   def new
@@ -13,7 +13,6 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id])
   end
 
   def create
@@ -29,8 +28,6 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event = Event.find(params[:id])
-
     if @event.update_attributes(params[:event] || params[:meeting])
       flash[:notice] = 'Event was successfully updated.'
       redirect_to(@event)
@@ -40,10 +37,14 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event = Event.find(params[:id])
     @event.destroy
-
     redirect_to(events_url)
   end
+
   
+  protected
+
+  def find_event
+    @event = Event.find(params[:id])
+  end
 end

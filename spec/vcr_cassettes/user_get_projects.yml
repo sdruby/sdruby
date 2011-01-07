@@ -1,0 +1,328 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://github.com:80/api/v2/xml/repos/show/mokolabs/
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      etag: 
+      - "\"dfd094ac6bcbcf5d04219c6abb602524\""
+      x-ratelimit-limit: 
+      - "60"
+      connection: 
+      - keep-alive
+      content-type: 
+      - application/xml; charset=utf-8
+      server: 
+      - nginx/0.7.67
+      date: 
+      - Thu, 06 Jan 2011 23:22:08 GMT
+      x-runtime: 
+      - 43ms
+      x-ratelimit-remaining: 
+      - "59"
+      content-length: 
+      - "13035"
+      cache-control: 
+      - private, max-age=0, must-revalidate
+      status: 
+      - 200 OK
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <repositories type="array">
+        <repository>
+          <has-downloads type="boolean">true</has-downloads>
+          <pushed-at type="datetime">2009-10-21T16:01:54-07:00</pushed-at>
+          <url>https://github.com/mokolabs/headliner</url>
+          <homepage>http://the.railsi.st/2007/05/03/headliner-dry-up-your-page-titles</homepage>
+          <created-at type="datetime">2008-07-02T17:05:57-07:00</created-at>
+          <forks type="integer">3</forks>
+          <fork type="boolean">false</fork>
+          <has-wiki type="boolean">true</has-wiki>
+          <watchers type="integer">32</watchers>
+          <size type="integer">236</size>
+          <private type="boolean">false</private>
+          <name>headliner</name>
+          <owner>mokolabs</owner>
+          <open-issues type="integer">0</open-issues>
+          <description>DRY up your page titles</description>
+          <has-issues type="boolean">true</has-issues>
+        </repository>
+        <repository>
+          <has-downloads type="boolean">true</has-downloads>
+          <pushed-at type="datetime">2010-07-19T09:35:33-07:00</pushed-at>
+          <url>https://github.com/mokolabs/javascripter</url>
+          <homepage>http://the.railsi.st/2007/08/22/javascripter-organize-your-javascript</homepage>
+          <created-at type="datetime">2008-07-02T17:23:40-07:00</created-at>
+          <forks type="integer">2</forks>
+          <fork type="boolean">false</fork>
+          <has-wiki type="boolean">true</has-wiki>
+          <watchers type="integer">8</watchers>
+          <size type="integer">176</size>
+          <private type="boolean">false</private>
+          <name>javascripter</name>
+          <owner>mokolabs</owner>
+          <open-issues type="integer">0</open-issues>
+          <description>Organize your javascript</description>
+          <has-issues type="boolean">true</has-issues>
+        </repository>
+        <repository>
+          <has-downloads type="boolean">false</has-downloads>
+          <pushed-at type="datetime">2010-06-02T17:58:56-07:00</pushed-at>
+          <url>https://github.com/mokolabs/styler</url>
+          <homepage>http://the.railsi.st/2007/05/03/styler-stylesheets-made-easy</homepage>
+          <created-at type="datetime">2008-07-02T17:26:26-07:00</created-at>
+          <forks type="integer">3</forks>
+          <fork type="boolean">false</fork>
+          <has-wiki type="boolean">false</has-wiki>
+          <watchers type="integer">15</watchers>
+          <size type="integer">1024</size>
+          <private type="boolean">false</private>
+          <name>styler</name>
+          <owner>mokolabs</owner>
+          <open-issues type="integer">0</open-issues>
+          <description>Stylesheets made easy</description>
+          <has-issues type="boolean">true</has-issues>
+        </repository>
+        <repository>
+          <has-downloads type="boolean">true</has-downloads>
+          <pushed-at type="datetime">2010-07-02T14:51:37-07:00</pushed-at>
+          <url>https://github.com/mokolabs/sdruby</url>
+          <homepage>http://sdruby.org</homepage>
+          <created-at type="datetime">2009-02-01T20:10:17-08:00</created-at>
+          <forks type="integer">14</forks>
+          <fork type="boolean">false</fork>
+          <has-wiki type="boolean">true</has-wiki>
+          <watchers type="integer">21</watchers>
+          <size type="integer">13440</size>
+          <private type="boolean">false</private>
+          <name>sdruby</name>
+          <owner>mokolabs</owner>
+          <open-issues type="integer">6</open-issues>
+          <description>The SD Ruby website</description>
+          <has-issues type="boolean">true</has-issues>
+        </repository>
+        <repository>
+          <has-downloads type="boolean">true</has-downloads>
+          <pushed-at type="datetime">2010-07-19T09:50:28-07:00</pushed-at>
+          <url>https://github.com/mokolabs/legacy</url>
+          <homepage></homepage>
+          <created-at type="datetime">2009-02-05T11:16:41-08:00</created-at>
+          <forks type="integer">0</forks>
+          <fork type="boolean">false</fork>
+          <has-wiki type="boolean">true</has-wiki>
+          <watchers type="integer">7</watchers>
+          <size type="integer">252</size>
+          <private type="boolean">false</private>
+          <name>legacy</name>
+          <owner>mokolabs</owner>
+          <open-issues type="integer">0</open-issues>
+          <description>Sample project for migrating legacy data into a Rails app</description>
+          <has-issues type="boolean">true</has-issues>
+        </repository>
+        <repository>
+          <has-downloads type="boolean">true</has-downloads>
+          <pushed-at type="datetime">2010-08-03T17:15:32-07:00</pushed-at>
+          <url>https://github.com/mokolabs/ignitesandiego</url>
+          <homepage>http://ignitesandiego.org</homepage>
+          <created-at type="datetime">2009-07-18T17:33:45-07:00</created-at>
+          <forks type="integer">1</forks>
+          <fork type="boolean">false</fork>
+          <has-wiki type="boolean">true</has-wiki>
+          <watchers type="integer">2</watchers>
+          <size type="integer">1272</size>
+          <private type="boolean">false</private>
+          <name>ignitesandiego</name>
+          <owner>mokolabs</owner>
+          <open-issues type="integer">0</open-issues>
+          <description>Website for the upcoming Ignite San Diego event.</description>
+          <has-issues type="boolean">true</has-issues>
+        </repository>
+        <repository>
+          <has-downloads type="boolean">false</has-downloads>
+          <pushed-at type="datetime">2009-10-22T12:02:08-07:00</pushed-at>
+          <url>https://github.com/mokolabs/mokolabs.github.com</url>
+          <homepage>http://the.railsi.st</homepage>
+          <created-at type="datetime">2009-10-18T13:15:30-07:00</created-at>
+          <forks type="integer">1</forks>
+          <fork type="boolean">false</fork>
+          <has-wiki type="boolean">false</has-wiki>
+          <watchers type="integer">2</watchers>
+          <size type="integer">4198</size>
+          <private type="boolean">false</private>
+          <name>mokolabs.github.com</name>
+          <owner>mokolabs</owner>
+          <open-issues type="integer">0</open-issues>
+          <description>My Ruby blog (Jekyll-based)</description>
+          <has-issues type="boolean">false</has-issues>
+        </repository>
+        <repository>
+          <has-downloads type="boolean">true</has-downloads>
+          <pushed-at type="datetime">2009-10-23T08:03:35-07:00</pushed-at>
+          <url>https://github.com/mokolabs/jekyll</url>
+          <homepage>http://jekyllrb.com</homepage>
+          <created-at type="datetime">2009-10-22T21:07:11-07:00</created-at>
+          <forks type="integer">1</forks>
+          <fork type="boolean">true</fork>
+          <has-wiki type="boolean">true</has-wiki>
+          <watchers type="integer">1</watchers>
+          <size type="integer">448</size>
+          <private type="boolean">false</private>
+          <name>jekyll</name>
+          <owner>mokolabs</owner>
+          <open-issues type="integer">0</open-issues>
+          <description>Jekyll is a blog-aware, static site generator in Ruby</description>
+          <has-issues type="boolean">false</has-issues>
+        </repository>
+        <repository>
+          <has-downloads type="boolean">true</has-downloads>
+          <pushed-at type="datetime">2009-11-30T17:18:27-08:00</pushed-at>
+          <url>https://github.com/mokolabs/validates_url_format_of</url>
+          <homepage></homepage>
+          <created-at type="datetime">2009-11-30T17:00:23-08:00</created-at>
+          <forks type="integer">1</forks>
+          <fork type="boolean">true</fork>
+          <has-wiki type="boolean">true</has-wiki>
+          <watchers type="integer">2</watchers>
+          <size type="integer">116</size>
+          <private type="boolean">false</private>
+          <name>validates_url_format_of</name>
+          <owner>mokolabs</owner>
+          <open-issues type="integer">0</open-issues>
+          <description>Validate the format of a URL by regexp in Ruby on Rails.</description>
+          <has-issues type="boolean">false</has-issues>
+        </repository>
+        <repository>
+          <has-downloads type="boolean">true</has-downloads>
+          <pushed-at type="datetime">2009-12-05T11:50:51-08:00</pushed-at>
+          <url>https://github.com/mokolabs/event_calendar</url>
+          <homepage>http://dev.elevationblog.com/2009/7/23/event-calendar-rails-plugin</homepage>
+          <created-at type="datetime">2009-12-02T12:02:37-08:00</created-at>
+          <forks type="integer">1</forks>
+          <fork type="boolean">true</fork>
+          <has-wiki type="boolean">true</has-wiki>
+          <watchers type="integer">1</watchers>
+          <size type="integer">500</size>
+          <private type="boolean">false</private>
+          <name>event_calendar</name>
+          <owner>mokolabs</owner>
+          <open-issues type="integer">0</open-issues>
+          <description>Show multiple, overlapping events across calendar days and rows. Rails plugin.</description>
+          <has-issues type="boolean">false</has-issues>
+        </repository>
+        <repository>
+          <has-downloads type="boolean">true</has-downloads>
+          <pushed-at type="datetime">2009-05-23T05:43:14-07:00</pushed-at>
+          <url>https://github.com/mokolabs/hivelogic-enkoder-rails</url>
+          <homepage>http://hivelogic.com/enkoder</homepage>
+          <created-at type="datetime">2009-12-29T10:03:55-08:00</created-at>
+          <forks type="integer">1</forks>
+          <fork type="boolean">true</fork>
+          <has-wiki type="boolean">true</has-wiki>
+          <watchers type="integer">1</watchers>
+          <size type="integer">156</size>
+          <private type="boolean">false</private>
+          <name>hivelogic-enkoder-rails</name>
+          <owner>mokolabs</owner>
+          <open-issues type="integer">0</open-issues>
+          <description>The Hivelogic Enkoder Rails Plugin</description>
+          <has-issues type="boolean">false</has-issues>
+        </repository>
+        <repository>
+          <has-downloads type="boolean">true</has-downloads>
+          <pushed-at type="datetime">2010-01-01T11:35:16-08:00</pushed-at>
+          <url>https://github.com/mokolabs/calendar_helper</url>
+          <homepage>http://rubyonrailsworkshops.com</homepage>
+          <created-at type="datetime">2010-01-01T11:28:20-08:00</created-at>
+          <forks type="integer">1</forks>
+          <fork type="boolean">true</fork>
+          <has-wiki type="boolean">true</has-wiki>
+          <watchers type="integer">1</watchers>
+          <size type="integer">104</size>
+          <private type="boolean">false</private>
+          <name>calendar_helper</name>
+          <owner>mokolabs</owner>
+          <open-issues type="integer">0</open-issues>
+          <description>Calendar-generating plugin for Ruby</description>
+          <has-issues type="boolean">false</has-issues>
+        </repository>
+        <repository>
+          <has-downloads type="boolean">true</has-downloads>
+          <pushed-at type="datetime">2010-09-01T13:43:21-07:00</pushed-at>
+          <url>https://github.com/mokolabs/jmapping</url>
+          <homepage>http://vigetlabs.github.com/jmapping/</homepage>
+          <created-at type="datetime">2010-07-02T09:00:43-07:00</created-at>
+          <forks type="integer">1</forks>
+          <fork type="boolean">true</fork>
+          <has-wiki type="boolean">true</has-wiki>
+          <watchers type="integer">1</watchers>
+          <size type="integer">680</size>
+          <private type="boolean">false</private>
+          <name>jmapping</name>
+          <owner>mokolabs</owner>
+          <open-issues type="integer">0</open-issues>
+          <description>jQuery plugin for creating Google Maps from semantic markup</description>
+          <has-issues type="boolean">false</has-issues>
+        </repository>
+        <repository>
+          <has-downloads type="boolean">true</has-downloads>
+          <pushed-at type="datetime">2010-09-29T10:13:56-07:00</pushed-at>
+          <url>https://github.com/mokolabs/trucker</url>
+          <homepage></homepage>
+          <created-at type="datetime">2010-07-02T10:45:01-07:00</created-at>
+          <forks type="integer">4</forks>
+          <fork type="boolean">false</fork>
+          <has-wiki type="boolean">true</has-wiki>
+          <watchers type="integer">19</watchers>
+          <size type="integer">1876</size>
+          <private type="boolean">false</private>
+          <name>trucker</name>
+          <owner>mokolabs</owner>
+          <open-issues type="integer">0</open-issues>
+          <description>Helper for migrating legacy data</description>
+          <has-issues type="boolean">true</has-issues>
+        </repository>
+        <repository>
+          <has-downloads type="boolean">true</has-downloads>
+          <pushed-at type="datetime">2010-08-05T18:15:35-07:00</pushed-at>
+          <url>https://github.com/mokolabs/trucker_sample_app</url>
+          <homepage></homepage>
+          <created-at type="datetime">2010-07-14T09:46:24-07:00</created-at>
+          <forks type="integer">1</forks>
+          <fork type="boolean">false</fork>
+          <has-wiki type="boolean">true</has-wiki>
+          <watchers type="integer">3</watchers>
+          <size type="integer">1308</size>
+          <private type="boolean">false</private>
+          <name>trucker_sample_app</name>
+          <owner>mokolabs</owner>
+          <open-issues type="integer">0</open-issues>
+          <description>Sample app that uses the trucker gem to migrate legacy data</description>
+          <has-issues type="boolean">true</has-issues>
+        </repository>
+        <repository>
+          <has-downloads type="boolean">true</has-downloads>
+          <pushed-at type="datetime">2010-12-30T10:39:30-08:00</pushed-at>
+          <url>https://github.com/mokolabs/criticalmasscansuckit.com</url>
+          <homepage>http://criticalmasscansuckit.com/</homepage>
+          <created-at type="datetime">2010-12-29T22:37:08-08:00</created-at>
+          <forks type="integer">0</forks>
+          <fork type="boolean">true</fork>
+          <has-wiki type="boolean">true</has-wiki>
+          <watchers type="integer">1</watchers>
+          <size type="integer">208</size>
+          <private type="boolean">false</private>
+          <name>criticalmasscansuckit.com</name>
+          <owner>mokolabs</owner>
+          <open-issues type="integer">0</open-issues>
+          <description>Critical Mass can suck it!</description>
+          <has-issues type="boolean">false</has-issues>
+        </repository>
+      </repositories>
+
+    http_version: "1.1"

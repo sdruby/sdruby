@@ -1,6 +1,8 @@
 class Podcast < ActiveRecord::Base
+  default_scope :order => "id DESC"
 
   named_scope :published, :conditions => {:publish => true}
+
   has_attached_file :screenshot, 
                     :styles => { 
                     :large => ["345x267!", :png], 
@@ -8,6 +10,7 @@ class Podcast < ActiveRecord::Base
                     :path => ":rails_root/public/images/screenshots/:style/:id.:extension",
                     :url => "/images/:attachment/:style/:id.:extension",
                     :default_style => :large
+
   validates_presence_of :name, :description, :movie_link
   
   validates_attachment_presence :screenshot, :message => "is missing"

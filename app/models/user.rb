@@ -24,6 +24,10 @@ class User < ActiveRecord::Base
     full_name.split(' ').first
   end
 
+  def last_name
+    full_name.split(' ')[1..-1].join(" ")
+  end
+
   def grab_projects
     unless self.github_username.blank?
       

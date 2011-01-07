@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include Rack::Recaptcha::Helpers
 
   def current_user
     @controller.send :current_user

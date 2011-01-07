@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
   # Uncomment the :secret if you're not using the cookie session store
   protect_from_forgery # :secret => 'db24fa1f12cedfd2184dc9156cd2e704'
 
+  include Rack::Recaptcha::Helpers
+
   private
   
   def current_user_session

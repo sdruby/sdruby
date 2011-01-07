@@ -1,23 +1,27 @@
-require File.dirname(__FILE__) + '/../spec_helper'
+require "spec_helper"
 
 describe Event do
-  fuzzy :events
-  before(:each) do
-    @event = Event.new
-  end
+  before { @event = Factory(:event) }
 
   it "should be valid" do
     @event.should be_valid
   end
-  
-  describe "Event.next" do
-    
-    it "should return the next event in time" do
-      old_event = fuzzy_events.create!(:starts_at => 1.minute.ago, :ends_at => 1.minute.from_now, :is_private => false)
-      next_event = fuzzy_events.create!(:starts_at => 10.minute.from_now, :ends_at => 10.minute.from_now, :is_private => false)
-      inactive_event = fuzzy_events.create!(:starts_at => 5.minute.from_now, :ends_at => 10.minute.from_now, :is_private => true)
-            
-      Event.next.should == next_event
+
+  context "with two upcoming events" do
+    before do
+      Event.destroy_all
+
+      @old_event = Factory.create(:event, :starts_at => 3.days.ago, :ends_at => 2.days.ago)
+      @first_event = Factory.create(:event, :starts_at => 1.day.from_now, :ends_at => 2.days.from_now)
+      @second_event = Factory.create(:event, :starts_at => 3.days.from_now, :ends_at => 4.days.from_now)
+    end
+
+    describe "next event" do
+      before { @next_event = described_class.next }
+
+      it "should be the first upcoming event" do
+        @next_event.should == @first_event
+      end
     end
   end
 end
