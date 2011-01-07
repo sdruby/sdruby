@@ -33,7 +33,7 @@ Rails::Initializer.run do |config|
   config.gem 'mislav-will_paginate', :lib => false, :version => '>= 2.3.11'
 
   config.gem "hpricot"
-  config.gem "chronic", :version => '0.3.0' #, :version => '0.6', :source => "http://code.whytheluckystiff.net"
+  config.gem "chronic" #, :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
 
@@ -52,7 +52,7 @@ Rails::Initializer.run do |config|
   # Make Time.zone default to the specified zone, and make Active Record store time values
   # in the database in UTC, and return them converted to the specified local zone.
   # Run "rake -D time" for a list of tasks for finding time zone names. Comment line to use default local time.
-  config.time_zone = "Pacific Time (US & Canada)"
+  config.time_zone = 'UTC'
 
   # The internationalization framework can be changed to have another default locale (standard is :en) or more load paths.
   # All files from config/locales/*.rb,yml are added automatically.
