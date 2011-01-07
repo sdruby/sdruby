@@ -32,9 +32,10 @@ The [list of projects](http://sdruby.org/projects) shows all Github projects cre
 
 Thanks to the following people for contributing to this app.
 
-* Neal Clark
-* Patrick Crowley
-* Jordan Fowler
-* Rob Kaufman
-* Nick Zadrozny
-* James Miller
+* [Neal Clark](https://github.com/nclark/)
+* [Patrick Crowley](https://github.com/mokolabs/)
+* [Jordan Fowler](https://github.com/thebreeze/)
+* [Ben Hughes](https://github.com/rubeity/)
+* [Rob Kaufman](https://github.com/notch8/)
+* [James Miller](https://github.com/bensie/)
+* [Nick Zadrozny](https://github.com/nz/)
