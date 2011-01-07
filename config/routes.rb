@@ -12,13 +12,9 @@ ActionController::Routing::Routes.draw do |map|
   map.sponsors '/sponsors', :controller => 'pages', :action => 'sponsors'
 
   # Resources
-  map.resources :events
-  map.resources :jobs
-  map.resources :meetings, :controller => 'events'
   map.resources :podcasts, :as => 'podcast'
   map.resources :projects
   map.resources :users, :member => {:edit_profile => :get}
-  map.resources :widgets
   map.resource :account, :controller => "users"
   map.resources :users
   map.resource :user_session

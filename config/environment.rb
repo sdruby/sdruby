@@ -5,7 +5,7 @@
 # ENV['RAILS_ENV'] ||= 'production'
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '2.3.4' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.3.10' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -23,19 +23,6 @@ Rails::Initializer.run do |config|
   # Specify gems that this application depends on. 
   # They can then be installed with "rake gems:install" on new installations.
   # You have to specify the :lib option for libraries, where the Gem name (sqlite3-ruby) differs from the file itself (sqlite3)
-
-  config.gem "haml"
-  config.gem "newrelic_rpm"
-  config.gem "rdiscount"
-  config.gem "rspec", :lib => false
-  config.gem "rspec-rails", :lib => false
-  config.gem "authlogic"
-  config.gem 'mislav-will_paginate', :lib => false, :version => '>= 2.3.11'
-
-  config.gem "hpricot"
-  config.gem "chronic" #, :version => '0.6', :source => "http://code.whytheluckystiff.net"
-  # config.gem "sqlite3-ruby", :lib => "sqlite3"
-  # config.gem "aws-s3", :lib => "aws/s3"
 
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
@@ -81,6 +68,9 @@ Rails::Initializer.run do |config|
   # Activate observers that should always be running
   # Please note that observers generated using script/generate observer need to have an _observer suffix
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
+
+  require "rack/recaptcha"  # I know, I know... Bundler doesn't seem to be requiring this correctly!
+  config.middleware.use Rack::Recaptcha, :public_key => '6LdJOMASAAAAAFZDpwMtiQLz_J4yZ5PqaGRlJ2dQ', :private_key => '6LdJOMASAAAAABY7abzfkCSBFOz94yd-sVF8RBvn', :paths => '/users'
 end
 
 # We need open-uri to grab GitHub projects
