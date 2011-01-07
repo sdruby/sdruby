@@ -51,6 +51,7 @@ module ApplicationHelper
   
   def next_meeting_date(now=Time.zone.now)
     now -= 1.day
+    Chronic.time_class = Time.zone
     if Chronic.parse("1st thursday of this month", :context => :past, :now => now)
       return Chronic.parse('1st thursday of next month', :now => now)
     else
