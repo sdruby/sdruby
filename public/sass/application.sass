@@ -1,3 +1,10 @@
+// It's mixin time!!!
+=border_radius(!radius)
+  border-radius = "#{!radius}"
+  -moz-border-radius = "#{!radius}"
+  -webkit-border-radius = "#{!radius}"
+
+
 // Reset
 
 html, body, div, span, applet, object, iframe,
@@ -181,16 +188,21 @@ td
     :margin 15px 15px 0 0
 
 #slogan
-  :background #330906
-  :color #be0d21
+  :background #3E0A06
+  :color #C60D22
   :font-size 18px
   :font-weight bold
   :height 36px
   :padding 20px
 
 #navigation
-  :background #261B13
+  :background #2F2016
   :font-size 18px !important
+  :-webkit-user-select none
+  :-khtml-user-select none
+  :-moz-user-select none
+  :-o-user-select none
+  :user-select none
   ul
     :height 34px
     :padding-left 20px
@@ -207,13 +219,13 @@ td
           :color #fff
           :text-shadow 1px 1px 0 #000
   li.active
-    :background #312218
+    :background #412A1D
     a
       :color #fff
       :text-shadow 1px 1px 0 #000
   
 #content
-  :background #312218
+  :background #412A1D
   :min-height 500px
   :padding 20px
   a
@@ -225,13 +237,13 @@ td
 
 #footer
   :background url('/images/application/footer.gif') no-repeat
-  :color #393633
+  :color #444
   :font-size 14px
   :height 45px
   :padding-top 10px
   :text-align center
   a
-    :color #393633
+    :color #505050
 
 
 // Errors
@@ -325,6 +337,7 @@ label
     :right 0
     :padding 5px 8px 0 0
 
+
 // Home
 
 #promo
@@ -402,6 +415,7 @@ label
   input[type=hidden]
     :display none
 
+
 // Podcast
 
 .screenshot
@@ -413,7 +427,8 @@ label
     :border 10px solid #1B140D
 
 .watch
-  :background url('/images/application/watch.gif') no-repeat
+  +border_radius(10px)
+  :background #2F2016
   :color #fff
   :font-weight bold
   :height 33px
@@ -446,14 +461,15 @@ label
     img#feed_stats
       :margin 9px 10px 0 0
   .watch_now
-    :background url('/images/application/watch_now.gif') no-repeat
+    +border_radius(10px)
+    :background #2F2016
     :font-weight bold
     :height 30px
     :padding 10px 0 0 0
     :text-align center
     :width 121px
     a
-      :color #98908c
+      :color #eee
       :display block
       :height 30px
       :text-decoration none
@@ -472,7 +488,8 @@ ul#filter
     :margin 0 10px 0 0
     :width 77px
     span
-      :background url('/images/application/filter.gif') no-repeat
+      +border_radius(20px)
+      :background #2F2016
       :color #98908c
       :cursor pointer
       :display block
@@ -483,11 +500,11 @@ ul#filter
       :text-decoration none
       :width 77px
       &:hover
-        :background url('/images/application/selected_filter.gif') no-repeat
+        :border 1px solid #555
   li.current
     span
-      :background url('/images/application/selected_filter.gif') no-repeat
-   
+      :border 1px solid #555
+    
 #episodes
   :border-top 1px solid #3F3229
   :margin-top 10px
@@ -526,6 +543,7 @@ ul#filter
         &:hover
           :color #fff
 
+
 // Members
 
 #members
@@ -542,6 +560,7 @@ ul#filter
   
 #members_intro
   :margin-left 15px
+
 
 // Member profile
 
@@ -582,6 +601,7 @@ ul#filter
         :margin-right 3px
         :vertical-align middle
 
+
 // Projects
 
 .projects
@@ -617,6 +637,7 @@ ul#filter
   li
     .projects
       :margin-left 57px
+
 
 // Miscellaneous
 
