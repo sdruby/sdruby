@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090720192407) do
+ActiveRecord::Schema.define(:version => 20101224204119) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -79,15 +79,6 @@ ActiveRecord::Schema.define(:version => 20090720192407) do
     t.string   "neighborhood"
     t.boolean  "available_for_work"
     t.boolean  "show_email",            :default => false
-  end
-
-  create_table "widgets", :force => true do |t|
-    t.string   "setup"
-    t.integer  "column"
-    t.integer  "row"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "view"
   end
 
 end

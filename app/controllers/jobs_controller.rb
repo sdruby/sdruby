@@ -38,11 +38,11 @@ class JobsController < ApplicationController
     end
   end
 
-  def destroy
-    @job.destroy
+#  def destroy
+    #@job.destroy
 
-    redirect_to(jobs_url)
-  end
+    #redirect_to(jobs_url)
+  #end
 
   private
   

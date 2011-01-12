@@ -46,11 +46,11 @@ class PodcastsController < ApplicationController
     end
   end
 
-  def destroy
-    @podcast.destroy
+#  def destroy
+    #@podcast.destroy
 
-    redirect_to(podcasts_url)
-  end
+    #redirect_to(podcasts_url)
+#  end
 
 
   protected

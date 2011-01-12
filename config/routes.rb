@@ -14,8 +14,8 @@ ActionController::Routing::Routes.draw do |map|
   # Resources
   map.resources :podcasts, :as => 'podcast'
   map.resources :projects
-  map.resources :users, :member => {:edit_profile => :get}
-  map.resource :account, :controller => "users"
+  map.resources :users, :member => {:edit_profile => :get}, :except => [:destroy]
+  map.resource :account, :controller => "users", :except => [:destroy]
   map.resources :users
   map.resource :user_session
   
