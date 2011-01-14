@@ -1,5 +1,5 @@
 class PodcastsController < ApplicationController
-  before_filter :require_user, :except => [:index, :show]
+  before_filter :require_admin, :except => [:index, :show]
   before_filter :find_podcast, :except => [:index, :new, :create]
   
   def index
@@ -46,17 +46,16 @@ class PodcastsController < ApplicationController
     end
   end
 
-#  def destroy
-    #@podcast.destroy
-
-    #redirect_to(podcasts_url)
-#  end
+  def destroy
+    @podcast.destroy
+    flash[:notice] = 'Podcast was successfully destroyed.'
+    redirect_to podcasts_path
+  end
 
 
   protected
 
-    def find_podcast
-      @podcast = Podcast.find(params[:id])
-    end
-
+  def find_podcast
+    @podcast = Podcast.find(params[:id])
+  end
 end
