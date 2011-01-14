@@ -10,7 +10,7 @@ class UserSessionsController < ApplicationController
 
     if @user_session.save
       flash[:notice] = "Login successful!"
-      redirect_back_or_default account_url
+      redirect_back_or_default user_path(@user_session.user)
     else
       render :action => :new
     end
@@ -31,7 +31,7 @@ class UserSessionsController < ApplicationController
   
   def require_not_logged_in
     if current_user
-      redirect_to account_path
+      redirect_to user_path(current_user)
       false
     end
   end

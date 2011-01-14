@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :require_user, :except => [:index, :new, :create]
+  before_filter :require_user, :except => [:index, :show, :new, :create]
   before_filter :find_user, :except => [:index, :new, :create]
   before_filter :authorize_user, :except => [:index, :show, :new, :create]
 
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   
   def new
     if current_user
-      redirect_to account_path
+      redirect_to user_path(current_user)
     else
       @user = User.new
     end
@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
+    @user.valid?
 
     if !recaptcha_valid?
       @user.errors.add_to_base "You did not enter the correct words. Please try again."

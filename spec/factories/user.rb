@@ -11,3 +11,7 @@ Factory.define :user do |f|
   f.neighborhood { ["North Park", "South Park", "University Heights", "Hillcrest"].sample }
   f.available_for_work true
 end
+
+Factory.define :admin, :parent => :user do |f|
+  f.admin true
+end

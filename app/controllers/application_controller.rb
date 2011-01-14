@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
   def require_admin
     unless current_user and current_user.admin?
       store_location
-      flash[:notice] = "You must be an administrator to access this page"
+      flash[:notice] = "You are not authorized to access this page"
       redirect_to new_user_session_url
       return false
     end
@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
     if current_user
       store_location
       flash[:notice] = "You must be logged out to access this page"
-      redirect_to account_url
+      redirect_to root_path
       return false
     end
   end
