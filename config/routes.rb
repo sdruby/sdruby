@@ -14,9 +14,8 @@ ActionController::Routing::Routes.draw do |map|
   # Resources
   map.resources :podcasts, :as => 'podcast'
   map.resources :projects
-  map.resources :users, :member => {:edit_profile => :get}, :except => [:destroy]
+  map.resources :users, :member => {:edit_profile => :get}, :except => [:destroy], :as => 'members'
   map.resource :account, :controller => "users", :except => [:destroy]
-  map.resources :users
   map.resource :user_session
   
   # Install the default routes as the lowest priority.
