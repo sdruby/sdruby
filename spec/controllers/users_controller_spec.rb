@@ -26,7 +26,7 @@ describe UsersController do
 
     describe "on GET to new" do
       before { get :new }
-      it { should redirect_to(account_path) }
+      it { should redirect_to(user_path(@user)) }
     end
 
     describe "on GET to edit" do
@@ -37,15 +37,80 @@ describe UsersController do
 
     describe "on PUT to update" do
       context "when valid" do
-        before { put :update, :user => Factory.attributes_for(:user) }
+        before { put :update, :id => @user.id, :user => Factory.attributes_for(:user) }
         it { should redirect_to(user_path(@user)) }
         it { should set_the_flash }
       end
 
       context "when not valid" do
-        before { put :update, :user => Factory.attributes_for(:user, :full_name => "") }
+        before { put :update, :id => @user.id, :user => Factory.attributes_for(:user, :full_name => "") }
         it { should respond_with(:success) }
         it { should render_template(:edit) }
+      end
+    end
+
+    describe "on DELETE to destroy" do
+      before do
+        lambda { delete :destroy, :id => @user }.should change { User.count }.by(-1)
+      end
+
+      it { should respond_with(:redirect) }
+      it { should set_the_flash.to(/deleted/) }
+    end
+
+
+    context "as admin" do
+      before { login_as Factory.create(:admin) }
+
+      describe "on GET to edit" do
+        before { get :edit, :id => @user }
+        it { should respond_with(:success) }
+        it { should assign_to(:user) }
+      end
+
+      describe "on PUT to update" do
+        context "when valid" do
+          before { put :update, :id => @user.id, :user => Factory.attributes_for(:user) }
+          it { should redirect_to(user_path(@user)) }
+          it { should set_the_flash }
+        end
+
+        context "when not valid" do
+          before { put :update, :id => @user.id, :user => Factory.attributes_for(:user, :full_name => "") }
+          it { should respond_with(:success) }
+          it { should render_template(:edit) }
+        end
+      end
+
+      describe "on DELETE to destroy" do
+        before do
+          lambda { delete :destroy, :id => @user }.should change { User.count }.by(-1)
+        end
+
+        it { should respond_with(:redirect) }
+        it { should set_the_flash.to(/deleted/) }
+      end
+    end
+
+    context "with another user" do
+      before { @another_user = Factory.create(:user) }
+
+      describe "on GET to edit" do
+        before { get :edit, :id => @another_user }
+        it { should respond_with(:redirect) }
+        it { should set_the_flash.to(/not authorized/) }
+      end
+
+      describe "on PUT to update" do
+        before { put :update, :id => @another_user, :user => Factory.attributes_for(:user) }
+        it { should respond_with(:redirect) }
+        it { should set_the_flash.to(/not authorized/) }
+      end
+
+      describe "on DELETE to destroy" do
+        before { delete :destroy, :id => @another_user }
+        it { should respond_with(:redirect) }
+        it { should set_the_flash.to(/not authorized/) }
       end
     end
   end

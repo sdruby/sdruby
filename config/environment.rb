@@ -70,7 +70,7 @@ Rails::Initializer.run do |config|
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 
   require "rack/recaptcha"  # I know, I know... Bundler doesn't seem to be requiring this correctly!
-  config.middleware.use Rack::Recaptcha, :public_key => '6LdJOMASAAAAAFZDpwMtiQLz_J4yZ5PqaGRlJ2dQ', :private_key => '6LdJOMASAAAAABY7abzfkCSBFOz94yd-sVF8RBvn', :paths => '/users'
+  config.middleware.use Rack::Recaptcha, :public_key => '6LdJOMASAAAAAFZDpwMtiQLz_J4yZ5PqaGRlJ2dQ', :private_key => '6LdJOMASAAAAABY7abzfkCSBFOz94yd-sVF8RBvn', :paths => '/members'
 end
 
 # We need open-uri to grab GitHub projects

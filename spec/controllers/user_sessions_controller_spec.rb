@@ -10,12 +10,12 @@ describe UserSessionsController do
 
     describe "on GET to new" do
       before { get :new }
-      it { should redirect_to(account_path) }
+      it { should redirect_to(user_path(@user)) }
     end
 
     describe "on POST to create" do
       before { post :create }
-      it { should redirect_to(account_path) }
+      it { should redirect_to(user_path(@user)) }
     end
 
     describe "on DELETE to destroy" do

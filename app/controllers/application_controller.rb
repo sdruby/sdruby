@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
 
   filter_parameter_logging :password, :password_confirmation
-  helper_method :current_user_session, :current_user
+  helper_method :current_user_session, :current_user, :current_admin
 
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
@@ -21,6 +21,10 @@ class ApplicationController < ActionController::Base
     return @current_user if defined?(@current_user)
     @current_user = current_user_session && current_user_session.user
   end
+
+  def current_admin
+    current_user if current_user.try(:admin?)
+  end
   
   def require_user
     unless current_user
@@ -31,11 +35,20 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def require_admin
+    unless current_user and current_user.admin?
+      store_location
+      flash[:notice] = "You are not authorized to access this page"
+      redirect_to new_user_session_url
+      return false
+    end
+  end
+
   def require_no_user
     if current_user
       store_location
       flash[:notice] = "You must be logged out to access this page"
-      redirect_to account_url
+      redirect_to root_path
       return false
     end
   end
