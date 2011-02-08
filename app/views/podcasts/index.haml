@@ -13,7 +13,7 @@
       = link_to "Watch now", @podcast.movie_link if @podcast
 
   .screenshot
-    = link_to(image_tag(@podcast.screenshot.url, :size => "345x266", :alt => "Episode 36"), @podcast.movie_link)
+    = link_to(image_tag(@podcast.screenshot.url, :size => "345x267", :alt => "Episode #{@podcast.id}"), @podcast.movie_link)
 
   #actions
     = link_to(image_tag("application/feed.png", :size => "32x32", :alt => "Podcast feed"), "http://feeds2.feedburner.com/sdrbpodcast")

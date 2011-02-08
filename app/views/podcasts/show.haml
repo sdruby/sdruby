@@ -12,7 +12,7 @@
       = link_to "Watch now", @podcast.movie_link
 
   .screenshot
-    = link_to(image_tag(@podcast.screenshot.url, :size => "345x266", :alt => "Episode #{@podcast.id}"), @podcast.movie_link)
+    = link_to(image_tag(@podcast.screenshot.url, :size => size_for(@podcast), :alt => "Episode #{@podcast.id}"), @podcast.movie_link)
 
   #actions
     = link_to "More episodes from the SD Ruby Podcast&raquo;", podcasts_path
