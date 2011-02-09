@@ -3,6 +3,7 @@ tmp/*
 tmp/**/*
 .DS_Store
 config/database.yml
+config/fuzzy.yml
 config/password.txt
 public/stylesheets/*
 public/images/screenshots/*
