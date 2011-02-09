@@ -91,6 +91,13 @@ form
     :margin -9px 0 0 0
     select
       :display inline
+  input[type=text],
+  input[type=password],
+  textarea
+    +border_radius(3px)
+    :border none
+    :padding 6px
+    :width 305px
   #podcast_screenshot
     :color #98908c
     :font-size 14px
@@ -650,4 +657,25 @@ ul#filter
   
 .panel
   :float left
-  :margin-right 70px
+  :margin-right 50px
+  :width 380px
+  input[type=text],
+  input[type=password],
+  textarea
+    :width 360px
+    
+
+// New/Edit podcast
+
+.new_podcast,
+.edit_podcast
+  input[type=text]
+    :width 848px
+  input[type=password]
+    :width 700px
+  textarea
+    :width 848px
+  #podcast_movie_size
+    :width 200px
+  #podcast_movie_duration
+    :width 200px
