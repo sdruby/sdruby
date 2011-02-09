@@ -1,6 +1,10 @@
+# SD Ruby
+
+## Overview ##
+
 This app is the website of [SD Ruby](http://sdruby.org), a local Ruby user group based in San Diego, CA.
 
-Currently, this application includes support for our video podcast, member signup and registration, member profiles, and a Github project list. We're also working on adding a job board and other features.
+Currently, this application includes support for our video podcast, member signup and registration, member profiles, and a Github project list. We're also working on adding other features.
 
 ## Features ##
 
