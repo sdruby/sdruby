@@ -3,7 +3,7 @@
     = link_to(image_tag(podcast.screenshot.url(:small), :size => "150x116", :alt => "Episode #{podcast.id}"), podcast_path(podcast.id))
   .details
     %h3
-      = link_to "Episode 0#{podcast.id}: #{podcast.name}", podcast_path(podcast.id)
+      = link_to "#{podcast.episode_number}: #{podcast.name}", podcast_path(podcast.id)
     %p= truncate(strip_tags(markdown(podcast.description)).squish, {:length => 180})
     .watch
       = link_to "Watch", podcast.movie_link
