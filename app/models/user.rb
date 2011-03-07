@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :projects
+  has_many :projects, :order => "github_created_at DESC"
 
   acts_as_authentic
 
@@ -40,7 +40,9 @@ class User < ActiveRecord::Base
       (doc/:repositories).each do |repository|
         (repository/:name).each_with_index do |name, index|
           unless (repository/:fork)[index].inner_html == 'true'
-            self.projects << Project.new(:name => name.inner_html, :description => (repository/:description)[index].inner_html)
+            self.projects << Project.new(:name => name.inner_html,
+                                         :description => (repository/:description)[index].inner_html,
+                                         :github_created_at => (repository/"created-at")[index].inner_html)
           end
         end
       end
