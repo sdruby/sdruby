@@ -42,7 +42,10 @@ class User < ActiveRecord::Base
           unless (repository/:fork)[index].inner_html == 'true'
             self.projects << Project.new(:name => name.inner_html,
                                          :description => (repository/:description)[index].inner_html,
-                                         :github_created_at => (repository/"created-at")[index].inner_html)
+                                         :github_created_at => (repository/"created-at")[index].inner_html,
+                                         :github_pushed_at => (repository/"pushed-at")[index].inner_html,
+                                         :github_watchers => (repository/"watchers")[index].inner_html                                   
+                                         )
           end
         end
       end
