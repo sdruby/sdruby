@@ -1,0 +1,6 @@
+#featured_project
+  %h2
+    = h link_to(@featured_project.name, "http://github.com/#{@featured_project.user.github_username}/#{@featured_project.name}")
+    by
+    = h link_to(@featured_project.user, user_path(@featured_project.user))
+  %p= h @featured_project.description

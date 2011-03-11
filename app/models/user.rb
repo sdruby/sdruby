@@ -14,7 +14,11 @@ class User < ActiveRecord::Base
                     :path => ":rails_root/public/images/users/avatars/:id/:style.:extension",
                     :url => "/images/users/avatars/:id/:style.:extension",
                     :default_url => "/images/users/avatar_:style.png"
-                    
+               
+  def to_s
+    full_name
+  end
+         
   def is_admin?
     self.id == 1 ? true : false
   end

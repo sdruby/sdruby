@@ -5,6 +5,8 @@
   = @projects.size
   open-source projects created by SD Ruby members.
 
+= render :partial => "project"
+
 %ul#users_with_projects
   - @users.each do |user|
     - unless user.projects.empty?
@@ -12,6 +14,6 @@
         .user
           = link_to(image_tag(user.avatar.url(:small), :size => "36x36"), user)
           .name
-            = link_to user.full_name, user
+            = link_to h(user.full_name), user
         %ul.projects
           = show_github_projects_for(user)
