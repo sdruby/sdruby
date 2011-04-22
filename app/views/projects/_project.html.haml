@@ -3,4 +3,4 @@
     = h link_to(@featured_project.name, "http://github.com/#{@featured_project.user.github_username}/#{@featured_project.name}")
     by
     = h link_to(@featured_project.user, user_path(@featured_project.user))
-  %p= truncate(@featured_project.description, :length => 70)
+  %p= truncate(@featured_project.description, :length => 65)
