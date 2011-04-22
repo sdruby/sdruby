@@ -4,6 +4,11 @@
   -moz-border-radius = "#{!radius}"
   -webkit-border-radius = "#{!radius}"
 
+=opacity(!opacity)
+  filter = "alpha(opacity: #{!opacity} * 100)"
+  -moz-opacity = #{!opacity}
+  -khtml-opacity = #{!opacity}
+  opacity = #{!opacity}
 
 // Reset
 
@@ -647,11 +652,27 @@ ul#filter
       
 #featured_project
   :background #221810
-  :margin 24px 0
-  :padding 12px
   :border 5px solid #261B13
+  :height 50px
+  :margin 24px 0
+  :padding 3px 12px
+  span
+    :display block
+    :float left
+    :font-size 30px
+    :height 50px
+    :line-height 42px
+    :width 280px
   a
     :color #fff
+    :text-decoration none
+  p
+    :margin 3px 0
+  h2
+    :margin 3px 0 0 0
+  #refresh
+    +opacity(0.5)
+    :float right
 
 
 // Miscellaneous

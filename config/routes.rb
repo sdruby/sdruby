@@ -13,7 +13,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Resources
   map.resources :podcasts, :as => 'podcast'
-  map.resources :projects
+  map.resources :projects, :collection => {:featured => :get}
   map.resources :users, :except => [:destroy], :as => 'members'
   map.resource :user_session
   

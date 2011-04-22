@@ -5,7 +5,11 @@
   = @projects.size
   open-source projects created by SD Ruby members.
 
-= render :partial => "project"
+#featured_project
+  #refresh= link_to_function "refresh", "$('#featured_project_details').fadeOut('fast');$('#featured_project_details').load('/projects/featured').hide().fadeIn('slow');"
+  %span :featured_project =>
+  #featured_project_details
+    = render :partial => "project"
 
 %ul#users_with_projects
   - @users.each do |user|

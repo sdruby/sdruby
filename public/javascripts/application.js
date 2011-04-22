@@ -1,3 +1,8 @@
+function sleep(delay) {
+  var start = new Date().getTime();
+  while (new Date().getTime() < start + delay);
+}
+
 
 $(document).ready(function() {
   
@@ -15,7 +20,8 @@ $(document).ready(function() {
     $(".published_in_" + year).show();
   });
   
-  if ( $('.panel').length > 0 )
+  if ( $('.panel').length > 0 ) {
     $(':checkbox').iphoneStyle();
+  }
   
 });
