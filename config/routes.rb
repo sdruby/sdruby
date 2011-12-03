@@ -14,5 +14,5 @@ SDRuby::Application.routes.draw do
   resources :users, except: :destroy, as: :members
   resource :user_session
 
-  root to: 'home'
+  root to: 'home#index'
 end
