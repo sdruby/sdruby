@@ -1,27 +1,24 @@
-function sleep(delay) {
-  var start = new Date().getTime();
-  while (new Date().getTime() < start + delay);
-}
+$(function () {
+  var $all = $(".all"),
+      $filter = $("#filter li"),
+      $episode = $(".episode"),
+      cur = "current";
 
-
-$(document).ready(function() {
-  
-  $("li.all").click(function() {
-    $(".episode").show();
-    $("#filter li").removeClass("current");
-    $(".all").addClass("current");
+  $all.click(function () {
+    $episode.show();
+    $filter.removeClass(cur);
+    $all.addClass(cur);
   });
-  
-  $("li.filter").click(function() {
-    year = $(this).find("span").html();
-    $(".episode").hide();
-    $("#filter li").removeClass("current");
-    $(".filter_" + year).addClass("current");
+
+  $(".filter").click(function () {
+    var year = $(this).find("span").html();
+    $episode.hide();
+    $filter.removeClass(cur);
+    $(".filter_" + year).addClass(cur);
     $(".published_in_" + year).show();
   });
-  
-  if ( $('.panel').length > 0 ) {
+
+  if ($('.panel').length) {
     $(':checkbox').iphoneStyle();
   }
-  
 });
