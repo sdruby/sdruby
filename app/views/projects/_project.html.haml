@@ -1,3 +1,4 @@
+- return unless @featured_project
 #featured_project_details
   %h2
     = h link_to(@featured_project.name, "http://github.com/#{@featured_project.user.github_username}/#{@featured_project.name}")
