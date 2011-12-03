@@ -1,24 +1,18 @@
-ActionController::Routing::Routes.draw do |map|
-  
-  # Homepage
-  map.root :controller => 'home'
-  map.tshirts '/tshirts',  :controller => 'home', :action => "tshirts"
-  map.thanks '/thanks',  :controller => 'home', :action => "thanks"
-  map.logout '/logout', :controller => 'user_sessions', :action => 'destroy'
-  map.login '/login', :controller => 'user_sessions', :action => 'new'
-  map.register '/register', :controller => 'users', :action => 'new'
+SDRuby::Application.routes.draw do
+  match "/tshirts" => "home#tshirts", as: :tshirts
+  match "/thanks" => "home#thanks", as: :thanks
+  match "/logout" => "user_sessions#destroy", as: :logout
+  match "/login" => "user_sessions#new", as: :login
+  match "/register" => "users#new", as: :register
 
-  # Pages
-  map.sponsors '/sponsors', :controller => 'pages', :action => 'sponsors'
+  match "/sponsors" => "pages#sponsors", as: :sponsors
 
-  # Resources
-  map.resources :podcasts, :as => 'podcast'
-  map.resources :projects, :collection => {:featured => :get}
-  map.resources :users, :except => [:destroy], :as => 'members'
-  map.resource :user_session
-  
-  # Install the default routes as the lowest priority.
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  resources :podcasts, as: :podcast
+  resources :projects do
+    get :featured, on: :collection
+  end
+  resources :users, except: :destroy, as: :members
+  resource :user_session
 
+  root to: 'home'
 end
