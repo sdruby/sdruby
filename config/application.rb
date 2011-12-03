@@ -46,6 +46,6 @@ module SDRuby
     config.assets.version = '1.0'
 
     # Recaptcha
-    config.middleware.use Rack::Recaptcha, :public_key => '6LdJOMASAAAAAFZDpwMtiQLz_J4yZ5PqaGRlJ2dQ', :private_key => '6LdJOMASAAAAABY7abzfkCSBFOz94yd-sVF8RBvn', :paths => '/members'
+    config.middleware.use Rack::Recaptcha, :public_key => '6LdJOMASAAAAAFZDpwMtiQLz_J4yZ5PqaGRlJ2dQ', :private_key => '6LdJOMASAAAAABY7abzfkCSBFOz94yd-sVF8RBvn', :paths => '/users'
   end
 end

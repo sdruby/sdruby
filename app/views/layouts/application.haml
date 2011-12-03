@@ -10,7 +10,7 @@
     = stylesheet_link_tag "application"
     = stylesheet_link_tag "iphone", :media => "only screen and (max-device-width: 480px)"
     = javascript_include_tag "jquery-1.3.2.min", "iphone-style-checkboxes", "application"
-    - if @controller.controller_name =~ /podcast/
+    - if params[:controller] == "podcasts"
       = auto_discovery_link_tag(:atom, "http://feeds2.feedburner.com/sdrbpodcast", {:title => "SD Ruby Podcast"})
     = csrf_meta_tags
   %body

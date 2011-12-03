@@ -11,7 +11,7 @@ SDRuby::Application.routes.draw do
   resources :projects do
     get :featured, on: :collection
   end
-  resources :users, except: :destroy, as: :members
+  resources :users, except: :destroy
   resource :user_session
 
   root to: 'home#index'

@@ -31,7 +31,7 @@ module ApplicationHelper
   end
 
   def request_host
-    if RAILS_ENV == "development"
+    if Rails.env.development?
       "http://#{request.host}:#{request.port}"
     else
       "http://sdruby.com"
@@ -40,9 +40,9 @@ module ApplicationHelper
 
   def check_if_active(controller)
 
-    if @controller.controller_name == controller.to_s
+    if params[:controller] == controller.to_s
       return "active"
-    elsif @controller.action_name == controller.to_s
+    elsif params[:action] == controller.to_s
       return "active"
     else
       return nil
@@ -55,7 +55,7 @@ module ApplicationHelper
     now = Time.parse("April 15, 2011") if now < Time.parse("April 15, 2011")
 
     now = now - 1.day
-    if RAILS_ENV == "production"
+    if Rails.env.production?
       now = now - 8.hours
     end
     if Chronic.parse("1st thursday of this month", :context => :past, :now => now)
