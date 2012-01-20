@@ -61,7 +61,6 @@ GEM
     linecache (0.43)
     mime-types (1.16)
     mysql (2.8.1)
-    newrelic_rpm (2.9.9)
     nokogiri (1.4.4)
     pickle (0.4.4)
       cucumber (>= 0.8)
@@ -123,7 +122,6 @@ DEPENDENCIES
   hpricot (~> 0.8.1)
   launchy (~> 0.3.7)
   mysql
-  newrelic_rpm (~> 2.9.5)
   pickle (~> 0.4.2)
   rack-recaptcha
   rails (= 2.3.10)
