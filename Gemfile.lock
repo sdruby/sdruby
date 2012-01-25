@@ -71,11 +71,6 @@ GEM
     erubis (2.7.0)
     execjs (1.2.9)
       multi_json (~> 1.0)
-    factory_girl (2.5.0)
-      activesupport
-    factory_girl_rails (1.6.0)
-      factory_girl (~> 2.5.0)
-      railties (>= 3.0.0)
     faker (1.0.1)
       i18n (~> 0.4)
     ffi (1.0.11)
@@ -217,7 +212,6 @@ DEPENDENCIES
   cucumber
   cucumber-rails
   dynamic_form
-  factory_girl_rails
   faker
   haml
   hpricot

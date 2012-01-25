@@ -26,8 +26,6 @@ group :development do
   gem "ruby-debug19", platforms: :ruby_19
 end
 
-gem "factory_girl_rails"
-
 group :test, :cucumber do
   gem "faker"
   gem "rspec-rails"
