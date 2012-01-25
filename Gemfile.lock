@@ -217,7 +217,7 @@ DEPENDENCIES
   hpricot
   jquery-rails
   launchy
-  mysql2
+  mysql2 (= 0.3.11)
   newrelic_rpm
   paperclip
   pickle
