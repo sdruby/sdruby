@@ -5,26 +5,26 @@
   #details
     %h1 SD Ruby Podcast
 
-    %h2= "#{@podcast.episode_number}: #{@podcast.name}"
+    %h2= "#{@podcast.episode_number}: #{@podcast.name}" if @podcast
 
-    %p= markdown(@podcast.description)
+    %p= markdown(@podcast.description) if @podcast
 
     .watch_now
       = link_to "Watch now", @podcast.movie_link if @podcast
 
   .screenshot
-    = link_to(image_tag(@podcast.screenshot.url, :size => "345x267", :alt => "Episode #{@podcast.id}"), @podcast.movie_link)
+    = link_to(image_tag(@podcast.screenshot.url, :size => "345x267", :alt => "Episode #{@podcast.id}"), @podcast.movie_link) if @podcast
 
   #actions
     = link_to(image_tag("application/feed.png", :size => "32x32", :alt => "Podcast feed"), "http://feeds2.feedburner.com/sdrbpodcast")
 
     = link_to(image_tag("application/itunes.png", :size => "79x24", :alt => "Podcast feed for iTunes", :id => "itunes"), "http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=168362573")
-    
+
     = link_to(image_tag("http://feeds.feedburner.com/~fc/sdrbpodcast?bg=FFFFFF&amp;fg=666666&amp;anim=0", :size => "88x26", :alt => "Podcast feed", :id => "feed_stats"), "http://feeds2.feedburner.com/sdrbpodcast")
-    
+
     %br.clear
 
-    
+
 %ul#filter
   %li.all.current
     %span= "All"
@@ -34,5 +34,5 @@
 
 #episodes
   = render :partial => "podcast", :collection => @podcasts
-      
+
   %br.clear

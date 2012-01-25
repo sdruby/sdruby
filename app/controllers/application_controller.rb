@@ -1,17 +1,14 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery
+
   helper :all # include all helpers, all the time
 
-  filter_parameter_logging :password, :password_confirmation
   helper_method :current_user_session, :current_user, :current_admin
-
-  # See ActionController::RequestForgeryProtection for details
-  # Uncomment the :secret if you're not using the cookie session store
-  protect_from_forgery # :secret => 'db24fa1f12cedfd2184dc9156cd2e704'
 
   include Rack::Recaptcha::Helpers
 
   private
-  
+
   def current_user_session
     return @current_user_session if defined?(@current_user_session)
     @current_user_session = UserSession.find
@@ -25,7 +22,7 @@ class ApplicationController < ActionController::Base
   def current_admin
     current_user if current_user.try(:admin?)
   end
-  
+
   def require_user
     unless current_user
       store_location
@@ -61,5 +58,4 @@ class ApplicationController < ActionController::Base
     redirect_to(session[:return_to] || default)
     session[:return_to] = nil
   end
-  
 end

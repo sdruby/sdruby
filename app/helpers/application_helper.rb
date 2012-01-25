@@ -4,18 +4,18 @@ module ApplicationHelper
   def current_user
     @controller.send :current_user
   end
-  
+
   def current_user_is?(user)
     current_user == user
   end
-  
+
   def display_flash_using(tag)
     key = [:notice, :warning, :error].find {|key| flash.key?(key)}
     unless key.blank?
       content_tag(tag.to_s, flash[key], :class => "flash #{key}")
     end
   end
-  
+
   def error_messages_for(object_name, options = {})
     options = options.symbolize_keys
     object = instance_variable_get("@#{object_name}")
@@ -29,9 +29,9 @@ module ApplicationHelper
         ""
     end
   end
-  
+
   def request_host
-    if RAILS_ENV == "development"
+    if Rails.env.development?
       "http://#{request.host}:#{request.port}"
     else
       "http://sdruby.com"
@@ -39,23 +39,23 @@ module ApplicationHelper
   end
 
   def check_if_active(controller)
-  
-    if @controller.controller_name == controller.to_s
+
+    if params[:controller] == controller.to_s
       return "active"
-    elsif @controller.action_name == controller.to_s
+    elsif params[:action] == controller.to_s
       return "active"
     else
       return nil
     end
 
   end
-  
+
   def next_meeting_date(now=Time.now)
     # HACK: This is temporary to skip the April 2011 Meeting
     now = Time.parse("April 15, 2011") if now < Time.parse("April 15, 2011")
 
     now = now - 1.day
-    if RAILS_ENV == "production"
+    if Rails.env.production?
       now = now - 8.hours
     end
     if Chronic.parse("1st thursday of this month", :context => :past, :now => now)
@@ -64,6 +64,4 @@ module ApplicationHelper
       return Chronic.parse("1st thursday of this month", :now => now)
     end
   end
-  
 end
-

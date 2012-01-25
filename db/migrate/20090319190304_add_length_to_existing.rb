@@ -5,7 +5,7 @@ class AddLengthToExisting < ActiveRecord::Migration
       puts "You need mplayer to read the metadata, skipping"
       return
     end
-    Dir.glob(File.join(RAILS_ROOT, "public", "video", "*.m4v")).each do |file|
+    Dir.glob(File.join(Rails.root, "public", "video", "*.m4v")).each do |file|
 
       file_data = Metadata.get(file)
       duration =  file_data[:LENGTH].to_f
