@@ -11,7 +11,7 @@ set :deploy_to, "/var/www/apps/#{application}"
 # If you aren't using Subversion to manage your source code, specify
 # your SCM below:
 set :scm, :git
-set :branch, "rails3"
+set :branch, "master"
 set :deploy_via, :remote_cache
 
 # role :app, :application
