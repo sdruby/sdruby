@@ -8,19 +8,19 @@
 
   %h2
     Latest from the
-    = "#{link_to "SD Ruby Podcast", podcasts_path}:"
-        
+    = "#{link_to "SD Ruby Podcast", podcasts_path}:".html_safe
+
   #name
     - if @podcast
       = link_to "Episode 0#{@podcast.id}: #{@podcast.name}", podcasts_path
-    
+
 
 #primary
 
   %h2 Meetings
 
   %p
-    We meet the first Thursday of each month, on the campus of UCSD, 
+    We meet the first Thursday of each month, on the campus of UCSD,
     in the Computer Science & Engineering Building.
     %br
     = link_to("Map and directions", "http://tinyurl.com/2f486e") + "."
@@ -28,27 +28,27 @@
   %h2 Google Group
 
   %p
-    We run a 
+    We run a
     = link_to "mailing list", "http://groups.google.com/group/sdruby/topics?gvc=2"
-    for discussion of Ruby-related topics. If you have a question about Ruby (or Ruby on Rails), 
+    for discussion of Ruby-related topics. If you have a question about Ruby (or Ruby on Rails),
     this group can probably figure it out.
 
   %p
     = link_to "Sign up", "http://groups.google.com/group/sdruby"
-    or 
+    or
     = link_to("browse the archives", "http://groups.google.com/group/sdruby/topics?gvc=2") + "."
-    (The original list is 
+    (The original list is
     = link_to("here", "http://list.sdruby.com/") + ".)"
 
   %h2 Need a Ruby Developer?
 
   %p
-    Seeking freelance or fulltime developers? Please post a brief summary of your needs to the 
+    Seeking freelance or fulltime developers? Please post a brief summary of your needs to the
     = link_to("mailing list", "http://groups.google.com/group/sdruby/topics?gvc=2") + "."
 
   %p#recruiters
     Recruiters: if you post long job listings, you will be banned.
-    Please use a short summary with a link to more information. 
+    Please use a short summary with a link to more information.
     Check the archives to make sure your listing hasn't been posted by another recruiter.
 
   %h2 Follow us on Twitter
@@ -57,5 +57,5 @@
     You can follow
     = link_to("@sdruby", "http://twitter.com/sdruby")
     on Twitter for meeting reminders and other updates.
-  
+
 = render :partial => "sponsors"

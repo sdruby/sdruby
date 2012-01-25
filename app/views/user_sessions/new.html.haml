@@ -1,7 +1,7 @@
 
 %h1=t "Login to SD Ruby"
 
-- form_for @user_session, :url => user_session_path do |f|
+= form_for @user_session, :url => user_session_path do |f|
   = f.error_messages
   = f.label :email
   = f.text_field :email, :size => 25

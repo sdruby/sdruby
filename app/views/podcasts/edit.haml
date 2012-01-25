@@ -1,6 +1,6 @@
 %h1= "Editing episode #{@podcast.id}"
 
-- form_for(@podcast, :html => { :multipart => true }) do |f|
+= form_for(@podcast, :html => { :multipart => true }) do |f|
   = f.error_messages
 
   = f.label :name
@@ -11,7 +11,7 @@
 
   = f.label :movie_link, 'Movie Link'
   = f.text_field :movie_link, :size => 62
-  
+
   = f.label :movie_size, 'Movie Size (in bytes)'
   = f.text_field :movie_size, :size => 17
 
@@ -20,11 +20,11 @@
 
   = f.label :screenshot, "Screenshot (345x267 pixels)"
   = f.file_field :screenshot
-  
+
   .check_box
     = f.check_box :publish
     = f.label :publish, "Publish this episode"
-  
+
   = f.submit "Update"
 
 = link_to 'Show', @podcast

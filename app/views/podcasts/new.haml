@@ -1,6 +1,6 @@
 %h1 New podcast episode
 
-- form_for(@podcast, :html => { :multipart => true }) do |f|
+= form_for(@podcast, :html => { :multipart => true }) do |f|
   = f.error_messages
 
   = f.label :name
@@ -17,7 +17,7 @@
 
   = f.label :movie_duration, 'Movie Duration (hh:mm:ss)'
   = f.text_field :movie_duration, :size => 17
-  
+
   = f.label :screenshot, "Screenshot (345x267 pixels)"
   = f.file_field :screenshot
 

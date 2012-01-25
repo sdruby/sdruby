@@ -2,7 +2,7 @@
 
 = error_messages_for :event
 
-- form_for(@event) do |f|
+= form_for(@event) do |f|
   %p
     %label{:for => "event_name"} Name:
     = f.text_field :name
@@ -22,7 +22,7 @@
   %p
   = f.check_box :is_private
   %label{:for => "event_is_private"} Make event private
-      
+
   %p
     = f.submit "Update"
 
