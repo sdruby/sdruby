@@ -47,6 +47,7 @@ namespace :deploy do
     run "ln -nfs #{shared_path}/system/screenshots #{latest_release}/public/images/screenshots"
     # Member avatars
     run "rm -f #{latest_release}/public/images/users/avatars"
+    run "mkdir -p #{latest_release}/public/images/users"
     run "ln -nfs #{shared_path}/system/avatars #{latest_release}/public/images/users/avatars"
   end
 
