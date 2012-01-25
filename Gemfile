@@ -8,7 +8,7 @@ gem "dynamic_form"
 gem "haml"
 gem "hpricot"
 gem "jquery-rails"
-gem "mysql2"
+gem "mysql2", "0.2.6"
 gem "newrelic_rpm"
 gem "paperclip"
 gem "rack-recaptcha", :require => "rack/recaptcha"
@@ -26,7 +26,7 @@ group :development do
 end
 
 group :test, :cucumber do
-  gem "factory_girl"
+  gem "factory_girl_rails"
   gem "faker"
   gem "rspec-rails"
   gem "shoulda"

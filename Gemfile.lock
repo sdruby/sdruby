@@ -71,8 +71,11 @@ GEM
     erubis (2.7.0)
     execjs (1.2.9)
       multi_json (~> 1.0)
-    factory_girl (2.3.2)
+    factory_girl (2.5.0)
       activesupport
+    factory_girl_rails (1.6.0)
+      factory_girl (~> 2.5.0)
+      railties (>= 3.0.0)
     faker (1.0.1)
       i18n (~> 0.4)
     ffi (1.0.11)
@@ -98,7 +101,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.17.2)
     multi_json (1.0.4)
-    mysql2 (0.3.10)
+    mysql2 (0.2.6)
     newrelic_rpm (3.3.0)
     nokogiri (1.5.0)
     paperclip (2.4.5)
@@ -214,13 +217,13 @@ DEPENDENCIES
   cucumber
   cucumber-rails
   dynamic_form
-  factory_girl
+  factory_girl_rails
   faker
   haml
   hpricot
   jquery-rails
   launchy
-  mysql2
+  mysql2 (= 0.2.6)
   newrelic_rpm
   paperclip
   pickle
