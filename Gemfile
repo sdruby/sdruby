@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '2.3.10'
+gem 'rails', '2.3.14'
 gem 'mysql'
 gem 'haml'
 gem 'rdiscount', '~> 1.3.5'
@@ -9,10 +9,6 @@ gem 'will_paginate', '~> 2.3.11'
 gem 'hpricot', '~> 0.8.1'
 gem 'chronic', '~> 0.2.3'
 gem 'rack-recaptcha', :require => 'rack/recaptcha'
-
-group :development do
-  gem 'ruby-debug'
-end
 
 group :test do
   gem 'rspec', '~> 1.3.1'
