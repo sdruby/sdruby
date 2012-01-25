@@ -27,12 +27,12 @@ after  'deploy:update_code',  'deploy:symlink_configs'
 
 namespace :deploy do
   desc "Symlinks the database and mongrel cluster configs"
-  task :symlink_configs, :roles => [:web] do 
+  task :symlink_configs, :roles => [:web] do
     symlink_database_config
     symlink_images
     symlink_video
   end
-  
+
   desc "Link to the shared database.yml."
   task :symlink_database_config, :roles => [:web] do
     run "rm -f #{latest_release}/config/database.yml"
@@ -42,6 +42,7 @@ namespace :deploy do
   desc "Link images to production"
   task :symlink_images, :roles => [:web] do
     # Podcast screenshots
+    run "mkdir -p #{latest_release}/public/images"
     run "rm -f #{latest_release}/public/images/screenshots"
     run "ln -nfs #{shared_path}/system/screenshots #{latest_release}/public/images/screenshots"
     # Member avatars
@@ -53,7 +54,7 @@ namespace :deploy do
   task :symlink_video, :roles => [:web] do
     run "ln -nfs  #{shared_path}/system/video #{latest_release}/public/video"
   end
-  
+
   desc "Restart application"
   task :restart do
     run "touch #{current_path}/tmp/restart.txt"

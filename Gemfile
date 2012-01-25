@@ -1,6 +1,7 @@
 source :rubygems
 
 gem "rails", "3.1.3"
+gem "rake", "0.8.7"
 
 gem "authlogic"
 gem "chronic"
