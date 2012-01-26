@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/GarthSnyder/mysql2.git
+  revision: c3a570213ebda4e91ce34dd4f5412606bced7b7f
+  specs:
+    mysql2 (0.3.11)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -93,7 +99,6 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.17.2)
     multi_json (1.0.4)
-    mysql2 (0.3.11)
     newrelic_rpm (3.3.0)
     nokogiri (1.5.0)
     paperclip (2.4.5)
@@ -206,7 +211,7 @@ DEPENDENCIES
   hpricot
   jquery-rails
   launchy
-  mysql2 (= 0.3.11)
+  mysql2!
   newrelic_rpm
   paperclip
   pickle
