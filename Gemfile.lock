@@ -1,6 +1,7 @@
 GIT
-  remote: git://github.com/GarthSnyder/mysql2.git
-  revision: c3a570213ebda4e91ce34dd4f5412606bced7b7f
+  remote: git://github.com/sdruby/mysql2.git
+  revision: 9f8316b82335e542c6104e64436aed7d0397dfd2
+  branch: master
   specs:
     mysql2 (0.3.11)
 
