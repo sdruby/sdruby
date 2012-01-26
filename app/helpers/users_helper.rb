@@ -1,3 +1,4 @@
+# TOOD: Both of these helpers need major refactoring. Becomes a mess with html_safe:
 module UsersHelper
   
   def iconify_and_link(links, options={})
@@ -13,8 +14,8 @@ module UsersHelper
       if icon.blank?
         icon += link_to(image_tag("application/social/web_#{options[:size]}.png"), link)
       end
-      "<li>" + icon + " " + link_to(link, link) + "</li>\n"
-    end
+      ("<li>".html_safe + icon.html_safe + " " + link_to(link, link) + "</li>\n".html_safe)
+    end.join.html_safe
   end
   
   def show_github_projects_for(user)
@@ -25,7 +26,7 @@ module UsersHelper
       projects << "<span>" + project.description + "</span>"
       projects << "</li>\n"      
     end
-    return projects
+    projects.html_safe
   end
 
 end

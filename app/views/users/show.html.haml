@@ -40,7 +40,7 @@
           Available for work
       - unless not @user.show_email?
         %li
-          = enkode_mail(@user.email,'Email me')    
+          = raw enkode_mail(@user.email, 'Email me')    
       
       
     - if @user == current_user or current_admin
