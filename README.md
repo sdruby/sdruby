@@ -6,9 +6,11 @@ Currently, this application includes support for our video podcast, member signu
 
 ## Development Setup ##
 
-  $ bundle install
-  $ sass --watch public/stylesheets:public/stylesheets/compiled
-  $ rails s
+Run:
+
+    $ bundle install
+    $ sass --watch public/stylesheets:public/stylesheets/compiled
+    $ rails s
 
 ## Features ##
 
