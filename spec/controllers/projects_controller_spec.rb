@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe ProjectsController do
-  integrate_views
+  render_views
 
   before do
     3.times do

@@ -32,17 +32,11 @@ end
 
 group :test, :cucumber do
   gem "faker"
+  gem "factory_girl_rails"
   gem "rspec-rails"
-  gem "shoulda"
+  gem "shoulda-matchers"
   gem "vcr"
   gem "webmock"
+  gem "capybara"
 end
 
-group :cucumber do
-  gem "capybara"
-  gem "cucumber"
-  gem "cucumber-rails"
-  gem "launchy"
-  gem "pickle"
-  gem "xpath"
-end

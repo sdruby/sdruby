@@ -9,3 +9,5 @@ db/*.sqlite3
 .idea/*
 .bundle
 .sass-cache
+public/images/screenshots
+public/images/users

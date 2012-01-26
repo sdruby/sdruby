@@ -1,15 +1,12 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe PagesController do
-  integrate_views
+  render_views
 
-  describe "on GET to about" do
-    before { get :about }
-    it { should respond_with(:success) }
-  end
-
-  describe "on GET to sponsors" do
-    before { get :sponsors }
-    it { should respond_with(:success) }
+  [:sponsors].each do |page|
+    describe "on GET to #{page}" do
+      before { get page }
+      it { should respond_with(:success) }
+    end
   end
 end

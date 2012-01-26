@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
 describe UserSessionsController do
-  integrate_views
+  render_views
 
   before { @user = Factory.create(:user) }
 
