@@ -11,3 +11,4 @@ db/*.sqlite3
 .sass-cache
 public/images/screenshots
 public/images/users
+.rvmrc
