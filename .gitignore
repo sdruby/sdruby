@@ -8,3 +8,4 @@ config/password.txt
 db/*.sqlite3
 .idea/*
 .bundle
+.sass-cache

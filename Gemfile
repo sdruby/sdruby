@@ -15,11 +15,14 @@ gem "paperclip"
 gem "rack-recaptcha", :require => "rack/recaptcha"
 gem "will_paginate"
 
-group :assets do
-  gem "coffee-rails", "~> 3.1.1"
-  gem "sass-rails",   "~> 3.1.5"
-  gem "uglifier", ">= 1.0.3"
-end
+gem "sass"
+
+# TODO: Pending move to Heroku...
+# group :assets do
+#   gem "coffee-rails", "~> 3.1.1"
+#   gem "sass-rails",   "~> 3.1.5"
+#   gem "uglifier", ">= 1.0.3"
+# end
 
 group :development do
   gem "ruby-debug", platforms: :ruby_18

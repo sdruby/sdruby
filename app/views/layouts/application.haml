@@ -7,8 +7,8 @@
     %link{:rel => "shortcut icon", :href => "/images/application/favicon.png"}
     %link{:rel => "apple-touch-icon", :href => "/images/application/apple-touch-icon.png"}
     %link{:rel => "apple-touch-startup-image", :href => "/images/application/startup.png"}
-    = stylesheet_link_tag "application"
-    = stylesheet_link_tag "iphone", :media => "only screen and (max-device-width: 480px)"
+    = stylesheet_link_tag "compiled/application"
+    = stylesheet_link_tag "compiled/iphone", :media => "only screen and (max-device-width: 480px)"
     = javascript_include_tag "jquery-1.3.2.min", "iphone-style-checkboxes", "application"
     - if params[:controller] == "podcasts"
       = auto_discovery_link_tag(:atom, "http://feeds2.feedburner.com/sdrbpodcast", {:title => "SD Ruby Podcast"})
