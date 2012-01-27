@@ -44,6 +44,7 @@ Thanks to the following people for contributing to this app.
 
 * [Neal Clark](https://github.com/nclark/)
 * [Patrick Crowley](https://github.com/mokolabs/)
+* [Jimmy Cuadra](https://github.com/jimmycuadra)
 * [Jordan Fowler](https://github.com/thebreeze/)
 * [Ben Hughes](https://github.com/rubiety/)
 * [Rob Kaufman](https://github.com/notch8/)
