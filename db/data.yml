@@ -1,0 +1,918 @@
+
+---
+podcasts:
+  columns:
+  - id
+  - name
+  - description
+  - movie_link
+  - publish
+  - created_at
+  - updated_at
+  - old_permalink
+  - screenshot_file_name
+  - screenshot_content_type
+  - screenshot_file_size
+  - screenshot_updated_at
+  - movie_duration
+  - movie_size
+  records: 
+  - - 1
+    - Summer of Rails
+    - ! "Patrick Crowley discusses Summer of Rails. He also introduces his first Summer
+      of Rails project, Graffletopia.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/001_summer_of_rails.m4v
+    - true
+    - 2006-07-17 23:32:03.000000000Z
+    - 2009-03-09 05:59:44.000000000Z
+    - episode-001-summer-of-rails
+    - 1.png
+    - image/png
+    - 35875
+    - 2009-03-09 05:59:43.000000000Z
+    - '28:02'
+    - 69675832
+  - - 2
+    - Camping
+    - ! "Chris Van Pelt discussing Camping, a microframework built by Why the Lucky
+      Stiff. Chris also gives us a preview of a cool little Camping app he built title
+      Croppr.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/002_camping.m4v
+    - true
+    - 2006-07-24 20:53:32.000000000Z
+    - 2009-03-09 05:59:44.000000000Z
+    - episode-002-camping
+    - 2.png
+    - image/png
+    - 105364
+    - 2009-03-09 05:59:44.000000000Z
+    - '34:34'
+    - 100531015
+  - - 3
+    - mkmf
+    - ! "Kevin Clark takes us through some of the work he's doing on mkmf for his
+      Summer of Rails project. We also get a quick preview of Kevin's RailsDay app,
+      Advisr.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/003_mkmf.m4v
+    - true
+    - 2006-07-24 20:54:52.000000000Z
+    - 2009-03-09 05:59:44.000000000Z
+    - episode-003-mkmf
+    - 3.png
+    - image/png
+    - 120927
+    - 2009-03-09 05:59:44.000000000Z
+    - '11:48'
+    - 40705751
+  - - 4
+    - Numbers
+    - ! "[Tom Werner](http://www.cube6media.com/) wows us with the power of numbers
+      in Ruby.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/004_numbers.m4v
+    - true
+    - 2006-09-08 17:14:30.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-004-numbers
+    - 4.png
+    - image/png
+    - 19531
+    - 2009-03-09 05:59:44.000000000Z
+    - '35:48'
+    - 71755714
+  - - 5
+    - ARTS Plugin
+    - ! "Kevin Clark demos his new Rails plugin, [ARTS](http://glu.ttono.us/articles/2006/05/29/guide-test-driven-rjs-with-arts),
+      which allows you to test your RJS templates.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/005_arts.m4v
+    - true
+    - 2006-09-08 17:17:13.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-005-arts-plugin
+    - 5.png
+    - image/png
+    - 63823
+    - 2009-03-09 05:59:45.000000000Z
+    - '47:32'
+    - 131703235
+  - - 6
+    - Dynamic Domains
+    - ! "[Chris Abad](http://blog.integralimpressions.com) introduces the new web
+      service, [Outlandish](http://out.landi.sh). He also shows us how they handle
+      dynamic domains within Outlandish.\r\n\r\nHere are the [slides](/pdfs/006_dynamic_domains.pdf)\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/006_dynamic_domains.m4v
+    - true
+    - 2006-09-08 17:20:17.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-006-dynamic-domains
+    - 6.png
+    - image/png
+    - 98715
+    - 2009-03-09 05:59:45.000000000Z
+    - '38:29'
+    - 56565951
+  - - 7
+    - Rails Authentication
+    - ! "[Kevin Clark](http://glu.ttono.us) gives us a brief overview of two of [Rick
+      Olson's](http://techno-weenie.net) authentication plugins: [acts_as_authenticated](http://svn.techno-weenie.net/projects/plugins/acts_as_authenticated/)
+      and [restful_authentication](http://svn.techno-weenie.net/projects/plugins/restful_authentication/).\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/007_authentication.m4v
+    - true
+    - 2006-09-08 17:24:08.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-007-rails-authentication
+    - 7.png
+    - image/png
+    - 102377
+    - 2009-03-09 05:59:45.000000000Z
+    - '12:01'
+    - 29531997
+  - - 8
+    - Chronic
+    - ! "[Tom Werner](http://www.cube6media.com/) has released the ruby gem Chronic,
+      a natural language date and time parser. In this episode he gives us a quick
+      run through of some of the cool points.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/008_chronic.m4v
+    - true
+    - 2006-10-03 16:32:29.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-008-chronic
+    - 8.png
+    - image/png
+    - 144641
+    - 2009-03-09 05:59:45.000000000Z
+    - '40:26'
+    - 161923972
+  - - 9
+    - REST with Rails
+    - ! "In this episode, [Kevin Clark](http://glu.ttono.us) shows us some of the
+      new REST features found in Edge Rails. He covers some basic concepts such as
+      HTTP verbs, and also takes a look at using RESTful routes.\r\n\r\nHere are the
+      [slides](/pdfs/009_rest.pdf)\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/009_rest.m4v
+    - true
+    - 2006-10-03 16:34:31.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-009-rest-with-rails
+    - 9.png
+    - image/png
+    - 126580
+    - 2009-03-09 05:59:46.000000000Z
+    - '15:56'
+    - 68726923
+  - - 10
+    - REST Web Services with Rails
+    - ! "[Chris Abad](http://blog.integralimpressions.com) talks a little bit about
+      providing web services to your Rails application using some of the new REST
+      features found in Edge Rails. At the end, he also throws in a bonus tip on using
+      [Rick Olson's](http://techno-weenie.net) authentication plugin [restful_authentication](http://svn.techno-weenie.net/projects/plugins/restful_authentication/)
+      to add authentication to your REST API.\r\n\r\nHere are the [slides](/pdfs/010_rest_2.pdf)\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/010_rest_2.m4v
+    - true
+    - 2006-10-03 16:37:55.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-010-rest-web-services-with-rails
+    - 10.png
+    - image/png
+    - 114053
+    - 2009-03-09 05:59:46.000000000Z
+    - '17:10'
+    - 50161545
+  - - 11
+    - ActsAsTaggable Plugin
+    - ! "[Patrick Crowley](http://mokolabs.com/) discusses his experiences with acts_as_taggable.
+      He starts off outlining some of the differences between the [gem](http://rubyforge.org/projects/taggable)
+      and the [plugin](http://dev.rubyonrails.com/svn/rails/plugins/acts_as_taggable).
+      Patrick then creates a simple app to show off some of the capabilities of the
+      plugin.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/011_acts_as_taggable.m4v
+    - true
+    - 2006-11-06 08:42:37.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-011-actsastaggable-plugin
+    - 11.png
+    - image/png
+    - 74639
+    - 2009-03-09 05:59:47.000000000Z
+    - '32:26'
+    - 179779859
+  - - 12
+    - Deployment
+    - ! "[Dominic Damian](http://acorsys.com) talks about the different options available
+      to you when deploying a Rails application. He covers areas such as servers,
+      caching, database, and hosting.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/012_deployment.m4v
+    - true
+    - 2006-11-06 08:43:33.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-012-deployment
+    - 12.png
+    - image/png
+    - 71158
+    - 2009-03-09 05:59:47.000000000Z
+    - '22:23'
+    - 74318006
+  - - 13
+    - Mocha and Stubba
+    - ! "[Kevin Clark](http://glu.ttono.us) shows us how to use mocks and stubs in
+      your Ruby tests using [Mocha and Stubba](http://mocha.rubyforge.org)\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/013_mocha_stubba.m4v
+    - true
+    - 2006-11-06 08:43:46.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-013-mocha-and-stubba
+    - 13.png
+    - image/png
+    - 113919
+    - 2009-03-09 05:59:47.000000000Z
+    - '27:20'
+    - 141459556
+  - - 14
+    - Ruby Idioms - Part 1
+    - ! "[Tom Werner](http://www.cube6media.com) gives us part 1 of his series on
+      Ruby idoms.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/014_ruby_idioms_1.mp4
+    - true
+    - 2007-01-16 21:42:56.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-014-ruby-idioms-part-1
+    - 14.png
+    - image/png
+    - 61702
+    - 2009-03-09 05:59:47.000000000Z
+    - '38:12'
+    - 112940686
+  - - 15
+    - Rails for Legacy Applications
+    - ! "[Patrick Crowley](http://mokolabs.com/) covers some of the finer point of
+      using Rails with legacy applications.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/015_rails_for_legacy_apps.mp4
+    - true
+    - 2007-01-16 21:43:08.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-015-rails-for-legacy-applications
+    - 15.png
+    - image/png
+    - 104608
+    - 2009-03-09 05:59:48.000000000Z
+    - '31:58'
+    - 109948536
+  - - 16
+    - MasterView Templates
+    - ! "Deb Lewis showcases her project MasterView. MasterView is a template language
+      for Rails.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/016_master_view.mp4
+    - true
+    - 2007-01-16 21:43:14.000000000Z
+    - 2009-03-09 05:59:48.000000000Z
+    - episode-016-masterview-templates
+    - 16.png
+    - image/png
+    - 107711
+    - 2009-03-09 05:59:48.000000000Z
+    - '25:53'
+    - 102038568
+  - - 17
+    - ActsNaked
+    - ! "In today's episode, [Patrick Crowley](http://mokolabs.com/) introduces his
+      first Rails plugin titled ActsNaked. It's an easy way to \"strip your models
+      and keep them DRY.\"\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/017_actsnaked.m4v
+    - true
+    - 2007-02-15 23:35:02.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-017-actsnaked
+    - 17.png
+    - image/png
+    - 138926
+    - 2009-03-09 05:59:48.000000000Z
+    - '10:21'
+    - 37218079
+  - - 18
+    - StaffTool
+    - ! "In this episode, [Toby Sterrett](http://120db.com/) gives us an update on
+      his soon-to-be-released project StaffTool. StaffTool is a web-based church management
+      application build with Ruby on Rails.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/018_stafftool.m4v
+    - true
+    - 2007-02-21 23:24:41.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-018-stafftool
+    - 18.png
+    - image/png
+    - 126935
+    - 2009-03-09 05:59:49.000000000Z
+    - '12:52'
+    - 52593617
+  - - 19
+    - AWS S3
+    - ! "[Jordan Fowler](http://www.jordanfowler.com/) gives a presentation on Amazon's
+      [S3](http://www.amazon.com/gp/browse.html?node=16427261) service. He also covers
+      the [AWS::S3](http://amazon.rubyforge.org/) gem written by [Marcel Molina Jr.](http://www.vernix.org/marcel/)\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/019_aws_s3.m4v
+    - true
+    - 2007-03-03 20:31:05.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-019-aws-s3
+    - 19.png
+    - image/png
+    - 83422
+    - 2009-03-09 05:59:49.000000000Z
+    - '22:34'
+    - 112326427
+  - - 20
+    - ImageScience
+    - ! "In this episode, Tom Werner covers some of the basics of the ruby image library
+      [ImageScience](http://seattlerb.rubyforge.org/ImageScience.html). ImageScience
+      is a wrapper for the [FreeImage](http://sourceforge.net/projects/freeimage)
+      graphics library, and is a lightweight alternative to [RMagick](http://rmagick.rubyforge.org/).\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/020_imagescience.mp4
+    - true
+    - 2007-03-25 01:25:33.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-20-imagescience
+    - 20.png
+    - image/png
+    - 94319
+    - 2009-03-09 05:59:49.000000000Z
+    - '19:43'
+    - 38338291
+  - - 21
+    - Merb
+    - ! "[Chris Van Pelt](http://vandev.com/) gives us an introduction to [Merb](http://merb.devjavu.com/).
+      Merb is a Ruby framework built by [Ezra Zygmuntowicz](http://brainspl.at/).\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/021_merb.m4v
+    - true
+    - 2007-04-23 04:13:15.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-21-merb
+    - 21.png
+    - image/png
+    - 143949
+    - 2009-03-09 05:59:50.000000000Z
+    - '15:03'
+    - 89568394
+  - - 22
+    - DRP
+    - ! "[DRP](http://drp.rubyforge.org/) stands for Directed Ruby Programming. In
+      this episode, Warren Henning explains exactly what that means and why you might
+      be interested in it.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/022_drp.m4v
+    - true
+    - 2007-05-31 07:08:50.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-22-drp
+    - 22.png
+    - image/png
+    - 144735
+    - 2009-03-09 05:59:50.000000000Z
+    - '30:52'
+    - 70364812
+  - - 23
+    - RubyInline
+    - ! "[Nick Zadrozny](http://beyondthepath.com/) shows us how to use C in Ruby
+      with [RubyInline](http://www.zenspider.com/ZSS/Products/RubyInline/). As an
+      example, Nick walks us through writing a password-generating application with
+      the help of [Diceware](http://www.diceware.com/).\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/023_ruby_inline.m4v
+    - true
+    - 2007-06-15 19:57:11.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-023-rubyinline
+    - 23.png
+    - image/png
+    - 144016
+    - 2009-03-09 05:59:50.000000000Z
+    - '13:10'
+    - 81696531
+  - - 24
+    - Using Ruby + Amazon SQS to build backdoors
+    - ! "[Brian Chapados](http://chapados.org/) talks about using Ruby and Amazon's
+      [Simple Que Service](http://www.amazon.com/Simple-Queue-Service-home-page/b?ie=UTF8&node=13584001)
+      web service to build backdoors into systems.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/024_amazon_sqs.m4v
+    - true
+    - 2007-11-02 19:57:43.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-024-using-ruby-amazon-sqs-to-build-backdoors
+    - 24.png
+    - image/png
+    - 8234
+    - 2009-03-09 05:59:51.000000000Z
+    - '18:09'
+    - 204460968
+  - - 25
+    - Ajax CSS Star Rating with ActsAsRateable
+    - ! "[Ryan Felton](http://www.aisleten.com/) shows off how to build an Ajax-powered,
+      CSS star rater using the [ActsAsRateable](http://juixe.com/svn/acts_as_rateable/)
+      plugin and Komodo Media's [CSS Star Rating Redux](http://komodomedia.com/blog/index.php/2007/01/20/css-star-rating-redux/)
+      technique.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/025_ajax_rating.m4v
+    - true
+    - 2007-11-02 20:10:25.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-025-ajax-css-star-rating-with-actsasrateable
+    - 25.png
+    - image/png
+    - 124605
+    - 2009-03-09 05:59:52.000000000Z
+    - '20:23'
+    - 229588670
+  - - 26
+    - ActsAsSolr
+    - ! "[Rob Kaufman](http://notch8.com) shows how easy it is to integrate [Solr](http://lucene.apache.org/solr/)
+      powered search into your Rails application using the [ActsAsSolr](http://acts-as-solr.rubyforge.org/)
+      plugin.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/026_acts_as_solr.m4v
+    - true
+    - 2007-11-02 20:22:04.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-026-acts-as-solr
+    - 26.png
+    - image/png
+    - 16424
+    - 2009-03-09 05:59:52.000000000Z
+    - '29:14'
+    - 319626810
+  - - 27
+    - Headliner and Styler
+    - ! "[Patrick Crowley](http://the.railsi.st) talks about his newest plugins: [Headliner](http://the.railsi.st/2007/5/3/headliner-dry-up-your-page-titles)
+      and [Styler](http://the.railsi.st/2007/5/3/styler-stylesheets-made-easy).\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/027_headliner_styler.m4v
+    - true
+    - 2007-11-02 20:22:36.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-027-headliner-and-styler
+    - 27.png
+    - image/png
+    - 1763
+    - 2009-03-09 05:59:52.000000000Z
+    - '20:30'
+    - 179633129
+  - - 28
+    - Simple Sidebar Plugin
+    - ! "[Ryan Felton](http://www.aisleten.com/) shows how to use [Simple Sidebar](http://mabs29.googlecode.com/svn/trunk/plugins/simple_sidebar/)
+      plugin to DRY up sidebar content in applications.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/028_sidebars.m4v
+    - true
+    - 2007-11-02 22:11:08.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-028-simple-sidebar-plugin
+    - 28.png
+    - image/png
+    - 61344
+    - 2009-03-09 05:59:52.000000000Z
+    - '24:25'
+    - 252290265
+  - - 29
+    - Big Stinking Piles (of data)
+    - ! "What do you do when third-party data vendors don't speak REST? [Rob Kaufman](http://notch8.com)
+      discuss real-world techniques for importing and exporting data. (This talk was
+      also given at [RailsConf 2007](http://conferences.oreillynet.com/rails2007/).)\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/029_stinking.m4v
+    - true
+    - 2007-11-02 22:23:56.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-029-big-stinking-piles-of-data
+    - 29.png
+    - image/png
+    - 22252
+    - 2009-03-09 05:59:53.000000000Z
+    - '36:38'
+    - 281555454
+  - - 30
+    - Tuneshelf
+    - ! "[Dominic Damian](http://www.19villages.com/) talks about his experiences
+      building [Tuneshelf](http://tuneshelf.com), a web application that allows music
+      fans to keep track of their favorite music albums.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/030_tuneshelf.m4v
+    - true
+    - 2007-11-02 22:41:54.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-030-tuneshelf
+    - 30.png
+    - image/png
+    - 42688
+    - 2009-03-09 05:59:53.000000000Z
+    - '21:13'
+    - 235887349
+  - - 31
+    - Seaside
+    - ! "Roger Whitney explores [Seaside](http://seaside.st/), the web application
+      framework based on [Smalltalk](http://en.wikipedia.org/wiki/Smalltalk).\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/031_seaside.m4v
+    - true
+    - 2007-11-02 22:54:11.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-031-seaside
+    - 31.png
+    - image/png
+    - 4087
+    - 2009-03-09 05:59:53.000000000Z
+    - '35:41'
+    - 243731718
+  - - 32
+    - Capistrano
+    - ! "[Rob Kaufman](http://notch8.com) takes on [Capistrano 2](http://www.capify.org/).
+      What is it? How does it work? What's changed since version 1?\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/032_capistrano.m4v
+    - true
+    - 2007-11-02 23:08:49.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-032-capistrano
+    - 32.png
+    - image/png
+    - 15980
+    - 2009-03-09 05:59:53.000000000Z
+    - '42:24'
+    - 382324797
+  - - 33
+    - Life on Edge
+    - ! "If you're a Rails junkie, you'll want to develop on [Edge Rails](http://wiki.rubyonrails.org/rails/pages/EdgeRails).
+      Matt Clark explains how to get started and shares some of the challenges of
+      working on Edge.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/033_edgerails.m4v
+    - true
+    - 2007-11-02 23:26:47.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-033-life-on-edge
+    - 33.png
+    - image/png
+    - 68706
+    - 2009-03-09 05:59:53.000000000Z
+    - '22:35'
+    - 204581652
+  - - 34
+    - Intro to JRuby
+    - ! "[Brian Chapados](http://chapados.org) shows how to install and work with
+      the latest [JRuby](http://jruby.codehaus.org) release.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/034_jruby.m4v
+    - true
+    - 2007-11-02 23:41:27.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-034-intro-to-jruby
+    - 34.png
+    - image/png
+    - 2241
+    - 2009-03-09 05:59:54.000000000Z
+    - '20:28'
+    - 237618665
+  - - 35
+    - ActiveRecord Backup & MimetypeFu
+    - ! "[Matt Aimonetti](http://railsontherun.com/) demonstrates his newest plugins:
+      [ActiveRecord Backup](http://code.google.com/p/ar-backup/) and [MimetypeFu](http://code.google.com/p/mimetype-fu/).\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/035_railsplugins.m4v
+    - true
+    - 2007-11-02 23:48:28.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-035-activerecord-backup-mimetypefu
+    - 35.png
+    - image/png
+    - 92519
+    - 2009-03-09 05:59:54.000000000Z
+    - '16:52'
+    - 185091718
+  - - 36
+    - The Return of Kevin Clark
+    - ! "[Kevin Clark](http://glu.ttono.us) takes a break from [Powerset](http://www.powerset.com/)
+      to give a full-throttle talk on using [Merb](http://merb.rubyforge.org/files/README.html)
+      as a JSON-RPC service, [god](http://god.rubyforge.org/), [gem2rpm](http://fooplanet.com/projects/gem2rpm/),
+      and [heckle](http://seattlerb.rubyforge.org/heckle/).\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/036_god.m4v
+    - true
+    - 2007-11-03 00:02:56.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-036-the-return-of-kevin-clark
+    - 36.png
+    - image/png
+    - 44910
+    - 2009-03-09 05:59:54.000000000Z
+    - '47:37'
+    - 578914037
+  - - 37
+    - Rails Sexy Charts
+    - ! "[Matt Aimonetti](http://railsontherun.com/) demonstrates how to create awesome,
+      Flash-powered charts by integrating Rails with [amCharts](http://www.amcharts.com).\r\n\r\nBonus
+      content: [download the sample app](http://railsontherun.com/assets/sexy_charts.zip)
+      shown in this talk or read Matt's original [Sexy charts in less than 5 minutes](http://railsontherun.com/2007/10/4/sexy-charts-in-less-than-5-minutes)
+      blog post.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/037_sexy_charts.m4v
+    - true
+    - 2007-11-13 18:11:37.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-037-sexy-charts
+    - 37.png
+    - image/png
+    - 30731
+    - 2009-03-09 05:59:54.000000000Z
+    - '41:53'
+    - 508683503
+  - - 38
+    - Haml and Sass in 15 minutes
+    - ! "[Patrick Crowley](http://the.railsi.st/) gets you up to speed on using [Haml](http://haml.hamptoncatlin.com/docs/haml)
+      and [Sass](http://haml.hamptoncatlin.com/docs/sass). Haml is a drop in replacement
+      for ERB that turns your views into beautiful code poetry. Sass does the same
+      for CSS.\r\n\r\nBonus content: [download the slides](http://the.railsi.st/slides/haml_and_sass.pdf)
+      \ from this talk.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/038_haml_sass.m4v
+    - true
+    - 2007-11-20 20:22:59.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-038-haml-and-sass-in-15-minutes
+    - 38.png
+    - image/png
+    - 2812
+    - 2009-03-09 05:59:55.000000000Z
+    - '31:46'
+    - 146337312
+  - - 39
+    - ActionMailer in Action
+    - ! "[Rob Kaufman](http://notch8.com/) talks about using ActionMailer safely,
+      how to keep out of the spam box and how to test your emails before your customers
+      see them.\r\n\r\nBonus content: [download the slides](http://www.slideshare.net/notch8/action-mailer-in-action/)
+      from this talk.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/039_actionmailer.m4v
+    - true
+    - 2008-01-10 03:24:31.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-039-actionmailer-in-action
+    - 39.png
+    - image/png
+    - 23710
+    - 2009-03-09 05:59:55.000000000Z
+    - '25:06'
+    - 160561021
+  - - 40
+    - Unobtrusive Javascript
+    - ! "[Matt Aimonetti](http://railsontherun.com/) lays down the law on best-practice
+      Ajax, using behavior oriented javascript with progressive enhancement. \r\n\r\nBonus
+      content: [download the slides](http://www.slideshare.net/matta/unobtrusive-javascript-sdrb-2007)
+      from this talk.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/040_unobtrusive.m4v
+    - true
+    - 2008-01-21 20:25:15.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-040-unobtrusive-javascript
+    - 40.png
+    - image/png
+    - 14404
+    - 2009-03-09 05:59:55.000000000Z
+    - '22:32'
+    - 162975888
+  - - 41
+    - MySQL Clustering
+    - ! "[Rob Kaufman](http://notch8.com/) takes on database scaling with MySQL. This
+      talk will walk you through setting up a Master (read write) Slave (read only)
+      MySQL network, as well as a Master Master, or Multi-Master network. The talk
+      will also cover the whys and when of database clustering.\r\n\r\nBonus content:
+      [download the slides](http://www.slideshare.net/notch8/mysql-sm/) from this
+      talk.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/041_mysql.m4v
+    - true
+    - 2008-04-28 18:18:02.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-041-mysql-clustering
+    - 41.png
+    - image/png
+    - 122270
+    - 2009-03-09 05:59:55.000000000Z
+    - '51:15'
+    - 308755287
+  - - 42
+    - Deploying Rails on Slicehost
+    - ! "[Jared Kuolt](http://superjared.com/) shows how to quickly deploy your Rails
+      application to a [Slicehost](http://www.slicehost.com/) VPS. This talk covers
+      installing MySQL, Nginx, Rails and Mongrel, as well as deployment using Capistrano.\r\n\r\nBonus
+      content: [download the slides](http://superjared.com/static/talk.pdf) from this
+      talk.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/042_slicehost.m4v
+    - true
+    - 2008-04-28 18:29:54.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-042-deploying-rails-on-slicehost
+    - 42.png
+    - image/png
+    - 47052
+    - 2009-03-09 05:59:55.000000000Z
+    - '26:21'
+    - 165758132
+  - - 43
+    - Facebook API
+    - ! "John Bresnik discusses the ruby library for the Facebook API, Facebooker,
+      based on his production experience building Facebook applications. Presentation
+      includes general overview of the Facebook API, Facebooker specifics, as well
+      as code examples.\r\n\r\nBonus content: [download the slides](http://www.rubyguerrilla.com/slides/SDRUBY-fb.pdf)
+      from this talk.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/043_facebooker.m4v
+    - true
+    - 2008-05-24 00:19:48.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-043-facebook-api
+    - 43.png
+    - image/png
+    - 115534
+    - 2009-03-09 05:59:56.000000000Z
+    - '41:15'
+    - 408966339
+  - - 44
+    - Ext JavaScript Library
+    - ! "Adam Grant talks about his experiences using Ext, a new Javascript library
+      for creating advanced UI controls (like grids, trees, progress bars, etc).\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/044_ext_javascript.m4v
+    - true
+    - 2008-05-24 00:23:28.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-044-ext-javascript-library
+    - 44.png
+    - image/png
+    - 75902
+    - 2009-03-09 05:59:56.000000000Z
+    - '46:36'
+    - 393764584
+  - - 45
+    - Merb
+    - ! "Much like Rails, Merb is a MVC web-framework written in Ruby. In this talk,
+      [Jordan Fowler](http://jordanfowler.com/) introduces Merb and presents some
+      of the distinctions and tradeoffs between the two frameworks.\r\n\r\nBonus content:
+      [download the slides](http://docs.google.com/Present?docid=dfxf4brr_15cqs63pxf)
+      from this talk.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/045_merb.m4v
+    - true
+    - 2008-06-05 16:32:34.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-045-merb
+    - 45.png
+    - image/png
+    - 10943
+    - 2009-03-09 05:59:56.000000000Z
+    - '38:32'
+    - 358968540
+  - - 46
+    - RSpec in 15 minutes
+    - ! "[Cliff Rhyne](http://workingwithrails.com/person/11918-cliff-rhyne) describes
+      in 15 minutes what it takes to get up and running with RSpec.\r\n\r\nBonus content:
+      [download the slides](http://docs.google.com/EmbedSlideshow?docid=dd7r668z_6f5xt2tf8)
+      from this talk.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/046_rspec.m4v
+    - true
+    - 2008-06-05 16:57:23.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-046-rspec-in-15-minutes
+    - 46.png
+    - image/png
+    - 28879
+    - 2009-03-09 05:59:57.000000000Z
+    - '12:12'
+    - 93226379
+  - - 47
+    - Lazy Indexing
+    - ! "[Matt Aimonetti](http://railsontherun.com/) shows how to quickly get your
+      database queries to run faster when you are not a DBA and are running out of
+      time.\r\n\r\nBonus content: [download the slides](http://www.slideshare.net/mattetti/lazy-indexing-466697/)
+      from this talk.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/047_indexing.m4v
+    - true
+    - 2008-06-13 21:31:29.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-047-lazy-indexing
+    - 47.png
+    - image/png
+    - 12705
+    - 2009-03-09 05:59:57.000000000Z
+    - '20:51'
+    - 152536980
+  - - 48
+    - Ruby for Data Processing
+    - ! "[Brian Chapados](http://chapados.org) talks about using ruby & rake to build
+      a simple workflow to coordinate external processes.\r\n\r\nBonus content: [download
+      the slides](http://www.slideshare.net/chapados/processing-data-with-ruby) from
+      this talk.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/048_ruby_for_data.m4v
+    - true
+    - 2008-06-13 21:31:40.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-048-ruby-for-data-processing
+    - 48.png
+    - image/png
+    - 6339
+    - 2009-03-09 05:59:57.000000000Z
+    - '6:00'
+    - 49453445
+  - - 49
+    - Intro to EC2
+    - ! "[Chris Petersen](http://blog.assaydepot.com) gives an introduction to working
+      with [Amazon EC2](http://aws.amazon.com/ec2), and discusses the advantages and
+      disadvantage to hosting your Ruby applications there.\r\n\r\nBonus content:
+      [download the slides](http://www.slideshare.net/cpetersen/ec2) from this talk.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/049_ec2.m4v
+    - true
+    - 2008-06-20 00:19:27.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-049-intro-to-ec2
+    - 49.png
+    - image/png
+    - 130350
+    - 2009-03-09 05:59:57.000000000Z
+    - '22:21'
+    - 70473542
+  - - 50
+    - One-man Lightning Talk
+    - ! "[Kevin Clark](http://glu.ttono.us) is back again and talking about his latest
+      work: Rubinius, grammar parsing from ruby, kqueue, and massive build systems.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/050_kfc.m4v
+    - true
+    - 2008-06-28 00:00:24.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-050-one-man-lightning-talk
+    - 50.png
+    - image/png
+    - 104379
+    - 2009-03-09 05:59:57.000000000Z
+    - '56:13'
+    - 454441938
+  - - 51
+    - Archaeopteryx
+    - ! "[Giles Bowkett](http://gilesbowkett.blogspot.com) shows off his mega-cool
+      MIDI scaffolding generator for creating dance music with Ruby. \r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/051_archaeopteryx.m4v
+    - true
+    - 2008-08-21 00:37:28.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-051-archaeopteryx
+    - 51.png
+    - image/png
+    - 208872
+    - 2009-03-09 05:59:58.000000000Z
+    - '56:21'
+    - 671928895
+  - - 52
+    - Shadow
+    - ! "[Jordan Fowler](http://jordanfowler.com) reveals his new [Shadow plugin](http://github.com/TheBreeze/shadow/tree/master/)
+      that tracks attribute and association changes to ActiveRecord objects, making
+      it easy to create activity feeds for your application.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/052_shadow.m4v
+    - true
+    - 2008-08-30 19:48:45.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-052-shadow
+    - 52.png
+    - image/png
+    - 28496
+    - 2009-03-09 05:59:58.000000000Z
+    - '17:55'
+    - 198617810
+  - - 53
+    - Ruby Arduino Development (RAD)
+    - ! "Sensors and servos in hand, [JD Barnhart](http://jdbarnhart.com) shows off
+      the current state of [RAD](http://rad.rubyforge.org), the Rails inspired framework
+      bringing convention over configuration and Ruby sensibility to the [Arduino
+      Physical computing platform](http://www.arduino.cc).\r\n\r\nBonus content: [download
+      the slides](http://www.slideshare.net/madrona/rad-demo-at-sd-ruby-presentation/)
+      from this talk. \r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/053_rad.m4v
+    - true
+    - 2008-09-12 21:17:43.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-053-ruby-arduino-development-rad
+    - 53.png
+    - image/png
+    - 131583
+    - 2009-03-09 05:59:58.000000000Z
+    - '22:59'
+    - 188760803
+  - - 54
+    - Paperclip
+    - ! "[Patrick Crowley](http://the.railsi.st) talks about [Paperclip](http://www.thoughtbot.com/projects/paperclip),
+      a lightweight plugin for handling attachments.\r\n\r\nBonus content: [download
+      the slides](http://www.slideshare.net/mokolabs/paperclip-presentation/) from
+      this talk.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/054_paperclip.m4v
+    - true
+    - 2008-09-20 15:31:00.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-054-paperclip
+    - 54.png
+    - image/png
+    - 3210
+    - 2009-03-09 05:59:58.000000000Z
+    - '29:15'
+    - 236034129
+  - - 55
+    - MySQL, Postgres, and Rails
+    - ! "Guyren Howe has considerable experience with both [MySQL](http://mysql.com)
+      and [PostgreSQL](http://www.postgresql.org/). He discusses the myriad technical
+      and other advantages to using PostgreSQL instead of MySQL for, well, pretty
+      much anything.\r\n\r\nBonus content: [download the slides](http://www.slideshare.net/gisborne/postgres-presentation-presentation/)
+      from this talk.\r\n\r\n"
+    - http://podcast.sdruby.com/podcasts/055_postgres.m4v
+    - false
+    - 2008-10-10 15:04:53.000000000Z
+    - 2009-07-22 23:31:03.000000000Z
+    - episode-055-postgres
+    - 55.png
+    - image/png
+    - 31582
+    - 2009-03-09 05:59:58.000000000Z
+    - '20:05'
+    - 2147483647
+
+---
