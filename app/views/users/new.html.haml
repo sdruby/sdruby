@@ -7,7 +7,7 @@
 
   %p
     %label Please enter these words:
-    = recaptcha_tag :challenge
+    = recaptcha_tag(:challenge).html_safe
 
   %p
     = f.submit "Create account"
