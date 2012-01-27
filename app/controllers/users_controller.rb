@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @user.valid?
 
     if !recaptcha_valid?
-      @user.errors.add_to_base "You did not enter the correct words. Please try again."
+      @user.errors.add(:base, "You did not enter the correct words. Please try again.")
       render :action => "new"
     elsif @user.save
       flash[:notice] = 'User was successfully created.'
