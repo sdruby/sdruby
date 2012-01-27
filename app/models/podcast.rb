@@ -19,11 +19,7 @@ class Podcast < ActiveRecord::Base
                                     :message => "must be a GIF, JPEG, or PNG"
 
   def episode_number
-    number = self.id.to_s
-    while number.length != 3
-      number = "0" + number
-    end
-    return "Episode #{number}"
+    "Episode %03d" % id
   end
 
   def movie_type
