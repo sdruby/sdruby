@@ -9,6 +9,3 @@ end
 Factory.define :private_event, :parent => :event do |f|
   f.is_private true
 end
-
-Factory.define :meeting, :class => Meeting do |f|
-end
