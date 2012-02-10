@@ -2,7 +2,7 @@
   .small_screenshot
     = link_to(image_tag(podcast.screenshot.url(:small), :size => "150x116", :alt => "Episode #{podcast.id}"), podcast_path(podcast.id))
   .details
-    %h3
+    %h3.ellipsis
       = link_to "#{podcast.episode_number}: #{podcast.name}", podcast_path(podcast.id)
     %p= truncate(strip_tags(markdown(podcast.description)).squish, {:length => 180})
     .watch
