@@ -1,7 +1,7 @@
 require "bundler/capistrano"
 
 set :application, "sdruby.org"
-set :repository,  "git://github.com/mokolabs/sdruby.git"
+set :repository,  "git://github.com/sdruby/sdruby.git"
 
 # If you aren't deploying to /u/apps/#{application} on the target
 # servers (which is the default), you can specify the actual location
