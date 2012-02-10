@@ -11,7 +11,7 @@ class Podcast < ActiveRecord::Base
                     :url => "/images/:attachment/:style/:id.:extension",
                     :default_style => :large
 
-  validates_presence_of :name, :description, :movie_link
+  validates :name, :description, :movie_link, :presence => true
 
   validates_attachment_presence :screenshot, :message => "is missing"
   validates_attachment_content_type :screenshot,
