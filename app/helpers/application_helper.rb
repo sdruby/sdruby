@@ -21,8 +21,8 @@ module ApplicationHelper
     object = instance_variable_get("@#{object_name}")
     if object && !object.errors.empty?
       content_tag("div",
-          content_tag("p", "Hey, there&rsquo;s a problem&hellip;") +
-          content_tag("ul", object.errors.full_messages.collect { |msg| content_tag("li", msg) }),
+          content_tag("p", "Hey, there&rsquo;s a problem&hellip;".html_safe) +
+          content_tag("ul", object.errors.full_messages.collect { |msg| content_tag("li", msg) }.join.html_safe),
           "id" => options[:id] || "errors"
           )
     else
