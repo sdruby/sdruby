@@ -4,8 +4,8 @@ SDRuby::Application.routes.draw do
   match "/logout" => "user_sessions#destroy", as: :logout
   match "/login" => "user_sessions#new", as: :login
   match "/register" => "users#new", as: :register
-
   match "/sponsors" => "pages#sponsors", as: :sponsors
+  match "/photos" => "photos#index"
 
   resources :podcasts
   resources :projects do
