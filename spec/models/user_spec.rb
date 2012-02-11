@@ -2,6 +2,10 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 describe User do
   it { should have_many(:projects) }
+  it { should ensure_length_of(:full_name).is_at_least(2) }
+  it { should validate_uniqueness_of(:email) }
+  it { should allow_value("test@example.com").for(:email) }
+  it { should_not allow_value("test").for(:email) }
 
   before { @user = Factory(:user, :full_name => "Snoop Dog") }
 

@@ -6,9 +6,8 @@ class User < ActiveRecord::Base
 
   acts_as_authentic
 
-  validates_length_of :full_name, :minimum => 2
-  validates_uniqueness_of :email
-  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
+  validates :full_name, :length => { :minimum => 2 }
+  validates :email, :uniqueness => true, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
 
   validate :avatar_is_valid
 

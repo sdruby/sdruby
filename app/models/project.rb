@@ -1,7 +1,7 @@
 class Project < ActiveRecord::Base
   belongs_to :user
 
-  validates_presence_of :name
+  validates :name, :presence => :true
 
   def self.featured
     random_method = connection.adapter_name == 'SQLite' ? 'RANDOM()' : 'RAND()'
