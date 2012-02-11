@@ -15,7 +15,8 @@ gem "paperclip"
 gem "rack-recaptcha", :require => "rack/recaptcha"
 gem "will_paginate"
 gem "formatize"
-gem 'yaml_db'
+gem "yaml_db"
+gem "rMeetup"
 
 gem "sass"
 

@@ -99,6 +99,7 @@ GEM
       cocaine (>= 0.0.2)
       mime-types
     polyglot (0.3.3)
+    rMeetup (1.0)
     rack (1.3.5)
     rack-cache (1.1)
       rack (>= 0.4)
@@ -202,6 +203,7 @@ DEPENDENCIES
   mysql2!
   newrelic_rpm
   paperclip
+  rMeetup
   rack-recaptcha
   rails (= 3.1.3)
   rake (= 0.8.7)
