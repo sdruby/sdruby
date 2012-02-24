@@ -32,7 +32,7 @@ group :development do
   gem "ruby-debug19", platforms: :ruby_19
 end
 
-group :test, :cucumber do
+group :test do
   gem "faker"
   gem "factory_girl_rails"
   gem "rspec-rails"
