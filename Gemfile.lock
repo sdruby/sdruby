@@ -165,6 +165,7 @@ GEM
       multi_json (~> 1.0.4)
       rubyzip
     shoulda-matchers (1.0.0)
+    spork (1.0.0rc2)
     sprockets (2.0.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -210,6 +211,7 @@ DEPENDENCIES
   ruby-debug19
   sass
   shoulda-matchers
+  spork (~> 1.0rc)
   sqlite3
   vcr
   webmock

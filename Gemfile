@@ -40,5 +40,6 @@ group :test, :cucumber do
   gem "vcr"
   gem "webmock"
   gem "capybara"
+  gem "spork", "~> 1.0rc"
 end
 
