@@ -17,14 +17,14 @@ Spork.prefork do
   require "rspec/autorun"
 
   require "capybara/rspec"
-  require "authlogic/test_case"
+  require "capybara/firebug"
 
   # Requires supporting files with custom matchers and macros, etc,
   # in ./support/ and its subdirectories.
   Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
   RSpec.configure do |config|
-    config.use_transactional_fixtures = true
+    config.use_transactional_fixtures = false  # Using database_cleaner instead...
     config.fixture_path = Rails.root + '/spec/fixtures/'
 
     ## Configure VCR Cassettes
@@ -34,20 +34,7 @@ Spork.prefork do
     end
 
     # Includes
-    config.include(Authlogic::TestCase)
     config.include(FactoryGirl::Syntax::Methods)
-
-    ## Helpers:
-    def logout
-      request.session = {'user_credentials' => nil, 'user_credentials_id' => nil}
-    end
-
-    def login_as(user)
-      activate_authlogic
-
-      user = Factory(user) if user.is_a?(Symbol)
-      UserSession.create(user)
-    end
   end
 end
 

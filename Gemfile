@@ -40,11 +40,14 @@ group :test do
   gem "vcr"
   gem "webmock"
   gem "capybara"
+  gem "capybara-firebug"
   gem "spork", "~> 1.0rc"
+  gem "database_cleaner"
 end
 
 group :development, :test do
   gem "guard"
   gem "guard-spork"
   gem "guard-rspec"
+  gem "launchy"
 end
