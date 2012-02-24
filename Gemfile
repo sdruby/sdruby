@@ -43,3 +43,8 @@ group :test do
   gem "spork", "~> 1.0rc"
 end
 
+group :development, :test do
+  gem "guard"
+  gem "guard-spork"
+  gem "guard-rspec"
+end
