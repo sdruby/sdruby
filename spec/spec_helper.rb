@@ -31,6 +31,7 @@ Spork.prefork do
     VCR.config do |c|
       c.cassette_library_dir = Rails.root.join("spec/vcr_cassettes")
       c.stub_with :webmock # or :fakeweb
+      c.ignore_localhost = true
     end
 
     # Includes
