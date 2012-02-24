@@ -65,6 +65,14 @@ class User < ActiveRecord::Base
     end
   end
 
+  def send_new_password
+    new_pass = User.random_string(10)
+    self.password = self.password_confirmation = new_pass
+    self.save
+
+    UserMailer.forgot_password(self.email, new_pass).deliver
+  end
+
   protected
   
   def avatar_is_valid
@@ -73,6 +81,13 @@ class User < ActiveRecord::Base
         errors.add_to_base "Avatar must be a GIF, JPEG, or PNG"
       end
     end
+  end
+
+  def self.random_string(len)
+    chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
+    newpass = ""
+    1.upto(len) { |i| newpass << chars[rand(chars.size-1)] }
+    return newpass
   end
   
 end
