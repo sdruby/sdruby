@@ -522,13 +522,19 @@ ul#filter {
       color: white;
       font-size: 18px;
       margin-top: 4px;
+      line-height: 1.2em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis; }
       a {
         color: white;
         text-decoration: none;
         &:hover {
-          text-decoration: underline; } } }
+          text-decoration: underline; } } 
     p {
-      font-size: 16px; }
+      font-size: 16px;
+      margin-top: 11px; }
     .small_screenshot {
       float: left;
       margin: 0 10px 0 0; }
