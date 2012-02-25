@@ -485,7 +485,7 @@ label {
 
 ul#filter {
   height: 29px;
-  margin: 70px 0 15px 160px;
+  margin: 70px 0 15px 0;
   padding: 0;
   li {
     display: inline;
@@ -493,6 +493,25 @@ ul#filter {
     height: 29px;
     margin: 0 10px 0 0;
     width: 77px;
+    form {
+      display: inline;
+      margin: 6px 0 0 0 !important;
+      padding: 0 !important;
+      width: 250px;
+    }
+    input {
+      @include border_radius(20px);
+      display: inline !important;
+      font-size: 16px;
+      height: 18px;
+      margin: 0;
+      padding: 5px 6px 5px 10px;
+      width: 220px;
+    }
+    img {
+      display: none;
+      margin-left: 5px;
+    }
     span {
       @include border_radius(20px);
       background: #2f2016;
@@ -507,9 +526,23 @@ ul#filter {
       width: 77px;
       &:hover {
         border: 1px solid #555555; } } }
+  li:last-child {
+    width: 263px !important;
+  }
   li.current {
     span {
       border: 1px solid #555555; } } }
+
+#noresults {
+  display: none;
+  float: left;
+  font-weight: bold;
+  margin: 280px auto 0 auto;
+  position: absolute;
+  text-align: center;
+  width: 860px;
+  z-index: 2;
+}
 
 #episodes {
   border-top: 1px solid #3f3229;
@@ -706,3 +739,11 @@ ul#filter {
     width: 200px; }
   #podcast_movie_duration {
     width: 200px; } }
+
+// Unselectable
+.unselectable {
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   user-select: none;
+}

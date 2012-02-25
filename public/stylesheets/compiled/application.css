@@ -462,7 +462,7 @@ label.iPhoneCheckLabelOff {
 
 ul#filter {
   height: 29px;
-  margin: 70px 0 15px 160px;
+  margin: 70px 0 15px 0;
   padding: 0; }
   ul#filter li {
     display: inline;
@@ -470,6 +470,24 @@ ul#filter {
     height: 29px;
     margin: 0 10px 0 0;
     width: 77px; }
+    ul#filter li form {
+      display: inline;
+      margin: 6px 0 0 0 !important;
+      padding: 0 !important;
+      width: 250px; }
+    ul#filter li input {
+      border-radius: 20px;
+      -moz-border-radius: 20px;
+      -webkit-border-radius: 20px;
+      display: inline !important;
+      font-size: 16px;
+      height: 18px;
+      margin: 0;
+      padding: 5px 6px 5px 10px;
+      width: 220px; }
+    ul#filter li img {
+      display: none;
+      margin-left: 5px; }
     ul#filter li span {
       border-radius: 20px;
       -moz-border-radius: 20px;
@@ -486,8 +504,20 @@ ul#filter {
       width: 77px; }
       ul#filter li span:hover {
         border: 1px solid #555555; }
+  ul#filter li:last-child {
+    width: 263px !important; }
   ul#filter li.current span {
     border: 1px solid #555555; }
+
+#noresults {
+  display: none;
+  float: left;
+  font-weight: bold;
+  margin: 280px auto 0 auto;
+  position: absolute;
+  text-align: center;
+  width: 860px;
+  z-index: 2; }
 
 #episodes {
   border-top: 1px solid #3f3229;
@@ -499,14 +529,20 @@ ul#filter {
     #episodes .episode h3 {
       color: white;
       font-size: 18px;
-      margin-top: 4px; }
-      #episodes .episode h3 a {
-        color: white;
-        text-decoration: none; }
-        #episodes .episode h3 a:hover {
-          text-decoration: underline; }
+      margin-top: 4px;
+      line-height: 1.2em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -o-text-overflow: ellipsis; }
+    #episodes .episode a {
+      color: white;
+      text-decoration: none; }
+      #episodes .episode a:hover {
+        text-decoration: underline; }
     #episodes .episode p {
-      font-size: 16px; }
+      font-size: 16px;
+      margin-top: 11px; }
     #episodes .episode .small_screenshot {
       float: left;
       margin: 0 10px 0 0; }
@@ -667,3 +703,9 @@ ul#filter {
 .new_podcast #podcast_movie_duration,
 .edit_podcast #podcast_movie_duration {
   width: 200px; }
+
+.unselectable {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none; }
