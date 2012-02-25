@@ -28,7 +28,11 @@ $(document).ready(function() {
   
   // Search episodes
   $('#filter input').bind('keypress', function(e) {
-    if(e.keyCode == 13){
+
+    // If enter key is pressed, perform search
+    if (e.keyCode == 13) {
+      
+      // Grab current query value
       var query = $(this).val();
       
       // Show spinner image
@@ -70,7 +74,23 @@ $(document).ready(function() {
       }          
                   
       return false;
+       
     }
   });
-
+  
+  // Show all episodes if search query is emptied using delete key
+  $('#filter input').keydown(function(e) {
+    
+    // Show episodes
+    if (e.keyCode == 8) {
+      // Grab current query value
+      var query = $('#filter input').val();
+      
+      // Show all episodes if query is blank
+      if (query.length < 2) {
+        $(".episode").show();
+      }
+    }
+  });
+  
 });
