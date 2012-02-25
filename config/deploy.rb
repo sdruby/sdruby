@@ -1,7 +1,7 @@
 require "bundler/capistrano"
 
 set :application, "sdruby.org"
-set :repository,  "git://github.com/mokolabs/sdruby.git"
+set :repository,  "git://github.com/sdruby/sdruby.git"
 
 # If you aren't deploying to /u/apps/#{application} on the target
 # servers (which is the default), you can specify the actual location
@@ -11,7 +11,7 @@ set :deploy_to, "/var/www/apps/#{application}"
 # If you aren't using Subversion to manage your source code, specify
 # your SCM below:
 set :scm, :git
-set :branch, "rails3"
+set :branch, "master"
 set :deploy_via, :remote_cache
 
 # role :app, :application
