@@ -4,13 +4,15 @@ This app is the website of [SD Ruby](http://sdruby.org), a local Ruby user group
 
 Currently, this application includes support for our video podcast, member signup and registration, member profiles, and a Github project list. We're also working on adding other features.
 
-## Development Setup ##
+## Installation ##
 
-Run:
-
-    $ bundle install
-    $ sass --watch public/stylesheets:public/stylesheets/compiled
-    $ rails s
+* bundle install
+* configure config/database.yml with your preferred settings
+* import a copy of the database
+* rake sunspot:solr:start (to start the solr search engine)
+* rake sunspot:solr:reindex (to index the database)
+* sass --watch public/stylesheets:public/stylesheets/compiled
+* rails s
 
 ## Features ##
 
