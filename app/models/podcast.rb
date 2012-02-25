@@ -3,6 +3,11 @@ class Podcast < ActiveRecord::Base
 
   scope :published, :conditions => {:publish => true}
 
+  searchable do
+    integer :id
+    text :name, :description
+  end
+  
   has_attached_file :screenshot,
                     :styles => {
                     :large => ["345x267!", :png],

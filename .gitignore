@@ -13,3 +13,4 @@ public/images/screenshots
 public/images/users
 .rvmrc
 bin/
+solr/*

@@ -7,7 +7,10 @@ SDRuby::Application.routes.draw do
 
   match "/sponsors" => "pages#sponsors", as: :sponsors
 
-  resources :podcasts
+  resources :podcasts do
+    get :search, on: :collection    
+  end
+  
   resources :projects do
     get :featured, on: :collection
   end
