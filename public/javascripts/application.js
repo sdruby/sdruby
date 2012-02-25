@@ -79,7 +79,7 @@ $(document).ready(function() {
   });
   
   // Show all episodes if search query is emptied using delete key
-  $('#filter input').keydown(function(e) {
+  $('#filter input').keyup(function(e) {
     
     // Show episodes
     if (e.keyCode == 8) {
@@ -87,7 +87,7 @@ $(document).ready(function() {
       var query = $('#filter input').val();
       
       // Show all episodes if query is blank
-      if (query.length < 2) {
+      if (query.length < 1) {
         $(".episode").show();
       }
     }
