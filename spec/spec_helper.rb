@@ -1,42 +1,46 @@
-# This file is copied to ~/spec when you run 'ruby script/generate rspec'
-# from the project root directory.
-ENV["RAILS_ENV"] = "test"
+require 'rubygems'
+require 'spork'
+#uncomment the following line to use spork with the debugger
+#require 'spork/ext/ruby-debug'
 
-require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
-require "rspec/rails"
-require "rspec/autorun"
+Spork.prefork do
+  # Loading more in this block will cause your tests to run faster. However,
+  # if you change any configuration or code from libraries loaded here, you'll
+  # need to restart spork for it take effect.
 
-require "capybara/rspec"
-require "authlogic/test_case"
+  # This file is copied to ~/spec when you run 'ruby script/generate rspec'
+  # from the project root directory.
+  ENV["RAILS_ENV"] = "test"
 
-# Requires supporting files with custom matchers and macros, etc,
-# in ./support/ and its subdirectories.
-Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
+  require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
+  require "rspec/rails"
+  require "rspec/autorun"
 
-RSpec.configure do |config|
-  config.use_transactional_fixtures = true
-  config.fixture_path = Rails.root + '/spec/fixtures/'
+  require "capybara/rspec"
+  require "capybara/firebug"
 
-  ## Configure VCR Cassettes
-  VCR.config do |c|
-    c.cassette_library_dir = Rails.root.join("spec/vcr_cassettes")
-    c.stub_with :webmock # or :fakeweb
+  # Requires supporting files with custom matchers and macros, etc,
+  # in ./support/ and its subdirectories.
+  Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
+
+  RSpec.configure do |config|
+    config.use_transactional_fixtures = false  # Using database_cleaner instead...
+    config.fixture_path = Rails.root + '/spec/fixtures/'
+
+    ## Configure VCR Cassettes
+    VCR.config do |c|
+      c.cassette_library_dir = Rails.root.join("spec/vcr_cassettes")
+      c.stub_with :webmock # or :fakeweb
+      c.ignore_localhost = true
+    end
+
+    # Includes
+    config.include(FactoryGirl::Syntax::Methods)
   end
+end
 
-  # Includes
-  config.include(Authlogic::TestCase)
-  config.include(FactoryGirl::Syntax::Methods)
+Spork.each_run do
+  # This code will be run each time you run your specs.
 
-  ## Helpers:
-  def logout
-    request.session = {'user_credentials' => nil, 'user_credentials_id' => nil}
-  end
-
-  def login_as(user)
-    activate_authlogic
-
-    user = Factory(user) if user.is_a?(Symbol)
-    UserSession.create(user)
-  end
 end
 

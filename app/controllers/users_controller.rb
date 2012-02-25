@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     @user.valid?
 
-    if !recaptcha_valid?
+    if !Rails.env.test? and !recaptcha_valid?
       @user.errors.add(:base, "You did not enter the correct words. Please try again.")
       render :action => "new"
     elsif @user.save

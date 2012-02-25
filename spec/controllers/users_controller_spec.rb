@@ -22,7 +22,7 @@ describe UsersController do
   end
 
   context "when logged in" do
-    before { login_as @user }
+    before { login @user }
 
     describe "on GET to new" do
       before { get :new }
@@ -60,7 +60,7 @@ describe UsersController do
 
 
     context "as admin" do
-      before { login_as Factory.create(:admin) }
+      before { login Factory.create(:admin) }
 
       describe "on GET to edit" do
         before { get :edit, :id => @user }
@@ -151,7 +151,5 @@ describe UsersController do
       end
     end
   end
-
-
 
 end
