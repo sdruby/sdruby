@@ -1,0 +1,18 @@
+production:
+  solr:
+    hostname: ec2-west.websolr.com
+    port: 80
+    path: '/solr/c6ff6f86cde'
+    log_level: WARNING
+
+development:
+  solr:
+    hostname: localhost
+    port: 8982
+    log_level: INFO
+
+test:
+  solr:
+    hostname: localhost
+    port: 8981
+    log_level: WARNING

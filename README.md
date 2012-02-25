@@ -47,6 +47,7 @@ Thanks to the following people for contributing to this app.
 * [Jimmy Cuadra](https://github.com/jimmycuadra)
 * [Jordan Fowler](https://github.com/thebreeze/)
 * [Ben Hughes](https://github.com/rubiety/)
+* [Marvin Humphrey](http://rectangular.com)
 * [Rob Kaufman](https://github.com/notch8/)
 * [James Miller](https://github.com/bensie/)
 * [Nick Zadrozny](https://github.com/nz/)

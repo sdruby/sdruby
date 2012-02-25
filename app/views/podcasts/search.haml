@@ -1,0 +1,6 @@
+- @episodes.results.each do |episode|
+  %p
+    Episode
+    = episode.id
+    = "-"
+    = link_to episode.name, podcast_path(episode)

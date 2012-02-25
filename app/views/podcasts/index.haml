@@ -24,15 +24,21 @@
 
     %br.clear
 
-
-%ul#filter
+%ul#filter.unselectable
   %li.all.current
     %span= "All"
   - @years.each do |year|
     %li{:class => "filter"}
       %span= year
+  %li
+    %form{:action => search_podcasts_path, :method => "post"}
+      %input{:type => "text", :placeholder => "Search"}
+      = image_tag "application/spinner.gif", :size => "16x16"
 
-#episodes
+#noresults
+  %p No results found
+
+#episodes{:style => "min-height: 600px"}
   = render :partial => "podcast", :collection => @podcasts
 
   %br.clear
