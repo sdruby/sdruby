@@ -4,7 +4,7 @@ SDRuby::Application.routes.draw do
   match "/logout" => "user_sessions#destroy", as: :logout
   match "/login" => "user_sessions#new", as: :login
   match "/register" => "users#new", as: :register
-  match "/password-reset" => "users#forgot_password", as: :password_reset
+  match "/forgot" => "users#forgot_password", as: :password_reset
 
   match "/sponsors" => "pages#sponsors", as: :sponsors
 

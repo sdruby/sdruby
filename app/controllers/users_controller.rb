@@ -38,7 +38,7 @@ class UsersController < ApplicationController
         current_user_session.destroy
         redirect_to login_path
       else
-        flash.now[:notice] = "Invalid email. Couldn't send password."
+        flash.now[:notice] = "Your email is invalid. Please try again."
       end
     end
   end
