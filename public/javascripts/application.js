@@ -2,7 +2,10 @@ $(document).ready(function() {
 
   // Add iPhone style checkboxes
   if ($('.panel').length) {
-    $(':checkbox').iphoneStyle();
+    $(':checkbox').iphoneStyle({
+      checkedLabel: 'YES',
+      uncheckedLabel: 'NO'
+    });
   }
   
   // Filter episodes
