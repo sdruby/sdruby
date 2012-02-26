@@ -45,11 +45,19 @@ The [list of projects](http://sdruby.org/projects) shows all Github projects cre
 Thanks to the following people for contributing to this app.
 
 * [Neal Clark](https://github.com/nclark/)
+* [Rafael Cardoso](https://github.com/rafamvc)
 * [Patrick Crowley](https://github.com/mokolabs/)
+* [John Cozen](https://github.com/mediamaker)
 * [Jimmy Cuadra](https://github.com/jimmycuadra)
 * [Jordan Fowler](https://github.com/thebreeze/)
 * [Ben Hughes](https://github.com/rubiety/)
 * [Marvin Humphrey](http://rectangular.com)
+* [Sayem Islam](https://github.com/sayem/)
 * [Rob Kaufman](https://github.com/notch8/)
+* [Chris Kelly](https://github.com/chriskelly/)
+* [Chris McCann](https://github.com/testflyjets/)
 * [James Miller](https://github.com/bensie/)
+* [Dan Simpson](https://github.com/dansimpson/)
 * [Nick Zadrozny](https://github.com/nz/)
+
+Special thanks to the folks at [Websolr](http://websolr.com/) for providing us with a free hosted search account.
