@@ -36,6 +36,7 @@ class UsersController < ApplicationController
       u = User.find_by_email(params[:user][:email])
       if u and u.send_new_password
         current_user_session.destroy
+        flash[:notice] = "We just sent you a new password. Check your email!"
         redirect_to login_path
       else
         flash.now[:notice] = "Your email is invalid. Please try again."

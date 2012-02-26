@@ -3,11 +3,18 @@
 
 = form_for @user_session, :url => user_session_path do |f|
   = f.error_messages
-  = f.label :email
-  = f.text_field :email, :size => 25
+  - flash.each do |key, value|
+    .flash
+      &bull;
+      = value
+    
+  %p
+    = f.label :email
+    = f.text_field :email, :size => 25
 
-  = f.label :password
-  = f.password_field :password, :size => 25
+  %p
+    = f.label :password
+    = f.password_field :password, :size => 25
 
   .check_box
     = f.check_box :remember_me
