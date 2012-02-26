@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_filter :require_user, :except => [:index, :show, :new, :create]
-  before_filter :find_user, :except => [:index, :new, :create]
-  before_filter :authorize_user, :except => [:index, :show, :new, :create]
+  before_filter :require_user, :except => [:index, :show, :new, :create, :forgot_password]
+  before_filter :find_user, :except => [:index, :new, :create, :forgot_password]
+  before_filter :authorize_user, :except => [:index, :show, :new, :create, :forgot_password]
 
   def index
     @users = User.all(:order => "full_name ASC", :include => :projects)
@@ -27,6 +27,19 @@ class UsersController < ApplicationController
       redirect_to(@user)
     else
       render :action => "new"
+    end
+  end
+
+  def forgot_password
+    @user = User.new(params[:user])
+    if request.post?
+      u = User.find_by_email(params[:user][:email])
+      if u and u.send_new_password
+        current_user_session.destroy
+        redirect_to login_path
+      else
+        flash.now[:notice] = "Invalid email. Couldn't send password."
+      end
     end
   end
 
