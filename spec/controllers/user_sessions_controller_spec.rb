@@ -6,7 +6,7 @@ describe UserSessionsController do
   before { @user = Factory.create(:user) }
 
   context "when logged in" do
-    before { login_as @user }
+    before { login @user }
 
     describe "on GET to new" do
       before { get :new }
