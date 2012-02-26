@@ -1,13 +1,18 @@
 SDRuby::Application.routes.draw do
-  match "/tshirts" => "home#tshirts", as: :tshirts
-  match "/thanks" => "home#thanks", as: :thanks
+
+  # Homepage
+  root to: 'pages#index'
+  
+  # Custom routes
+  match "/tshirts" => "pages#tshirts", as: :tshirts
+  match "/thanks" => "pages#thanks", as: :thanks
   match "/logout" => "user_sessions#destroy", as: :logout
   match "/login" => "user_sessions#new", as: :login
   match "/register" => "users#new", as: :register
+  match "/sponsors" => "pages#sponsors", as: :sponsors
   match "/forgot" => "users#forgot_password", as: :password_reset
 
-  match "/sponsors" => "pages#sponsors", as: :sponsors
-
+  # Resources
   resources :podcasts do
     get :search, on: :collection    
   end
@@ -19,5 +24,4 @@ SDRuby::Application.routes.draw do
   resources :users
   resource :user_session
 
-  root to: 'home#index'
 end
