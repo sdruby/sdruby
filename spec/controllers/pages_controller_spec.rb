@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe PagesController do
   render_views
 
-  [:sponsors].each do |page|
+  [:index, :sponsors].each do |page|
     describe "on GET to #{page}" do
       before { get page }
       it { should respond_with(:success) }
