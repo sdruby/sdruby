@@ -587,7 +587,7 @@ ul#filter {
       ul#filter li span:hover {
         border: 1px solid #555555; }
   ul#filter li:last-child {
-    width: 263px !important; }
+    width: 240px !important; }
   ul#filter li.current span {
     border: 1px solid #555555; }
 
