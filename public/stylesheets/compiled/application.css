@@ -566,7 +566,7 @@ ul#filter {
       height: 18px;
       margin: 0;
       padding: 5px 6px 5px 10px;
-      width: 220px; }
+      width: 195px; }
     ul#filter li img {
       display: none;
       margin-left: 5px; }
@@ -587,6 +587,7 @@ ul#filter {
       ul#filter li span:hover {
         border: 1px solid #555555; }
   ul#filter li:last-child {
+    margin: 0 !important;
     width: 240px !important; }
   ul#filter li.current span {
     border: 1px solid #555555; }
