@@ -526,6 +526,18 @@ label.iOSCheckLabelOff {
     #number {
       font-weight: bold;
       margin: 10px 0 -3px 0; } }
+
+    .social_share {
+      margin-top: 15px;
+
+      .twitter {
+        display: inline-block;
+        vertical-align: top; }
+      .facebook {
+        display: inline-block;
+        width: 150px;
+        overflow: hidden; } }
+
   #actions {
     margin: 0 0 0 10px;
     img {
