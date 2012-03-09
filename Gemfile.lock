@@ -121,6 +121,7 @@ GEM
     progress_bar (0.4.0)
       highline (~> 1.6.1)
       options (~> 2.3.0)
+    rMeetup (1.0)
     rack (1.3.5)
     rack-cache (1.1)
       rack (>= 0.4)
@@ -243,6 +244,7 @@ DEPENDENCIES
   newrelic_rpm
   paperclip
   progress_bar
+  rMeetup
   rack-recaptcha
   rails (= 3.1.3)
   rake (= 0.8.7)
