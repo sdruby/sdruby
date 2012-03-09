@@ -11,6 +11,8 @@ SDRuby::Application.routes.draw do
   match "/register" => "users#new", as: :register
   match "/sponsors" => "pages#sponsors", as: :sponsors
   match "/forgot" => "users#forgot_password", as: :password_reset
+  match "/photos" => "photos#index"
+
 
   # Resources
   resources :podcasts do
