@@ -19,11 +19,11 @@ Currently, this application includes support for our video podcast, member signu
 * rake db:test:prepare  (if this is your first time running the tests)
 * rspec spec
 
-For development purposes, we also have Guard set up, so you can run Guard as follows:
+We also have [Guard](https://github.com/guard/guard) set up:
 
 * guard
 
-Please be sure to run the tests and ensure all is passing before issuing a pull request!
+Please be sure to run the tests and ensure all are passing before issuing a pull request!
 
 ## Features ##
 
