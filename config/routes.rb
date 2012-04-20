@@ -13,7 +13,7 @@ SDRuby::Application.routes.draw do
   match "/forgot" => "users#forgot_password", as: :password_reset
 
   # Resources
-  resources :podcasts do
+  resources :podcasts, :path => :podcast do
     get :search, on: :collection    
   end
   
