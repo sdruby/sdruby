@@ -1,3 +1,13 @@
+// This is a manifest file that'll be compiled into including all the files listed below.
+// Add new JavaScript/Coffee code in separate files in this directory and they'll automatically
+// be included in the compiled file accessible from http://example.com/assets/application.js
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// the compiled file.
+//
+//= require jquery
+//= require jquery_ujs
+//= require_tree .
+
 $(document).ready(function() {
 
   // Add iPhone style checkboxes
@@ -7,7 +17,7 @@ $(document).ready(function() {
       uncheckedLabel: 'NO'
     });
   }
-  
+
   // Filter episodes
   var $all = $(".all"),
       $filter = $("#filter li"),
@@ -28,26 +38,26 @@ $(document).ready(function() {
     $(".published_in_" + year).show();
     $('#filter input').val("");
   });
-  
+
   // Search episodes
   $('#filter input').bind('keypress', function(e) {
 
     // If enter key is pressed, perform search
     if (e.keyCode == 13) {
-      
+
       // Grab current query value
       var query = $(this).val();
-      
+
       // Show spinner image
-      $("#filter img").show();            
-      
+      $("#filter img").show();
+
       // Search episodes (if query is not blank)
       if (query != '') {
         $.getJSON('/podcasts/search.json?q=' + query, function(data) {
 
           // Show/hide no results message
           if (data.length == 0) {
-            $("#noresults").show();            
+            $("#noresults").show();
           } else {
             $("#noresults").hide();
           }
@@ -61,39 +71,39 @@ $(document).ready(function() {
           });
 
           // Hide spinner when search is complete
-          $("#filter img").hide();            
+          $("#filter img").hide();
 
         });
-        
+
       // Otherwise show all episodes
       } else {
-        
+
         // Hide spinner when search is complete
         $("#filter img").hide();
-        
+
         // Show all episodes
         $(".episode").show();
-        
-      }          
-                  
+
+      }
+
       return false;
-       
+
     }
   });
-  
+
   // Show all episodes if search query is emptied using delete key
   $('#filter input').keyup(function(e) {
-    
+
     // Show episodes
     if (e.keyCode == 8) {
       // Grab current query value
       var query = $('#filter input').val();
-      
+
       // Show all episodes if query is blank
       if (query.length < 1) {
         $(".episode").show();
       }
     }
   });
-  
+
 });
