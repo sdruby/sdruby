@@ -51,3 +51,7 @@ group :development, :test do
   gem "guard-rspec"
   gem "launchy"
 end
+
+group :heroku do
+  gem 'pg'
+end

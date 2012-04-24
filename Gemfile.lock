@@ -132,6 +132,7 @@ GEM
       activesupport (>= 2.3.2)
       cocaine (>= 0.0.2)
       mime-types
+    pg (0.13.2)
     polyglot (0.3.3)
     pr_geohash (1.0.0)
     progress_bar (0.4.0)
@@ -266,6 +267,7 @@ DEPENDENCIES
   mysql2!
   newrelic_rpm
   paperclip
+  pg
   progress_bar
   rack-recaptcha
   rails (~> 3.2.3)
