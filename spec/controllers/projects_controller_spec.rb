@@ -5,7 +5,7 @@ describe ProjectsController do
 
   before do
     3.times do
-      Factory.create(:project)
+      FactoryGirl.create(:project)
     end
   end
 

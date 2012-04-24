@@ -4,7 +4,7 @@ describe UsersController do
   render_views
 
   before do
-    @user = Factory.create(:user)
+    @user = FactoryGirl.create(:user)
   end
 
   describe "on GET to index" do
@@ -37,13 +37,13 @@ describe UsersController do
 
     describe "on PUT to update" do
       context "when valid" do
-        before { put :update, :id => @user.id, :user => Factory.attributes_for(:user) }
+        before { put :update, :id => @user.id, :user => FactoryGirl.attributes_for(:user) }
         it { should redirect_to(user_path(@user)) }
         it { should set_the_flash }
       end
 
       context "when not valid" do
-        before { put :update, :id => @user.id, :user => Factory.attributes_for(:user, :full_name => "") }
+        before { put :update, :id => @user.id, :user => FactoryGirl.attributes_for(:user, :full_name => "") }
         it { should respond_with(:success) }
         it { should render_template(:edit) }
       end
@@ -60,7 +60,7 @@ describe UsersController do
 
 
     context "as admin" do
-      before { login Factory.create(:admin) }
+      before { login FactoryGirl.create(:admin) }
 
       describe "on GET to edit" do
         before { get :edit, :id => @user }
@@ -70,13 +70,13 @@ describe UsersController do
 
       describe "on PUT to update" do
         context "when valid" do
-          before { put :update, :id => @user.id, :user => Factory.attributes_for(:user) }
+          before { put :update, :id => @user.id, :user => FactoryGirl.attributes_for(:user) }
           it { should redirect_to(user_path(@user)) }
           it { should set_the_flash }
         end
 
         context "when not valid" do
-          before { put :update, :id => @user.id, :user => Factory.attributes_for(:user, :full_name => "") }
+          before { put :update, :id => @user.id, :user => FactoryGirl.attributes_for(:user, :full_name => "") }
           it { should respond_with(:success) }
           it { should render_template(:edit) }
         end
@@ -93,7 +93,7 @@ describe UsersController do
     end
 
     context "with another user" do
-      before { @another_user = Factory.create(:user) }
+      before { @another_user = FactoryGirl.create(:user) }
 
       describe "on GET to edit" do
         before { get :edit, :id => @another_user }
@@ -102,7 +102,7 @@ describe UsersController do
       end
 
       describe "on PUT to update" do
-        before { put :update, :id => @another_user, :user => Factory.attributes_for(:user) }
+        before { put :update, :id => @another_user, :user => FactoryGirl.attributes_for(:user) }
         it { should respond_with(:redirect) }
         it { should set_the_flash.to(/not authorized/) }
       end
@@ -130,7 +130,7 @@ describe UsersController do
 
       context "when valid" do
         before do
-          lambda { post :create, :user => Factory.attributes_for(:user) }.should change {
+          lambda { post :create, :user => FactoryGirl.attributes_for(:user) }.should change {
             User.count 
           }.by(1)
         end
@@ -141,7 +141,7 @@ describe UsersController do
 
       context "when invalid" do
         before do
-          lambda { post :create, :user => Factory.attributes_for(:user, :full_name => "") }.should_not change {
+          lambda { post :create, :user => FactoryGirl.attributes_for(:user, :full_name => "") }.should_not change {
             User.count
           }
         end
