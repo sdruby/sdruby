@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe UserSessionsController do
   render_views
 
-  before { @user = Factory.create(:user) }
+  before { @user = FactoryGirl.create(:user) }
 
   context "when logged in" do
     before { login @user }

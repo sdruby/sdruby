@@ -11,9 +11,9 @@ describe Event do
     before do
       Event.destroy_all
 
-      @old_event = Factory.create(:event, :starts_at => 3.days.ago, :ends_at => 2.days.ago)
-      @first_event = Factory.create(:event, :starts_at => 1.day.from_now, :ends_at => 2.days.from_now)
-      @second_event = Factory.create(:event, :starts_at => 3.days.from_now, :ends_at => 4.days.from_now)
+      @old_event = FactoryGirl.create(:event, :starts_at => 3.days.ago, :ends_at => 2.days.ago)
+      @first_event = FactoryGirl.create(:event, :starts_at => 1.day.from_now, :ends_at => 2.days.from_now)
+      @second_event = FactoryGirl.create(:event, :starts_at => 3.days.from_now, :ends_at => 4.days.from_now)
     end
 
     describe "next event" do

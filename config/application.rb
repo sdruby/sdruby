@@ -40,18 +40,18 @@ module SDRuby
     config.filter_parameters += [:password, :password_confirmation]
 
     # Enable the asset pipeline
-    config.assets.enabled = false  # TODO: Turning back one when we move to Heroku...
+    config.assets.enabled = true
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    # config.assets.precompile += ['iphone.css', 'jquery-1.3.2.min.js', 'iphone-style-checkboxes.js']
+    config.assets.precompile += %w(application.css iphone.css application.js iphone-style-checkboxes.js)
 
     # Recaptcha
     unless Rails.env.test?
-      config.middleware.use Rack::Recaptcha, 
-        :public_key => '6LdJOMASAAAAAFZDpwMtiQLz_J4yZ5PqaGRlJ2dQ', 
-        :private_key => '6LdJOMASAAAAABY7abzfkCSBFOz94yd-sVF8RBvn', 
+      config.middleware.use Rack::Recaptcha,
+        :public_key => '6LdJOMASAAAAAFZDpwMtiQLz_J4yZ5PqaGRlJ2dQ',
+        :private_key => '6LdJOMASAAAAABY7abzfkCSBFOz94yd-sVF8RBvn',
         :paths => '/users'
     end
 

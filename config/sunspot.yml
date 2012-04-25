@@ -14,5 +14,5 @@ development:
 test:
   solr:
     hostname: localhost
-    port: 8981
+    port: 8982
     log_level: WARNING
