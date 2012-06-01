@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "Podcasts", :js => true do
+feature "Podcasts" do
   let!(:podcast_1) { create(:podcast) }
   let!(:podcast_2) { create(:podcast) }
 
