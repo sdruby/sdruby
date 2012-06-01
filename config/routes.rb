@@ -5,6 +5,7 @@ SDRuby::Application.routes.draw do
   match "/login" => "user_sessions#new", as: :login
   match "/register" => "users#new", as: :register
 
+  match "/about" => "pages#about", as: :about
   match "/sponsors" => "pages#sponsors", as: :sponsors
 
   resources :podcasts
