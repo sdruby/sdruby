@@ -34,12 +34,11 @@ module ApplicationHelper
     if Rails.env.development?
       "http://#{request.host}:#{request.port}"
     else
-      "http://sdruby.com"
+      "http://sdruby.org"
     end
   end
 
   def check_if_active(controller)
-
     if params[:controller] == controller.to_s
       return "active"
     elsif params[:action] == controller.to_s
@@ -47,7 +46,6 @@ module ApplicationHelper
     else
       return nil
     end
-
   end
 
   def next_meeting_date(now=Time.now)
