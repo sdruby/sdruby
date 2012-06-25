@@ -22,6 +22,8 @@ gem 'yaml_db'
 
 gem "sass"
 
+gem "capistrano", "2.8.0"
+
 # TODO: Pending move to Heroku...
 # group :assets do
 #   gem "coffee-rails", "~> 3.1.1"
