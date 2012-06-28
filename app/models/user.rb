@@ -1,4 +1,4 @@
-require "hpricot"
+require 'net/http'
 require "open-uri"
 
 class User < ActiveRecord::Base
@@ -35,26 +35,24 @@ class User < ActiveRecord::Base
 
   def grab_projects
     unless self.github_username.blank?
-      
       # Destroy existing projects
       self.projects.destroy_all
       
       # Grab new projects
       begin
-      doc = Hpricot.XML(open("http://github.com/api/v2/xml/repos/show/#{self.github_username.strip}/"))
+        api_uri = URI("https://api.github.com/users/#{self.github_username.strip}/repos")
+        api_session = Net::HTTP.new api_uri.host, api_uri.port
+        api_session.use_ssl = true
 
-      (doc/:repositories).each do |repository|
-        (repository/:name).each_with_index do |name, index|
-          unless (repository/:fork)[index].try(:inner_html) == 'true'
-            self.projects << Project.new(:name => name.inner_html,
-                                         :description => (repository/:description)[index].inner_html,
-                                         :github_created_at => (repository/"created-at")[index].inner_html,
-                                         :github_pushed_at => (repository/"pushed-at")[index].inner_html,
-                                         :github_watchers => (repository/"watchers")[index].inner_html                                   
-                                         )
-          end
+        repos = JSON.parse(api_session.request(Net::HTTP::Get.new(api_uri.request_uri)).body)
+        repos.each do |repo|
+          next if repo['fork']
+          self.projects << Project.create( :name            => repo['name'],
+                                        :description        => repo['description'],
+                                        :github_created_at  => repo['created_at'],
+                                        :github_pushed_at   => repo['pushed_at'],
+                                        :github_watchers    => repo['watchers'] )
         end
-      end
       rescue Exception => e#if no projects are found
         Rails.logger.error(e.inspect)
       end
