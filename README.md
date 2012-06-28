@@ -14,6 +14,17 @@ Currently, this application includes support for our video podcast, member signu
 * sass --watch public/stylesheets:public/stylesheets/compiled
 * rails s
 
+## Running Tests ##
+
+* rake db:test:prepare  (if this is your first time running the tests)
+* rspec spec
+
+We also have [Guard](https://github.com/guard/guard) set up:
+
+* guard
+
+Please be sure to run the tests and ensure all are passing before issuing a pull request!
+
 ## Features ##
 
 ### Podcast ###

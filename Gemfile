@@ -19,6 +19,8 @@ gem "sunspot_solr"
 gem "will_paginate"
 gem "formatize"
 gem 'yaml_db'
+gem "rMeetup"
+
 
 gem "sass"
 

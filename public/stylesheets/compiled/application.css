@@ -514,6 +514,15 @@ label.iOSCheckLabelOff span {
   #podcast_episode #details #number {
     font-weight: bold;
     margin: 10px 0 -3px 0; }
+#podcast_episode .social_share {
+  margin-top: 15px; }
+  #podcast_episode .social_share .twitter {
+    display: inline-block;
+    vertical-align: top; }
+  #podcast_episode .social_share .facebook {
+    display: inline-block;
+    width: 150px;
+    overflow: hidden; }
 #podcast_episode #actions {
   margin: 0 0 0 10px; }
   #podcast_episode #actions img {
