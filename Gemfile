@@ -4,8 +4,10 @@ gem "rails", "3.1.3"
 gem "rake", "0.8.7"
 
 gem "authlogic"
+gem "capistrano", "2.8.0"
 gem "chronic"
 gem "dynamic_form"
+gem "formatize"
 gem "haml"
 gem "hpricot"
 gem "jquery-rails"
@@ -14,17 +16,12 @@ gem "newrelic_rpm"
 gem "paperclip"
 gem "progress_bar"
 gem "rack-recaptcha", :require => "rack/recaptcha"
+gem "rMeetup"
+gem "sass"
+gem "seed_dump"
 gem "sunspot_rails"
 gem "sunspot_solr"
 gem "will_paginate"
-gem "formatize"
-gem 'yaml_db'
-gem "rMeetup"
-
-
-gem "sass"
-
-gem "capistrano", "2.8.0"
 
 # TODO: Pending move to Heroku...
 # group :assets do
