@@ -14,7 +14,6 @@
     - if @podcast
       = link_to "Episode #{@podcast.id}: #{@podcast.name}", podcasts_path
 
-
 #primary
 
   %h2 Meetings
@@ -22,8 +21,17 @@
   %p
     We meet the first Thursday of each month, on the campus of UCSD,
     in the Computer Science & Engineering Building.
-    %br
     = link_to("Map and directions", "http://tinyurl.com/2f486e") + "."
+
+  %p
+    We also organize hackfests twice a month, which are held at the offices of
+    = link_to "Monk Development", "http://www.monkdevelopment.com"
+    in Old Town San Diego.
+    
+  %p
+    For more information, check out our
+    = link_to("SD Ruby Meetup", "http://www.meetup.com/sdruby/")
+    page.
 
   %h2 Google Group
 
