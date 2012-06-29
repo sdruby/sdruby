@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "Homepage", :js => true do
+feature "Homepage" do
   let!(:podcast) { create(:podcast) }
 
   scenario "Viewing the Homepage" do
