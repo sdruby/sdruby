@@ -7,8 +7,8 @@ Currently, this application includes support for our video podcast, member signu
 ## Installation ##
 
 * bundle install
-* configure config/database.yml with your preferred settings
-* import a copy of the database
+* configure config/database.yml with your preferred settings (You can use the provided database.example.yml file to use sqlite3)
+* Setup database and load sample data (rake db:migrate db:data:load)
 * rake sunspot:solr:start (to start the solr search engine)
 * rake sunspot:solr:reindex (to index the database)
 * sass --watch public/stylesheets:public/stylesheets/compiled
