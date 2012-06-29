@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "Members", :js => true do
+feature "Members" do
   scenario "Viewing Members" do
     3.times { create(:user) }
 

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "Projects", :js => true do
+feature "Projects" do
   [:member_1, :member_2].each do |name|
     let!(name) do
       FactoryGirl.create(:user).tap do |member|
