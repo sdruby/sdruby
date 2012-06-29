@@ -448,6 +448,12 @@ label.iOSCheckLabelOff {
   img:first-child {
     margin-left: 17px;
     margin-right: 3px !important; }
+  img#heroku {
+    margin-top: 7px;
+  }
+  img#monk {
+    margin-top: 12px;
+  }
   span {
     display: block;
     font-size: 16px;
@@ -455,7 +461,6 @@ label.iOSCheckLabelOff {
     padding-top: 10px;
     text-align: left;
     font-weight: normal; } }
-
 #recruiters {
   color: #776d67;
   font-size: 12px;
