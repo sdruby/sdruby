@@ -527,16 +527,9 @@ label.iOSCheckLabelOff {
       font-weight: bold;
       margin: 10px 0 -3px 0; } }
 
-    .social_share {
-      margin-top: 15px;
-
-      .twitter {
-        display: inline-block;
-        vertical-align: top; }
-      .facebook {
-        display: inline-block;
-        width: 150px;
-        overflow: hidden; } }
+    .twitter {
+      margin: 21px 0 0 140px;
+      vertical-align: top; }
 
   #actions {
     margin: 0 0 0 10px;
@@ -547,9 +540,11 @@ label.iOSCheckLabelOff {
       margin: 9px 10px 0 0; }
     img#feed_stats {
       margin: 9px 10px 0 0; } }
+  
   .watch_now {
     @include border_radius(10px);
     background: #2f2016;
+    float: left;
     font-weight: bold;
     height: 30px;
     padding: 10px 0 0 0;
