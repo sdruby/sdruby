@@ -2,13 +2,18 @@
 
 #promo
 
+  #sponsor
+    %span
+      Podcast sponsored by
+      = link_to(image_tag("home/newrelic_small.png", :size => "167x30", :alt => "New Relic"), "http://newrelic.com")
+
   .screenshot
     - if @podcast && @podcast.screenshot
       = link_to(image_tag(@podcast.screenshot.url, :size => "345x267", :alt => "Episode #{@podcast.id}"), podcasts_path)
 
   %h2
     Latest from the
-    = "#{link_to "SD Ruby Podcast", podcasts_path}:".html_safe
+    = "#{link_to "SD Ruby Podcast", podcasts_path}".html_safe
 
   #name
     - if @podcast

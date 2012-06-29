@@ -418,7 +418,7 @@ label.iOSCheckLabelOff {
 
 #promo {
   float: right;
-  margin-top: -5px;
+  margin-top: 5px;
   width: 370px;
   h2 {
     margin-left: 10px;
@@ -429,7 +429,24 @@ label.iOSCheckLabelOff {
   #more {
     float: left;
     font-size: 14px;
-    margin: 7px 0 0 7px; } }
+    margin: 7px 0 0 7px; }
+  #sponsor {
+    background: rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 365px;
+    span {
+      font-weight: bold;
+      padding: 0 0 0 10px;
+      margin-top: 20px;
+      img {
+        margin: -5px 10px 0 0;
+        float: right; }
+      }
+    }
+  }
 
 #sponsors {
   background: #261b13;
@@ -535,9 +552,20 @@ label.iOSCheckLabelOff {
     .twitter {
       margin: 21px 0 0 140px;
       vertical-align: top; }
+    #joyent {
+      padding-top: 24px;
+      margin: -10px 0 0 10px;
+      clear: left;
+      font-size: 14px;
+      width: 245px;
+      img {
+        margin: -3px 8px 0 0;
+        float: right; }
+    }
 
   #actions {
-    margin: 0 0 0 10px;
+    clear: left;
+    margin: -10px 0 0 10px;
     img {
       float: left;
       margin: 5px 10px 0 0; }
@@ -564,6 +592,24 @@ label.iOSCheckLabelOff {
       &:hover {
         color: white; } } } }
 
+#newrelic {
+  background: rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin-bottom: 20px;
+  span {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px auto 20px auto;
+    width: 405px;
+    img {
+      margin: -9px 5px 0 0;
+      float: right; }
+    }
+  }
+
+          
 ul#filter {
   height: 29px;
   margin: 70px 0 15px 0;

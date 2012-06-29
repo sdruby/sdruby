@@ -408,7 +408,7 @@ label.iOSCheckLabelOff span {
 
 #promo {
   float: right;
-  margin-top: -5px;
+  margin-top: 5px;
   width: 370px; }
   #promo h2 {
     margin-left: 10px; }
@@ -420,6 +420,20 @@ label.iOSCheckLabelOff span {
     float: left;
     font-size: 14px;
     margin: 7px 0 0 7px; }
+  #promo #sponsor {
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 365px; }
+    #promo #sponsor span {
+      font-weight: bold;
+      padding: 0 0 0 10px;
+      margin-top: 20px; }
+      #promo #sponsor span img {
+        margin: -5px 10px 0 0;
+        float: right; }
 
 #sponsors {
   background: #261b13;
@@ -521,8 +535,18 @@ label.iOSCheckLabelOff span {
 #podcast_episode .twitter {
   margin: 21px 0 0 140px;
   vertical-align: top; }
+#podcast_episode #joyent {
+  padding-top: 24px;
+  margin: -10px 0 0 10px;
+  clear: left;
+  font-size: 14px;
+  width: 245px; }
+  #podcast_episode #joyent img {
+    margin: -3px 8px 0 0;
+    float: right; }
 #podcast_episode #actions {
-  margin: 0 0 0 10px; }
+  clear: left;
+  margin: -10px 0 0 10px; }
   #podcast_episode #actions img {
     float: left;
     margin: 5px 10px 0 0; }
@@ -549,6 +573,21 @@ label.iOSCheckLabelOff span {
     width: 121px; }
     #podcast_episode .watch_now a:hover {
       color: white; }
+
+#newrelic {
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 20px; }
+  #newrelic span {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px auto 20px auto;
+    width: 405px; }
+    #newrelic span img {
+      margin: -9px 5px 0 0;
+      float: right; }
 
 ul#filter {
   height: 29px;
