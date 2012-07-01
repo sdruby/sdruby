@@ -10,8 +10,8 @@ SDRuby::Application.routes.draw do
   match "/photos" => "photos#index"
   match "/register" => "users#new", as: :register
   match "/sponsors" => "pages#sponsors", as: :sponsors
-  match "/tshirts" => "pages#tshirts", as: :tshirts
   match "/thanks" => "pages#thanks", as: :thanks
+  match "/tshirts" => "pages#tshirts", as: :tshirts
 
   # Resources
   resources :podcasts, :path => :podcast do
