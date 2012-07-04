@@ -44,7 +44,11 @@ module ApplicationHelper
     elsif params[:action] == controller.to_s
       return "active"
     else
-      return nil
+      if params[:controller] == "pages" and params[:action] == "index" and controller == :home
+        return "active"
+      else
+        return nil
+      end
     end
   end
 
