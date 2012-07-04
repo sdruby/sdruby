@@ -249,9 +249,9 @@ td {
 #footer {
   background: url("/images/application/footer.gif") no-repeat;
   color: #444444;
-  font-size: 14px;
+  font-size: 16px;
   height: 45px;
-  padding-top: 10px;
+  padding-top: 20px;
   text-align: center;
   a {
     color: #505050; } }
@@ -431,9 +431,9 @@ label.iOSCheckLabelOff {
     font-size: 14px;
     margin: 7px 0 0 7px; }
   #sponsor {
-    background: rgba(255,255,255,0.1);
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    border-top: 1px solid rgba(255,255,255,0.2);
+    background: rgba(150,150,150,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-top: 1px solid rgba(255,255,255,0.05);
     padding-top: 20px;
     padding-bottom: 20px;
     width: 365px;
@@ -450,8 +450,6 @@ label.iOSCheckLabelOff {
 
 #sponsors {
   background: #261b13;
-  border-top: 1px solid #333333;
-  border-bottom: 1px solid #333333;
   color: #685f5a;
   font-size: 18px;
   font-weight: bold;
@@ -593,10 +591,10 @@ label.iOSCheckLabelOff {
         color: white; } } } }
 
 #newrelic {
-  background: rgba(255,255,255,0.1);
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-  border-top: 1px solid rgba(255,255,255,0.2);
-  margin-bottom: 20px;
+  background: rgba(150,150,150,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  margin-bottom: 40px;
   span {
     display: block;
     font-size: 18px;
@@ -875,4 +873,51 @@ ul#filter {
    -khtml-user-select: none;
    -webkit-user-select: none;
    user-select: none;
+}
+
+// Team page
+
+#team {
+  h1 {
+    margin-left: 150px;
+  }
+  h1 + p {
+    margin: -6px 0 32px 150px;
+  }
+  .member {
+    margin: 12px 0 24px 0;
+    min-height: 128px;
+    padding-bottom: 12px;
+    .twitter-follow-button {
+      display: block !important;
+      float: right;
+      margin: 3px 0 0 0;
+    }
+    h2 a {
+      color: #fff;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline !important;
+      }
+    }
+    img {
+      float: left;
+      margin: 0 10px 12px 0;
+    }
+    p {
+      margin-bottom: 0 !important;
+    }
+    .profile {
+      margin: 0 0 0 150px;
+    }
+  }
+}
+
+// Homepage
+
+.homepage {
+  .twitter-follow-button {
+    display: block !important;
+    margin: 12px 0;
+  }
 }

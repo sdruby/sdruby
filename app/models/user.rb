@@ -70,6 +70,24 @@ class User < ActiveRecord::Base
     UserMailer.forgot_password(self.email, new_pass).deliver
   end
 
+  def twitter
+    handle = nil
+    if self.links
+      self.links.split("\n").each do |link|
+        if link.match('twitter')
+          handle = link.split(/\//)[-1]
+        end
+      end
+      if handle != nil
+        return handle
+      else
+        return false
+      end
+    else
+      return false
+    end
+  end
+
   protected
   
   def avatar_is_valid

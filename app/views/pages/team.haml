@@ -1,0 +1,22 @@
+-t "Team"
+
+
+
+#team
+  %h1 The SD Ruby Team
+
+  %p These are the people who make SD Ruby happen.
+  
+  - @team.each do |organizer|
+    .member
+      = link_to(image_tag(organizer.avatar.url(:medium), :size => "128x128"), organizer)
+      - if organizer.twitter
+        %a{:href => "https://twitter.com/" + organizer.twitter, :class => "twitter-follow-button", "data-show-count" => "false", "data-dnt" => "true", "data-size" => "large"}= "Follow @" + organizer.twitter
+      .profile
+
+        %h2= link_to organizer.full_name, organizer
+        %h3= organizer.role
+        %p
+          = organizer.about
+          %br
+          = link_to "more", organizer

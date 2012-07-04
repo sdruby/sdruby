@@ -1,7 +1,8 @@
 #navigation
   %ul
     %li{:class => check_if_active(:home)}= link_to "Home", root_path
-    %li{:class => check_if_active(:users)}= link_to "Members", users_path
-    %li{:class => check_if_active(:projects)}= link_to "Projects", projects_path
     %li{:class => check_if_active(:podcasts)}= link_to "Podcast", podcasts_path
     %li{:class => check_if_active(:sponsors)}= link_to "Sponsors", sponsors_path
+    %li{:class => check_if_active(:users)}= link_to "Members", users_path
+    %li{:class => check_if_active(:projects)}= link_to "Projects", projects_path
+    %li{:class => check_if_active(:team)}= link_to "Team", team_path

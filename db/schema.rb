@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120127024438) do
+ActiveRecord::Schema.define(:version => 20120701160514) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(:version => 20120127024438) do
     t.boolean  "available_for_work"
     t.boolean  "show_email",            :default => false
     t.boolean  "admin",                 :default => false
+    t.string   "role"
+    t.integer  "sort",                  :default => 0
   end
 
 end
