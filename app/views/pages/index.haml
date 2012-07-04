@@ -19,7 +19,7 @@
     - if @podcast
       = link_to "Episode #{@podcast.id}: #{@podcast.name}", podcasts_path
 
-#primary
+#primary.homepage
 
   %h2 Meetings
 
@@ -67,8 +67,7 @@
   %h2 Follow us on Twitter
 
   %p
-    You can follow
-    = link_to("@sdruby", "http://twitter.com/sdruby")
-    on Twitter for meeting reminders and other updates.
+    Get notified about upcoming SD Ruby meetings and hackfests, as well as new podcast episodes.
+    %a{:href => "https://twitter.com/sdruby", :class => "twitter-follow-button", "data-show-count" => "false", "data-dnt" => "true", "data-size" => "large"} Follow @sdruby
 
 = render :partial => "sponsors"
