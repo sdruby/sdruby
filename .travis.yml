@@ -1,6 +1,9 @@
 language: ruby
 rvm:
   - 1.9.2
-before_script: "bundle install"
+before_script:
+  - bundle install
+  - mysql -e 'create database sdruby_test;'
+  - cp spec/config/database.yml config/database.yml; bundle exec rake db:migrate
 script: "bundle exec rspec spec"
 

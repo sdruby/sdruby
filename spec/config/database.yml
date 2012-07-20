@@ -1,0 +1,5 @@
+test:
+  adapter: mysql2
+  database: sdruby_test
+  username: root
+  encoding: utf8
