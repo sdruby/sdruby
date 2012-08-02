@@ -13,6 +13,7 @@ SDRuby::Application.routes.draw do
   match "/team" => "pages#team", as: :team
   match "/thanks" => "pages#thanks", as: :thanks
   match "/tshirts" => "pages#tshirts", as: :tshirts
+  match "/speak" => "pages#speak", as: :speak
 
   # Resources
   resources :podcasts, :path => :podcast do

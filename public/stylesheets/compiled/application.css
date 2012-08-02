@@ -867,3 +867,17 @@ ul#filter {
 .homepage .twitter-follow-button {
   display: block !important;
   margin: 12px 0; }
+
+#speak ul li {
+  list-style-type: disc !important;
+  margin: 6px 0 6px 20px; }
+#speak ul + h2 {
+  padding-top: 24px; }
+#speak h2 + p {
+  margin-top: 12px; }
+#speak p, #speak li, #speak ul {
+  line-height: 24px !important; }
+#speak img {
+  border: 5px solid rgba(150, 150, 150, 0.1); }
+#speak h1 {
+  padding-top: 12px; }

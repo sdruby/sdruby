@@ -921,3 +921,27 @@ ul#filter {
     margin: 12px 0;
   }
 }
+
+// Speakers
+
+#speak {
+  ul li {
+    list-style-type: disc !important;
+    margin: 6px 0 6px 20px;
+  }
+  ul + h2 {
+    padding-top: 24px;
+  }
+  h2 + p {
+    margin-top: 12px;
+  }
+  p, li, ul {
+    line-height: 24px !important;
+  }
+  img {
+    border: 5px solid rgba(150,150,150,0.1);
+  }
+  h1 {
+    padding-top: 12px;
+  }
+}

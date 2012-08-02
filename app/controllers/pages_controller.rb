@@ -7,6 +7,9 @@ class PagesController < ApplicationController
     @podcast = Podcast.published.first
   end
   
+  def speak
+  end
+  
   def sponsors
   end
   
