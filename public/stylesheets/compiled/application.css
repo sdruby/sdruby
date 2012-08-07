@@ -454,10 +454,13 @@ label.iOSCheckLabelOff span {
     margin-top: 7px; }
   #sponsors img#monk {
     margin-top: 12px; }
+  #sponsors img#ucsd {
+    margin-top: 5px; }
   #sponsors span {
     display: block;
     font-size: 16px;
     margin: 0 10px 0 25px;
+    padding-bottom: 3px;
     padding-top: 10px;
     text-align: left;
     font-weight: normal; }
