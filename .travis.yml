@@ -6,4 +6,7 @@ before_script:
   - mysql -e 'create database sdruby_test;'
   - cp spec/config/database.yml config/database.yml; bundle exec rake db:migrate
 script: "bundle exec rspec spec"
+notifications:
+  email:
+    - me@benhughes.name
 
