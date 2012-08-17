@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(:version => 20120817234227) do
     t.boolean  "available_for_work"
     t.boolean  "show_email",            :default => false
     t.boolean  "admin",                 :default => false
+    t.string   "role"
+    t.integer  "sort",                  :default => 0
   end
 
 end

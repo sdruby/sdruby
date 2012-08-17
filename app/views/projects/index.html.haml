@@ -1,9 +1,11 @@
 %h1=t "Projects"
 
 %p#projects_intro
-  This is a list of 
+  SD Ruby members have created
   = @projects.size
-  open-source projects created by SD Ruby members.
+  open-source projects
+  &mdash;
+  all available on Github.
 
 #featured_project
   #refresh= link_to_function "refresh", "$('#featured_project_details').fadeOut('fast');$('#featured_project_details').load('/projects/featured').hide().fadeIn('slow');"

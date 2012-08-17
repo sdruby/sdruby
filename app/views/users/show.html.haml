@@ -27,6 +27,10 @@
     %h1=t @user.full_name
 
     %ul#stats
+      - if @user.admin?
+        %li 
+          %strong= link_to @user.role, team_path
+
       - unless @user.started_using_ruby_on.blank?
         %li
           Using Ruby since

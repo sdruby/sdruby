@@ -10,6 +10,11 @@ class PagesController < ApplicationController
   def sponsors
   end
   
+  def team
+    @organizer = User.find_by_full_name("Patrick Crowley")
+    @team = User.where(:admin => true).order(:sort)
+  end
+  
   def thanks
   end
   

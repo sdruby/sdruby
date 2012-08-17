@@ -1,5 +1,7 @@
 - t "Podcast"
 
+= render :partial => "sponsor"
+
 #podcast_episode
 
   #details
@@ -21,8 +23,12 @@
     = link_to(image_tag("application/itunes.png", :size => "79x24", :alt => "Podcast feed for iTunes", :id => "itunes"), "http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=168362573")
 
     = link_to(image_tag("http://feeds.feedburner.com/~fc/sdrbpodcast?bg=FFFFFF&amp;fg=666666&amp;anim=0", :size => "88x26", :alt => "Podcast feed", :id => "feed_stats"), "http://feeds2.feedburner.com/sdrbpodcast")
-
+    
     %br.clear
+      
+  #joyent
+    Bandwidth provided by
+    = link_to(image_tag("home/joyent.png", :size => "86x25", :alt => "New Relic"), "http://newrelic.com")
 
 %ul#filter.unselectable
   %li.all.current
