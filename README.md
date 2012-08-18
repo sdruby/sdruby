@@ -25,6 +25,14 @@ We also have [Guard](https://github.com/guard/guard) set up:
 
 Please be sure to run the tests and ensure all are passing before issuing a pull request!
 
+## Deployment ##
+
+There are are staging and production apps hosted on Heroku's cedar stack.
+
+You can deploy to Heroku if you have app permissions via rake staging deploy commit=BRANCH or rake production deploy.
+
+Deployment tasks will automatically run any pending migrations.
+
 ## Features ##
 
 ### Podcast ###
@@ -44,7 +52,7 @@ Member profiles can include:
 * Github ID
 * Neighborhood
 * Ruby experience
-* Work availability 
+* Work availability
 * Contact email (if public)
 
 ### Project List ###
