@@ -1,5 +1,5 @@
 module Headliner
-  
+
   def title(options, headline='')
     if options.is_a? String
       save_title(options, headline)
@@ -38,7 +38,7 @@ module Headliner
     else
       suffix = ' '
     end
-  
+
     # Lowercase title?
     if options[:lowercase] == true
       @title = @title.downcase unless @title.blank?
@@ -54,7 +54,7 @@ module Headliner
         return content_tag(:title, options[:site] + prefix + separator + suffix + @title)
       end
     end
-    
+
     # If title is blank, return only website name
     content_tag :title, options[:site]
   end

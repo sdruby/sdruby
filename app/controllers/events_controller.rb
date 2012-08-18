@@ -41,7 +41,7 @@ class EventsController < ApplicationController
     #redirect_to(events_url)
   #end
 
-  
+
   protected
 
   def find_event

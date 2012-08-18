@@ -12,14 +12,14 @@ describe User do
   it "should be valid" do
     @user.should be_valid
   end
-  
+
   it "should expose #first_name" do
     @user.first_name.should == "Snoop"
   end
 
   it "should expose #last_name" do
     @user.last_name.should == "Dog"
-  end 
+  end
 
   describe "validations" do
     it "should be invalid when full_name is nil, blank, or too short" do

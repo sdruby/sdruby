@@ -4,6 +4,6 @@ FactoryGirl.define do
     f.description { Faker::Lorem.paragraph }
     f.movie_link "http://sdruby.org"
     f.publish true
-    f.screenshot { Rack::Test::UploadedFile.new(Rails.root.join("spec", "fixtures", "files", "podcast_screenshot.png").to_s, "image/png") }  
+    f.screenshot { Rack::Test::UploadedFile.new(Rails.root.join("spec", "fixtures", "files", "podcast_screenshot.png").to_s, "image/png") }
   end
 end

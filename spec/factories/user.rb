@@ -13,7 +13,7 @@ FactoryGirl.define do
   end
 
   factory :user_with_avatar, :parent => :user do |f|
-    f.avatar { Rack::Test::UploadedFile.new(Rails.root.join("spec", "fixtures", "files", "user_avatar.jpg").to_s, "image/jpeg") }  
+    f.avatar { Rack::Test::UploadedFile.new(Rails.root.join("spec", "fixtures", "files", "user_avatar.jpg").to_s, "image/jpeg") }
   end
 
   factory :admin, :parent => :user do |f|

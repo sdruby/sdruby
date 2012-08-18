@@ -7,7 +7,7 @@ class Podcast < ActiveRecord::Base
     integer :id
     text :name, :description
   end
-  
+
   has_attached_file :screenshot,
                     :styles => {
                     :large => ["345x267!", :png],

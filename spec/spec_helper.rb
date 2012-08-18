@@ -36,9 +36,9 @@ Spork.prefork do
 
     # Includes
     config.include(FactoryGirl::Syntax::Methods)
-    
+
     # Stubing Solr
-    Sunspot.session = Sunspot::Rails::StubSessionProxy.new(Sunspot.session) 
+    Sunspot.session = Sunspot::Rails::StubSessionProxy.new(Sunspot.session)
   end
 end
 

@@ -1,7 +1,7 @@
 class PodcastsController < ApplicationController
   before_filter :require_admin, :except => [:index, :show, :search]
   before_filter :find_podcast, :except => [:index, :new, :create, :search]
-  
+
   def index
     @podcasts = Podcast.published.all
 
@@ -51,13 +51,13 @@ class PodcastsController < ApplicationController
     flash[:notice] = 'Podcast was successfully destroyed.'
     redirect_to podcasts_path
   end
-  
+
   def search
     @episodes = Podcast.search do
       fulltext params[:q]
       order_by :id, :desc
     end
-    
+
     respond_to do |format|
       format.html
       format.json { render :json => @episodes.results, :only => [:id] }

@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all(:order => "full_name ASC", :include => :projects)
   end
-  
+
   def new
     if current_user
       redirect_to user_path(current_user)
@@ -61,7 +61,7 @@ class UsersController < ApplicationController
       render :action => "edit"
     end
   end
-  
+
   def destroy
     @user.destroy
     flash[:notice] = "Member profile deleted."
@@ -74,7 +74,7 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find_by_id(params[:id])
-    
+
     unless @user
       flash[:notice] = "No such user."
       redirect_to root_path

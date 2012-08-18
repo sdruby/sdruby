@@ -1,4 +1,4 @@
-class Photo 
+class Photo
 
   def self.meetup
     RMeetup::Client.api_key = '28593fc521913722bc11a60253a29'

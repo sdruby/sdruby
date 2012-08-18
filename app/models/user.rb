@@ -11,16 +11,16 @@ class User < ActiveRecord::Base
 
   validate :avatar_is_valid
 
-  has_attached_file :avatar, 
-                    :styles => { :small  => "48x48#", :medium  => "128x128#", :large  => "256x256#" }, 
+  has_attached_file :avatar,
+                    :styles => { :small  => "48x48#", :medium  => "128x128#", :large  => "256x256#" },
                     :path => ":rails_root/public/images/users/avatars/:id/:style.:extension",
                     :url => "/images/users/avatars/:id/:style.:extension",
                     :default_url => "/images/users/avatar_:style.png"
-               
+
   def to_s
     full_name
   end
-         
+
   def is_admin?
     self.id == 1 ? true : false
   end
@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
     unless self.github_username.blank?
       # Destroy existing projects
       self.projects.destroy_all
-      
+
       # Grab new projects
       begin
         api_uri = URI("https://api.github.com/users/#{self.github_username.strip}/repos")
@@ -89,7 +89,7 @@ class User < ActiveRecord::Base
   end
 
   protected
-  
+
   def avatar_is_valid
     if self.avatar_file_name?
       unless ["image/gif", "image/jpeg", "image/png"].include?(self.avatar_content_type)
@@ -104,5 +104,5 @@ class User < ActiveRecord::Base
     1.upto(len) { |i| newpass << chars[rand(chars.size-1)] }
     return newpass
   end
-  
+
 end

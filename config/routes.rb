@@ -2,7 +2,7 @@ SDRuby::Application.routes.draw do
 
   # Homepage
   root to: 'pages#index'
-  
+
   # Custom routes
   match "/forgot" => "users#forgot_password", as: :password_reset
   match "/login" => "user_sessions#new", as: :login
@@ -16,9 +16,9 @@ SDRuby::Application.routes.draw do
 
   # Resources
   resources :podcasts, :path => :podcast do
-    get :search, on: :collection    
+    get :search, on: :collection
   end
-  
+
   resources :projects do
     get :featured, on: :collection
   end

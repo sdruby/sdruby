@@ -9,7 +9,7 @@ class HeadlinerTest < Test::Unit::TestCase
   include Headliner
 
   # Make the blank? method available without loading Rails
-  Object.class_eval do   
+  Object.class_eval do
     def blank?
       if respond_to?(:empty?) && respond_to?(:strip)
         empty? or strip.empty?
@@ -18,7 +18,7 @@ class HeadlinerTest < Test::Unit::TestCase
       else
         !self
       end
-    end 
+    end
   end
 
   def test_title_is_saved
@@ -31,7 +31,7 @@ class HeadlinerTest < Test::Unit::TestCase
     assert_equal "Headliner", @title
     assert_equal "Headliner: a plugin for setting page titles", headline
   end
-  
+
   def test_title_is_site_when_empty
     title :site => "the.railsi.st"
     assert_equal nil, @title
@@ -53,13 +53,13 @@ class HeadlinerTest < Test::Unit::TestCase
     full_title = display_title :site => "the.railsi.st", :lowercase => true
     assert_equal "<title>the.railsi.st | headliner</title>", full_title
   end
-  
+
   def test_title_is_reversed
     @title = "Headliner"
     full_title = display_title :site => "the.railsi.st", :reverse => true
     assert_equal "<title>Headliner | the.railsi.st</title>", full_title
   end
-  
+
   def test_title_has_custom_separator
     @title = "Headliner"
     full_title = display_title :site => "the.railsi.st", :separator => "&mdash;"
@@ -86,18 +86,18 @@ class HeadlinerTest < Test::Unit::TestCase
 
   def test_title_has_no_prefix_and_suffix_and_has_custom_separator
     @title = "Headliner"
-    full_title = display_title :site => "the.railsi.st", 
-                               :prefix => false, 
-                               :suffix => false, 
+    full_title = display_title :site => "the.railsi.st",
+                               :prefix => false,
+                               :suffix => false,
                                :separator => "&mdash;"
     assert_equal "<title>the.railsi.st&mdash;Headliner</title>", full_title
   end
 
   def test_title_has_all_custom_options
     @title = "Headliner"
-    full_title = display_title :site => "the.railsi.st", 
-                               :prefix => " ", 
-                               :suffix => " ", 
+    full_title = display_title :site => "the.railsi.st",
+                               :prefix => " ",
+                               :suffix => " ",
                                :separator => ".:.",
                                :lowercase => true,
                                :reverse => true

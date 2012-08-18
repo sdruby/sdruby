@@ -131,7 +131,7 @@ describe UsersController do
       context "when valid" do
         before do
           lambda { post :create, :user => FactoryGirl.attributes_for(:user) }.should change {
-            User.count 
+            User.count
           }.by(1)
         end
 
