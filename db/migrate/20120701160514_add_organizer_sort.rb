@@ -1,6 +1,6 @@
 class AddOrganizerSort < ActiveRecord::Migration
   def up
-    add_column :users, :sort, :integer, :default => false
+    add_column :users, :sort, :integer, :default => 0
   end
 
   def down
