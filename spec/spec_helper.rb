@@ -28,9 +28,9 @@ Spork.prefork do
     config.fixture_path = Rails.root + '/spec/fixtures/'
 
     ## Configure VCR Cassettes
-    VCR.config do |c|
+    VCR.configure do |c|
       c.cassette_library_dir = Rails.root.join("spec/vcr_cassettes")
-      c.stub_with :webmock # or :fakeweb
+      c.hook_into :webmock # or :fakeweb
       c.ignore_localhost = true
     end
 
