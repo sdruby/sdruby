@@ -1,0 +1,29 @@
+#
+# Format:
+#
+# <stage name>:
+#   app: <Heroku app name>
+#   stack: <Heroku stack, optional>
+#   tag: <git tag pattern, optional>
+#   repo: <git repository, optional>
+#   config:
+#     - <Heroku config:var name>: <Heroku config:var value>
+#
+production:
+  app: sdruby
+  stack: cedar
+  config:
+    BUNDLE_WITHOUT: "development:test"
+    RACK_ENV: 'production'
+  addons:
+    - scheduler:standard
+
+staging:
+  app: sdruby-staging
+  stack: cedar
+  config:
+    BUNDLE_WITHOUT: "development:test"
+    RACK_ENV: 'staging'
+  addons:
+    - scheduler:standard
+

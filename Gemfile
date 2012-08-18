@@ -7,27 +7,22 @@ gem "authlogic"
 gem "capistrano", "2.8.0"
 gem "chronic"
 gem "dynamic_form"
-gem "haml-rails"
 gem "formatize"
+gem "haml-rails"
+gem "heroku_san"
 gem "hpricot"
 gem "jquery-rails"
-gem "mysql2", :git => "git://github.com/sdruby/mysql2.git", :branch => "master"
 gem "newrelic_rpm"
 gem "paperclip"
 gem "progress_bar"
 gem "rack-recaptcha", :require => "rack/recaptcha"
+gem "rMeetup"
 gem "rMeetup"
 gem "sass"
 gem "seed_dump"
 gem "sunspot_rails"
 gem "sunspot_solr"
 gem "will_paginate"
-gem 'yaml_db'
-gem "rMeetup"
-
-
-gem "sass"
-
 
 group :assets do
   gem "coffee-rails", "~> 3.2.1"
@@ -36,6 +31,7 @@ group :assets do
 end
 
 group :development do
+  gem "mysql2", :git => "git://github.com/sdruby/mysql2.git", :branch => "master"
   gem "sqlite3"
   gem "ruby-debug",   platforms: :ruby_18
   gem "ruby-debug19", platforms: :ruby_19
