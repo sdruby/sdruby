@@ -469,10 +469,14 @@ label.iOSCheckLabelOff {
   img#monk {
     margin-top: 12px;
   }
+  img#ucsd {
+    margin-top: 5px;
+  }
   span {
     display: block;
     font-size: 16px;
     margin: 0 10px 0 25px;
+    padding-bottom: 3px;
     padding-top: 10px;
     text-align: left;
     font-weight: normal; } }
@@ -571,7 +575,7 @@ label.iOSCheckLabelOff {
       margin: 9px 10px 0 0; }
     img#feed_stats {
       margin: 9px 10px 0 0; } }
-  
+
   .watch_now {
     @include border_radius(10px);
     background: #2f2016;
@@ -607,7 +611,7 @@ label.iOSCheckLabelOff {
     }
   }
 
-          
+
 ul#filter {
   height: 29px;
   margin: 70px 0 15px 0;
@@ -691,7 +695,7 @@ ul#filter {
         color: white;
         text-decoration: none;
         &:hover {
-          text-decoration: underline; } } 
+          text-decoration: underline; } }
     p {
       font-size: 16px;
       margin-top: 11px; }
@@ -919,5 +923,29 @@ ul#filter {
   .twitter-follow-button {
     display: block !important;
     margin: 12px 0;
+  }
+}
+
+// Speakers
+
+#speak {
+  ul li {
+    list-style-type: disc !important;
+    margin: 6px 0 6px 20px;
+  }
+  ul + h2 {
+    padding-top: 24px;
+  }
+  h2 + p {
+    margin-top: 12px;
+  }
+  p, li, ul {
+    line-height: 24px !important;
+  }
+  img {
+    border: 5px solid rgba(150,150,150,0.1);
+  }
+  h1 {
+    padding-top: 12px;
   }
 }

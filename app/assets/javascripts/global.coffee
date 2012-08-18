@@ -1,74 +1,95 @@
-$ ->
-  # Add iPhone style checkbokes
-  if $('.panel').length
-    $(':checkbokx').iphoneStyle(
-      checkedLabel:   'YES'
-      uncheckedLabel: 'NO'
-    )
+$(document).ready ->
+
+  # Add iPhone style checkboxes
+  if $(".panel").length
+    $(":checkbox").iphoneStyle
+      checkedLabel: "YES"
+      uncheckedLabel: "NO"
+
 
   # Filter episodes
-  $all      = $('.all')
-  $filter   = $('#filter li')
-  $episode  = $('.episode')
-  cur = 'current'
-
+  $all = $(".all")
+  $filter = $("#filter li")
+  $episode = $(".episode")
+  cur = "current"
   $all.click ->
     $episode.show()
     $filter.removeClass cur
     $all.addClass cur
 
-  $('.filter').click ->
-    year = $(this).find('span').html()
+  $(".filter").click ->
+    year = $(this).find("span").html()
     $episode.hide()
     $filter.removeClass cur
-    $('.filter_' + year).addClass cur
-    $('.plublished_in_' + year).show()
-    $('#filter input').val ''
+    $(".filter_" + year).addClass cur
+    $(".published_in_" + year).show()
+    $("#filter input").val ""
+
 
   # Search episodes
-  $('#filter input').bind 'keypress', (e)->
+  $("#filter input").bind "keypress", (e) ->
+
     # If enter key is pressed, perform search
-    if e.keyCode == 13
+    if e.keyCode is 13
+
       # Grab current query value
       query = $(this).val()
 
       # Show spinner image
-      $('#filter img').show()
+      $("#filter img").show()
 
       # Search episodes (if query is not blank)
-      if query != ''
-        $.getJSON '/podcasts/search.json?q=' + query, (data)->
+      unless query is ""
+        $.getJSON "/podcasts/search.json?q=" + query, (data) ->
+
           # Show/hide no results message
-          if data.length == 0
-            $('#noresults').show()
+          if data.length is 0
+            $("#noresults").show()
           else
-            $('#noresults').hide()
+            $("#noresults").hide()
 
           # Hide all episodes
-          $('.episode').hide()
+          $(".episode").hide()
 
           # Show only matching results
-          $.each data, (key,val)->
-            $('#episode_' + val.id).show()
+          $.each data, (key, val) ->
+            $("#episode_" + val.id).show()
+
 
           # Hide spinner when search is complete
-          $('#filter img').hide()
+          $("#filter img").hide()
+
 
       # Otherwise show all episodes
       else
+
         # Hide spinner when search is complete
-        $('#filter img').hide()
+        $("#filter img").hide()
 
         # Show all episodes
-        $('.episode').show()
+        $(".episode").show()
       false
 
+
   # Show all episodes if search query is emptied using delete key
-  $('#filter input').keyup (e)->
+  $("#filter input").keyup (e) ->
+
     # Show episodes
-    if e.keyCode == 8
+    if e.keyCode is 8
+
       # Grab current query value
-      query = $('#filter input').val()
+      query = $("#filter input").val()
 
       # Show all episodes if query is blank
-      $('.episode').show() if query.length < 1
+      $(".episode").show()  if query.length < 1
+
+
+not (d, s, id) ->
+  js = undefined
+  fjs = d.getElementsByTagName(s)[0]
+  unless d.getElementById(id)
+    js = d.createElement(s)
+    js.id = id
+    js.src = "//platform.twitter.com/widgets.js"
+    fjs.parentNode.insertBefore js, fjs
+(document, "script", "twitter-wjs")
