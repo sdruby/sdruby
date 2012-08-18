@@ -1,10 +1,9 @@
-source :rubygems
+source "https://rubygems.org"
 
-gem "rails", "~> 3.2.3"
+gem "rails", "~> 3.2.8"
 gem "rake"
 
 gem "authlogic"
-gem "capistrano", "2.8.0"
 gem "chronic"
 gem "dynamic_form"
 gem "formatize"
@@ -13,12 +12,10 @@ gem "heroku_san"
 gem "hpricot"
 gem "jquery-rails"
 gem "newrelic_rpm"
-gem "paperclip"
+gem "paperclip", "~> 2.4.5"
 gem "progress_bar"
 gem "rack-recaptcha", :require => "rack/recaptcha"
 gem "rMeetup"
-gem "rMeetup"
-gem "sass"
 gem "seed_dump"
 gem "sunspot_rails"
 gem "sunspot_solr"
@@ -31,7 +28,7 @@ group :assets do
 end
 
 group :development do
-  gem "mysql2", :git => "git://github.com/sdruby/mysql2.git", :branch => "master"
+  gem "mysql2"
   gem "sqlite3"
   gem "ruby-debug",   platforms: :ruby_18
   gem "ruby-debug19", platforms: :ruby_19
@@ -39,7 +36,7 @@ end
 
 group :test do
   gem "faker"
-  gem "factory_girl_rails"
+  gem "factory_girl_rails", "~> 1.6.0"
   gem "rspec-rails"
   gem "shoulda-matchers"
   gem "vcr"
