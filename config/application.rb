@@ -65,5 +65,8 @@ module SDRuby
       g.stylesheets false
       g.javascripts false
     end
+
+  # Prevent initializing application and connecting to the database when precompiling assets
+  config.assets.initialize_on_precompile = false
   end
 end
