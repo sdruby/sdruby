@@ -4,6 +4,16 @@ This app is the website of [SD Ruby](http://sdruby.org), a local Ruby user group
 
 Currently, this application includes support for our video podcast, member signup and registration, member profiles, and a Github project list. We're also working on adding other features.
 
+
+## System Dependencies ##
+
+### ImageMagick ###
+
+To work best, you must have ImageMagick installed on your local machine:
+
+* For Linux: This is best installed with your package manager. For Debian-flavored distributions (Ubuntu), use: "aptitude install imagemagick".
+* For Mac OS X: The best approach is to install this via homebrew: "brew install imagemagick".
+
 ## Installation ##
 
 * bundle install
