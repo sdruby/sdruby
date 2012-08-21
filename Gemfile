@@ -4,6 +4,7 @@ gem "rails", "~> 3.2.8"
 gem "rake"
 
 gem "authlogic"
+gem "aws-sdk"
 gem "chronic"
 gem "dynamic_form"
 gem "formatize"
@@ -13,7 +14,7 @@ gem "heroku_san"
 gem "hpricot"
 gem "jquery-rails"
 gem "newrelic_rpm"
-gem "paperclip", "~> 2.4.5"
+gem "paperclip", "~> 3.1.4"
 gem "progress_bar"
 gem "rack-recaptcha", :require => "rack/recaptcha"
 gem "rMeetup"
@@ -33,6 +34,7 @@ group :development do
   gem "sqlite3"
   gem "ruby-debug",   platforms: :ruby_18
   gem "ruby-debug19", platforms: :ruby_19
+  gem "quiet_assets"
 end
 
 group :test do

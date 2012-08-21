@@ -35,6 +35,11 @@ GEM
     authlogic (3.1.3)
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
+    aws-sdk (1.6.4)
+      httparty (~> 0.7)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
     bluecloth (2.2.0)
     builder (3.0.0)
     capybara (1.1.2)
@@ -110,6 +115,9 @@ GEM
     highline (1.6.13)
     hike (1.2.1)
     hpricot (0.8.6)
+    httparty (0.8.3)
+      multi_json (~> 1.0)
+      multi_xml
     i18n (0.6.0)
     journey (1.0.4)
     jquery-rails (2.1.1)
@@ -134,15 +142,17 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.19)
     multi_json (1.3.6)
+    multi_xml (0.5.1)
     mysql2 (0.3.11)
     netrc (0.7.7)
     newrelic_rpm (3.4.1)
     nokogiri (1.5.5)
     options (2.3.0)
       fattr
-    paperclip (2.4.5)
-      activerecord (>= 2.3.0)
-      activesupport (>= 2.3.2)
+    paperclip (3.1.4)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
       cocaine (>= 0.0.2)
       mime-types
     pg (0.14.0)
@@ -151,6 +161,8 @@ GEM
     progress_bar (0.4.0)
       highline (~> 1.6.1)
       options (~> 2.3.0)
+    quiet_assets (1.0.1)
+      railties (~> 3.1)
     rMeetup (1.0)
     rack (1.4.1)
     rack-cache (1.2)
@@ -253,6 +265,7 @@ GEM
     uglifier (1.2.7)
       execjs (>= 0.3.0)
       multi_json (~> 1.3)
+    uuidtools (2.1.3)
     vcr (2.2.4)
     webmock (1.8.9)
       addressable (>= 2.2.7)
@@ -266,6 +279,7 @@ PLATFORMS
 
 DEPENDENCIES
   authlogic
+  aws-sdk
   capybara
   capybara-firebug
   chronic
@@ -286,9 +300,10 @@ DEPENDENCIES
   launchy
   mysql2
   newrelic_rpm
-  paperclip (~> 2.4.5)
+  paperclip (~> 3.1.4)
   pg
   progress_bar
+  quiet_assets
   rMeetup
   rack-recaptcha
   rails (~> 3.2.8)

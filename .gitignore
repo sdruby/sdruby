@@ -2,6 +2,7 @@ log/*
 tmp/*
 tmp/**/*
 .DS_Store
+config/app_config.yml
 config/database.yml
 config/fuzzy.yml
 config/password.txt
@@ -9,8 +10,7 @@ db/*.sqlite3
 .idea/*
 .bundle
 .sass-cache
-public/images/screenshots
-public/images/users
+public/assets
 .rvmrc
 .powrc
 bin/
