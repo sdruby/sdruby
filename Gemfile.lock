@@ -93,6 +93,7 @@ GEM
       activesupport (~> 3.0)
       haml (~> 3.0)
       railties (~> 3.0)
+    headliner (0.1.3)
     heroku (2.30.3)
       heroku-api (~> 0.3.4)
       launchy (>= 0.3.2)
@@ -278,6 +279,7 @@ DEPENDENCIES
   guard-rspec
   guard-spork
   haml-rails
+  headliner
   heroku_san
   hpricot
   jquery-rails

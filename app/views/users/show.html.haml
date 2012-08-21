@@ -6,29 +6,29 @@
       %p#about
         = @user.about
         %br
-      
+
     - unless @user.links.blank?
       %p
         %strong= "Links"
         %ul#links
           = iconify_and_link @user.links, :size => 32
-    
+
     - unless @user.projects.empty?
       %p
         %strong Projects
         %ul.projects
           = show_github_projects_for(@user)
-      
+
   #basics
-  
+
     #avatar
       = image_tag @user.avatar.url(:medium)
 
-    %h1=t @user.full_name
+    %h1=pt @user.full_name
 
     %ul#stats
       - if @user.admin?
-        %li 
+        %li
           %strong= link_to @user.role, team_path
 
       - unless @user.started_using_ruby_on.blank?
@@ -44,13 +44,13 @@
           Available for work
       - unless not @user.show_email?
         %li
-          = raw enkode_mail(@user.email, 'Email me')    
-      
-      
+          = mail_to(@user.email, 'Email me', :encode => "javascript")
+
+
     - if @user == current_user or current_admin
       %p
         = link_to 'edit profile', edit_user_path(@user)
       %p
         = link_to 'delete profile', user_path(@user), :method => :delete, :confirm => "Are you sure you wish to delete your profile?  Your profile will be completely removed."
-    
+
   %br.clear

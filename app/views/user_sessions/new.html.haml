@@ -1,5 +1,5 @@
 
-%h1=t "Login to SD Ruby"
+%h1=pt "Login to SD Ruby"
 
 = form_for @user_session, :url => user_session_path do |f|
   = f.error_messages
@@ -7,7 +7,7 @@
     .flash
       &bull;
       = value
-    
+
   %p
     = f.label :email
     = f.text_field :email, :size => 25

@@ -1,4 +1,4 @@
-- t "#{@podcast.episode_number}: #{h(@podcast.name)}"
+- pt "#{@podcast.episode_number}: #{h(@podcast.name)}"
 
 = render :partial => "sponsor"
 
@@ -17,7 +17,7 @@
       %a.twitter-share-button{ "data-via" => "sdruby", :href => "https://twitter.com/share" }
       :javascript
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-          
+
   .screenshot
     = link_to(image_tag(@podcast.screenshot.url, :size => size_for(@podcast), :alt => "Episode #{@podcast.id}"), @podcast.movie_link)
 

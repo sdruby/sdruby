@@ -1,52 +1,52 @@
 
 #primary.tshirt
-  
-  %h1=t "SD Ruby T-Shirts"
-  
+
+  %h1=pt "SD Ruby T-Shirts"
+
   %p
     = image_tag "home/tshirt.gif", :size => "840x533", :alt => "SD Ruby t-shirt", :id => "tshirt"
-  
+
   %p
-    We're reprinting our super awesome SD Ruby t-shirts (designed by 
+    We're reprinting our super awesome SD Ruby t-shirts (designed by
     = link_to("Luke Mysse", "http://www.lukemysse.com/") + ")."
-      
+
   %p#details
     %strong.first :details => {<br />
-    %strong :price => 
+    %strong :price =>
     '&#036;15',<br />
-    %strong :stock => 
+    %strong :stock =>
     'American Apparel',<br />
-    %strong :color => 
+    %strong :color =>
     'Chocolate Brown',<br />
-    %strong :sizes => 
+    %strong :sizes =>
     'Available in XXS, XS, S, M, L, XL, 2XL, 3XL
     = link_to "(size chart)", "http://www.americanapparel.net/garmentspecs/index.asp?garmentspecid=2001"
     '<br />
     %strong }
-    
+
   %p
     You can purchase this shirt via PayPal. Please note your size when ordering. If you'd like to buy a shirt using cash, please email your name and size to <a href="mailto:patrick@mokolabs.com">patrick@mokolabs.com</a>.
-    
+
   %p
     %strong The deadline for ordering shirts is May 1.
-    
+
   <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
   <input type="hidden" name="cmd" value="_s-xclick">
   <input type="hidden" name="hosted_button_id" value="4899618">
   <table>
   <tr><td><input type="hidden" name="on0" value="Size">Select t-shirt size:</td></tr><tr><td><select name="os0">
-  <option value="XXS">XXS 
-  <option value="XS">XS 
-  <option value="S">S 
-  <option value="M" selected="selected">M 
-  <option value="L">L 
-  <option value="XL">XL 
-  <option value="2XL">2XL 
-  <option value="3XL">3XL 
+  <option value="XXS">XXS
+  <option value="XS">XS
+  <option value="S">S
+  <option value="M" selected="selected">M
+  <option value="L">L
+  <option value="XL">XL
+  <option value="2XL">2XL
+  <option value="3XL">3XL
   </select> </td></tr>
   </table>
   <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
   <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
   </form>
 
-    
+
