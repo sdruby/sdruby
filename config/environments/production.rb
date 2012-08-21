@@ -20,6 +20,9 @@ SDRuby::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  # Prevent initializing application and connecting to the database when precompiling assets
+  config.assets.initialize_on_precompile = false
+
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
 
