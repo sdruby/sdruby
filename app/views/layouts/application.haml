@@ -4,9 +4,9 @@
     = title :site => "SD Ruby", :separator => "-"
     %meta{"http-equiv" => "Content-type", :content => "text/html; charset=utf-8"}
     %meta{"name" => "viewport", :content => "width=930"}
-    %link{:rel => "shortcut icon", :href => "/assets/application/favicon.png"}
-    %link{:rel => "apple-touch-icon", :href => "/assets/application/apple-touch-icon.png"}
-    %link{:rel => "apple-touch-startup-image", :href => "/assets/application/startup.png"}
+    %link{:rel => "shortcut icon", :href => asset_path("application/favicon.png")}
+    %link{:rel => "apple-touch-icon", :href => asset_path("application/apple-touch-icon.png")}
+    %link{:rel => "apple-touch-startup-image", :href => asset_path("application/startup.png")}
     = stylesheet_link_tag "application"
     = stylesheet_link_tag "iphone", :media => "only screen and (max-device-width: 480px)"
     = javascript_include_tag "application", "iphone-style-checkboxes"
@@ -15,11 +15,11 @@
     = csrf_meta_tags
   %body
     #page
-      = render :partial => "layouts/login"
-      = render :partial => "layouts/header"
-      = render :partial => "layouts/slogan"
-      = render :partial => "layouts/navigation"
+      = render "layouts/login"
+      = render "layouts/header"
+      = render "layouts/slogan"
+      = render "layouts/navigation"
       #content
         = yield
-      = render :partial => "layouts/footer"
-    = render :partial => "layouts/adsense"
+      = render "layouts/footer"
+    = render "layouts/adsense"
