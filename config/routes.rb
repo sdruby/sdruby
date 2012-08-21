@@ -4,16 +4,16 @@ SDRuby::Application.routes.draw do
   root to: 'pages#index'
 
   # Custom routes
-  match "/forgot" => "users#forgot_password", as: :password_reset
-  match "/login" => "user_sessions#new", as: :login
-  match "/logout" => "user_sessions#destroy", as: :logout
-  match "/photos" => "photos#index"
-  match "/register" => "users#new", as: :register
-  match "/sponsors" => "pages#sponsors", as: :sponsors
-  match "/team" => "pages#team", as: :team
-  match "/thanks" => "pages#thanks", as: :thanks
-  match "/tshirts" => "pages#tshirts", as: :tshirts
-  match "/speak" => "pages#speak", as: :speak
+  get "/forgot" => "users#forgot_password", as: :password_reset
+  get "/login" => "user_sessions#new", as: :login
+  get "/logout" => "user_sessions#destroy", as: :logout
+  get "/photos" => "photos#index"
+  get "/register" => "users#new", as: :register
+  get "/sponsors" => "pages#sponsors", as: :sponsors
+  get "/team" => "pages#team", as: :team
+  get "/thanks" => "pages#thanks", as: :thanks
+  get "/tshirts" => "pages#tshirts", as: :tshirts
+  get "/speak" => "pages#speak", as: :speak
 
   # Resources
   resources :podcasts, :path => :podcast do
