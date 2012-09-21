@@ -4,7 +4,7 @@ class Project < ActiveRecord::Base
   validates :name, :presence => :true
 
   def self.featured
-    random_method = connection.adapter_name == 'SQLite' ? 'RANDOM()' : 'RAND()'
+    random_method = connection.adapter_name == 'MySQL' ? 'RAND()' : 'RANDOM()'
 
     includes(:user)
     .where("github_watchers >= ? AND github_pushed_at >= ?", 5, 1.year.ago)
