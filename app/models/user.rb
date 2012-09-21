@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
   if ['production', 'staging'].include?(Rails.env)
     has_attached_file :avatar,
-      :styles => { :small  => "48x48#", :medium  => "128x128#", :large  => "256x256#" },
+      styles: { :small  => "48x48#", :medium  => "128x128#", :large  => "256x256#" },
       storage: :s3,
       s3_credentials: {
         access_key_id: APP_CONFIG["AWS_ACCESS_KEY_ID"],
@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
       s3_protocol: "http",
       s3_permissions: "public_read",
       bucket: APP_CONFIG["AWS_BUCKET"],
-      path: "avatars/:style/:id.:extension",
+      path: "avatars/:id/:style.:extension",
       url: "/avatars/:id/:style.:extension",
       default_style: :large
   else
