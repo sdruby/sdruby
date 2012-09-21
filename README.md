@@ -22,7 +22,6 @@ To work best, you must have ImageMagick installed on your local machine:
 * Setup database and load sample data (rake db:migrate db:data:load)
 * rake sunspot:solr:start (to start the solr search engine)
 * rake sunspot:solr:reindex (to index the database)
-* sass --watch public/stylesheets:public/stylesheets/compiled
 * rails s
 
 ## Running Tests ##
