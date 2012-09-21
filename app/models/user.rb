@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
       s3_permissions: "public_read",
       bucket: APP_CONFIG["AWS_BUCKET"],
       path: "avatars/:style/:id.:extension",
+      url: "/avatars/:id/:style.:extension",
       default_style: :large
   else
     has_attached_file :avatar,
