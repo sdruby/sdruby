@@ -11,11 +11,28 @@ class User < ActiveRecord::Base
 
   validate :avatar_is_valid
 
-  has_attached_file :avatar,
-                    :styles => { :small  => "48x48#", :medium  => "128x128#", :large  => "256x256#" },
-                    :path => ":rails_root/public/images/users/avatars/:id/:style.:extension",
-                    :url => "/images/users/avatars/:id/:style.:extension",
-                    :default_url => "/images/users/avatar_:style.png"
+  if ['production', 'staging'].include?(Rails.env)
+    has_attached_file :avatar,
+      :styles => { :small  => "48x48#", :medium  => "128x128#", :large  => "256x256#" },
+      storage: :s3,
+      s3_credentials: {
+        access_key_id: APP_CONFIG["AWS_ACCESS_KEY_ID"],
+        secret_access_key: APP_CONFIG["AWS_SECRET_ACCESS_KEY"]
+      },
+      s3_protocol: "http",
+      s3_permissions: "public_read",
+      bucket: APP_CONFIG["AWS_BUCKET"],
+      path: "avatars/:style/:id.:extension",
+      url: "/avatars/:id/:style.:extension",
+      default_style: :large
+  else
+    has_attached_file :avatar,
+                      :styles => { :small  => "48x48#", :medium  => "128x128#", :large  => "256x256#" },
+                      :path => ":rails_root/public/images/users/avatars/:id/:style.:extension",
+                      :url => "/images/users/avatars/:id/:style.:extension",
+                      :default_url => "/images/users/avatar_:style.png"
+  end
+
 
   def to_s
     full_name
