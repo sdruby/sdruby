@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(:version => 20120817234227) do
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean  "is_private"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
     t.string   "type",        :default => "Event"
   end
 
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(:version => 20120817234227) do
     t.text     "description"
     t.string   "movie_link"
     t.boolean  "publish"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
     t.string   "old_permalink"
     t.string   "screenshot_file_name"
     t.string   "screenshot_content_type"
@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(:version => 20120817234227) do
     t.string   "name"
     t.text     "description"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.datetime "github_created_at"
     t.datetime "github_pushed_at"
     t.integer  "github_watchers"
@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(:version => 20120817234227) do
     t.string   "perishable_token",                         :null => false
     t.integer  "login_count",           :default => 0,     :null => false
     t.integer  "failed_login_count",    :default => 0,     :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
     t.string   "github_username"
     t.date     "started_using_ruby_on"
     t.string   "neighborhood"
