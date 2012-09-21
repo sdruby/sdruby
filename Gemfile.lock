@@ -143,7 +143,6 @@ GEM
     mime-types (1.19)
     multi_json (1.3.6)
     multi_xml (0.5.1)
-    mysql2 (0.3.11)
     netrc (0.7.7)
     newrelic_rpm (3.4.1)
     nokogiri (1.5.5)
@@ -298,7 +297,6 @@ DEPENDENCIES
   hpricot
   jquery-rails
   launchy
-  mysql2
   newrelic_rpm
   paperclip (~> 3.1.4)
   pg
