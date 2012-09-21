@@ -15,3 +15,5 @@ public/assets
 .powrc
 bin/
 solr/*
+public/images/screenshots
+public/images/users
