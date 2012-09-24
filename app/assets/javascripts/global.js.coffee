@@ -40,7 +40,7 @@ $(document).ready ->
 
       # Search episodes (if query is not blank)
       unless query is ""
-        $.getJSON "/podcasts/search.json?q=" + query, (data) ->
+        $.getJSON "/podcast/search.json?q=" + query, (data) ->
 
           # Show/hide no results message
           if data.length is 0
