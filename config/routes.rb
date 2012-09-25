@@ -14,6 +14,7 @@ SDRuby::Application.routes.draw do
   get "/thanks" => "pages#thanks", as: :thanks
   get "/tshirts" => "pages#tshirts", as: :tshirts
   get "/speak" => "pages#speak", as: :speak
+  get "/tutorial" => "pages#tutorial", as: :tutorial
 
   # Resources
   resources :podcasts, :path => :podcast do

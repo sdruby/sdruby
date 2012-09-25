@@ -1,0 +1,155 @@
+:plain
+  <h1 id="welcome_to_the_download_page_for_the_madrailers_newbie_night">Welcome to the download page for the MadRailers “Newbie” night.</h1>
+
+  <p>Here you’ll find a VirtualBox image to download and run in order to get everyone on the same page and up and running quickly.</p>
+
+  <h2 id="download_virtualbox">Download VirtualBox</h2>
+
+  <p><a href="https://www.virtualbox.org/wiki/Downloads">Download for Windows, OS X or Linux</a></p>
+
+  <h2 id="download_the_image">Download the image</h2>
+
+  <p><a href="http://video.sdruby.org/tutorial/Ubuntu-11.10.zip">Ubuntu-11.10.zip</a></p>
+
+  <p>MD5 (Ubuntu-11.10.zip) = 11f00969e28f9059e8c7b780029129d2</p>
+
+  <p>Go do something else for a while… it a big file.</p>
+
+  <h2 id="instuctions">Instuctions</h2>
+
+  <p>Open the VM and then log in with the password “letslearn”. Once the VM boots please open Terminal (its on the side bar). Once the termanl loads do the following:</p>
+  <pre class="highlight"><code class="bash">
+      <span class="nv">$ </span><span class="nb">cd </span>work
+
+      <span class="nv">$ </span>rails new tutor -T -m rails3_template.rb
+
+      <span class="nv">$ </span><span class="nb">cd </span>tutor
+
+      <span class="nv">$ </span>rake db:create
+
+      <span class="nv">$ </span>./script/rails g scaffold Page title:string body:text
+  </code></pre>
+
+  <p>edit route file:</p>
+
+  <p><em>uncomment root :to =&gt; “pages#index”</em></p>
+  <pre class="highlight"><code class="bash">
+      <span class="nv">$ </span>rake db:migrate
+
+      <span class="nv">$ </span>./script/rails s
+  </code></pre>
+
+  <p>Here is the code from the template.</p>
+  <pre class="highlight"><code class="ruby"><span class="c1"># An application template for Rails 3</span>
+  <span class="n">gem</span> <span class="s2">"factory_girl_rails"</span><span class="p">,</span>     <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span><span class="o">]</span>
+  <span class="n">gem</span> <span class="s2">"factory_girl_generator"</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span><span class="o">]</span>
+  <span class="n">gem</span> <span class="s2">"rspec"</span><span class="p">,</span>                  <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span><span class="o">]</span>
+  <span class="n">gem</span> <span class="s2">"rspec-rails"</span><span class="p">,</span>            <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span><span class="o">]</span>
+  <span class="n">gem</span> <span class="s2">"haml"</span>
+  <span class="n">gem</span> <span class="s2">"haml-rails"</span>
+  <span class="n">gem</span> <span class="s2">"taps"</span>
+  <span class="n">gem</span> <span class="s2">"heroku"</span><span class="p">,</span>                 <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="ss">:development</span>
+
+  <span class="k">begin</span>
+    <span class="nb">require</span> <span class="s1">'bundler'</span>
+  <span class="k">rescue</span> <span class="no">Bundler</span><span class="o">::</span><span class="no">GemNotFound</span> <span class="o">=&gt;</span> <span class="n">e</span>
+    <span class="no">STDERR</span><span class="o">.</span><span class="n">puts</span> <span class="n">e</span><span class="o">.</span><span class="n">message</span>
+    <span class="nb">exit!</span>
+  <span class="k">end</span>
+
+  <span class="n">run</span> <span class="s1">'bundle install'</span>
+
+  <span class="n">run</span> <span class="s1">'rails g rspec:install'</span>
+
+  <span class="n">generators</span> <span class="o">=</span> <span class="o">&lt;&lt;-</span><span class="no">GENERATORS</span>
+
+  <span class="sh">    config.generators do |g|</span>
+  <span class="sh">      g.test_framework :rspec, :fixture =&gt; true, :views =&gt; false</span>
+  <span class="sh">      g.integration_tool :rspec, :fixture =&gt; true, :views =&gt; true</span>
+  <span class="sh">      g.template_engine :haml</span>
+  <span class="sh">      g.fixture_replacement :factory_girl</span>
+  <span class="sh">    end</span>
+  <span class="no">GENERATORS</span>
+
+  <span class="n">application</span> <span class="n">generators</span>
+
+  <span class="c1"># describing of layout application</span>
+  <span class="n">layout</span> <span class="o">=</span> <span class="o">&lt;&lt;-</span><span class="no">LAYOUT</span>
+  <span class="sh">!!!</span>
+  <span class="sh">%html</span>
+  <span class="sh">  %head</span>
+  <span class="sh">    %title= h(yield(:title) || "Untitled")</span>
+  <span class="sh">    = stylesheet_link_tag :all</span>
+  <span class="sh">    = javascript_include_tag :defaults</span>
+  <span class="sh">    = csrf_meta_tag</span>
+
+  <span class="sh">    = yield(:head)</span>
+  <span class="sh">  %body</span>
+  <span class="sh">    #container</span>
+  <span class="sh">      - flash.each do |name, msg|</span>
+  <span class="sh">        = content_tag :div, msg, :id =&gt; "flash_\#\{name\}", :class =&gt; 'flash'</span>
+  <span class="sh">      %nav</span>
+  <span class="sh">        = link_to "Home", root_url</span>
+  <span class="sh">      %header</span>
+  <span class="sh">        - if show_title?</span>
+  <span class="sh">          %h1=h yield(:title)</span>
+  <span class="sh">      %article</span>
+  <span class="sh">        = yield</span>
+  <span class="sh">      %footer</span>
+
+  <span class="no">LAYOUT</span>
+
+  <span class="c1"># ... and a layout helper</span>
+  <span class="n">layout_helper</span> <span class="o">=</span> <span class="o">&lt;&lt;-</span><span class="no">LAYOUTHELPER</span>
+  <span class="sh"># These helper methods can be called in your template to set variables to be used in the layout</span>
+  <span class="sh"># This module should be included in all views globally,</span>
+  <span class="sh"># to do so you may need to add this line to your ApplicationController</span>
+  <span class="sh">#   helper :layout</span>
+  <span class="sh">module LayoutHelper</span>
+  <span class="sh">  def title(page_title, show_title = true)</span>
+  <span class="sh">    content_for(:title) { page_title.to_s }</span>
+  <span class="sh">    @show_title = show_title</span>
+  <span class="sh">  end</span>
+
+  <span class="sh">  def show_title?</span>
+  <span class="sh">    @show_title</span>
+  <span class="sh">  end</span>
+
+  <span class="sh">  def stylesheet(*args)</span>
+  <span class="sh">    content_for(:head) { stylesheet_link_tag(*args) }</span>
+  <span class="sh">  end</span>
+
+  <span class="sh">  def javascript(*args)</span>
+  <span class="sh">    content_for(:head) { javascript_include_tag(*args) }</span>
+  <span class="sh">  end</span>
+
+  <span class="sh">end</span>
+  <span class="no">LAYOUTHELPER</span>
+
+  <span class="c1"># adding correct routes</span>
+  <span class="n">new_routes</span> <span class="o">=</span> <span class="o">&lt;&lt;-</span><span class="no">ROUTES</span>
+  <span class="sh">  #root :to =&gt; 'pages#index'</span>
+  <span class="no">ROUTES</span>
+
+  <span class="c1"># ... inject there</span>
+  <span class="n">inject_into_file</span> <span class="s2">"config/routes.rb"</span><span class="p">,</span> <span class="s2">"</span><span class="se">\n</span><span class="si">#{</span><span class="n">new_routes</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="ss">:after</span> <span class="o">=&gt;</span> <span class="s2">"</span><span class="si">#{</span><span class="n">app_name</span><span class="o">.</span><span class="n">classify</span><span class="si">}</span><span class="s2">::Application.routes.draw do"</span>
+
+
+  <span class="c1"># removing unused files</span>
+  <span class="n">remove_file</span> <span class="s2">"README"</span>
+  <span class="n">remove_file</span> <span class="s2">"public/index.html"</span>
+  <span class="n">remove_file</span> <span class="s2">"public/images/rails.png"</span>
+  <span class="n">remove_file</span> <span class="s2">"app/views/layouts/application.html.erb"</span>
+
+  <span class="c1"># creating the new ones</span>
+  <span class="n">create_file</span> <span class="s1">'README'</span>
+  <span class="n">create_file</span> <span class="s2">"app/views/layouts/application.html.haml"</span><span class="p">,</span> <span class="n">layout</span>
+  <span class="n">create_file</span> <span class="s2">"app/helpers/layout_helper.rb"</span><span class="p">,</span> <span class="n">layout_helper</span>
+
+  <span class="nb">puts</span> <span class="s2">"go to directory and let rails go ;)"</span>
+  <span class="nb">puts</span> <span class="s2">"$ cd </span><span class="si">#{</span><span class="n">app_name</span><span class="si">}</span><span class="s2">"</span>
+  <span class="nb">puts</span> <span class="s2">"$ rake db:create"</span>
+  <span class="nb">puts</span> <span class="s2">"$ ./script/rails g scaffold Pages title:string body:text"</span>
+  <span class="nb">puts</span> <span class="s2">"edit config/routes.rb and uncomment root :to =&gt; 'pages#index'"</span>
+  <span class="nb">puts</span> <span class="s2">"$ ./script/rails s"</span>
+  </code></pre>

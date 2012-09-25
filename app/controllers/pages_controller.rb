@@ -24,4 +24,7 @@ class PagesController < ApplicationController
   def tshirts
   end
 
+  def tutorial
+  end
+
 end
