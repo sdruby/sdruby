@@ -19,7 +19,8 @@
     Unzip the Ubuntu VM image somewhere on your system.  Start VirtualBox.  Click "Machine > Add" and navigate to where you unzipped the Ubuntu file.  Select the "Ubuntu-11.10.vbox" file to add it to VirtualBox and then click "Start" to start the VM.  You may get some VirtualBox messages about capturing the mouse and keyboard -- set those as you wish and move on!
   </p>
 
-  <p>In the Ubuntu VM and then log in as the "ubuntu" use with the password “reverse”. Once the VM boots please open Terminal (its on the side bar in the middle - mouse-over the icons to find it). Once the terminal loads do the following:</p>
+  <p>In the Ubuntu VM log in as the "ubuntu" user with the password “reverse”. Once Ubuntu boots please open Terminal (it's on the side bar in the middle - mouse-over the icons to find it). Once the terminal loads do the following:</p>
+  
   <pre class="highlight"><code class="bash">
       <span class="nv">$ </span>rails new tutor -T -m rails3_template.rb
 
@@ -36,13 +37,14 @@
   </p>
 
   <p>Uncomment <em>root :to =&gt; “pages#index”</em></p>
-  
+  <p>Back in terminal execute the following commands to migrate the database and start your app.</p>
   <pre class="highlight"><code class="bash">
       <span class="nv">$ </span>rake db:migrate
 
       <span class="nv">$ </span>./script/rails s
   </code></pre>
 
+  <p>Open Firefox and browse to http://localhost:3000 - voila, a Rails app!</p>
   <p>Here is the code from the template.</p>
   <pre class="highlight"><code class="ruby"><span class="c1"># An application template for Rails 3</span>
   <span class="n">gem</span> <span class="s2">"factory_girl_rails"</span><span class="p">,</span>     <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span><span class="o">]</span>
