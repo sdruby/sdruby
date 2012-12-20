@@ -3,7 +3,6 @@ rvm:
   - 1.9.2
 before_script:
   - bundle install
-  - mysql -e 'create database sdruby_test;'
   - cp spec/config/database.yml config/database.yml; bundle exec rake db:migrate
   - cp spec/config/app_config.yml config/app_config.yml
 script: "bundle exec rspec spec"

@@ -1,5 +1,4 @@
 test:
-  adapter: mysql2
-  database: sdruby_test
-  username: root
+  adapter: sqlite3
+  database: db/test.sqlite3
   encoding: utf8
