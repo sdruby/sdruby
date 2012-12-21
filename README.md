@@ -19,7 +19,7 @@ To work best, you must have ImageMagick installed on your local machine:
 * bundle install
 * configure config/database.yml with your preferred settings (You can use the provided database.example.yml file to use sqlite3)
 * configure config/app_config.yml with your preferred settings (You can use the provided app_config.example.yml file as an example)
-* Setup database and load sample data (rake db:migrate db:data:load)
+* Setup database and load sample data (rake db:migrate db:seed)
 * rake sunspot:solr:start (to start the solr search engine)
 * rake sunspot:solr:reindex (to index the database)
 * rails s
