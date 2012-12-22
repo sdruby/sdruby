@@ -53,9 +53,6 @@ module ApplicationHelper
   end
 
   def next_meeting_date(now=Time.now)
-    # HACK: This is temporary to skip the April 2011 Meeting
-    now = Time.parse("April 15, 2011") if now < Time.parse("April 15, 2011")
-
     now = now - 1.day
     if Rails.env.production?
       now = now - 8.hours
