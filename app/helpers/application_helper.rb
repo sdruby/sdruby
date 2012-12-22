@@ -1,6 +1,20 @@
 module ApplicationHelper
   include Rack::Recaptcha::Helpers
 
+  def check_if_active(controller)
+    if params[:controller] == controller.to_s
+      return "active"
+    elsif params[:action] == controller.to_s
+      return "active"
+    else
+      if params[:controller] == "pages" and params[:action] == "index" and controller == :home
+        return "active"
+      else
+        return nil
+      end
+    end
+  end
+
   def current_user
     @controller.send :current_user
   end
@@ -30,28 +44,6 @@ module ApplicationHelper
     end
   end
 
-  def request_host
-    if Rails.env.development?
-      "http://#{request.host}:#{request.port}"
-    else
-      "http://sdruby.org"
-    end
-  end
-
-  def check_if_active(controller)
-    if params[:controller] == controller.to_s
-      return "active"
-    elsif params[:action] == controller.to_s
-      return "active"
-    else
-      if params[:controller] == "pages" and params[:action] == "index" and controller == :home
-        return "active"
-      else
-        return nil
-      end
-    end
-  end
-
   def next_meeting_date(now=Time.now)
     now = now - 1.day
     if Rails.env.production?
@@ -61,6 +53,14 @@ module ApplicationHelper
       return Chronic.parse('1st thursday of next month', :now => now)
     else
       return Chronic.parse("1st thursday of this month", :now => now)
+    end
+  end
+
+  def request_host
+    if Rails.env.development?
+      "http://#{request.host}:#{request.port}"
+    else
+      "http://sdruby.org"
     end
   end
 end
