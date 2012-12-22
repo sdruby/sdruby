@@ -11,35 +11,39 @@ Currently, this application includes support for our video podcast, member signu
 
 To work best, you must have ImageMagick installed on your local machine:
 
-* For Linux: This is best installed with your package manager. For Debian-flavored distributions (Ubuntu), use: "aptitude install imagemagick".
-* For Mac OS X: The best approach is to install this via homebrew: "brew install imagemagick".
+* For Linux, install using a package manager such as aptitude: `aptitude install imagemagick`
+* For Mac OS X, install this via homebrew: `brew install imagemagick`
 
 ## Installation ##
 
-* bundle install
-* configure config/database.yml with your preferred settings (You can use the provided database.example.yml file to use sqlite3)
-* configure config/app_config.yml with your preferred settings (You can use the provided app_config.example.yml file as an example)
-* Setup database and load sample data (rake db:migrate db:seed)
-* rake sunspot:solr:start (to start the solr search engine)
-* rake sunspot:solr:reindex (to index the database)
-* rails s
+``` shell
+bundle install                                          # Install project dependencies
+cp config/database.example.yml config/database.yml      # Configure your database(s)
+cp config/app_config.example.yml config/app_config.yml  # Configure your application settings
+rake sunspot:solr:start                                 # Start Solr search engine
+rake db:migrate db:seed                                 # Setup database and load sample data
+rake sunspot:solr:reindex                               # Index the database
+rails s                                                 # Start Rails server
+```
 
 ## Running Tests ##
 
-* rake db:test:prepare  (if this is your first time running the tests)
-* rspec spec
+``` shell
+rake db:test:prepare # if this is your first time running the tests
+rspec spec
+```
 
-We also have [Guard](https://github.com/guard/guard) set up:
-
-* guard
+Tests can also be run automatically using [Guard](https://github.com/guard/guard) watchers. In order to begin watching files, simple start Guard using the `guard` command.
 
 Please be sure to run the tests and ensure all are passing before issuing a pull request!
 
 ## Deployment ##
 
-There are are staging and production apps hosted on Heroku's cedar stack.
-
-You can deploy to Heroku if you have app permissions via rake staging deploy commit=BRANCH or rake production deploy.
+You can deploy to the staging or production Heroku apps, if you have the appropriate permissions, using one of the the following commands:
+``` shell
+rake staging deploy commit=BRANCH
+rake production deploy
+```
 
 Deployment tasks will automatically run any pending migrations.
 
