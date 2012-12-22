@@ -36,12 +36,6 @@ class EventsController < ApplicationController
     end
   end
 
-#  def destroy
-    #@event.destroy
-    #redirect_to(events_url)
-  #end
-
-
   protected
 
   def find_event
