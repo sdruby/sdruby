@@ -4,17 +4,16 @@
     = link_to(image_tag("application/logo.png", :size => "331x105", :alt => "iCalendar"), "/")
 
   - cache 'upcoming', expires_in: 30.minutes do
-    #upcoming
-      - if meetup.next_event
+    - if meetup.next_event
+      #upcoming
         %span Next meeting:
-        #date= meetup.next_event.time.strftime("%A, %B %e")
-        = meetup.next_event.time.strftime("%l:%M%P,")
-
-      = link_to "UCSD CSE Building", "http://www.cs.ucsd.edu/", :id => "venue"
-      #actions
-        = link_to(image_tag("application/ical.gif", :size => "36x14", :alt => "iCal"), "http://tinyurl.com/bwlae4")
-        = link_to "map/directions", "http://tinyurl.com/2f486e"
-        = link_to "calendar", "http://tinyurl.com/bhrj6c"
+        #date= meetup.date
+        #time= meetup.time
+        #venue= meetup.venue
+        #actions
+          = link_to(image_tag("application/ical.gif", :size => "36x14", :alt => "iCal"), "http://tinyurl.com/bwlae4")
+          = link_to "map/directions", meetup.map_url
+          = link_to "calendar", "http://tinyurl.com/bhrj6c"
 
   #podcast
     = link_to(image_tag("application/podcast.gif", :size => "102x104", :alt => "iCalendar"), podcasts_url)
