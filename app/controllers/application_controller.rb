@@ -27,10 +27,6 @@ class ApplicationController < ActionController::Base
     @meetup ||= Meetup.new :sdruby
   end
 
-  def next_event
-    meetup.events.first
-  end
-
   def require_user
     unless current_user
       store_location

@@ -5,10 +5,10 @@
 
   - cache 'upcoming', expires_in: 30.minutes do
     #upcoming
-      - if next_event
+      - if meetup.next_event
         %span Next meeting:
-        #date= next_event.time.strftime("%A, %B %e")
-        = next_event.time.strftime("%l:%M%P,")
+        #date= meetup.next_event.time.strftime("%A, %B %e")
+        = meetup.next_event.time.strftime("%l:%M%P,")
 
       = link_to "UCSD CSE Building", "http://www.cs.ucsd.edu/", :id => "venue"
       #actions

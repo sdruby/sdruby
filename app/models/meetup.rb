@@ -13,6 +13,10 @@ class Meetup
     @photos ||= client.fetch(:photos, group_urlname: urlname)
   end
 
+  def next_event
+    events.first
+  end
+
 private
 
   def client
