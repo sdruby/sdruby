@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.meetup.com/events.json/?group_urlname=sdruby&key=28593fc521913722bc11a60253a29
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 23 Dec 2012 02:11:13 GMT
+      Server:
+      - Apache-Coyote/1.1
+      X-Meetup-Server:
+      - api2.int.meetup.com
+      X-Ratelimit-Limit:
+      - '200'
+      X-Ratelimit-Remaining:
+      - '199'
+      X-Ratelimit-Reset:
+      - '1356231600'
+      X-Oauth-Scopes:
+      - basic
+      X-Accepted-Oauth-Scopes:
+      - basic
+      Content-Type:
+      - application/json;charset=ISO-8859-1
+      Content-Length:
+      - '5393'
+      Vary:
+      - Accept-Encoding,User-Agent
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"results":[{"rsvpcount":"5","venue_name":"University of California
+        San Diego","maybe_rsvpcount":"0","payment_required":"0","allow_maybe_rsvp":"0","rsvpable":"OPEN","member_status":"member","time":"Thu
+        Jan 03 19:30:00 PST 2013","venue_zip":"92093","venue_visibility":"public","feedesc":"","updated":"Mon
+        Nov 05 19:43:51 EST 2012","venue_address1":"9500 Gilman Drive","description":"<p>Meetings<\/p>\n<p>We
+        meet the first Thursday of each month, on the campus of UCSD, in the Computer
+        Science &amp; Engineering Building.  <br \/>\n\n <a href=\"http:\/\/tinyurl.com\/2f486e\">Map
+        and directions<\/a>.<\/p>\n<p>Follow us on <a href=\"http:\/\/twitter.com\/sdruby\">@sdruby<\/a>
+        on Twitter for meeting reminders and other updates.<\/p>","venue_address2":"","venue_address3":"","venue_id":"4970422","rsvp_closed":"0","photo_count":"","lon":"-117.19999694824219","no_rsvpcount":"1","status":"upcoming","photo_url":"http:\/\/photos1.meetupstatic.com\/photos\/event\/1\/2\/8\/5\/global_24070741.jpeg","group_id":"1738874","utc_rsvp_cutoff":"None","questions":[],"rsvp_cutoff":"None","short_link":"","attendee_count":"0","fee":"0.0","venue_map":"http:\/\/maps.google.com\/staticmap?center=32.875622,-117.241264&zoom=14&size=512x512&maptype=mobile&markers=32.875622,-117.241264,blues&sensor=false","how_to_find_us":"Check
+        out the link to the venue which has detailed directions on how to get to our
+        event.","venue_lat":"32.875622","rsvp_open_time":"None","my_waitlist_status":"","organizer_id":"6457173","feelabel":"","myrsvp":"none","id":"90138602","ismeetup":"1","venue_city":"La
+        Jolla","name":"SD Ruby Monthly Meeting","photo_album_id":"","lat":"32.7599983215332","venue_state":"Ca","group_name":"SD
+        Ruby (Ruby on Rails Enthusiasts)","rsvp_limit":"0","group_photo_url":"http:\/\/photos1.meetupstatic.com\/photos\/event\/1\/2\/8\/5\/global_24070741.jpeg","guest_limit":"2","utc_time":"1357270200000","waiting_rsvpcount":"0","organizer_name":"","feecurrency":"USD","utc_rsvp_open_time":"None","event_hosts":[{"member_name":"Patrick
+        Crowley","member_id":6457173}],"venue_phone":"","venue_lon":"-117.241264","rating_count":0,"event_url":"http:\/\/www.meetup.com\/sdruby\/events\/90138602\/","rating":0},{"rsvpcount":"2","venue_name":"Monk
+        Development, Inc.","maybe_rsvpcount":"0","payment_required":"0","allow_maybe_rsvp":"0","rsvpable":"OPEN","member_status":"member","time":"Thu
+        Jan 17 18:30:00 PST 2013","venue_zip":"92110","venue_visibility":"members","feedesc":"","updated":"Thu
+        Aug 30 15:16:58 EDT 2012","venue_address1":"2707 Congress Street","description":"<p>Consider
+        this the after party of our monthly SD Ruby UCSD meetings. <br \/>\n\n <br
+        \/>\n\n On the third Thursday of every month, we get together at Monk Development
+        for a gathering of Ruby minds over some beers and laptops. Bring your projects,
+        questions, ideas, and favorite six pack of beer to share with the clan. <br
+        \/>\n\n <br \/>\n\n For those who would prefer a more focused approach, we
+        usually hack on an open source project. <br \/>\n\n <br \/>\n\n We have white
+        boards, tables, chairs and a foozball table. The vibe is informal and the
+        outcome is unpredictable. This hackfest is open to all so whether you''re
+        new to Ruby or a total guru, please join us and help grow the community. :)
+        <br \/>\n\n <br \/>\n\n Feel free to e-mail me with any more questions: etdebruin
+        AT gmail DOT com <br \/>\n\n <br \/>\n\n Etienne<\/p>","venue_address2":"Suite
+        2-G","venue_address3":"","venue_id":"1435532","rsvp_closed":"0","photo_count":"","lon":"-117.19999694824219","no_rsvpcount":"0","status":"upcoming","photo_url":"http:\/\/photos1.meetupstatic.com\/photos\/event\/1\/2\/8\/5\/global_24070741.jpeg","group_id":"1738874","utc_rsvp_cutoff":"None","questions":[],"rsvp_cutoff":"None","short_link":"","attendee_count":"0","fee":"0.0","venue_map":"http:\/\/maps.google.com\/staticmap?center=32.753101,-117.197664&zoom=14&size=512x512&maptype=mobile&markers=32.753101,-117.197664,blues&sensor=false","how_to_find_us":"We
+        are right above Pizza Bella","venue_lat":"32.753101","rsvp_open_time":"None","my_waitlist_status":"","organizer_id":"6457173","feelabel":"","myrsvp":"yes","id":"96100572","ismeetup":"1","venue_city":"San
+        Diego","name":"SD Ruby Hackfest","photo_album_id":"","lat":"32.7599983215332","venue_state":"CA","group_name":"SD
+        Ruby (Ruby on Rails Enthusiasts)","rsvp_limit":"8","group_photo_url":"http:\/\/photos1.meetupstatic.com\/photos\/event\/1\/2\/8\/5\/global_24070741.jpeg","guest_limit":"0","utc_time":"1358476200000","waiting_rsvpcount":"0","organizer_name":"Patrick
+        Crowley","feecurrency":"USD","utc_rsvp_open_time":"None","event_hosts":[{"member_name":"Etienne
+        de Bruin","member_id":9314458}],"venue_phone":"619 757 2612","venue_lon":"-117.197664","rating_count":0,"event_url":"http:\/\/www.meetup.com\/sdruby\/events\/96100572\/","rating":0}],"meta":{"lon":"","count":2,"link":"http:\/\/api.meetup.com\/events.json\/","next":"","total_count":2,"url":"http:\/\/api.meetup.com\/events.json\/?key=28593fc521913722bc11a60253a29&radius=25.0&order=time&group_urlname=sdruby&offset=0&format=json&page=200&fields=","id":"","title":"Meetup
+        Events","updated":"Mon Nov 05 19:43:51 EST 2012","description":"Deprecated
+        API method for accessing meetup events. Please see [\/2\/events](\/meetup_api\/docs\/2\/events\/)
+        and [\/2\/open_events](\/meetup_api\/docs\/2\/open_events\/) for replacements.","method":"Events","lat":""}}
+
+'
+    http_version: 
+  recorded_at: Sun, 23 Dec 2012 02:11:13 GMT
+recorded_with: VCR 2.2.4

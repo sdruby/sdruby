@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   helper :all # include all helpers, all the time
 
-  helper_method :current_user_session, :current_user, :current_admin
+  helper_method :current_user_session, :current_user, :current_admin, :meetup, :next_event
 
   include Rack::Recaptcha::Helpers
 
@@ -21,6 +21,14 @@ class ApplicationController < ActionController::Base
 
   def current_admin
     current_user if current_user.try(:admin?)
+  end
+
+  def meetup
+    @meetup ||= Meetup.new :sdruby
+  end
+
+  def next_event
+    meetup.events.first
   end
 
   def require_user

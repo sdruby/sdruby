@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
 
   def index
-    @photos = Photo::meetup
+    @photos = meetup.photos.map(&:photo_urls).flatten
   end
 end
