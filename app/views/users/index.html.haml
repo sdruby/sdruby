@@ -1,21 +1,28 @@
--t "Members"
+-t 'Members'
 
 %h1 SD Ruby Members
 
 %p We're an awesome group of developers, designers, and all-around cool people.
 
-%table#members
-  - @users.each do |user|
-    %tr.member
-      %td= link_to(image_tag(user.avatar.url(:small), :size => "48x48"), user)
-      %td= link_to user.full_name, user
-      - unless user.neighborhood.blank?
-        %td= user.neighborhood
-      - else
-        %td ...
-      - if not user.projects.empty?
-        %td= pluralize(user.projects.count, 'project')
-      - else
-        %td ...
+%form.search#user_search{ action: search_users_path, method: :post }
+  %input{ name: 'query', placeholder: 'Search Members' }
+  = image_tag 'application/spinner-white.gif', size: '16x16', class: 'loading'
+
+.results
+  #noresults
+    %p No results found
+  %table#members
+    - @users.each do |user|
+      %tr.member.result{ data: { id: user.id } }
+        %td= link_to(image_tag(user.avatar.url(:small), size: '48x48'), user)
+        %td= link_to user.full_name, user
+        - unless user.neighborhood.blank?
+          %td= user.neighborhood
+        - else
+          %td ...
+        - if not user.projects.empty?
+          %td= pluralize(user.projects.count, 'project')
+        - else
+          %td ...
       
 %br/

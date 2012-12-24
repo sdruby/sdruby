@@ -1,4 +1,4 @@
-%div{:id => "episode_#{podcast.id}", :class => "episode published_in_#{podcast.created_at.to_s[0..3]}"}
+%div{ :class => "result episode published_in_#{podcast.created_at.to_s[0..3]}", "data-id" => podcast.id }
   .small_screenshot
     = link_to(image_tag(podcast.screenshot.url(:small), :size => "150x116", :alt => "Episode #{podcast.id}"), podcast_path(podcast.id))
   .details

@@ -26,62 +26,41 @@ $(document).ready ->
     $("#filter input").val ""
 
 
-  # Search episodes
-  $("#filter input").bind "keypress", (e) ->
+  # Search Filtering
+  $('form.search').each (i, form) ->
+    $form      = $(form)
+    action     = $form.attr('action') + '.json'
+    $query     = $('[name="query"]', form)
+    $loading   = $('.loading', form).hide()
+    $results   = $('.result')
+    $noResults = $('#noresults')
 
-    # If enter key is pressed, perform search
-    if e.keyCode is 13
+    $form.bind 'submit', (e) =>
+      e.preventDefault()
+      query = $query.val()
 
-      # Grab current query value
-      query = $(this).val()
+      if query != $form.data('query')
+        $form.data('query', query)
 
-      # Show spinner image
-      $("#filter img").show()
+        if query == ''
+          $results.show()
+          $noResults.hide()
+        else
+          $loading.show()
+          $.getJSON action, { q: query }, (data) ->
+            $loading.hide()
+            $results.hide()
 
-      # Search episodes (if query is not blank)
-      unless query is ""
-        $.getJSON "/podcast/search.json?q=" + query, (data) ->
+            if data.length
+              $noResults.hide()
+            else
+              $noResults.show()
+              
+            $.each data, (key, val) -> $(".result[data-id='#{val.id}']").show()
 
-          # Show/hide no results message
-          if data.length is 0
-            $("#noresults").show()
-          else
-            $("#noresults").hide()
-
-          # Hide all episodes
-          $(".episode").hide()
-
-          # Show only matching results
-          $.each data, (key, val) ->
-            $("#episode_" + val.id).show()
-
-
-          # Hide spinner when search is complete
-          $("#filter img").hide()
-
-
-      # Otherwise show all episodes
-      else
-
-        # Hide spinner when search is complete
-        $("#filter img").hide()
-
-        # Show all episodes
-        $(".episode").show()
-      false
-
-
-  # Show all episodes if search query is emptied using delete key
-  $("#filter input").keyup (e) ->
-
-    # Show episodes
-    if e.keyCode is 8
-
-      # Grab current query value
-      query = $("#filter input").val()
-
-      # Show all episodes if query is blank
-      $(".episode").show()  if query.length < 1
-
+    $query.bind 'keyup', (e) =>  
+      clearTimeout(@searchTimeout)
+      submitForm = => $form.submit()
+      @searchTimeout = setTimeout submitForm, 250
 
 `!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");`
