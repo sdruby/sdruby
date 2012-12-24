@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_filter :require_user, :except => [:index, :show, :new, :create, :forgot_password]
-  before_filter :find_user, :except => [:index, :new, :create, :forgot_password]
-  before_filter :authorize_user, :except => [:index, :show, :new, :create, :forgot_password]
+  before_filter :require_user, :except => [:index, :show, :new, :create, :forgot_password, :search]
+  before_filter :find_user, :except => [:index, :new, :create, :forgot_password, :search]
+  before_filter :authorize_user, :except => [:index, :show, :new, :create, :forgot_password, :search]
 
   def index
     @users = User.all(:order => "full_name ASC", :include => :projects)
@@ -69,6 +69,17 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+  def search
+    search = User.search do
+      fulltext params[:q]
+    end
+
+    @users = search.results.sort{ |a,b| a.full_name <=> b.full_name }
+    respond_to do |format|
+      format.html
+      format.json { render json: @users, only: :id }
+    end
+  end
 
   protected
 

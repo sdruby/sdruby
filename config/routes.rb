@@ -25,7 +25,9 @@ SDRuby::Application.routes.draw do
     get :featured, on: :collection
   end
 
-  resources :users
+  resources :users do
+    get :search, on: :collection
+  end
   resource :user_session
 
 end
