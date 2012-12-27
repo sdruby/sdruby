@@ -236,6 +236,7 @@ td {
       text-shadow: 1px 1px 0 black; } } }
 
 #content {
+  position: relative;
   background: #412a1d;
   min-height: 500px;
   padding: 20px;
@@ -628,15 +629,6 @@ ul#filter {
       padding: 0 !important;
       width: 250px;
     }
-    input {
-      @include border_radius(20px);
-      display: inline !important;
-      font-size: 16px;
-      height: 18px;
-      margin: 0;
-      padding: 5px 6px 5px 10px;
-      width: 220px;
-    }
     img {
       display: none;
       margin-left: 5px;
@@ -663,11 +655,40 @@ ul#filter {
     span {
       border: 1px solid #555555; } } }
 
+ul#filter, form.search {
+  input {
+    @include border_radius(20px);
+    display: inline !important;
+    font-size: 16px;
+    height: 18px;
+    margin: 0;
+    padding: 5px 6px 5px 10px;
+    width: 220px;
+  }
+}
+
+#user_search {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+
+  .loading {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+  }
+}
+
+.results {
+  border-top: 1px solid #3F3229;
+  padding-top: 10px;
+}
+
 #noresults {
   display: none;
   float: left;
   font-weight: bold;
-  margin: 280px auto 0 auto;
+  margin: 2em auto 0 auto;
   position: absolute;
   text-align: center;
   width: 860px;
