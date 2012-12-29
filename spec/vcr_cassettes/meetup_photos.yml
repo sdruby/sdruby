@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.meetup.com/photos.json/?group_urlname=sdruby&key=28593fc521913722bc11a60253a29
+    uri: http://api.meetup.com/photos.json/?group_urlname=sdruby&key=test
     body:
       encoding: US-ASCII
       string: ''
