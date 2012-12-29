@@ -56,5 +56,6 @@ group :development, :test do
 end
 
 group :heroku do
-  gem 'pg'
+  gem "pg"
+  gem "thin"
 end
