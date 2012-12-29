@@ -11,7 +11,7 @@ describe Meetup do
 
   describe '#events' do
     before do
-      VCR.use_cassette('meetup events', record: :new_episodes){ @events = @meetup.events }
+      VCR.use_cassette('meetup events', record: :none){ @events = @meetup.events }
     end
 
     it 'returns a collection of events' do
@@ -22,7 +22,7 @@ describe Meetup do
 
   describe '#photos' do
     before do
-      VCR.use_cassette('meetup photos', record: :new_episodes){ @photos = @meetup.photos }
+      VCR.use_cassette('meetup photos', record: :none){ @photos = @meetup.photos }
     end
 
     it 'returns a collection of photos' do
