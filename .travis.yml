@@ -6,6 +6,3 @@ before_script:
   - cp spec/config/app_config.yml config/app_config.yml
   - bundle exec rake db:migrate
 script: "bundle exec rspec spec"
-notifications:
-  email:
-    - me@benhughes.name
