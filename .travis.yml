@@ -2,8 +2,9 @@ rvm:
   - 1.9.2
 before_script:
   - bundle install
-  - cp spec/config/database.yml config/database.yml; bundle exec rake db:migrate
+  - cp spec/config/database.yml config/database.yml
   - cp spec/config/app_config.yml config/app_config.yml
+  - bundle exec rake db:migrate
 script: "bundle exec rspec spec"
 notifications:
   email:
