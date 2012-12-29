@@ -1,5 +1,5 @@
 rvm:
-  - 1.9.2
+  - 1.9.3
 before_script:
   - bundle install
   - cp spec/config/database.yml config/database.yml
