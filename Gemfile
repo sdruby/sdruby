@@ -16,8 +16,8 @@ gem "jquery-rails"
 gem "newrelic_rpm"
 gem "paperclip", "~> 3.1.4"
 gem "progress_bar"
-gem "rack-recaptcha", :require => "rack/recaptcha"
-gem "rMeetup"
+gem "rack-recaptcha", require: "rack/recaptcha"
+gem "rMeetup", require: "rmeetup"
 gem "seed_dump"
 gem "sunspot_rails"
 gem "sunspot_solr"
@@ -30,9 +30,6 @@ group :assets do
 end
 
 group :development do
-  gem "sqlite3"
-  gem "ruby-debug",   platforms: :ruby_18
-  gem "ruby-debug19", platforms: :ruby_19
   gem "quiet_assets"
 end
 
@@ -54,6 +51,7 @@ group :development, :test do
   gem "guard-spork"
   gem "guard-rspec"
   gem "launchy"
+  gem "sqlite3"
 end
 
 group :heroku do
