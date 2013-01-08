@@ -26,7 +26,7 @@ rake sunspot:solr:reindex                               # Index the database
 rails s                                                 # Start Rails server
 ```
 
-Note: You will need to add your AWS credentials and Meetup API key to config/app_config.yml.
+Note: You will need to add your AWS credentials and Meetup API key to `config/app_config.yml`.
 
 ## Running Tests ##
 
