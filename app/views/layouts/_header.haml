@@ -11,9 +11,8 @@
         #time= meetup.time
         #venue= meetup.venue
         #actions
-          = link_to(image_tag("application/ical.gif", :size => "36x14", :alt => "iCal"), "http://tinyurl.com/bwlae4")
-          = link_to "map/directions", meetup.map_url
-          = link_to "calendar", "http://tinyurl.com/bhrj6c"
+          = link_to "map & directions", meetup.map_url
+          = link_to "more events&hellip;".html_safe, "http://www.meetup.com/sdruby/"
 
   #podcast
     = link_to(image_tag("application/podcast.gif", :size => "102x104", :alt => "iCalendar"), podcasts_url)

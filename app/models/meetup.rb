@@ -26,7 +26,13 @@ class Meetup
   end
 
   def venue
-    next_event.venue_name
+    if next_event.venue_name.match(/Monk/)
+      return "Monk Development"
+    elsif next_event.venue_name.match(/UCSD/)
+      return "UCSD CSE Building"
+    else
+      next_event.venue_name
+    end
   end
 
   def address
@@ -39,7 +45,7 @@ class Meetup
   end
 
   def map_url
-    if venue =~ /U(niversity of )?C(alifornia )?S(an )?D(iego)?/i
+    if venue.match(/UCSD/)
       'http://tinyurl.com/2f486e'
     else
       "https://maps.google.com/maps?daddr=#{URI.escape(address)}"
