@@ -33,8 +33,7 @@ class User < ActiveRecord::Base
     has_attached_file :avatar,
                       :styles => { :small  => "48x48#", :medium  => "128x128#", :large  => "256x256#" },
                       :path => ":rails_root/public/images/users/avatars/:id/:style.:extension",
-                      :url => "/images/users/avatars/:id/:style.:extension",
-                      :default_url => "/images/users/avatar_:style.png"
+                      :url => "/images/users/avatars/:id/:style.:extension"
   end
 
 
