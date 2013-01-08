@@ -621,21 +621,23 @@ ul#filter {
     display: inline;
     float: left;
     height: 29px;
-    margin: 0 10px 0 0;
+    margin: 0 3px 0 0;
     width: 67px;
     form {
       display: inline;
-      margin: 6px 0 0 0 !important;
+      margin: 10px 0 0 0 !important;
       padding: 0 !important;
       width: 250px;
     }
     img {
       display: none;
-      margin-left: 5px;
+      margin: 8px 0 0 3px;
+      float: right;
     }
     span {
       @include border_radius(20px);
       background: #2f2016;
+      border: 1px solid #2f2016;
       color: #98908c;
       cursor: pointer;
       display: block;
@@ -644,12 +646,12 @@ ul#filter {
       padding: 5px 0 0 0;
       text-align: center;
       text-decoration: none;
-      width: 67px;
+      width: 60px;
       &:hover {
         border: 1px solid #555555; } } }
   li:last-child {
     margin: 0 !important;
-    width: 240px !important;
+    width: 260px !important;
   }
   li.current {
     span {
@@ -664,18 +666,6 @@ ul#filter, form.search {
     margin: 0;
     padding: 5px 6px 5px 10px;
     width: 220px;
-  }
-}
-
-#user_search {
-  position: absolute;
-  top: 16px;
-  right: 20px;
-
-  .loading {
-    position: absolute;
-    top: 8px;
-    right: 10px;
   }
 }
 
