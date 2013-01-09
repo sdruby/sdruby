@@ -125,6 +125,13 @@ td {
   font-size: 24px;
   vertical-align: middle; }
 
+hr {
+  border: 0;
+  color: #7A6F6A;
+  background-color: #7A6F6A;
+  height: 1px;
+}
+
 // Layout
 
 #page {
@@ -484,6 +491,7 @@ label.iOSCheckLabelOff {
     padding-top: 10px;
     text-align: left;
     font-weight: normal; } }
+
 #recruiters {
   color: #776d67;
   font-size: 12px;
@@ -598,22 +606,24 @@ label.iOSCheckLabelOff {
       &:hover {
         color: white; } } } }
 
-#newrelic {
-  background: rgba(150,150,150,0.1);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  border-top: 1px solid rgba(255,255,255,0.05);
-  margin-bottom: 40px;
-  span {
-    display: block;
-    font-size: 18px;
-    font-weight: bold;
-    margin: 20px auto 20px auto;
-    width: 405px;
-    img {
-      margin: -9px 5px 0 0;
-      float: right; }
+#sponsor {
+  #newrelic {
+    background: rgba(150,150,150,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    margin-bottom: 40px;
+    span {
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 20px auto 20px auto;
+      width: 405px;
+      img {
+        margin: -9px 5px 0 0;
+        float: right; }
+      }
     }
-  }
+}
 
 
 ul#filter {
@@ -961,5 +971,47 @@ ul#filter, form.search {
   }
   h1 {
     padding-top: 12px;
+  }
+}
+
+// Sponsors
+#sponsors_page {
+  img {
+    float: left;
+  }
+  h2 {
+    clear: left;
+    padding-top: 12px;
+  }
+  p + h2 {
+    padding-top: 24px;
+  }
+  #ucsd img {
+    margin: 0 0 0 55px;
+  }
+  #monk img {
+    margin: 32px 0 0 50px;
+  }
+  #newrelic img {
+    margin: 12px 0 0 80px;
+  }
+  #joyent img {
+    margin: 3px 0 0 50px;
+  }
+  #heroku img {
+    margin: 0 0 0 95px;
+  }
+  #peepcode img {
+    margin: 16px 0 0 50px;
+  }
+  #railscasts img {
+    clear: left;
+    margin: 24px 0 0 280px;
+  }
+  #websolr img {
+    margin: 0 0 0 290px;
+  }
+  br {
+    clear: left;
   }
 }
