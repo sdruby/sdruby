@@ -490,7 +490,15 @@ label.iOSCheckLabelOff {
     padding-bottom: 3px;
     padding-top: 10px;
     text-align: left;
-    font-weight: normal; } }
+    font-weight: normal;
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
 
 #recruiters {
   color: #776d67;
