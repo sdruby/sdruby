@@ -5,6 +5,7 @@ SDRuby::Application.routes.draw do
 
   # Custom routes
   get "/forgot" => "users#forgot_password", as: :password_reset
+  post "/forgot" => "users#forgot_password"
   get "/login" => "user_sessions#new", as: :login
   get "/logout" => "user_sessions#destroy", as: :logout
   get "/photos" => "photos#index"
