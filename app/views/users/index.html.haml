@@ -20,9 +20,9 @@
           %td= user.neighborhood
         - else
           %td ...
-        - if not user.projects.empty?
-          %td= pluralize(user.projects.count, 'project')
+        - if user.projects_count > 0
+          %td= pluralize(user.projects_count, 'project')
         - else
           %td ...
-      
+
 %br/

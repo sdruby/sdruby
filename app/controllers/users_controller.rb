@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_filter :authorize_user, :except => [:index, :show, :new, :create, :forgot_password, :search]
 
   def index
-    @users = User.all(:order => "full_name ASC", :include => :projects)
+    @users = User.all(:order => "full_name ASC")
   end
 
   def new

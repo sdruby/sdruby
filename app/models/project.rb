@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :user, counter_cache: true
 
   validates :name, :presence => :true
 

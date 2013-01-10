@@ -36,7 +36,6 @@ class User < ActiveRecord::Base
                       :url => "/images/users/avatars/:id/:style.:extension"
   end
 
-
   def to_s
     full_name
   end
@@ -54,31 +53,31 @@ class User < ActiveRecord::Base
   end
 
   def grab_projects
-    unless self.github_username.blank?
+    unless github_username.blank?
       # Destroy existing projects
-      self.projects.destroy_all
+      projects.destroy_all
 
       # Grab new projects
       begin
-        api_uri = URI("https://api.github.com/users/#{self.github_username.strip}/repos")
+        api_uri = URI("https://api.github.com/users/#{github_username.strip}/repos")
         api_session = Net::HTTP.new api_uri.host, api_uri.port
         api_session.use_ssl = true
 
         repos = JSON.parse(api_session.request(Net::HTTP::Get.new(api_uri.request_uri)).body)
         repos.each do |repo|
           next if repo['fork']
-          self.projects << Project.create( :name            => repo['name'],
-                                        :description        => repo['description'],
-                                        :github_created_at  => repo['created_at'],
-                                        :github_pushed_at   => repo['pushed_at'],
-                                        :github_watchers    => repo['watchers'] )
+          projects.create( :name               => repo['name'],
+                           :description        => repo['description'],
+                           :github_created_at  => repo['created_at'],
+                           :github_pushed_at   => repo['pushed_at'],
+                           :github_watchers    => repo['watchers'] )
         end
-      rescue Exception => e#if no projects are found
+      rescue Exception => e #if no projects are found
         Rails.logger.error(e.inspect)
       end
     else
       # Destroy existing projects (if github username is blank)
-      self.projects.destroy_all
+      projects.destroy_all
     end
   end
 

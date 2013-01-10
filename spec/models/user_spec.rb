@@ -68,6 +68,12 @@ describe User do
     it "should have created an styler project" do
       @user.projects.map(&:name).should include("styler")
     end
+
+    it "should have an incremented projects counter cache" do
+      @user.reload
+      @user.projects.count.should == @user.projects_count
+      @user.projects_count.should_not == 0
+    end
   end
 
   describe "after saving" do
