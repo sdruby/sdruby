@@ -3,6 +3,7 @@
 .idea/*
 .powrc
 .rvmrc
+.ruby-version
 .sass-cache
 bin/
 config/app_config.yml
