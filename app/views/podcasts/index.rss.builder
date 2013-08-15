@@ -3,7 +3,7 @@ author = "SD Ruby"
 email = 'sandiegoruby@gmail.com'
 description = "SD Ruby. We are San Diego's Ruby community."
 keywords = "ruby, rails, ruby on rails, programming, web, development, agile, railscast"
-image = "http://sdruby.org/assets/application/logo_podcast.jpg"
+image = "http://sdruby.org/assets/application/logo_podcast.png"
 
 xml.instruct! :xml, :version => "1.0"
 xml.rss "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd",  "xmlns:media" => "http://search.yahoo.com/mrss/",  :version => "2.0" do
@@ -12,8 +12,8 @@ xml.rss "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd",  "xmlns:
     xml.link 'http://sdruby.org'
     xml.description description
     xml.language 'en-us'
-    xml.pubDate @podcasts.first.created_at.to_s(:rfc822)
-    xml.lastBuildDate @podcasts.first.created_at.to_s(:rfc822)
+    xml.pubDate @podcasts.last.created_at.to_s(:rfc822)
+    xml.lastBuildDate @podcasts.last.created_at.to_s(:rfc822)
     xml.itunes :author, author
     xml.itunes :keywords, keywords
     xml.itunes :image, :href => image
