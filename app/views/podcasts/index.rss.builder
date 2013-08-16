@@ -33,20 +33,26 @@ xml.rss "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd",  "xmlns:
 
     @podcasts.each do  |episode|
       xml.item do
-        # Remove slide links since iTunes ignores them
+        # Remove bonus links to slides since iTunes ignores them
+        description = episode.description.split(/Bonus/)[0].split(/Here are the/)[0]
+        
         # De-educate smart quotes since they can also cause problems
+        description = description.gsub('&#8217;',"'")
+        
         # Provide episode summary with encoded line breaks (for feed readers that support HTML)
-        description = markdown(episode.description.split(/Bonus/)[0].split(/Here are the/)[0]).gsub('&#8217;',"'")
+        description = markdown(description)
+        
+        # Episode info
         xml.title "#{episode.episode_number}: #{episode.name}"
-        xml.description description, :type => 'html'
-        xml.pubDate episode.created_at.to_s(:rfc822)
-        xml.enclosure :url => episode.movie_link, :type => episode.movie_type, :length => episode.movie_size
-        xml.link podcast_url(episode)
-        xml.guid({:isPermaLink => "false"}, podcast_url(episode))
-        xml.itunes :summary, strip_tags(description)
-        xml.itunes :explicit, 'no'
         xml.itunes :duration, episode.movie_duration.strip
         xml.itunes :image, :href => image
+        xml.itunes :explicit, 'no'
+        xml.itunes :summary, strip_tags(description) # plain text description for iTunes
+        xml.description description, :type => 'html' # html description for feed readers
+        xml.pubDate episode.created_at.to_s(:rfc822) # publish date for episode
+        xml.enclosure :url => episode.movie_link, :type => episode.movie_type, :length => episode.movie_size
+        xml.link podcast_url(episode)
+        xml.guid(podcast_url(episode))
       end
     end
   end
