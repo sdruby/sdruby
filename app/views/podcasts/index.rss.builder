@@ -33,8 +33,10 @@ xml.rss "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd",  "xmlns:
 
     @podcasts.each do  |episode|
       xml.item do
-        # Remove bonus content links and smart quotes, then convert to HTML via markdown
-        description = markdown(episode.description.split(/Bonus/)[0]).gsub('&#8217;',"'")
+        # Remove slide links since iTunes ignores them
+        # De-educate smart quotes since they can also cause problems
+        # Provide episode summary with encoded line breaks (for feed readers that support HTML)
+        description = markdown(episode.description.split(/Bonus/)[0].split(/Here are the/)[0]).gsub('&#8217;',"'")
         xml.title "#{episode.episode_number}: #{episode.name}"
         xml.description description, :type => 'html'
         xml.pubDate episode.created_at.to_s(:rfc822)
@@ -42,7 +44,6 @@ xml.rss "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd",  "xmlns:
         xml.link podcast_url(episode)
         xml.guid({:isPermaLink => "false"}, podcast_url(episode))
         xml.itunes :summary, strip_tags(description)
-        xml.itunes :subtitle, strip_tags(description)
         xml.itunes :explicit, 'no'
         xml.itunes :duration, episode.movie_duration.strip
         xml.itunes :image, :href => image
