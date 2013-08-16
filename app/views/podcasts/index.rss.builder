@@ -15,7 +15,6 @@ xml.rss "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd",  "xmlns:
     xml.pubDate @podcasts.last.created_at.to_s(:rfc822)
     xml.lastBuildDate @podcasts.last.created_at.to_s(:rfc822)
     xml.itunes :author, author
-    xml.itunes :keywords, keywords
     xml.itunes :image, :href => image
     xml.itunes :explicit, 'no'
     xml.itunes :owner do
@@ -47,6 +46,7 @@ xml.rss "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd",  "xmlns:
         xml.itunes :duration, episode.movie_duration.strip
         xml.itunes :image, :href => image
         xml.itunes :explicit, 'no'
+        xml.itunes :keywords, keywords
         xml.itunes :summary, strip_tags(description) # plain text description for iTunes
         xml.description description                  # html description for feed readers
         xml.pubDate episode.created_at.to_s(:rfc822) # publish date for episode
