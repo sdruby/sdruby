@@ -40,7 +40,6 @@ xml.rss "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd",  "xmlns:
         xml.pubDate episode.created_at.to_s(:rfc822)
         xml.enclosure :url => episode.movie_link, :type => episode.movie_type, :length => episode.movie_size
         xml.link podcast_url(episode)
-        Rails.logger.info podcast_url(episode)
         xml.guid({:isPermaLink => "false"}, podcast_url(episode))
         xml.itunes :summary, strip_tags(description)
         xml.itunes :subtitle, strip_tags(description)
