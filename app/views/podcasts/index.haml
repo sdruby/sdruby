@@ -14,17 +14,13 @@
     .watch_now
       = link_to "Watch now", @podcast.movie_link if @podcast
 
+    .or
+      %span or
+
+    %a{:href => "https://itunes.apple.com/us/podcast/sd-ruby-podcast/id168362573?mt=2&uo=4", :style => "display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_itunes-lrg.png) no-repeat;width:110px;height:40px;@media only screen{background-image:url(http://linkmaker.itunes.apple.com/htmlResources/assets/en_us/images/web/linkmaker/badge_itunes-lrg.svg);}", :target => "itunes_store"}
+
   .screenshot
     = link_to(image_tag(@podcast.screenshot.url, :size => "345x267", :alt => "Episode #{@podcast.id}"), @podcast.movie_link) if @podcast
-
-  #actions
-    = link_to(image_tag("application/feed.png", :size => "32x32", :alt => "Podcast feed"), "http://feeds2.feedburner.com/sdrbpodcast")
-
-    = link_to(image_tag("application/itunes.png", :size => "79x24", :alt => "Podcast feed for iTunes", :id => "itunes"), "http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=168362573")
-
-    = link_to(image_tag("http://feeds.feedburner.com/~fc/sdrbpodcast?bg=FFFFFF&amp;fg=666666&amp;anim=0", :size => "88x26", :alt => "Podcast feed", :id => "feed_stats"), "http://feeds2.feedburner.com/sdrbpodcast")
-
-    %br.clear
 
   #joyent
     Bandwidth provided by
