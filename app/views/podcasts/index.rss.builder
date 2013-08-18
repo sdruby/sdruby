@@ -6,7 +6,7 @@ image = "http://sdruby.org/assets/application/logo_podcast.png"
 description = "Watch awesome talks on Ruby, Ruby on Rails, and other topics in this long-running video podcast from the San Diego Ruby user group. This podcast features live talks from SD Ruby members which are recorded each month on the campus of the University of California San Diego, in the Computer Science and Engineering building. The SD Ruby podcast is sponsored by New Relic. Bandwidth is provided by Joyent."
 
 xml.instruct! :xml, :version => "1.0"
-xml.rss "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd",  "xmlns:media" => "http://search.yahoo.com/mrss/",  :version => "2.0" do
+xml.rss "xmlns:itunes" => "http://www.itunes.com/dtds/podcast-1.0.dtd",  :version => "2.0" do
   xml.channel do
     xml.title title
     xml.link 'http://sdruby.org'
