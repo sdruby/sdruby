@@ -14,10 +14,7 @@
     .watch_now
       = link_to "Watch now", @podcast.movie_link if @podcast
 
-    .or
-      %span or
-
-    %a{:href => "https://itunes.apple.com/us/podcast/sd-ruby-podcast/id168362573?mt=2&uo=4", :style => "display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/htmlResources/assets/en_us//images/web/linkmaker/badge_itunes-lrg.png) no-repeat;width:110px;height:40px;@media only screen{background-image:url(http://linkmaker.itunes.apple.com/htmlResources/assets/en_us/images/web/linkmaker/badge_itunes-lrg.svg);}", :target => "itunes_store"}
+    = render :partial => "itunes"
 
   .screenshot
     = link_to(image_tag(@podcast.screenshot.url, :size => "345x267", :alt => "Episode #{@podcast.id}"), @podcast.movie_link) if @podcast

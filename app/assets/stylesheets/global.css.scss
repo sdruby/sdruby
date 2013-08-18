@@ -573,7 +573,7 @@ label.iOSCheckLabelOff {
       margin: 10px 0 -3px 0; } }
 
     .twitter {
-      margin: 21px 0 0 140px;
+      margin: 21px 0 0 1px;
       vertical-align: top; }
     #joyent {
       padding-top: 12px;
@@ -592,8 +592,6 @@ label.iOSCheckLabelOff {
     img {
       float: left;
       margin: 5px 10px 0 0; }
-    img#itunes {
-      margin: 9px 10px 0 0; }
     img#feed_stats {
       margin: 9px 10px 0 0; } }
 
@@ -603,6 +601,7 @@ label.iOSCheckLabelOff {
     float: left;
     font-weight: bold;
     height: 30px;
+margin-top: 5px;
     padding: 10px 0 0 0;
     text-align: center;
     width: 121px;
@@ -702,7 +701,7 @@ ul#filter, form.search {
     height: 18px;
     margin: 0;
     padding: 5px 6px 5px 10px;
-    width: 220px;
+    width: 210px;
   }
 }
 

@@ -12,6 +12,8 @@
 
     .watch_now
       = link_to "Watch now", @podcast.movie_link
+    
+    = render :partial => "itunes"
 
     .twitter
       %a.twitter-share-button{ "data-via" => "sdruby", :href => "https://twitter.com/share" }
