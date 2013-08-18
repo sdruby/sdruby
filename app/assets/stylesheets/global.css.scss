@@ -438,6 +438,9 @@ label.iOSCheckLabelOff {
       color: white; } }
   #name {
     margin: 12px 0 12px 10px; }
+	#name + a {
+		margin-left: 10px;
+	}
   #more {
     float: left;
     font-size: 14px;

@@ -14,6 +14,9 @@
     .watch_now
       = link_to "Watch now", @podcast.movie_link if @podcast
 
+    .or
+      %span or
+
     = render :partial => "itunes"
 
   .screenshot

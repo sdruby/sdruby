@@ -19,6 +19,8 @@
     - if @podcast
       = link_to "Episode #{@podcast.id}: #{@podcast.name}", podcasts_path
 
+  = render :partial => "podcasts/itunes"
+
 #primary.homepage
 
   %h2 Meetings
