@@ -439,6 +439,7 @@ label.iOSCheckLabelOff {
   #name {
     margin: 12px 0 12px 10px; }
 	#name + a {
+    @include opacity(0.6);
 		margin-left: 10px;
 	}
   #more {
@@ -630,6 +631,10 @@ margin-top: 5px;
 			text-align: center;
 			z-index: 2;
 		}
+	}
+	
+	.or + a {
+		@include opacity(0.6);
 	}
 
 #sponsor {
