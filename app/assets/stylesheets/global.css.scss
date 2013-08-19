@@ -543,6 +543,7 @@ label.iOSCheckLabelOff {
 // Podcast
 
 .screenshot {
+	background-color: #2f2016;
   border: 10px solid #261b13;
   height: 267px;
   margin: 12px 0;
@@ -656,7 +657,6 @@ margin-top: 5px;
     }
 }
 
-
 ul#filter {
   height: 29px;
   margin: 70px 0 15px 0;
@@ -755,6 +755,7 @@ ul#filter, form.search {
       font-size: 16px;
       margin-top: 11px; }
     .small_screenshot {
+			background-color: #2f2016;
       float: left;
       margin: 0 10px 0 0; }
     .details {

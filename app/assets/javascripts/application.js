@@ -8,3 +8,4 @@
 //= require jquery_ujs
 //= require global
 //= iphone-style-checkboxes
+//= require jquery.lazyload.min

@@ -1,11 +1,13 @@
 $(document).ready ->
 
+  # Lazy load podcast episode thumbnails
+  $("img.lazy").lazyload()
+
   # Add iPhone style checkboxes
   if $(".panel").length
     $(":checkbox").iphoneStyle
       checkedLabel: "YES"
       uncheckedLabel: "NO"
-
 
   # Filter episodes
   $all = $(".all")
@@ -24,7 +26,6 @@ $(document).ready ->
     $(".filter_" + year).addClass cur
     $(".published_in_" + year).show()
     $("#filter input").val ""
-
 
   # Search Filtering
   $('form.search').each (i, form) ->

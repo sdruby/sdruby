@@ -1,6 +1,6 @@
 %div{ :class => "result episode published_in_#{podcast.created_at.to_s[0..3]}", "data-id" => podcast.id }
   .small_screenshot
-    = link_to(image_tag(podcast.screenshot.url(:small), :size => "150x116", :alt => "Episode #{podcast.id}"), podcast_path(podcast.id))
+    = link_to(image_tag("application/transparent.gif", :size => "150x116", :alt => "Episode #{podcast.id}", :class => "lazy", "data-original" => podcast.screenshot.url(:small)), podcast_path(podcast.id))
   .details
     %h3.ellipsis
       = link_to "#{podcast.episode_number}: #{podcast.name}", podcast_path(podcast.id)
