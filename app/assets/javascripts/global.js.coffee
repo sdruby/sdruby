@@ -26,7 +26,8 @@ $(document).ready ->
     $(".filter_" + year).addClass cur
     $(".published_in_" + year).show()
     $("#filter input").val ""
-
+    $('img.lazy').lazyload()
+    
   # Search Filtering
   $('form.search').each (i, form) ->
     $form      = $(form)
