@@ -1,13 +1,16 @@
 -t "Team"
 
-
-
 #team
   %h1 The SD Ruby Team
 
   %p These are the people who make SD Ruby happen.
   
   - @team.each do |organizer|
+  
+    - if organizer.sort > 3 and organizer.sort < 5
+      %hr
+      %br
+    
     .member
       = link_to(image_tag(organizer.avatar.url(:medium), :size => "128x128"), organizer)
       - if organizer.twitter

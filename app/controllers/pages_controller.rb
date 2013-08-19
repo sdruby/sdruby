@@ -14,7 +14,6 @@ class PagesController < ApplicationController
   end
 
   def team
-    @organizer = User.find_by_full_name("Patrick Crowley")
     @team = User.where(:admin => true).order(:sort)
   end
 
