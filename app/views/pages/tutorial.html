@@ -1,6 +1,6 @@
   <h1 id="welcome_to_the_download_page_for_the_madrailers_newbie_night">Welcome to the download page for the SD Ruby “Newbie” night.</h1>
 
-  <p>Here you’ll find a VirtualBox image of Ubuntu 11.1 to download and run in order to get everyone on the same page and up and running quickly.</p>
+  <p>Here you’ll find a VirtualBox image of Ubuntu 12.04 to download and run in order to get everyone on the same page and up and running quickly.</p>
 
   <h2 id="download_virtualbox">Download VirtualBox</h2>
 
@@ -8,9 +8,9 @@
 
   <h2 id="download_the_image">Download the image</h2>
 
-  <p><a href="http://video.sdruby.org/tutorial/Ubuntu-11.10.zip">Ubuntu-11.10.zip</a></p>
+  <p><a href="http://video.sdruby.org/tutorial/Ubuntu-12.04.zip">Ubuntu-12.04.zip</a></p>
 
-  <p>MD5 (Ubuntu-11.10.zip) = 11f00969e28f9059e8c7b780029129d2</p>
+  <p>MD5 (Ubuntu-12.04.zip) = ced0a168ea8860165818636988612597</p>
 
   <p>Go do something else for a while… it's a big file.</p>
 
@@ -20,9 +20,9 @@
   </p>
 
   <p>In the Ubuntu VM log in as the "ubuntu" user with the password “reverse”. Once Ubuntu boots please open Terminal (it's on the side bar in the middle - mouse-over the icons to find it). Once the terminal loads do the following:</p>
-  
+
   <pre class="highlight"><code class="bash">
-      <span class="nv">$ </span>rails new tutor -T -m rails3_template.rb
+      <span class="nv">$ </span>rails new tutor -T -m rails4_template.rb
 
       <span class="nv">$ </span><span class="nb">cd </span>tutor
 
@@ -32,7 +32,7 @@
   </code></pre>
 
   <p>
-    Edit the config/routes.rb file.  There are several text editors in 
+    Edit the config/routes.rb file.  There are several text editors in
     the desktop sidebar -- try Sublime Text 2 (orange S icon below Terminal).
   </p>
 
@@ -46,7 +46,7 @@
 
   <p>Open Firefox and browse to http://localhost:3000 - voila, a Rails app!</p>
   <p>Here is the code from the template.</p>
-  <pre class="highlight"><code class="ruby"><span class="c1"># An application template for Rails 3</span>
+  <pre class="highlight"><code class="ruby"><span class="c1"># An application template for Rails 4</span>
   <span class="n">gem</span> <span class="s2">"factory_girl_rails"</span><span class="p">,</span>     <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span><span class="o">]</span>
   <span class="n">gem</span> <span class="s2">"factory_girl_generator"</span><span class="p">,</span> <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span><span class="o">]</span>
   <span class="n">gem</span> <span class="s2">"rspec"</span><span class="p">,</span>                  <span class="ss">:group</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:development</span><span class="p">,</span> <span class="ss">:test</span><span class="o">]</span>
