@@ -1,5 +1,4 @@
 SDRuby::Application.routes.draw do
-
   # Homepage
   root to: 'pages#index'
 
@@ -30,5 +29,9 @@ SDRuby::Application.routes.draw do
     get :search, on: :collection
   end
   resource :user_session
+
+  resources :talk_suggestions do
+    post :vote, on: :member
+  end
 
 end
