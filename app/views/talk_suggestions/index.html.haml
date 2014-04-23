@@ -10,7 +10,7 @@
         %tr.header
           %td= talk_suggestion.name
           %td= talk_suggestion.style
-          %td= "by #{talk_suggestion.suggested_speaker}"
+          %td= "#{talk_suggestion.suggested_speaker}"
           - if current_user.last_voted_at.blank? && current_user.last_voted_at > 1.day.ago
             %td
               = "#{talk_suggestion.vote_count} Votes"

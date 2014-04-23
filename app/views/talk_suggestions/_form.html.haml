@@ -16,8 +16,8 @@
     = f.label :style
     = f.select :style, TalkSuggestion.talk_suggestions
   %p.field
-    = f.label :suggested_speaker
-    = f.text_field :suggested_speaker, :value => current_user.full_name
+    = f.label :suggested_speaker, "I want to"
+    = f.select :suggested_speaker, [["give this talk", "by #{current_user.full_name}"], ["see this talk", "looking for speaker"]]
   %p.field
     = f.hidden_field :created_by_id, :value => current_user.id
   %p.actions
