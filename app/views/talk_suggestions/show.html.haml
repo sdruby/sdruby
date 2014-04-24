@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @talk_suggestion.name
+%p
+  %b Description:
+  = @talk_suggestion.description
+%p
+  %b Style:
+  = @talk_suggestion.style
+%p
+  %b Suggested speaker:
+  = @talk_suggestion.suggested_speaker
+%p
+  %b Created by:
+  = @talk_suggestion.created_by
+
+= link_to 'Edit', edit_talk_suggestion_path(@talk_suggestion)
+\|
+= link_to 'Back', talk_suggestions_path

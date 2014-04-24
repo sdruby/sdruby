@@ -1,4 +1,9 @@
 $(document).ready ->
+  $('div.expandable p').expander({
+    expandPrefix:     ' ',
+    expandText:       '...',
+    slicePoint:       150
+  });
 
   # Lazy load podcast episode thumbnails
   $("img.lazy").lazyload()
@@ -27,7 +32,7 @@ $(document).ready ->
     $(".published_in_" + year).show()
     $("#filter input").val ""
     $('img.lazy').lazyload()
-    
+
   # Search Filtering
   $('form.search').each (i, form) ->
     $form      = $(form)
@@ -57,10 +62,10 @@ $(document).ready ->
               $noResults.hide()
             else
               $noResults.show()
-              
+
             $.each data, (key, val) -> $(".result[data-id='#{val.id}']").show()
 
-    $query.bind 'keyup', (e) =>  
+    $query.bind 'keyup', (e) =>
       clearTimeout(@searchTimeout)
       submitForm = => $form.submit()
       @searchTimeout = setTimeout submitForm, 250

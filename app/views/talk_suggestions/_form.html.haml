@@ -1,0 +1,24 @@
+= form_for @talk_suggestion do |f|
+  -if @talk_suggestion.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@talk_suggestion.errors.count, "error")} prohibited this talk_suggestion from being saved:"
+      %ul
+        - @talk_suggestion.errors.full_messages.each do |msg|
+          %li= msg
+
+  %p.field
+    = f.label :name
+    = f.text_field :name
+  %p.field
+    = f.label :description
+    = f.text_area :description, :rows => 5
+  %p.field
+    = f.label :style
+    = f.select :style, TalkSuggestion.talk_suggestions
+  %p.field
+    = f.label :suggested_speaker, "I want to"
+    = f.select :suggested_speaker, [["give this talk", "by #{current_user.full_name}"], ["see this talk", "looking for speaker"]]
+  %p.field
+    = f.hidden_field :created_by_id, :value => current_user.id
+  %p.actions
+    = f.submit 'Submit'
