@@ -37,6 +37,9 @@ class TalkSuggestionsController < ApplicationController
   # GET /talk_suggestions/1/edit
   def edit
     @talk_suggestion = TalkSuggestion.find(params[:id])
+    if @talk_suggestion.created_by_id != current_user.id
+      redirect_to talk_suggestions_path, notice: 'You can not edit other peoples suggestions'
+    end
   end
 
   # POST /talk_suggestions
@@ -62,7 +65,7 @@ class TalkSuggestionsController < ApplicationController
 
     respond_to do |format|
       if @talk_suggestion.update_attributes(params[:talk_suggestion])
-        format.html { redirect_to @talk_suggestion, notice: 'Talk suggestion was successfully updated.' }
+        format.html { redirect_to talk_suggestions_path, notice: 'Talk suggestion was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

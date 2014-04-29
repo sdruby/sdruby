@@ -24,7 +24,11 @@
               %p
                 = talk_suggestion.description
               %p
-                = "suggested by #{talk_suggestion.created_by}"
+                - if current_user && talk_suggestion.created_by?(current_user)
+                  suggested by you
+                  = link_to "(edit)", edit_talk_suggestion_path(talk_suggestion)
+                - else
+                  = "suggested by #{talk_suggestion.created_by}"
 
   %br
 

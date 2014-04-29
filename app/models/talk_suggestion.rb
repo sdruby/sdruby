@@ -10,4 +10,8 @@ class TalkSuggestion < ActiveRecord::Base
   def vote_count
     read_attribute(:vote_count) || 0
   end
+
+  def created_by?(user)
+    self.created_by_id == user.id
+  end
 end
