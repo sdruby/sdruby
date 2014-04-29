@@ -11,7 +11,7 @@
           %td= talk_suggestion.name
           %td= talk_suggestion.style
           %td= "#{talk_suggestion.suggested_speaker}"
-          - if current_user.last_voted_at.blank? || current_user.last_voted_at > 1.day.ago
+          - if current_user.last_voted_at.blank? || current_user.last_voted_at < 1.day.ago
             %td
               = "#{talk_suggestion.vote_count} Votes"
               = link_to '+1', vote_talk_suggestion_path(talk_suggestion), :method => :post
