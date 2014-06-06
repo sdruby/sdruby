@@ -1,8 +1,8 @@
 production:
   solr:
-    hostname: ec2-west.websolr.com
+    hostname: us-west-2.websolr.com
     port: 80
-    path: '/solr/c6ff6f86cde'
+    path: '/solr/d740a6b006a'
     log_level: WARNING
 
 development:

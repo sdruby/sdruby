@@ -9,3 +9,4 @@
 //= require global
 //= iphone-style-checkboxes
 //= require jquery.lazyload.min
+//= require jquery.expander

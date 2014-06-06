@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130110000749) do
+ActiveRecord::Schema.define(:version => 20140422053512) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -51,6 +51,17 @@ ActiveRecord::Schema.define(:version => 20130110000749) do
     t.integer  "github_watchers"
   end
 
+  create_table "talk_suggestions", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "style"
+    t.string   "suggested_speaker"
+    t.integer  "created_by_id"
+    t.integer  "vote_count"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "full_name"
     t.string   "email"
@@ -78,6 +89,7 @@ ActiveRecord::Schema.define(:version => 20130110000749) do
     t.string   "role"
     t.integer  "sort",                  :default => 0
     t.integer  "projects_count",        :default => 0
+    t.datetime "last_voted_at"
   end
 
 end

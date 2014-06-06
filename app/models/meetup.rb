@@ -7,6 +7,8 @@ class Meetup
 
   def events
     @events ||= client.fetch(:events, group_urlname: urlname)
+  rescue
+    @events = []
   end
 
   def photos

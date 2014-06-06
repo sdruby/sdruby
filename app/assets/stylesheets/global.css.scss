@@ -633,7 +633,7 @@ margin-top: 5px;
 			z-index: 2;
 		}
 	}
-	
+
 	.or + a {
 		@include opacity(0.6);
 	}
@@ -933,6 +933,24 @@ ul#filter, form.search {
    -khtml-user-select: none;
    -webkit-user-select: none;
    user-select: none;
+}
+
+// Talk Suggestions
+#talk_suggestions{
+  #new_talk {
+    float: right;
+  }
+
+  .suggestion {
+    border-bottom: 1px solid #3f3229;
+    .header {
+      padding: 15px 0 0 15px;
+      color: white;
+    }
+    a {
+      color: white;
+    }
+  }
 }
 
 // Team page

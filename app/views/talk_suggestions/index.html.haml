@@ -1,0 +1,30 @@
+#talk_suggestions
+  #new_talk
+    = link_to 'Add a Talk Suggestion', new_talk_suggestion_path
+
+  %h1 Talk Suggestions
+  %table
+
+    - @talk_suggestions.each do |talk_suggestion|
+      %tbody.suggestion
+        %tr.header
+          %td= talk_suggestion.name
+          %td= talk_suggestion.style
+          %td= "#{talk_suggestion.suggested_speaker}"
+
+          - if current_user && (current_user.last_voted_at.blank? || current_user.last_voted_at < 1.day.ago)
+            %td
+              = "#{talk_suggestion.vote_count} Votes"
+              = link_to '+1', vote_talk_suggestion_path(talk_suggestion), :method => :post
+          - else
+            %td= "Votes (#{talk_suggestion.vote_count})"
+        %tr
+          %td{:colspan => 4}
+            .expandable
+              %p
+                = talk_suggestion.description
+              %p
+                = "suggested by #{talk_suggestion.created_by}"
+
+  %br
+
