@@ -7,6 +7,10 @@ Currently, this application includes support for our video podcast, member signu
 
 ## System Dependencies ##
 
+### Ruby ###
+
+This app is designed to run on Ruby 1.9.3.
+
 ### ImageMagick ###
 
 To work best, you must have ImageMagick installed on your local machine:
