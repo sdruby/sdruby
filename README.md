@@ -24,6 +24,7 @@ To work best, you must have ImageMagick installed on your local machine:
 bundle install                                          # Install project dependencies
 cp config/database.example.yml config/database.yml      # Configure your database(s)
 cp config/app_config.example.yml config/app_config.yml  # Configure your application settings
+cp config/.env.sample .env                              # Configure your env
 rake sunspot:solr:start                                 # Start Solr search engine
 rake db:migrate db:seed                                 # Setup database and load sample data
 rake sunspot:solr:reindex                               # Index the database
