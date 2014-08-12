@@ -2,6 +2,7 @@ require 'net/http'
 require "open-uri"
 
 class User < ActiveRecord::Base
+  include PgSearch
   has_many :projects, :order => "github_created_at DESC"
 
   acts_as_authentic
@@ -10,10 +11,10 @@ class User < ActiveRecord::Base
   validates :email, :uniqueness => true, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
   validate :avatar_is_valid
 
-  searchable do
-    text :about, :email, :full_name, :github_username, :neighborhood
-    boolean :available_for_work
-  end
+  pg_search_scope :search_by_text,
+    :against => [:about, :email, :full_name, :github_username, :neighborhood],
+    :using => {:tsearch => {:prefix => true}}
+
 
   if ['production', 'staging'].include?(Rails.env)
     has_attached_file :avatar,

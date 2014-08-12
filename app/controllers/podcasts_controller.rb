@@ -53,14 +53,11 @@ class PodcastsController < ApplicationController
   end
 
   def search
-    @episodes = Podcast.search do
-      fulltext params[:q]
-      order_by :id, :desc
-    end
+    @episodes = Podcast.search_by_text(params[:q])
 
     respond_to do |format|
       format.html
-      format.json { render :json => @episodes.results, :only => [:id] }
+      format.json { render :json => @episodes, :only => [:id] }
     end
   end
 

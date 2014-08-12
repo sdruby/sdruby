@@ -1,12 +1,14 @@
 class Podcast < ActiveRecord::Base
+  include PgSearch
+
   default_scope :order => "id DESC"
 
   scope :published, :conditions => {:publish => true}
 
-  searchable do
-    integer :id
-    text :name, :description
-  end
+  pg_search_scope :search_by_text,
+    :against => [:name, :description],
+    :using => {:tsearch => {:prefix => true}},
+    :order_within_rank => "podcasts.created_at DESC"
 
   if ['production', 'staging'].include?(Rails.env)
     has_attached_file :screenshot,

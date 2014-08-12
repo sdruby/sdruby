@@ -16,12 +16,12 @@ gem "hpricot"
 gem "jquery-rails"
 gem "newrelic_rpm"
 gem "paperclip", "~> 3.1.4"
+gem "pg"
+gem 'pg_search'
 gem "progress_bar"
 gem "rack-recaptcha", require: "rack/recaptcha"
 gem "rMeetup", require: "rmeetup"
 gem "seed_dump"
-gem "sunspot_rails"
-gem "sunspot_solr"
 gem "will_paginate"
 
 group :assets do
@@ -52,10 +52,8 @@ group :development, :test do
   gem "guard-spork"
   gem "guard-rspec"
   gem "launchy"
-  gem "sqlite3"
 end
 
 group :heroku do
-  gem "pg"
   gem "thin"
 end
