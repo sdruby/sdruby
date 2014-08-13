@@ -70,11 +70,8 @@ class UsersController < ApplicationController
   end
 
   def search
-    search = User.search do
-      fulltext params[:q]
-    end
+    @users = User.search_by_text(params[:q]).sort{ |a,b| a.full_name <=> b.full_name }
 
-    @users = search.results.sort{ |a,b| a.full_name <=> b.full_name }
     respond_to do |format|
       format.html
       format.json { render json: @users, only: :id }

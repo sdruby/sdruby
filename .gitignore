@@ -16,6 +16,5 @@ log/*
 public/assets
 public/images/screenshots
 public/images/users
-solr/*
 tmp/*
 tmp/**/*
