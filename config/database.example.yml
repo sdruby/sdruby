@@ -1,7 +1,7 @@
 development: &defaults
   adapter: postgresql
   encoding: unicode
-  database: sdruby_development
+  database: sdruby_dev
   pool: 20
   username: root
   password:
@@ -19,4 +19,3 @@ staging:
 production:
   <<: *defaults
   database: sdruby_production
-
