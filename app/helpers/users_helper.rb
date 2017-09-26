@@ -23,7 +23,7 @@ module UsersHelper
     user.projects.each do |project|
       projects << "<li>"
       projects << link_to(project.name, "http://github.com/#{user.github_username}/#{project.name}")
-      projects << "<span>" + project.description + "</span>"
+      projects << "<span>#{project.description}</span>"
       projects << "</li>\n"
     end
     projects.html_safe
