@@ -17,7 +17,7 @@
     .or
       %span or
 
-    = render :partial => "itunes"
+    #itunes= render :partial => "itunes"
 
   .screenshot
     = link_to(image_tag(@podcast.screenshot.url, :size => "345x267", :alt => "Episode #{@podcast.id}"), @podcast.movie_link) if @podcast
