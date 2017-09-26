@@ -290,3 +290,9 @@ DEPENDENCIES
   vcr
   webmock
   will_paginate
+
+RUBY VERSION
+   ruby 1.9.3p545
+
+BUNDLED WITH
+   1.15.4
