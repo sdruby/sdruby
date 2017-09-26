@@ -66,7 +66,10 @@ module SDRuby
       g.javascripts false
     end
 
-  # Prevent initializing application and connecting to the database when precompiling assets
-  config.assets.initialize_on_precompile = false
+    # Prevent initializing application and connecting to the database when precompiling assets
+    config.assets.initialize_on_precompile = false
+  
+    # Don't try to validate internationalization locales
+    I18n.enforce_available_locales = false
   end
 end
