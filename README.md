@@ -46,7 +46,7 @@ Please be sure to run the tests and ensure all are passing before issuing a pull
 
 ## Deployment ##
 
-You can deploy to the staging or production Heroku apps, if you have the appropriate permissions, using one of the the following commands:
+You can deploy to the staging or production Heroku apps, if you have the appropriate permissions, using one of the following commands:
 ``` shell
 rake staging deploy commit=BRANCH
 rake production deploy
