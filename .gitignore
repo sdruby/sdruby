@@ -12,6 +12,7 @@ config/database.yml
 config/fuzzy.yml
 config/password.txt
 db/*.sqlite3
+latest.dump
 log/*
 public/assets
 public/images/screenshots
